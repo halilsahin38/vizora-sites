@@ -246,18 +246,31 @@ def pricing_cards():
           </article>''')
     return "\n".join(out)
 
+SUB_TIERS = [
+  ("Basis", "25", ["Onderhoud &amp; beveiliging", "1 kleine aanpassing per maand", "Hulp via WhatsApp"], False),
+  ("Plus", "49", ["Alles uit Basis", "Tot 3 aanpassingen per maand", "Google Bedrijfsprofiel bijhouden", "Maandelijkse groeitips"], True),
+  ("Pro", "79", ["Alles uit Plus", "Tot 6 aanpassingen per maand", "Elk kwartaal een nieuwe pagina of actie", "Maandelijks groeigesprek"], False),
+]
+def sub_tiers():
+    out = []
+    for name, price, feats, featured in SUB_TIERS:
+        lis = "".join(f"<li>{f}</li>" for f in feats)
+        out.append(f'''            <div class="tier{" tier--featured" if featured else ""}">
+              <span class="tier__name">{name}</span>
+              <strong><sup>€</sup>{price}<small> p/m</small></strong>
+              <ul>{lis}</ul>
+              <a href="contact.html?pakket=Abonnement%20{name}" class="btn {"btn--light" if featured else "btn--ghost"} btn--small">Kies {name}</a>
+            </div>''')
+    return "\n".join(out)
+
 SUBSCRIPTION = f'''        <div class="sub reveal" id="abonnement">
           <div class="sub__copy">
             <span class="price__name">Website-abonnement</span>
             <h3>Elke maand een website die <em>klopt.</em></h3>
-            <p>Een website is nooit af. Met ons abonnement werken we je site elke maand bij: nieuwe prijzen, foto's of acties, technisch onderhoud en een maandelijkse check wat er beter kan. Wil je verder groeien? Dan schakel je ons direct in.</p>
-            <ul class="sub__list"><li>Maandelijkse updates</li><li>Onderhoud &amp; beveiliging</li><li>Kleine aanpassingen</li><li>Groeitips per maand</li><li>Direct contact via WhatsApp</li></ul>
+            <p>Een website is nooit af. Met een abonnement houden wij je site up-to-date, veilig en snel, en helpen we je elke maand een stap verder. Je kiest zelf hoeveel hulp je wilt en ontvangt maandelijks een factuur.</p>
           </div>
-          <div class="sub__price">
-            <span>vanaf</span>
-            <strong><sup>€</sup>25</strong>
-            <span>per maand</span>
-            <a href="contact.html?pakket=Abonnement" class="btn btn--light">Abonnement bespreken {I["arrow"]}</a>
+          <div class="tiers">
+{sub_tiers()}
           </div>
         </div>
 '''
@@ -914,7 +927,7 @@ prijs += f"""
         <div class="faq reveal">
           <details><summary>Waarom staat er "vanaf"?</summary><p>Elke zaak is anders. De vanaf-prijs is wat je minimaal betaalt voor het pakket. Na het gratis gesprek krijg je een vaste prijs, zonder verrassingen.</p></details>
           <details><summary>Zijn er maandelijkse kosten?</summary><p>De pakketten zijn eenmalig. Wil je dat we je website elke maand bijwerken en onderhouden? Dan kun je een abonnement nemen vanaf €25 per maand. Je domeinnaam betaal je zelf (meestal een paar euro per jaar).</p></details>
-          <details><summary>Wat zit er in het website-abonnement?</summary><p>Maandelijkse updates (teksten, prijzen, foto's of acties), technisch onderhoud en beveiliging, kleine aanpassingen en elke maand tips over wat er beter kan.</p></details>
+          <details><summary>Welke abonnementen zijn er?</summary><p>Basis (€25 p/m): onderhoud, beveiliging en 1 kleine aanpassing per maand. Plus (€49 p/m): tot 3 aanpassingen, je Google Bedrijfsprofiel bijhouden en maandelijkse groeitips. Pro (€79 p/m): tot 6 aanpassingen, elk kwartaal een nieuwe pagina of actie en een maandelijks groeigesprek. Je ontvangt elke maand een factuur.</p></details>
           <details><summary>Maken jullie ook posts voor social media?</summary><p>In de pakketten richten we je profielen in en helpen we met stijl en strategie. Content maken of posten valt daarbuiten; dat bespreken we graag samen en kost extra.</p></details>
           <details><summary>Kan ik later upgraden?</summary><p>Ja. Begin je met Start, dan kun je altijd uitbreiden naar Groei of Compleet. Wat al gemaakt is, bouwen we gewoon verder uit.</p></details>
           <details><summary>Hoe betaal ik?</summary><p>Dat spreken we samen af in de offerte. Je weet vooraf precies wat je betaalt en wanneer.</p></details>
