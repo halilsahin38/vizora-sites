@@ -1,0 +1,74 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ristorante Olivo (concept)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root{--bg:#f4ece0;--fg:#2a1c13;--acc:#b0502b;--on-acc:#fff;--card:#fffaf2;--line:rgba(42,28,19,.2);--display:'Playfair Display',serif;--sans:'Lato',sans-serif;--dw:500}
+body{background:radial-gradient(700px 520px at 85% 35%,#fbe9d4,transparent 65%),#f4ece0}
+.logo{font:italic 500 34px var(--display);color:var(--acc)}
+h1 em{color:var(--acc)}
+.branch{position:absolute;right:-30px;top:-10px;width:360px;stroke:#6b7a43;fill:none;stroke-width:2;opacity:.55}
+.branch ellipse{fill:#7d8b4e;stroke:none;opacity:.55}
+.menu{position:absolute;left:0;top:30px;width:420px;padding:36px 34px;background:#fffaf2 repeating-linear-gradient(0deg,transparent 0 3px,rgba(42,28,19,.012) 3px 4px)}
+.menu h3{font:italic 500 30px var(--display);text-align:center}
+.menu .sub{text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin:6px 0 22px}
+.dish{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(42,28,19,.1)}
+.dish:last-child{border:0}
+.dish b{font:600 18px var(--display)}
+.dish small{display:block;font-size:13px;opacity:.6;margin-top:3px}
+.dish span{font:600 17px var(--display);color:var(--acc);white-space:nowrap}
+.res{position:absolute;right:10px;top:300px;width:330px;padding:26px}
+.res h4{font:600 20px var(--display);margin-bottom:16px}
+.field{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-radius:12px;background:#f4ece0;margin-bottom:9px;font-size:15px}
+.field small{opacity:.55;font-size:12px;display:block}
+.ok{display:flex;align-items:center;gap:8px;color:#2f7a4f;font-weight:700;font-size:14px;margin:14px 0}
+.res .btn{width:100%}
+.s2 h2{text-align:center}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.cols>div{padding:34px;border-radius:22px;background:var(--card)}
+.cols h3{font:italic 500 26px var(--display);color:var(--acc);margin-bottom:12px}
+@media (max-width:500px){
+  .branch{display:none}
+  .menu{position:relative;width:100%;padding:26px 22px}
+  .res{display:none}
+}
+</style></head><body>
+<!--#statusbar-->
+<div class="wrap">
+  <nav class="nav"><a class="logo">Olivo</a><div class="nav__links"><a>Menu</a><a>Reserveren</a><a>Afhalen</a><a>Over ons</a></div><a class="btn btn--sm">Reserveer</a><span class="burger"></span></nav>
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Trattoria · Pasta fresca · Vino</span>
+      <h1>Echte Italiaanse keuken, <em>met liefde</em> gemaakt.</h1>
+      <p class="lead">Elke dag verse pasta, seizoensgerechten en wijnen uit kleine Italiaanse wijnhuizen. Reserveer je tafel in een paar tikken.</p>
+      <div class="actions"><a class="btn">Reserveer een tafel</a><a class="btn btn--ghost">Bekijk het menu</a></div>
+      <div class="meta"><div><b>Wo – zo</b>vanaf 17:00</div><div><b>Lunch</b>vr – zo vanaf 12:00</div><div><b>Afhalen</b>online bestellen</div></div>
+    </div>
+    <div class="visual">
+      <svg class="branch" viewBox="0 0 300 300"><path d="M20 280C90 210 150 150 280 30"/><ellipse cx="80" cy="200" rx="26" ry="9" transform="rotate(-50 80 200)"/><ellipse cx="110" cy="196" rx="24" ry="8" transform="rotate(20 110 196)"/><ellipse cx="130" cy="150" rx="26" ry="9" transform="rotate(-55 130 150)"/><ellipse cx="160" cy="146" rx="24" ry="8" transform="rotate(15 160 146)"/><ellipse cx="185" cy="105" rx="25" ry="8.5" transform="rotate(-55 185 105)"/><ellipse cx="215" cy="98" rx="23" ry="8" transform="rotate(12 215 98)"/><ellipse cx="240" cy="62" rx="22" ry="8" transform="rotate(-50 240 62)"/><circle cx="150" cy="175" r="9" fill="#55602f" stroke="none"/><circle cx="205" cy="128" r="8" fill="#55602f" stroke="none"/></svg>
+      <div class="menu card">
+        <h3>Menu della settimana</h3><div class="sub">Vers · seizoen · huisgemaakt</div>
+        <div class="dish"><div><b>Burrata con pomodori</b><small>Burrata, tomaat, basilicum, olijfolie</small></div><span>€ 12,50</span></div>
+        <div class="dish"><div><b>Tagliatelle al tartufo</b><small>Verse pasta, truffel, Parmigiano</small></div><span>€ 21,00</span></div>
+        <div class="dish"><div><b>Risotto ai funghi</b><small>Bospaddenstoelen, tijm, mascarpone</small></div><span>€ 19,50</span></div>
+        <div class="dish"><div><b>Tiramisù della casa</b><small>Volgens recept van de nonna</small></div><span>€ 8,50</span></div>
+      </div>
+      <div class="res card">
+        <h4>Reserveer een tafel</h4>
+        <div class="field"><div><small>Gasten</small>2 personen</div>▾</div>
+        <div class="field"><div><small>Datum</small>vrijdag 18 oktober</div>▾</div>
+        <div class="field"><div><small>Tijd</small>19:30</div>▾</div>
+        <div class="ok">✓ Tafel beschikbaar</div>
+        <a class="btn">Bevestig reservering</a>
+      </div>
+    </div>
+  </section>
+</div>
+<section class="s2"><div class="wrap">
+  <h2>Ons menu</h2>
+  <div class="cols">
+    <div><h3>Antipasti</h3><div class="dish"><div><b>Vitello tonnato</b></div><span>€ 13,50</span></div><div class="dish"><div><b>Bruschetta mista</b></div><span>€ 9,00</span></div><div class="dish"><div><b>Carpaccio di manzo</b></div><span>€ 14,00</span></div></div>
+    <div><h3>Primi</h3><div class="dish"><div><b>Cacio e pepe</b></div><span>€ 17,50</span></div><div class="dish"><div><b>Ravioli di ricotta</b></div><span>€ 19,00</span></div><div class="dish"><div><b>Linguine alle vongole</b></div><span>€ 23,00</span></div></div>
+    <div><h3>Dolci</h3><div class="dish"><div><b>Panna cotta</b></div><span>€ 8,00</span></div><div class="dish"><div><b>Cannoli siciliani</b></div><span>€ 7,50</span></div><div class="dish"><div><b>Affogato</b></div><span>€ 6,50</span></div></div>
+  </div>
+</div></section>
+</body></html>

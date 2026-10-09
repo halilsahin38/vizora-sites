@@ -1,0 +1,72 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bakkerij Goudkorst (concept)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root{--bg:#f7efe1;--fg:#3a2715;--acc:#a5652a;--on-acc:#fff;--card:#fffdf8;--line:rgba(58,39,21,.2);--display:'DM Serif Display',serif;--sans:'Manrope',sans-serif;--dw:400;--r:14px}
+body{background:radial-gradient(760px 560px at 82% 40%,#f3dcb8,transparent 65%),#f7efe1}
+.logo{display:flex;align-items:center;gap:12px;font:400 28px var(--display)}
+.logo svg{width:34px;height:34px}
+h1 em{color:var(--acc)}
+.badge{position:absolute;right:30px;top:0;width:150px;height:150px;border-radius:50%;background:var(--fg);color:#f7efe1;display:grid;place-items:center;text-align:center;font:400 18px/1.15 var(--display);transform:rotate(8deg)}
+.badge b{display:block;font-size:44px;color:#f0c88f}
+.order{position:absolute;left:0;top:40px;width:470px;padding:30px}
+.order h3{font:400 28px var(--display)}
+.order p{font-size:14px;opacity:.65;margin:4px 0 18px}
+.item{display:grid;grid-template-columns:54px 1fr auto;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(58,39,21,.1)}
+.item svg{width:54px;height:54px}
+.item b{font-size:16px}
+.item small{display:block;font-size:13px;opacity:.6}
+.qty{display:flex;align-items:center;gap:12px;font-weight:700}
+.qty i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-style:normal;box-shadow:inset 0 0 0 1px var(--line)}
+.qty i.p{background:var(--acc);color:#fff;box-shadow:none}
+.total{display:flex;justify-content:space-between;margin:20px 0 16px;font-weight:700;font-size:17px}
+.order .btn{width:100%}
+.pick{position:absolute;right:10px;bottom:40px;width:270px;padding:20px 22px;font-size:14px}
+.pick b{display:block;font:400 22px var(--display);margin-bottom:2px}
+.prod{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:46px}
+.prod div{padding:26px;border-radius:22px;background:var(--card)}
+.prod svg{width:100%;height:120px;margin-bottom:16px}
+.prod b{display:block;font:400 22px var(--display)}
+.prod span{color:var(--acc);font-weight:700}
+@media (max-width:500px){
+  .badge,.pick{display:none}
+  .order{position:static;width:100%;padding:22px}
+}
+</style></head><body>
+<!--#statusbar-->
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="crust" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d99a52"/><stop offset="1" stop-color="#8f5422"/></linearGradient>
+<linearGradient id="crois" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0c27a"/><stop offset="1" stop-color="#b8732f"/></linearGradient>
+<symbol id="loaf" viewBox="0 0 100 70"><ellipse cx="50" cy="40" rx="46" ry="27" fill="url(#crust)"/><path d="M25 28q8 10 0 22M45 22q8 12 0 28M65 22q8 12 0 28" stroke="#f3d3a1" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="croissant" viewBox="0 0 100 70"><path d="M8 50Q20 12 50 10q30 2 42 40-10-8-20-6-8-18-22-18T28 44Q18 42 8 50Z" fill="url(#crois)"/><path d="M36 22q4 12 2 24M50 16v28M64 22q-4 12-2 24" stroke="#8f5422" stroke-width="2.5" fill="none" opacity=".45"/></symbol>
+<symbol id="pie" viewBox="0 0 100 70"><ellipse cx="50" cy="44" rx="44" ry="20" fill="#9a5d27"/><ellipse cx="50" cy="38" rx="42" ry="18" fill="#e3a65a"/><path d="M14 38h72M22 30l56 16M22 46l56-16M50 21v34" stroke="#f6d39b" stroke-width="4" opacity=".9"/></symbol>
+</defs></svg>
+<div class="wrap">
+  <nav class="nav"><a class="logo"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#3a2715"/><path d="M20 9v22M20 14l-5-4M20 14l5-4M20 20l-6-4M20 20l6-4M20 26l-6-4M20 26l6-4" stroke="#f0c88f" stroke-width="2.2" stroke-linecap="round"/></svg>Goudkorst</a><div class="nav__links"><a>Assortiment</a><a>Bestellen</a><a>Taarten</a><a>Over ons</a></div><a class="btn btn--sm">Bestel online</a><span class="burger"></span></nav>
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Ambachtelijke bakkerij</span>
+      <h1>Elke ochtend vers uit de <em>oven.</em></h1>
+      <p class="lead">Desembrood, roomboter croissants en taarten voor elk feest. Bestel vandaag vóór 20:00 en haal morgen alles vers op.</p>
+      <div class="actions"><a class="btn">Bestel voor morgen</a><a class="btn btn--ghost">Bekijk assortiment</a></div>
+      <div class="meta"><div><b>Ma – za</b>07:00 – 17:30</div><div><b>Ophalen</b>vanaf 07:00</div><div><b>Taarten</b>op bestelling</div></div>
+    </div>
+    <div class="visual">
+      <div class="badge"><div><b>14</b>soorten<br>brood</div></div>
+      <div class="order card">
+        <h3>Jouw bestelling</h3><p>Morgen vers ophalen vanaf 07:00</p>
+        <div class="item"><svg><use href="#loaf"/></svg><div><b>Desem volkoren</b><small>800 gram</small></div><div class="qty"><i>−</i>1<i class="p">+</i></div></div>
+        <div class="item"><svg><use href="#croissant"/></svg><div><b>Roomboter croissant</b><small>per stuk € 1,60</small></div><div class="qty"><i>−</i>6<i class="p">+</i></div></div>
+        <div class="item"><svg><use href="#pie"/></svg><div><b>Appeltaart</b><small>8 personen</small></div><div class="qty"><i>−</i>1<i class="p">+</i></div></div>
+        <div class="total"><span>Totaal</span><span>€ 28,35</span></div>
+        <a class="btn">Bestellen &amp; ophalen</a>
+      </div>
+      <div class="pick card"><b>Klaar om op te halen</b><span class="dot"></span>Morgen vanaf 07:00</div>
+    </div>
+  </section>
+</div>
+<section class="s2"><div class="wrap">
+  <span class="eyebrow">Assortiment</span><h2 style="margin-top:14px">Vers, eerlijk en ambachtelijk</h2>
+  <div class="prod"><div><svg><use href="#loaf"/></svg><b>Desembrood</b><span>€ 4,25</span></div><div><svg><use href="#croissant"/></svg><b>Croissants</b><span>€ 1,60</span></div><div><svg><use href="#pie"/></svg><b>Appeltaart</b><span>€ 14,50</span></div><div><svg><use href="#loaf"/></svg><b>Spelt</b><span>€ 4,75</span></div></div>
+</div></section>
+</body></html>

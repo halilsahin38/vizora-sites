@@ -195,10 +195,12 @@ if (booking) {
   const branche = params.get('branche');
   if (bedrijf) booking.bedrijf.value = bedrijf.slice(0, 60);
   if (pakket || branche) {
-    const site = booking.querySelector('[name="dienst"][value="Website"]');
-    if (site) site.checked = true;
+    const abo = pakket === 'Abonnement';
+    const box = booking.querySelector(`[name="dienst"][value="${abo ? 'Website-abonnement' : 'Website'}"]`);
+    if (box) box.checked = true;
     const parts = [];
-    if (pakket) parts.push(`Ik heb interesse in het pakket ${pakket.slice(0, 20)}.`);
+    if (abo) parts.push('Ik heb interesse in het website-abonnement.');
+    else if (pakket) parts.push(`Ik heb interesse in het pakket ${pakket.slice(0, 20)}.`);
     if (branche) parts.push(`Mijn zaak: ${branche.slice(0, 30)}.`);
     booking.bericht.value = parts.join(' ');
   }

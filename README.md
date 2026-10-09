@@ -12,6 +12,18 @@ De HTML-pagina's worden gemaakt door `build.py`. Pas teksten daar aan en draai:
 python3 build.py
 ```
 
+## Conceptwebsites
+
+In `concepts/` staan vier voorbeeldwebsites (barbershop, restaurant, salon, bakkerij).
+Daarvan worden screenshots gemaakt die op de site gebruikt worden (hero, Contour Reveal, strook):
+
+```
+npm i playwright
+node tools/render-concepts.mjs
+```
+
+De screenshots komen in `assets/concepts/`.
+
 ## Bestanden
 
 | Bestand | Inhoud |
@@ -29,3 +41,5 @@ python3 build.py
 | `assets/logo.svg`, `logo-licht.svg` | Logo voor lichte / donkere achtergrond |
 | `assets/profielfoto-*.png` | Profielfoto voor Instagram/TikTok |
 | `vercel.json` | Beveiligingsheaders voor hosting op Vercel |
+| `concepts/` | Bronbestanden van de conceptwebsites |
+| `assets/concepts/` | Screenshots van de concepten |

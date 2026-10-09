@@ -3,7 +3,8 @@
    Het oude beeld zakt weg in hoogtelijnen, vanaf je klik
    groeit een kristallen opening waarin het volgende beeld
    eerst als ijs verschijnt en daarna in kleur.
-   De beelden worden met canvas getekend (geen foto's nodig).
+   De beelden zijn screenshots van onze conceptwebsites
+   (zie /concepts en tools/render-concepts.mjs).
    ========================================================= */
 (() => {
   const root = document.querySelector('[data-contour]');
@@ -18,178 +19,26 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const SLIDES = [
-    { title: 'Websites met karakter', text: 'Geen standaard template, maar een ontwerp dat past bij jouw zaak.', draw: drawArch },
-    { title: 'Rust in elk detail', text: 'Design dat ademt, zodat bezoekers blijven kijken.', draw: drawDunes },
-    { title: 'Laag voor laag', text: 'Website, social media en marketing die naadloos op elkaar aansluiten.', draw: drawPlates },
-    { title: 'Stap voor stap groeien', text: 'Van eerste indruk tot vaste klant.', draw: drawStairs },
+    { name: 'noir', title: 'Barbershop Noir', text: 'Online boeken, heldere prijzen en openingstijden in één oogopslag.' },
+    { name: 'olivo', title: 'Ristorante Olivo', text: 'Menukaart en reserveren, zodat gasten direct een tafel boeken.' },
+    { name: 'serene', title: 'Studio Serene', text: 'Behandeling kiezen en meteen een moment plannen, ook om 23:00.' },
+    { name: 'goudkorst', title: 'Bakkerij Goudkorst', text: 'Vandaag bestellen, morgen vers ophalen. Minder telefoontjes, meer omzet.' },
   ];
+  const src = (s, mobile) => `assets/concepts/${s.name}-${mobile ? 'mobile-45' : 'desktop'}.jpg`;
+  const cache = {};
+  const loadImg = (url) => (cache[url] ||= new Promise((resolve, reject) => {
+    const img = new Image();
+    img.decoding = 'async';
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = url;
+  }));
 
-  /* ---------- Beelden tekenen ---------- */
-  function lin(ctx, x0, y0, x1, y1, stops) {
-    const g = ctx.createLinearGradient(x0, y0, x1, y1);
-    stops.forEach(([o, c]) => g.addColorStop(o, c));
-    return g;
-  }
-  function poly(ctx, pts, fill) {
-    ctx.beginPath();
-    pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-    ctx.closePath();
-    ctx.fillStyle = fill;
-    ctx.fill();
-  }
-  function rrect(ctx, x, y, w, h, r) {
-    ctx.beginPath();
-    ctx.moveTo(x + r, y);
-    ctx.arcTo(x + w, y, x + w, y + h, r);
-    ctx.arcTo(x + w, y + h, x, y + h, r);
-    ctx.arcTo(x, y + h, x, y, r);
-    ctx.arcTo(x, y, x + w, y, r);
-    ctx.closePath();
-  }
-
-  function drawArch(ctx, w, h) {
-    ctx.fillStyle = lin(ctx, 0, 0, 0, h, [[0, '#f6ecdd'], [1, '#e6d0b0']]);
-    ctx.fillRect(0, 0, w, h);
-    const sun = ctx.createRadialGradient(w * 0.82, h * 0.12, 0, w * 0.82, h * 0.12, w * 0.35);
-    sun.addColorStop(0, 'rgba(255,250,240,.9)');
-    sun.addColorStop(1, 'rgba(255,250,240,0)');
-    ctx.fillStyle = sun;
-    ctx.fillRect(0, 0, w, h);
-
-    const floorY = h * 0.8;
-    // achterwand rechts (schaduwzijde)
-    poly(ctx, [[w * 0.6, h * 0.06], [w * 0.88, h * 0.2], [w * 0.88, h * 0.76], [w * 0.6, floorY]],
-      lin(ctx, w * 0.6, 0, w * 0.88, 0, [[0, '#b0825d'], [1, '#c79f7b']]));
-    // grote wand links
-    ctx.fillStyle = lin(ctx, 0, 0, w * 0.6, 0, [[0, '#c4946b'], [0.6, '#d6ab84'], [1, '#dcb690']]);
-    ctx.fillRect(0, h * 0.06, w * 0.6, floorY - h * 0.06);
-    // boog
-    const ax = w * 0.26, aw = w * 0.2, top = h * 0.36;
-    ctx.beginPath();
-    ctx.moveTo(ax, floorY);
-    ctx.lineTo(ax, top);
-    ctx.arc(ax + aw / 2, top, aw / 2, Math.PI, 0);
-    ctx.lineTo(ax + aw, floorY);
-    ctx.closePath();
-    ctx.fillStyle = lin(ctx, ax, 0, ax + aw, 0, [[0, '#9f7251'], [0.45, '#b98c66'], [1, '#d3ab84']]);
-    ctx.fill();
-    // doorkijk door de boog
-    const ix = ax + aw * 0.3, iw = aw * 0.48, itop = top + h * 0.03;
-    ctx.beginPath();
-    ctx.moveTo(ix, floorY);
-    ctx.lineTo(ix, itop);
-    ctx.arc(ix + iw / 2, itop, iw / 2, Math.PI, 0);
-    ctx.lineTo(ix + iw, floorY);
-    ctx.closePath();
-    ctx.fillStyle = lin(ctx, 0, itop - iw / 2, 0, floorY, [[0, '#f7efe2'], [0.55, '#ead6b8'], [1, '#d9b996']]);
-    ctx.fill();
-    // vloer
-    poly(ctx, [[0, floorY], [w, h * 0.74], [w, h], [0, h]], lin(ctx, 0, floorY, 0, h, [[0, '#ead7bb'], [1, '#d6bb98']]));
-    // trede
-    poly(ctx, [[ax - w * 0.04, floorY], [ax + aw + w * 0.04, floorY], [ax + aw + w * 0.06, floorY + h * 0.05], [ax - w * 0.06, floorY + h * 0.05]], '#efe0c8');
-    // lange schaduw van het zonlicht
-    poly(ctx, [[w * 0.6, floorY], [w, h * 0.86], [w, h], [w * 0.38, h]], 'rgba(110,75,45,.16)');
-    
-  }
-
-  function drawDunes(ctx, w, h) {
-    ctx.fillStyle = lin(ctx, 0, 0, 0, h, [[0, '#f5eadb'], [0.6, '#ecd5b6'], [1, '#e2c39b']]);
-    ctx.fillRect(0, 0, w, h);
-    const sx = w * 0.68, sy = h * 0.3, sr = Math.min(w, h) * 0.09;
-    const glow = ctx.createRadialGradient(sx, sy, 0, sx, sy, sr * 5);
-    glow.addColorStop(0, 'rgba(255,248,236,.95)');
-    glow.addColorStop(1, 'rgba(255,248,236,0)');
-    ctx.fillStyle = glow;
-    ctx.fillRect(0, 0, w, h);
-    ctx.beginPath();
-    ctx.arc(sx, sy, sr, 0, Math.PI * 2);
-    ctx.fillStyle = '#fcf6ec';
-    ctx.fill();
-
-    const layers = [
-      { y: 0.5, a: 0.07, f: 1.3, p: 0.2, c: ['#e4c9a4', '#d7b48a'] },
-      { y: 0.6, a: 0.08, f: 0.9, p: 1.7, c: ['#d9b68b', '#c39468'] },
-      { y: 0.72, a: 0.09, f: 1.1, p: 3.1, c: ['#c99d72', '#a97c56'] },
-      { y: 0.86, a: 0.07, f: 0.7, p: 4.4, c: ['#b2845c', '#8a6343'] },
-    ];
-    layers.forEach((l) => {
-      ctx.beginPath();
-      ctx.moveTo(0, h);
-      for (let x = 0; x <= w; x += w / 120) {
-        const t = x / w;
-        const y = h * (l.y - l.a * Math.sin(t * Math.PI * l.f + l.p) - l.a * 0.4 * Math.sin(t * Math.PI * 3.3 + l.p * 2));
-        ctx.lineTo(x, y);
-      }
-      ctx.lineTo(w, h);
-      ctx.closePath();
-      ctx.fillStyle = lin(ctx, 0, h * (l.y - l.a * 1.4), w * 0.3, h, [[0, l.c[0]], [1, l.c[1]]]);
-      ctx.fill();
-    });
-  }
-
-  function drawPlates(ctx, w, h) {
-    ctx.fillStyle = lin(ctx, 0, 0, w, h, [[0, '#f4ebde'], [1, '#e3d3bc']]);
-    ctx.fillRect(0, 0, w, h);
-    const cx = w * 0.55, cy = h * 0.52, s = Math.min(w * 0.42, h * 0.75);
-    const plate = (rot, dx, dy, pw, ph, fill, shadow) => {
-      ctx.save();
-      ctx.translate(cx + dx, cy + dy);
-      ctx.rotate((rot * Math.PI) / 180);
-      ctx.shadowColor = `rgba(70,45,25,${shadow})`;
-      ctx.shadowBlur = s * 0.12;
-      ctx.shadowOffsetY = s * 0.05;
-      rrect(ctx, -pw / 2, -ph / 2, pw, ph, s * 0.06);
-      ctx.fillStyle = fill;
-      ctx.fill();
-      ctx.restore();
-    };
-    plate(9, s * 0.18, s * 0.02, s * 1.25, s * 0.95, '#d6c0a0', 0.12);
-    plate(-5, -s * 0.06, s * 0.03, s * 1.25, s * 0.92, '#e6d6bf', 0.18);
-    plate(0, 0, 0, s * 1.2, s * 0.82, '#fbf7f0', 0.28);
-    // inhoud van het "browser"-vlak
-    const x0 = cx - s * 0.6, y0 = cy - s * 0.41;
-    ctx.fillStyle = '#efe6d8';
-    ctx.fillRect(x0, y0 + s * 0.08, s * 1.2, 1.5);
-    ['#d8c6aa', '#d8c6aa', '#d8c6aa'].forEach((c, i) => {
-      ctx.beginPath();
-      ctx.arc(x0 + s * (0.05 + i * 0.035), y0 + s * 0.04, s * 0.011, 0, Math.PI * 2);
-      ctx.fillStyle = c;
-      ctx.fill();
-    });
-    rrect(ctx, x0 + s * 0.05, y0 + s * 0.13, s * 1.1, s * 0.34, s * 0.03);
-    ctx.fillStyle = lin(ctx, x0, 0, x0 + s * 1.1, 0, [[0, '#3b2f25'], [0.6, '#7a5c43'], [1, '#b39272']]);
-    ctx.fill();
-    ctx.fillStyle = 'rgba(255,255,255,.85)';
-    ctx.fillRect(x0 + s * 0.1, y0 + s * 0.2, s * 0.42, s * 0.035);
-    ctx.fillStyle = 'rgba(255,255,255,.45)';
-    ctx.fillRect(x0 + s * 0.1, y0 + s * 0.27, s * 0.3, s * 0.025);
-    [0, 1, 2].forEach((i) => {
-      rrect(ctx, x0 + s * (0.05 + i * 0.37), y0 + s * 0.53, s * 0.34, s * 0.22, s * 0.025);
-      ctx.fillStyle = i === 1 ? '#e9dcc8' : '#f3ebdf';
-      ctx.fill();
-    });
-  }
-
-  function drawStairs(ctx, w, h) {
-    ctx.fillStyle = lin(ctx, 0, 0, w, 0, [[0, '#dcbb95'], [1, '#f1e2cc']]);
-    ctx.fillRect(0, 0, w, h);
-    const n = 6;
-    const sw = w * 0.11, sh = h * 0.085, depth = w * 0.05;
-    const baseX = w * 0.16, baseY = h * 0.9;
-    for (let i = n - 1; i >= 0; i--) {
-      const x = baseX + i * sw, y = baseY - (i + 1) * sh;
-      const bw = w - x;
-      // bovenvlak
-      poly(ctx, [[x, y], [x + bw, y], [x + bw + depth, y - depth * 0.55], [x + depth, y - depth * 0.55]], '#f1e3cd');
-      // voorvlak
-      ctx.fillStyle = lin(ctx, 0, y, 0, y + sh * (i + 1), [[0, '#d7b28a'], [1, '#c19670']]);
-      ctx.fillRect(x, y, bw, baseY - y);
-    }
-    // schaduw van de muur
-    poly(ctx, [[0, 0], [w * 0.34, 0], [w * 0.62, h], [0, h]], 'rgba(95,62,38,.14)');
-    // vloer
-    ctx.fillStyle = lin(ctx, 0, baseY, 0, h, [[0, '#e7d2b4'], [1, '#d4b792']]);
-    ctx.fillRect(0, baseY, w, h - baseY);
+  // beeld schalen zodat het canvas gevuld is (zoals background-size: cover, uitgelijnd bovenaan)
+  function drawCover(ctx, img, w, h) {
+    const sc = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+    const dw = img.naturalWidth * sc, dh = img.naturalHeight * sc;
+    ctx.drawImage(img, (w - dw) / 2, 0, dw, dh);
   }
 
   /* ---------- WebGL ---------- */
@@ -198,6 +47,7 @@
   const offCtx = off.getContext('2d');
   let index = 0;
   let busy = false;
+  let ready = false;
   let timer = null;
   let visible = false;
   const AUTOPLAY = 7000;
@@ -208,7 +58,7 @@
     setTimeout(() => {
       titleEl.textContent = s.title;
       textEl.textContent = s.text;
-      countEl.textContent = `${String(i + 1).padStart(2, '0')} / ${String(SLIDES.length).padStart(2, '0')}`;
+      countEl.textContent = `Concept ${String(i + 1).padStart(2, '0')} / ${String(SLIDES.length).padStart(2, '0')}`;
       root.classList.remove('is-changing');
     }, 350);
   }
@@ -224,6 +74,7 @@
 
   function schedule() {
     clearTimeout(timer);
+    if (!ready) return;
     if (reduceMotion || !visible) { if (bar) bar.style.transform = 'scaleX(0)'; return; }
     restartBar();
     timer = setTimeout(() => go(0.5 + (Math.random() - 0.5) * 0.4, 0.5 + (Math.random() - 0.5) * 0.4), AUTOPLAY);
@@ -232,11 +83,12 @@
   // Geen WebGL: eenvoudige wissel met 2D-canvas
   if (!gl) {
     const ctx = canvas.getContext('2d');
-    const paint = () => {
+    const paint = async () => {
       const r = canvas.getBoundingClientRect();
       canvas.width = r.width * Math.min(devicePixelRatio, 2);
       canvas.height = r.height * Math.min(devicePixelRatio, 2);
-      SLIDES[index].draw(ctx, canvas.width, canvas.height);
+      const img = await loadImg(src(SLIDES[index], r.width < r.height));
+      drawCover(ctx, img, canvas.width, canvas.height);
     };
     paint();
     window.addEventListener('resize', paint);
@@ -381,15 +233,24 @@
   });
   gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
 
-  function uploadAll() {
+  let uploadId = 0;
+  async function uploadAll() {
+    const id = ++uploadId;
+    const mobile = canvas.width < canvas.height;
+    const imgs = await Promise.all(SLIDES.map((s) => loadImg(src(s, mobile))));
+    if (id !== uploadId) return; // intussen opnieuw van formaat veranderd
     off.width = canvas.width;
     off.height = canvas.height;
-    SLIDES.forEach((s, i) => {
-      offCtx.clearRect(0, 0, off.width, off.height);
-      s.draw(offCtx, off.width, off.height);
+    imgs.forEach((img, i) => {
+      offCtx.fillStyle = '#ebe1d2';
+      offCtx.fillRect(0, 0, off.width, off.height);
+      drawCover(offCtx, img, off.width, off.height);
       gl.bindTexture(gl.TEXTURE_2D, textures[i]);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, off);
     });
+    ready = true;
+    root.classList.add('is-ready');
+    if (!busy) { render(index, index, 0); schedule(); }
   }
 
   function render(from, to, p, cx = 0.5, cy = 0.5) {
@@ -413,14 +274,32 @@
     canvas.width = w;
     canvas.height = h;
     gl.viewport(0, 0, w, h);
-    uploadAll();
-    if (!busy) render(index, index, 0);
+    uploadAll().catch(showStatic);
+  }
+
+  // Noodoplossing als WebGL de beelden niet mag gebruiken: toon het beeld gewoon als achtergrond
+  function showStatic() {
+    if (root.classList.contains('is-static')) return;
+    root.classList.add('is-static', 'is-ready');
+    ready = true;
+    const paint = () => {
+      const mobile = canvas.clientWidth < canvas.clientHeight;
+      canvas.style.background = `url(${src(SLIDES[index], mobile)}) center top / cover no-repeat`;
+    };
+    paint();
+    go = (() => {
+      index = (index + 1) % SLIDES.length;
+      setCaption(index);
+      paint();
+      schedule();
+    });
+    schedule();
   }
 
   const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
-  function go(cx, cy) {
-    if (busy) return;
+  let go = function (cx, cy) {
+    if (busy || !ready) return;
     busy = true;
     clearTimeout(timer);
     root.classList.add('is-touched');
@@ -447,7 +326,7 @@
       }
     };
     requestAnimationFrame(step);
-  }
+  };
 
   root.addEventListener('click', (e) => {
     if (e.target.closest('[data-next]')) return;
