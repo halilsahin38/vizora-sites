@@ -948,3 +948,21 @@ a.tag:hover { background: var(--ink); color: var(--bg); }
 @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
 .demo--single { display: block; }
 .demo--single .demo__controls { display: grid; gap: 1.6rem; }
+
+/* ---------- Tevredenheidsgarantie ---------- */
+.guarantee { display: grid; grid-template-columns: auto 1fr; gap: 2.6rem; align-items: center; margin-top: 2rem; padding: 2.4rem 2.8rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.guarantee h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: .5rem 0 .7rem; line-height: 1.15; }
+.guarantee h3 em { color: var(--taupe-ink); }
+.guarantee p { color: var(--muted); max-width: 46em; margin: 0; }
+.seal { position: relative; width: 150px; height: 150px; display: grid; place-items: center; }
+.seal__ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: seal-spin 28s linear infinite; }
+.seal__ring text { font: 600 14px var(--sans); text-transform: uppercase; fill: var(--taupe-ink); }
+.seal__icon { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); box-shadow: var(--shadow); }
+.seal__icon svg { width: 34px; height: 34px; fill: none; stroke: var(--sand); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes seal-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .seal__ring { animation: none; } }
+@media (max-width: 700px) {
+  .guarantee { grid-template-columns: 1fr; gap: 1.4rem; padding: 1.8rem 1.4rem; text-align: center; justify-items: center; }
+  .seal { width: 124px; height: 124px; }
+  .seal__icon { width: 70px; height: 70px; }
+}

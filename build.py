@@ -278,6 +278,19 @@ SUBSCRIPTION = f'''        <div class="sub reveal" id="abonnement">
         </div>
 '''
 
+GUARANTEE = f'''        <div class="guarantee reveal">
+          <div class="seal" aria-hidden="true">
+            <svg class="seal__ring" viewBox="0 0 200 200"><defs><path id="seal-path" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs><text><textPath href="#seal-path" textLength="482" lengthAdjust="spacing">Tevreden of je betaalt niets ·</textPath></text></svg>
+            <span class="seal__icon">{I["shield"]}</span>
+          </div>
+          <div class="guarantee__copy">
+            <span class="price__name">Tevredenheidsgarantie</span>
+            <h3>Je betaalt pas als je <em>blij</em> bent met het ontwerp.</h3>
+            <p>Eerst laten we je het ontwerp zien. Klopt iets niet, dan passen we het aan tot het goed is. Pas als jij zegt "zo wil ik het", gaan we verder en ontvang je de factuur. Ben je toch niet tevreden? Dan betaal je niets. Geen risico, geen kleine lettertjes.</p>
+          </div>
+        </div>
+'''
+
 # ======================= HOME =======================
 home = head("index.html", "Vizora Digital | Websites die klanten opleveren | Breda",
             "Websites die klanten opleveren, meer bereik in Google en een plan om te groeien. Vizora Digital uit Breda. Plan een gratis gesprek en ontvang een gratis concept.")
@@ -433,6 +446,7 @@ home += f'''
         <div class="pricing">
 {pricing_cards()}
         </div>
+{GUARANTEE}
 {SUBSCRIPTION}
         <p class="pricing__foot reveal"><a href="prijzen.html" class="link-arrow">Vergelijk alle pakketten</a></p>
       </div>
@@ -795,6 +809,7 @@ prijs += f"""
         <div class="pricing">
 {pricing_cards()}
         </div>
+{GUARANTEE}
 {SUBSCRIPTION}
         <p class="pricing__foot reveal">Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen.</p>
       </div>
@@ -845,6 +860,7 @@ prijs += f"""
           <details><summary>Maken jullie ook posts voor social media?</summary><p>In de pakketten richten we je profielen in en helpen we met stijl en strategie. Content maken of posten valt daarbuiten; dat bespreken we graag samen en kost extra.</p></details>
           <details><summary>Kan ik later upgraden?</summary><p>Ja. Begin je met Start, dan kun je altijd uitbreiden naar Groei of Compleet. Wat al gemaakt is, bouwen we gewoon verder uit.</p></details>
           <details><summary>Hoe betaal ik?</summary><p>Dat spreken we samen af in de offerte. Je weet vooraf precies wat je betaalt en wanneer.</p></details>
+          <details><summary>Wat als ik niet tevreden ben?</summary><p>Dan betaal je niets. Je ziet eerst het ontwerp en we passen het aan tot het klopt. Pas als jij tevreden bent, gaan we verder en ontvang je de factuur.</p></details>
         </div>
       </div>
     </section>
