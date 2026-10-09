@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /concepts/
+Disallow: /tools/
+
+Sitemap: https://vizoradigital.nl/sitemap.xml

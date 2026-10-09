@@ -1,0 +1,100 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barbershop Noir (concept)</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root{--bg:#0d0c0b;--fg:#f2ece3;--acc:#c9a46a;--on-acc:#15110c;--card:#181614;--line:rgba(242,236,227,.22);--display:'Oswald',sans-serif;--sans:'Inter',sans-serif;--r:6px}
+body{background:radial-gradient(900px 640px at 78% 30%,rgba(201,164,106,.16),transparent 62%),radial-gradient(600px 400px at 0% 100%,rgba(140,47,47,.12),transparent 60%),#0d0c0b}
+.logo{display:flex;align-items:center;gap:14px;font:600 25px var(--display);letter-spacing:.22em}
+.logo svg{width:30px;height:30px;stroke:var(--acc);fill:none;stroke-width:1.6}
+h1{text-transform:uppercase;font-size:104px;line-height:.98;letter-spacing:.005em}
+h1 span{color:var(--acc)}
+.pole{position:absolute;right:0;top:0;width:120px;height:620px;border-radius:70px;background:repeating-linear-gradient(135deg,#c9a46a 0 22px,#f2ece3 22px 44px,#8c2f2f 44px 66px,#f2ece3 66px 88px);opacity:.13}
+.book{position:absolute;left:10px;top:40px;width:460px;padding:30px 30px 28px}
+.book h3{font:600 22px var(--display);letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.book h3 small{font:500 12px var(--sans);letter-spacing:.1em;color:var(--acc)}
+.svc{margin:20px 0 22px;display:grid;gap:8px}
+.svc div{display:grid;grid-template-columns:20px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.035);font-size:15px}
+.svc div i{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--line)}
+.svc div.on{background:rgba(201,164,106,.12);box-shadow:inset 0 0 0 1px rgba(201,164,106,.5)}
+.svc div.on i{box-shadow:inset 0 0 0 5px var(--acc)}
+.svc small{display:block;font-size:12px;opacity:.55;margin-top:2px}
+.svc b{font-weight:600}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:12px}
+.days span{text-align:center;padding:10px 0;border-radius:12px;font-size:12px;opacity:.85;box-shadow:inset 0 0 0 1px var(--line)}
+.days span b{display:block;font:600 19px var(--display)}
+.days span.on{background:var(--fg);color:var(--bg);opacity:1}
+.book .chips{margin-bottom:22px}
+.book .btn{width:100%}
+.open{position:absolute;right:0;top:552px;padding:18px 22px;width:250px;font-size:14px}
+.open b{display:block;font-size:16px;margin-bottom:4px}
+.free{position:absolute;right:-30px;top:-34px;padding:16px 20px;font-size:13px;display:flex;gap:12px;align-items:center}
+.free strong{display:block;font:600 24px var(--display);color:var(--acc)}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:20px 80px;margin-top:50px}
+.prices div{display:flex;align-items:baseline;gap:12px;font-size:19px}
+.prices div::after{content:"";order:1;flex:1;border-bottom:1px dotted var(--line)}
+.prices div b{order:2;font:600 22px var(--display);color:var(--acc)}
+.prices small{display:block;font-size:13px;opacity:.55}
+.s2 .row{display:grid;grid-template-columns:1.3fr 1fr;gap:90px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+.team div{padding:26px;border-radius:18px;background:var(--card)}
+.team i{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#c9a46a,#6b5130);font:600 22px var(--display);font-style:normal;color:#15110c;margin-bottom:16px}
+.team small{opacity:.6;font-size:13px}
+.hours{margin-top:50px;padding:30px;border-radius:18px;background:var(--card);font-size:15px;display:grid;gap:12px}
+.hours div{display:flex;justify-content:space-between}
+@media (max-width:500px){
+  h1{font-size:58px}
+  .pole,.open,.free{display:none}
+  .book{position:static;width:100%;padding:22px}
+  .svc div{padding:12px 14px;font-size:14px}
+}
+</style></head><body>
+<!--#statusbar-->
+<div class="wrap">
+  <nav class="nav">
+    <a class="logo"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4M14.5 12h0"/></svg>NOIR</a>
+    <div class="nav__links"><a>Behandelingen</a><a>Prijzen</a><a>Team</a><a>Contact</a></div>
+    <a class="btn btn--sm">Boek nu</a><span class="burger"></span>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Barbershop &amp; grooming</span>
+      <h1>Scherp.<br>Strak.<br><span>Elke dag.</span></h1>
+      <p class="lead">Vakmanschap in een ontspannen sfeer. Kies je behandeling, pak een tijd die jou uitkomt en loop fris de deur weer uit.</p>
+      <div class="actions"><a class="btn">Boek je afspraak →</a><a class="btn btn--ghost">Bekijk prijzen</a></div>
+      <div class="meta"><div><b>Ma – za</b>09:00 – 20:00</div><div><b>Zonder afspraak</b>ook welkom</div><div><b>Online</b>24/7 boeken</div></div>
+    </div>
+    <div class="visual">
+      <div class="pole"></div>
+      <div class="book card">
+        <h3>Boek je afspraak <small>Stap 1 van 2</small></h3>
+        <div class="svc">
+          <div><i></i><span>Knippen<small>30 min</small></span><b>€25</b></div>
+          <div class="on"><i></i><span>Knippen + baard<small>45 min</small></span><b>€35</b></div>
+          <div><i></i><span>Hot towel shave<small>30 min</small></span><b>€30</b></div>
+        </div>
+        <div class="days"><span>Di<b>15</b></span><span class="on">Wo<b>16</b></span><span>Do<b>17</b></span><span>Vr<b>18</b></span><span>Za<b>19</b></span></div>
+        <div class="chips"><span class="chip">10:00</span><span class="chip">11:30</span><span class="chip on">14:30</span><span class="chip">16:00</span><span class="chip">17:15</span></div>
+        <a class="btn">Bevestig afspraak · €35</a>
+      </div>
+      <div class="free card"><span class="dot"></span><div>Eerstvolgende plek<strong>Vandaag 14:30</strong></div></div>
+      <div class="open card"><b><span class="dot"></span>Nu geopend</b>Vandaag tot 20:00 · loop gerust binnen</div>
+    </div>
+  </section>
+</div>
+<section class="s2"><div class="wrap row">
+  <div><span class="eyebrow">Prijzen</span><h2 style="margin-top:16px;text-transform:uppercase">Eerlijke prijzen,<br>strak resultaat</h2>
+    <div class="prices">
+      <div><span>Knippen<small>Wassen, knippen, stylen</small></span><b>€25</b></div>
+      <div><span>Knippen + baard<small>Inclusief scheermes-afwerking</small></span><b>€35</b></div>
+      <div><span>Baard trimmen<small>Model en contouren</small></span><b>€15</b></div>
+      <div><span>Hot towel shave<small>Klassiek scheren</small></span><b>€30</b></div>
+      <div><span>Kids (t/m 12)<small>Knippen</small></span><b>€18</b></div>
+      <div><span>Skin fade<small>Tot op de huid</small></span><b>€28</b></div>
+    </div>
+  </div>
+  <div><span class="eyebrow">Team</span>
+    <div class="team"><div><i>Y</i><b>Yassin</b><br><small>Fades</small></div><div><i>M</i><b>Milan</b><br><small>Baarden</small></div><div><i>D</i><b>Daan</b><br><small>Klassiek</small></div></div>
+    <div class="hours"><div><span>Maandag – vrijdag</span><b>09:00 – 20:00</b></div><div><span>Zaterdag</span><b>09:00 – 18:00</b></div><div><span>Zondag</span><b>Gesloten</b></div></div>
+  </div>
+</div></section>
+</body></html>

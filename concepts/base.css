@@ -1,0 +1,46 @@
+/* Gedeelde basis voor de conceptwebsites (alleen gebruikt om screenshots te maken) */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1400px,100% - 120px);margin:0 auto}
+.statusbar{display:none}
+.nav{display:flex;align-items:center;justify-content:space-between;height:92px}
+.nav__links{display:flex;gap:38px;font-size:15px;font-weight:500;opacity:.85}
+.burger{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 28px;border-radius:var(--r,999px);font-weight:600;font-size:15px;background:var(--acc);color:var(--on-acc);white-space:nowrap}
+.btn--ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn--sm{padding:12px 20px;font-size:14px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;height:708px;padding-bottom:30px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--acc)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+h1{font-family:var(--display);font-weight:var(--dw,600);font-size:80px;line-height:1.02;letter-spacing:-.02em;margin:20px 0 24px}
+h2{font-family:var(--display);font-weight:var(--dw,600);font-size:54px;line-height:1.05;letter-spacing:-.015em}
+.lead{font-size:19px;line-height:1.65;opacity:.75;max-width:31em}
+.actions{display:flex;gap:14px;margin-top:36px}
+.meta{display:flex;gap:40px;margin-top:44px;font-size:14px}
+.meta div{opacity:.7}
+.meta b{display:block;font-size:16px;margin-bottom:2px;opacity:1}
+.meta div b{opacity:1}
+.card{background:var(--card);border-radius:22px;box-shadow:0 50px 90px -40px rgba(0,0,0,.45),0 2px 8px rgba(0,0,0,.06)}
+.visual{position:relative;height:620px}
+.s2{padding:90px 0 110px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:9px 14px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:inset 0 0 0 1px var(--line)}
+.chip.on{background:var(--acc);color:var(--on-acc);box-shadow:none}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3fae6a;box-shadow:0 0 0 4px rgba(63,174,106,.18);margin-right:8px;vertical-align:middle}
+@media (max-width:500px){
+  .wrap{width:calc(100% - 44px)}
+  .statusbar{display:flex;justify-content:space-between;align-items:center;height:54px;padding:6px 30px 0 36px;font:600 16px -apple-system,"SF Pro Text",Inter,system-ui,sans-serif}
+  .statusbar svg{height:12px;width:auto}
+  .statusbar span:last-child{display:flex;gap:6px;align-items:center}
+  .nav{height:62px}
+  .nav__links,.nav .btn{display:none}
+  .burger{display:block;width:24px;height:12px;border-top:2px solid currentColor;border-bottom:2px solid currentColor}
+  .hero{grid-template-columns:1fr;gap:30px;height:auto;padding:16px 0 40px}
+  h1{font-size:46px;margin:14px 0 16px}
+  .lead{font-size:16px}
+  .actions{flex-direction:column;margin-top:24px;gap:10px}
+  .meta{display:none}
+  .visual{height:auto}
+}
+.statusbar svg{fill:currentColor}

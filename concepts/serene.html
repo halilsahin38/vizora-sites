@@ -1,0 +1,77 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Studio Serene (concept)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root{--bg:#f6ebe6;--fg:#3a2629;--acc:#8e5c64;--on-acc:#fff;--card:#fffaf8;--line:rgba(58,38,41,.2);--display:'Cormorant Garamond',serif;--sans:'Jost',sans-serif;--dw:500}
+h1{font-size:92px;line-height:.98}
+h1 em{color:var(--acc)}
+.logo{font:600 30px var(--display);letter-spacing:.06em}
+.logo small{font:500 11px var(--sans);letter-spacing:.4em;display:block;margin-top:-4px;color:var(--acc)}
+.orb{position:absolute;border-radius:50%}
+.orb.a{width:480px;height:480px;right:-40px;top:40px;background:radial-gradient(circle at 35% 30%,#fff3ee,#ecc9c0 55%,#d6a7a3)}
+.orb.b{width:180px;height:180px;left:40px;top:10px;background:radial-gradient(circle at 35% 30%,#fbe7df,#e3b8b2);opacity:.8}
+.cal{position:absolute;left:0;top:150px;width:340px;padding:26px}
+.cal h4{display:flex;justify-content:space-between;font:600 24px var(--display)}
+.cal h4 span{font:500 14px var(--sans);opacity:.5}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:16px;text-align:center;font-size:13px}
+.grid b{font-weight:500;opacity:.45;font-size:11px;letter-spacing:.06em}
+.grid span{padding:8px 0;border-radius:50%}
+.grid .x{opacity:.3}
+.grid .on{background:var(--acc);color:#fff}
+.grid .av{box-shadow:inset 0 0 0 1px rgba(142,92,100,.35)}
+.treat{position:absolute;right:-20px;width:310px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.treat b{font:600 20px var(--display);display:block}
+.treat small{font-size:13px;opacity:.6}
+.treat span{font:600 22px var(--display);color:var(--acc)}
+.t1{top:110px}.t2{top:205px}.t3{top:300px}
+.slot{position:absolute;left:150px;bottom:20px;width:300px;padding:20px 22px}
+.slot b{font:600 20px var(--display)}
+.slot .chips{margin-top:12px}
+.s2 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:50px}
+.s2 .cards div{padding:30px;border-radius:24px;background:var(--card)}
+.s2 .cards i{display:block;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fbe7df,#d6a7a3);margin-bottom:22px}
+.s2 .cards b{font:600 24px var(--display);display:block}
+.s2 .cards small{opacity:.6}
+.gift{margin-top:24px;padding:34px 40px;border-radius:24px;background:#3a2629;color:#f6ebe6;display:flex;justify-content:space-between;align-items:center;font:500 30px var(--display)}
+@media (max-width:500px){
+  h1{font-size:54px}
+  .orb.b,.slot,.t3{display:none}
+  .visual{height:430px}
+  .orb.a{width:300px;height:300px;right:-60px;top:20px}
+  .cal{left:0;top:0;width:290px;padding:20px}
+  .treat{right:0;width:250px}
+  .t1{top:300px}.t2{top:370px}
+}
+</style></head><body>
+<!--#statusbar-->
+<div class="wrap">
+  <nav class="nav"><a class="logo">Serene<small>BEAUTY STUDIO</small></a><div class="nav__links"><a>Behandelingen</a><a>Prijzen</a><a>Cadeaubon</a><a>Contact</a></div><a class="btn btn--sm">Afspraak maken</a><span class="burger"></span></nav>
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Huid · Nagels · Wimpers</span>
+      <h1>Even helemaal tot <em>rust</em> komen.</h1>
+      <p class="lead">Behandelingen met aandacht, in een studio waar de tijd even stilstaat. Kies je behandeling en plan direct een moment dat bij jou past.</p>
+      <div class="actions"><a class="btn">Plan je behandeling</a><a class="btn btn--ghost">Alle behandelingen</a></div>
+      <div class="meta"><div><b>Di – za</b>10:00 – 18:00</div><div><b>Do</b>koopavond tot 21:00</div><div><b>Cadeaubon</b>online te bestellen</div></div>
+    </div>
+    <div class="visual">
+      <div class="orb a"></div><div class="orb b"></div>
+      <div class="cal card"><h4>Oktober <span>2026</span></h4>
+        <div class="grid"><b>MA</b><b>DI</b><b>WO</b><b>DO</b><b>VR</b><b>ZA</b><b>ZO</b>
+          <span class="x">28</span><span class="x">29</span><span class="x">30</span><span>1</span><span>2</span><span>3</span><span class="x">4</span>
+          <span class="x">5</span><span>6</span><span class="av">7</span><span>8</span><span class="av">9</span><span>10</span><span class="x">11</span>
+          <span class="x">12</span><span class="av">13</span><span class="on">14</span><span class="av">15</span><span>16</span><span class="av">17</span><span class="x">18</span>
+          <span class="x">19</span><span class="av">20</span><span class="av">21</span><span>22</span><span class="av">23</span><span class="av">24</span><span class="x">25</span></div></div>
+      <div class="treat card t1"><div><b>Gezichtsbehandeling</b><small>60 minuten</small></div><span>€65</span></div>
+      <div class="treat card t2"><div><b>Gellak handen</b><small>45 minuten</small></div><span>€35</span></div>
+      <div class="treat card t3"><div><b>Wimperlift</b><small>50 minuten</small></div><span>€49</span></div>
+      <div class="slot card"><b>Woensdag 14 oktober</b><div class="chips"><span class="chip">10:30</span><span class="chip on">13:00</span><span class="chip">15:45</span></div></div>
+    </div>
+  </section>
+</div>
+<section class="s2"><div class="wrap">
+  <span class="eyebrow">Behandelingen</span><h2 style="margin-top:14px">Voor huid, handen en ogen</h2>
+  <div class="cards"><div><i></i><b>Gezicht</b><small>vanaf €45</small></div><div><i></i><b>Nagels</b><small>vanaf €30</small></div><div><i></i><b>Wimpers</b><small>vanaf €39</small></div><div><i></i><b>Massage</b><small>vanaf €55</small></div></div>
+  <div class="gift"><span>Geef rust cadeau</span><a class="btn">Bestel een cadeaubon</a></div>
+</div></section>
+</body></html>
