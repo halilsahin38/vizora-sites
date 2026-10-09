@@ -306,11 +306,11 @@ home += f'''
         <div class="stage reveal" data-delay="200" aria-hidden="true">
           <div class="stage__plate stage__plate--1" data-speed="0.06"></div>
           <div class="stage__plate stage__plate--2" data-speed="0.03"></div>
-          {win("olivo-desktop.jpg", "jouwbedrijf.nl", "left:0;top:64px;width:88%", "-0.04", eager=True)}
-          {iphone("noir-mobile.jpg", "right:0;bottom:6px", "-0.12", eager=True)}
+          {win("merk-desktop.jpg", "jouwbedrijf.nl", "left:0;top:64px;width:88%", "-0.04", eager=True)}
+          {iphone("merk-mobile.jpg", "right:0;bottom:6px", "-0.12", eager=True)}
           <div class="chip-card chip-card--a" data-speed="-0.18">
             <div class="chip-card__icon float">{I["cal"]}</div>
-            <div><strong>Nieuwe reservering</strong><small>via je website</small></div>
+            <div><strong>Nieuwe aanvraag</strong><small>via je website</small></div>
           </div>
           <div class="chip-card chip-card--b" data-speed="-0.08">
             <div class="chart"><i style="height:30%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:80%"></i><i style="height:100%"></i></div>
@@ -476,7 +476,7 @@ dien += f'''
           <div class="service__visual reveal" aria-hidden="true">
             <div class="plate plate--sand" style="inset:30px 0 10px 60px;rotate:6deg" data-speed="0.05"></div>
             <div class="plate plate--soft" style="inset:10px 40px 30px 20px;rotate:-3deg" data-speed="0.02"></div>
-            {win("serene-desktop.jpg", "jouwbedrijf.nl", "left:20px;right:20px;top:90px", "-0.05")}
+            {win("merk-desktop.jpg", "jouwbedrijf.nl", "left:20px;right:20px;top:90px", "-0.05")}
             <div class="chip-card" style="right:0;bottom:40px" data-speed="-0.14"><div class="chip-card__icon">{I["bolt"]}</div><div><strong>Supersnel</strong><small>laadt in een oogwenk</small></div></div>
           </div>
           <div class="service__copy">
@@ -528,7 +528,7 @@ dien += f'''
           <div class="service__visual reveal" aria-hidden="true">
             <div class="plate plate--sand" style="inset:40px 50px 0 0;rotate:-6deg" data-speed="0.05"></div>
             <div class="plate plate--soft" style="inset:20px 10px 30px 60px;rotate:3deg" data-speed="0.02"></div>
-            {iphone("olivo-mobile.jpg", "left:50%;top:10px;translate:-50% 0", "-0.08")}
+            {iphone("merk-mobile.jpg", "left:50%;top:10px;translate:-50% 0", "-0.08")}
             <div class="chip-card" style="left:0;top:80px" data-speed="-0.16"><div class="chip-card__icon">{I["social"]}</div><div><strong>Profiel ingericht</strong><small>Instagram &amp; Facebook</small></div></div>
             <div class="chip-card" style="right:0;bottom:50px" data-speed="-0.12"><div class="chip-card__icon">{I["pen"]}</div><div><strong>Herkenbare stijl</strong><small>overal hetzelfde gevoel</small></div></div>
           </div>
@@ -1093,7 +1093,7 @@ LD = {
   "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}],
 }
 home = home.replace("</head>", '  <script type="application/ld+json">' + json.dumps(LD, ensure_ascii=False) + "</script>\n</head>")
-home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/concepts/olivo-desktop.jpg">\n  <link rel="stylesheet" href="assets/style.css">')
+home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/concepts/merk-desktop.jpg">\n  <link rel="stylesheet" href="assets/style.css">')
 
 for name, html in [("index.html", home), ("diensten.html", dien), ("prijzen.html", prijs), ("werkwijze.html", werk), ("over-ons.html", over), ("contact.html", cont), ("404.html", nf)]:
     (OUT / name).write_text(html, encoding="utf-8")

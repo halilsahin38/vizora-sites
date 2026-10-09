@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'assets', 'concepts');
 const statusbar = fs.readFileSync(path.join(root, 'concepts', '_statusbar.html'), 'utf8');
-const names = ['noir', 'olivo', 'serene', 'goudkorst'];
+const names = process.argv.slice(2).length ? process.argv.slice(2) : ['merk', 'noir', 'olivo', 'serene', 'goudkorst'];
 fs.mkdirSync(out, { recursive: true });
 
 const browser = await chromium.launch(process.env.CHROMIUM ? { executablePath: process.env.CHROMIUM } : {});
