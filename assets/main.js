@@ -187,5 +187,126 @@ if (booking) {
   });
 }
 
+/* ---------- Contactformulier vooraf invullen vanuit link ---------- */
+if (booking) {
+  const params = new URLSearchParams(location.search);
+  const bedrijf = params.get('bedrijf');
+  const pakket = params.get('pakket');
+  const branche = params.get('branche');
+  if (bedrijf) booking.bedrijf.value = bedrijf.slice(0, 60);
+  if (pakket || branche) {
+    const site = booking.querySelector('[name="dienst"][value="Website"]');
+    if (site) site.checked = true;
+    const parts = [];
+    if (pakket) parts.push(`Ik heb interesse in het pakket ${pakket.slice(0, 20)}.`);
+    if (branche) parts.push(`Mijn zaak: ${branche.slice(0, 30)}.`);
+    booking.bericht.value = parts.join(' ');
+  }
+}
+
+/* ---------- Demo: zie je eigen website ---------- */
+const demo = document.querySelector('[data-demo]');
+if (demo) {
+  const PRESETS = {
+    Kapper: { head: 'Fresh cuts, elke dag', cta: 'Maak een afspraak', cards: ['Knippen', 'Baard', 'Styling'], theme: 'barber' },
+    Restaurant: { head: 'Proef het verschil', cta: 'Reserveer een tafel', cards: ['Menu', 'Lunch', 'Diner'], theme: 'resto' },
+    Salon: { head: 'Jouw moment van rust', cta: 'Boek een behandeling', cards: ['Nagels', 'Gezicht', 'Massage'], theme: 'beauty' },
+    Bedrijf: { head: 'Vakwerk waar je op bouwt', cta: 'Vraag een offerte aan', cards: ['Diensten', 'Projecten', 'Reviews'], theme: 'build' },
+  };
+  const input = demo.querySelector('[data-demo-input]');
+  const view = demo.querySelector('[data-demo-view]');
+  const nameEls = view.querySelectorAll('[data-demo-name]');
+  const initialEl = view.querySelector('[data-demo-initial]');
+  const urlEl = view.querySelector('[data-demo-url]');
+  const headEl = view.querySelector('[data-demo-head]');
+  const ctaEl = view.querySelector('[data-demo-cta]');
+  const cardEls = view.querySelectorAll('[data-demo-card]');
+  const go = demo.querySelector('[data-demo-go]');
+
+  const slug = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '') || 'jouwzaak';
+
+  const update = () => {
+    const name = input.value.trim() || 'Jouw Zaak';
+    const type = demo.querySelector('[name="demo-type"]:checked').value;
+    const p = PRESETS[type];
+    nameEls.forEach((el) => { el.textContent = name; });
+    initialEl.textContent = name.charAt(0).toUpperCase();
+    urlEl.textContent = `${slug(name)}.nl`;
+    headEl.textContent = p.head;
+    ctaEl.textContent = p.cta;
+    cardEls.forEach((el, i) => { el.textContent = p.cards[i]; });
+    view.dataset.theme = p.theme;
+    const q = new URLSearchParams({ branche: type });
+    if (input.value.trim()) q.set('bedrijf', input.value.trim());
+    go.href = `contact.html?${q}`;
+  };
+  let pulse;
+  const bump = () => {
+    view.classList.remove('is-updated');
+    void view.offsetWidth;
+    view.classList.add('is-updated');
+    clearTimeout(pulse);
+    pulse = setTimeout(() => view.classList.remove('is-updated'), 600);
+  };
+  input.addEventListener('input', update);
+  demo.addEventListener('change', () => { update(); bump(); });
+  update();
+}
+
+/* ---------- Verfijning voor muis-gebruikers ---------- */
+const finePointer = window.matchMedia('(pointer: fine)').matches;
+if (finePointer && !reduceMotion) {
+  // cursor-ring die zacht meebeweegt
+  const ring = document.createElement('div');
+  ring.className = 'cursor';
+  ring.setAttribute('aria-hidden', 'true');
+  document.body.append(ring);
+  let mx = -100, my = -100, rx = -100, ry = -100, raf = null;
+  const follow = () => {
+    rx += (mx - rx) * 0.2;
+    ry += (my - ry) * 0.2;
+    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+    raf = Math.abs(mx - rx) + Math.abs(my - ry) > 0.3 ? requestAnimationFrame(follow) : null;
+  };
+  window.addEventListener('pointermove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    ring.classList.add('is-active');
+    if (!raf) raf = requestAnimationFrame(follow);
+  }, { passive: true });
+  document.addEventListener('pointerleave', () => ring.classList.remove('is-active'));
+  document.addEventListener('pointerover', (e) => {
+    ring.classList.toggle('is-hover', !!e.target.closest('a, button, label, input, textarea, [data-contour]'));
+  });
+
+  // magnetische knoppen
+  document.querySelectorAll('.btn').forEach((btn) => {
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.18;
+      const y = (e.clientY - r.top - r.height / 2) * 0.3;
+      btn.style.translate = `${x.toFixed(1)}px ${y.toFixed(1)}px`;
+    });
+    btn.addEventListener('pointerleave', () => { btn.style.translate = ''; });
+  });
+}
+
+/* ---------- Zachte overgang tussen pagina's ---------- */
+if (!reduceMotion) {
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (a.target === '_blank' || a.hasAttribute('download')) return;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || !/\.html$|\/$/.test(url.pathname)) return;
+    if (url.pathname === location.pathname && url.hash) return;
+    e.preventDefault();
+    document.body.classList.add('is-leaving');
+    setTimeout(() => { location.href = url.href; }, 320);
+  });
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) document.body.classList.remove('is-leaving');
+  });
+}
+
 /* ---------- Jaar in footer ---------- */
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
