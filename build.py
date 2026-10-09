@@ -924,7 +924,6 @@ INTRO = '''<div class="intro" aria-hidden="true">
   </div>
   '''
 
-home = home.replace('''    <section class="section section--alt" aria-labelledby="diensten-titel">''', BEFORE_AFTER + '''    <section class="section section--alt" aria-labelledby="diensten-titel">''', 1)
 home = home.replace('<a class="skip" href="#main">Naar de inhoud</a>', INTRO + '<a class="skip" href="#main">Naar de inhoud</a>', 1)
 
 # ======================= BRANCHE-PAGINA'S =======================
