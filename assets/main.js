@@ -310,5 +310,91 @@ if (!reduceMotion) {
   });
 }
 
+/* ---------- Voor/na-schuif ---------- */
+document.querySelectorAll('[data-ba]').forEach((ba) => {
+  const range = ba.querySelector('.ba__range');
+  const set = (v) => { ba.style.setProperty('--pos', `${v}%`); };
+  range.addEventListener('input', () => set(range.value));
+  // slepen met muis of vinger over het hele beeld
+  let dragging = false;
+  const fromPointer = (e) => {
+    const r = ba.getBoundingClientRect();
+    const v = Math.min(100, Math.max(0, ((e.clientX - r.left) / r.width) * 100));
+    range.value = v; set(v.toFixed(1));
+  };
+  ba.addEventListener('pointerdown', (e) => { dragging = true; ba.dataset.touched = '1'; ba.setPointerCapture(e.pointerId); fromPointer(e); });
+  ba.addEventListener('pointermove', (e) => { if (dragging) fromPointer(e); });
+  ['pointerup', 'pointercancel'].forEach((t) => ba.addEventListener(t, () => { dragging = false; }));
+  // eenmalige hint-beweging zodra de schuif in beeld komt
+  if (!reduceMotion) {
+    new IntersectionObserver(([e], obs) => {
+      if (!e.isIntersecting) return;
+      obs.disconnect();
+      const start = performance.now();
+      const step = (now) => {
+        const t = Math.min(1, (now - start) / 1600);
+        const v = 50 + Math.sin(t * Math.PI * 2) * 22 * (1 - t);
+        if (ba.dataset.touched) return;
+        set(v.toFixed(1)); range.value = v;
+        if (t < 1 && !ba.dataset.touched) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, { threshold: 0.5 }).observe(ba);
+  }
+});
+
+/* ---------- Groei-calculator ---------- */
+const calc = document.querySelector('[data-calc]');
+if (calc) {
+  const PRESETS = {
+    kapper: { spend: 30, extra: 8, freq: 8 },
+    restaurant: { spend: 45, extra: 15, freq: 3 },
+    salon: { spend: 55, extra: 6, freq: 6 },
+    bakkerij: { spend: 12, extra: 20, freq: 25 },
+    anders: { spend: 150, extra: 3, freq: 2 },
+  };
+  const PACKAGE = 350;
+  const eur = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+  const inputs = ['spend', 'extra', 'freq'].reduce((o, n) => ({ ...o, [n]: calc.querySelector(`[name="${n}"]`) }), {});
+  const out = (n) => calc.querySelector(`[data-out="${n}"]`);
+  const res = (n) => calc.querySelector(`[data-res="${n}"]`);
+  let shown = 0, anim;
+
+  const countTo = (el, to) => {
+    cancelAnimationFrame(anim);
+    const from = shown, start = performance.now(), dur = reduceMotion ? 0 : 600;
+    const step = (now) => {
+      const t = dur ? Math.min(1, (now - start) / dur) : 1;
+      shown = from + (to - from) * (1 - Math.pow(1 - t, 3));
+      el.textContent = eur.format(Math.round(shown));
+      if (t < 1) anim = requestAnimationFrame(step);
+    };
+    anim = requestAnimationFrame(step);
+  };
+
+  const update = () => {
+    const spend = +inputs.spend.value, extra = +inputs.extra.value, freq = +inputs.freq.value;
+    Object.values(inputs).forEach((i) => i.style.setProperty('--fill', `${((i.value - i.min) / (i.max - i.min)) * 100}%`));
+    out('spend').textContent = eur.format(spend);
+    out('extra').textContent = extra;
+    out('freq').textContent = `${freq}×`;
+    // nieuwe klanten komen gelijkmatig binnen; wie in maand m komt, komt de rest van het jaar terug (minstens 1 bezoek)
+    let visits1 = 0;
+    for (let m = 1; m <= 12; m++) visits1 += extra * Math.max(1, (freq * (13 - m)) / 12);
+    countTo(res('year'), Math.round(visits1 * spend));
+    res('client').textContent = eur.format(spend * freq);
+    const pay = Math.ceil(PACKAGE / spend);
+    res('payback').textContent = `${pay} ${pay === 1 ? 'klantbezoek' : 'klantbezoeken'}`;
+  };
+  const applyPreset = (key) => {
+    const p = PRESETS[key];
+    Object.entries(p).forEach(([k, v]) => { inputs[k].value = v; });
+    update();
+  };
+  calc.addEventListener('input', (e) => { if (e.target.type === 'range') update(); });
+  calc.addEventListener('change', (e) => { if (e.target.name === 'calc-type') applyPreset(e.target.value); });
+  applyPreset('kapper');
+}
+
 /* ---------- Jaar in footer ---------- */
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });

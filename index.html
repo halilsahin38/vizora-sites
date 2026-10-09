@@ -21,10 +21,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/concepts/olivo-desktop.jpg">
   <link rel="stylesheet" href="assets/style.css">
-  <script>document.documentElement.classList.add("js")</script>
+  <script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("vz-intro"))document.documentElement.classList.add("intro-seen");sessionStorage.setItem("vz-intro","1")}catch(e){}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Vizora Digital", "url": "https://vizoradigital.nl", "logo": "https://vizoradigital.nl/assets/logo.svg", "image": "https://vizoradigital.nl/assets/og.png", "description": "Websites, social media en marketing voor ondernemers in Breda en Noord-Brabant.", "telephone": "+31638705348", "email": "halilsahinai@gmail.com", "priceRange": "€€", "address": {"@type": "PostalAddress", "addressLocality": "Breda", "addressRegion": "Noord-Brabant", "addressCountry": "NL"}, "areaServed": [{"@type": "City", "name": "Breda"}, {"@type": "AdministrativeArea", "name": "Noord-Brabant"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "18:00"}], "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}]}</script>
 </head>
 <body>
+  <div class="intro" aria-hidden="true">
+    <div class="intro__logo">
+      <svg viewBox="0 0 64 64"><path class="i-a" d="M8 10h12l15 44h-8z"/><path class="i-b" d="M56 10H44L29 54h8z"/><circle class="i-c" cx="32" cy="14" r="5"/></svg>
+      <span class="intro__word"><b>Vizora</b><small>Digital</small></span>
+    </div>
+  </div>
   <a class="skip" href="#main">Naar de inhoud</a>
   <header class="nav">
     <div class="container nav__inner">
@@ -173,6 +179,29 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="voorna-titel">
+      <div class="container">
+        <div class="section__head center">
+          <p class="eyebrow reveal">Voor &amp; na</p>
+          <h2 id="voorna-titel" class="split-words">Van verouderd naar <em>Vizora.</em></h2>
+          <p class="reveal">Sleep de schuif en zie het verschil. Dezelfde barbershop, dezelfde prijzen. Alleen nu met een website die vertrouwen wekt en waar klanten direct online boeken.</p>
+        </div>
+        <div class="ba reveal" data-ba style="--pos:50%">
+          <picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/noir-mobile-45.jpg"><img src="assets/concepts/noir-desktop.jpg" alt="Nieuwe website van de barbershop, ontworpen door Vizora" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture>
+          <div class="ba__before"><picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/oud-mobile-45.jpg"><img src="assets/concepts/oud-desktop.jpg" alt="Oude, verouderde website van dezelfde barbershop" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture></div>
+          <span class="ba__tag ba__tag--before">Voor</span>
+          <span class="ba__tag ba__tag--after">Na · Vizora</span>
+          <div class="ba__handle" aria-hidden="true"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span></div>
+          <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Schuif tussen de oude en de nieuwe website">
+        </div>
+        <ul class="ba__points reveal">
+          <li><b>Online boeken</b><span>in plaats van bellen tijdens openingstijden</span></li>
+          <li><b>Perfect op mobiel</b><span>waar de meeste klanten zoeken</span></li>
+          <li><b>Professionele uitstraling</b><span>die past bij de kwaliteit van je werk</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section section--alt" aria-labelledby="diensten-titel">
       <div class="container">
         <div class="section__head">
@@ -275,6 +304,38 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="calc-titel">
+      <div class="container calc" data-calc>
+        <div class="calc__form">
+          <p class="eyebrow reveal">Rekenvoorbeeld</p>
+          <h2 id="calc-titel" class="split-words">Wat levert een betere website <em>jou</em> op?</h2>
+          <p class="lead reveal">Vul je eigen cijfers in en zie hoe snel een nieuwe website zichzelf terugverdient. Schuif gerust: het zijn jouw getallen.</p>
+          <div class="calc__fields reveal">
+            <div class="choices" role="radiogroup" aria-label="Jouw branche">
+              <div class="choice"><input type="radio" name="calc-type" id="ct1" value="kapper" checked><label for="ct1">Kapper</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct2" value="restaurant"><label for="ct2">Restaurant</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct3" value="salon"><label for="ct3">Salon</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct4" value="bakkerij"><label for="ct4">Bakkerij</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct5" value="anders"><label for="ct5">Anders</label></div>
+            </div>
+            <label class="slider"><span>Gemiddelde besteding per klant <output data-out="spend"></output></span><input type="range" name="spend" min="5" max="300" step="5"></label>
+            <label class="slider"><span>Extra nieuwe klanten per maand <output data-out="extra"></output></span><input type="range" name="extra" min="1" max="40" step="1"></label>
+            <label class="slider"><span>Bezoeken per klant per jaar <output data-out="freq"></output></span><input type="range" name="freq" min="1" max="30" step="1"></label>
+          </div>
+        </div>
+        <div class="calc__result reveal" aria-live="polite">
+          <span class="calc__label">Extra omzet in het eerste jaar</span>
+          <strong class="calc__big" data-res="year">€ 0</strong>
+          <div class="calc__rows">
+            <div><span>Waarde van één vaste klant per jaar</span><b data-res="client">€ 0</b></div>
+            <div><span>Groei-pakket (€350) terugverdiend na</span><b data-res="payback">0 bezoeken</b></div>
+          </div>
+          <p class="calc__note">Dit is een rekenvoorbeeld op basis van jouw eigen invoer, geen garantie. In het gratis gesprek kijken we samen wat realistisch is voor jouw zaak.</p>
+          <a href="contact.html" class="btn btn--light">Bespreek mijn groei <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
@@ -413,6 +474,15 @@
             <li><a href="diensten.html#marketing">Marketing &amp; bereik</a></li>
             <li><a href="diensten.html#social-media">Social media</a></li>
             <li><a href="prijzen.html#abonnement">Website-abonnement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Voor wie</h4>
+          <ul>
+            <li><a href="website-voor-kappers.html">Kappers &amp; barbers</a></li>
+            <li><a href="website-voor-restaurants.html">Restaurants</a></li>
+            <li><a href="website-voor-beautysalons.html">Beautysalons</a></li>
+            <li><a href="website-voor-bakkerijen.html">Bakkerijen &amp; winkels</a></li>
           </ul>
         </div>
         <div>

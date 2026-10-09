@@ -37,6 +37,8 @@ WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0
 
 PAGES = [("index.html", "Home"), ("diensten.html", "Diensten"), ("prijzen.html", "Prijzen"), ("werkwijze.html", "Werkwijze"), ("over-ons.html", "Over ons")]
 
+INLINE_JS = 'document.documentElement.classList.add("js");try{if(sessionStorage.getItem("vz-intro"))document.documentElement.classList.add("intro-seen");sessionStorage.setItem("vz-intro","1")}catch(e){}'
+
 def head(file, title, desc):
     url = SITE + "/" + ("" if file == "index.html" else file)
     return f'''<!doctype html>
@@ -61,7 +63,7 @@ def head(file, title, desc):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <script>document.documentElement.classList.add("js")</script>
+  <script>{INLINE_JS}</script>
 </head>
 <body>
   <a class="skip" href="#main">Naar de inhoud</a>
@@ -117,6 +119,15 @@ FOOTER = f'''  <footer class="footer">
             <li><a href="diensten.html#marketing">Marketing &amp; bereik</a></li>
             <li><a href="diensten.html#social-media">Social media</a></li>
             <li><a href="prijzen.html#abonnement">Website-abonnement</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Voor wie</h4>
+          <ul>
+            <li><a href="website-voor-kappers.html">Kappers &amp; barbers</a></li>
+            <li><a href="website-voor-restaurants.html">Restaurants</a></li>
+            <li><a href="website-voor-beautysalons.html">Beautysalons</a></li>
+            <li><a href="website-voor-bakkerijen.html">Bakkerijen &amp; winkels</a></li>
           </ul>
         </div>
         <div>
@@ -645,7 +656,7 @@ dien += f'''
           <h2 class="split-words">Gemaakt voor lokale ondernemers</h2>
         </div>
         <ul class="tags reveal">
-          <li>Kappers &amp; barbers</li><li>Restaurants &amp; cafés</li><li>Beautysalons &amp; nagelstudio's</li><li>Bakkerijen</li>
+          <li><a href="website-voor-kappers.html">Kappers &amp; barbers →</a></li><li><a href="website-voor-restaurants.html">Restaurants &amp; cafés →</a></li><li><a href="website-voor-beautysalons.html">Beautysalons &amp; nagelstudio's →</a></li><li><a href="website-voor-bakkerijen.html">Bakkerijen →</a></li>
           <li>Winkels</li><li>Sportscholen &amp; personal trainers</li><li>Zorg &amp; fysio</li><li>Bouw &amp; vakmensen</li><li>Starters &amp; zzp'ers</li>
         </ul>
       </div>
@@ -940,6 +951,216 @@ prijs += f"""
 """
 prijs += FOOTER
 
+# ======================= EXTRA ONDERDELEN =======================
+SWAP_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg>'
+
+BEFORE_AFTER = f'''    <section class="section" aria-labelledby="voorna-titel">
+      <div class="container">
+        <div class="section__head center">
+          <p class="eyebrow reveal">Voor &amp; na</p>
+          <h2 id="voorna-titel" class="split-words">Van verouderd naar <em>Vizora.</em></h2>
+          <p class="reveal">Sleep de schuif en zie het verschil. Dezelfde barbershop, dezelfde prijzen. Alleen nu met een website die vertrouwen wekt en waar klanten direct online boeken.</p>
+        </div>
+        <div class="ba reveal" data-ba style="--pos:50%">
+          <picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/noir-mobile-45.jpg"><img src="assets/concepts/noir-desktop.jpg" alt="Nieuwe website van de barbershop, ontworpen door Vizora" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture>
+          <div class="ba__before"><picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/oud-mobile-45.jpg"><img src="assets/concepts/oud-desktop.jpg" alt="Oude, verouderde website van dezelfde barbershop" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture></div>
+          <span class="ba__tag ba__tag--before">Voor</span>
+          <span class="ba__tag ba__tag--after">Na · Vizora</span>
+          <div class="ba__handle" aria-hidden="true"><span>{SWAP_ICON}</span></div>
+          <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Schuif tussen de oude en de nieuwe website">
+        </div>
+        <ul class="ba__points reveal">
+          <li><b>Online boeken</b><span>in plaats van bellen tijdens openingstijden</span></li>
+          <li><b>Perfect op mobiel</b><span>waar de meeste klanten zoeken</span></li>
+          <li><b>Professionele uitstraling</b><span>die past bij de kwaliteit van je werk</span></li>
+        </ul>
+      </div>
+    </section>
+
+'''
+
+CALC = f'''    <section class="section" aria-labelledby="calc-titel">
+      <div class="container calc" data-calc>
+        <div class="calc__form">
+          <p class="eyebrow reveal">Rekenvoorbeeld</p>
+          <h2 id="calc-titel" class="split-words">Wat levert een betere website <em>jou</em> op?</h2>
+          <p class="lead reveal">Vul je eigen cijfers in en zie hoe snel een nieuwe website zichzelf terugverdient. Schuif gerust: het zijn jouw getallen.</p>
+          <div class="calc__fields reveal">
+            <div class="choices" role="radiogroup" aria-label="Jouw branche">
+              <div class="choice"><input type="radio" name="calc-type" id="ct1" value="kapper" checked><label for="ct1">Kapper</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct2" value="restaurant"><label for="ct2">Restaurant</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct3" value="salon"><label for="ct3">Salon</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct4" value="bakkerij"><label for="ct4">Bakkerij</label></div>
+              <div class="choice"><input type="radio" name="calc-type" id="ct5" value="anders"><label for="ct5">Anders</label></div>
+            </div>
+            <label class="slider"><span>Gemiddelde besteding per klant <output data-out="spend"></output></span><input type="range" name="spend" min="5" max="300" step="5"></label>
+            <label class="slider"><span>Extra nieuwe klanten per maand <output data-out="extra"></output></span><input type="range" name="extra" min="1" max="40" step="1"></label>
+            <label class="slider"><span>Bezoeken per klant per jaar <output data-out="freq"></output></span><input type="range" name="freq" min="1" max="30" step="1"></label>
+          </div>
+        </div>
+        <div class="calc__result reveal" aria-live="polite">
+          <span class="calc__label">Extra omzet in het eerste jaar</span>
+          <strong class="calc__big" data-res="year">€ 0</strong>
+          <div class="calc__rows">
+            <div><span>Waarde van één vaste klant per jaar</span><b data-res="client">€ 0</b></div>
+            <div><span>Groei-pakket (€350) terugverdiend na</span><b data-res="payback">0 bezoeken</b></div>
+          </div>
+          <p class="calc__note">Dit is een rekenvoorbeeld op basis van jouw eigen invoer, geen garantie. In het gratis gesprek kijken we samen wat realistisch is voor jouw zaak.</p>
+          <a href="contact.html" class="btn btn--light">Bespreek mijn groei {I["arrow"]}</a>
+        </div>
+      </div>
+    </section>
+
+'''
+
+INTRO = '''<div class="intro" aria-hidden="true">
+    <div class="intro__logo">
+      <svg viewBox="0 0 64 64"><path class="i-a" d="M8 10h12l15 44h-8z"/><path class="i-b" d="M56 10H44L29 54h8z"/><circle class="i-c" cx="32" cy="14" r="5"/></svg>
+      <span class="intro__word"><b>Vizora</b><small>Digital</small></span>
+    </div>
+  </div>
+  '''
+
+home = home.replace('''    <section class="section section--alt" aria-labelledby="diensten-titel">''', BEFORE_AFTER + '''    <section class="section section--alt" aria-labelledby="diensten-titel">''', 1)
+home = home.replace('''    <section class="section section--alt" aria-labelledby="prijzen-titel">''', CALC + '''    <section class="section section--alt" aria-labelledby="prijzen-titel">''', 1)
+home = home.replace('<a class="skip" href="#main">Naar de inhoud</a>', INTRO + '<a class="skip" href="#main">Naar de inhoud</a>', 1)
+
+# ======================= BRANCHE-PAGINA'S =======================
+BRANCHES = [
+  dict(file="website-voor-kappers.html", label="Kappers &amp; barbers", concept="noir", url="noir",
+       title="Website voor kappers in Breda | Vizora Digital",
+       desc="Een website voor je kapsalon of barbershop met online afspraken, prijslijst en vindbaarheid in Google. Vanuit Breda. Plan een gratis gesprek.",
+       eyebrow="Voor kappers &amp; barbers in Breda",
+       h1="Een website die je <em>agenda</em> vult",
+       lead="Jij staat de hele dag achter de stoel. Je website werkt ondertussen door: klanten zien je prijzen, kiezen een tijd en boeken direct, ook 's avonds en in het weekend.",
+       intro="Een goede kapperswebsite doet drie dingen: hij laat zien hoe goed je werk is, maakt boeken kinderlijk eenvoudig en zorgt dat mensen in de buurt je vinden als ze zoeken op 'kapper Breda' of 'barber in de buurt'.",
+       features=["Online afspraken, 24/7", "Prijslijst die altijd klopt", "Team en specialisaties", "Openingstijden en walk-in", "Koppeling met je Instagram", "Gevonden in Google Maps"],
+       why=[("Minder telefoontjes", "Geen gebel meer tijdens het knippen: klanten plannen zelf een moment dat past."),
+            ("Boeken wanneer het uitkomt", "Veel afspraken worden 's avonds gemaakt, als je zaak dicht is. Je website is altijd open."),
+            ("Een uitstraling met stijl", "Je zaak heeft een eigen sfeer. Je website laat die al zien voordat iemand binnenstapt.")],
+       faq=[("Kan ik mijn bestaande boekingssysteem gebruiken?", "Ja. Gebruik je al een online agenda of boekingssysteem? Dan koppelen we dat aan je website. Heb je nog niets, dan adviseren we je wat het beste past."),
+            ("Kan ik zelf mijn prijzen aanpassen?", "Met ons website-abonnement passen wij je prijzen, openingstijden en acties voor je aan. Stuur een appje en het staat erop."),
+            ("Hoe word ik beter gevonden als kapper in Breda?", "Met een snelle website, de juiste teksten en een goed ingericht Google Bedrijfsprofiel. Dat zit in het pakket Groei en Compleet.")]),
+  dict(file="website-voor-restaurants.html", label="Restaurants &amp; horeca", concept="olivo", url="olivo",
+       title="Website voor restaurants in Breda | Vizora Digital",
+       desc="Een restaurantwebsite met menukaart, online reserveren en afhalen. Meer gasten via Google. Vizora Digital uit Breda. Plan een gratis gesprek.",
+       eyebrow="Voor restaurants &amp; horeca in Breda",
+       h1="Een website die zin geeft om te <em>reserveren</em>",
+       lead="Gasten kiezen met hun ogen, en ze kiezen online. Met een website die je sfeer laat proeven, een menukaart die altijd klopt en reserveren in een paar tikken.",
+       intro="Mensen bekijken eerst je menu, je sfeer en je openingstijden voordat ze reserveren. Een sterke restaurantwebsite maakt die keuze makkelijk en zorgt dat je gevonden wordt als iemand zoekt naar 'uit eten in Breda'.",
+       features=["Online reserveren", "Menukaart die altijd klopt", "Afhalen en bestellen", "Openingstijden en route", "Groepen en events", "Gevonden in Google Maps"],
+       why=[("Meer reserveringen", "Een duidelijke reserveerknop op elke pagina. Geen gemiste telefoontjes in de spits."),
+            ("Je menu als verleiding", "Een menukaart die er net zo goed uitziet als je gerechten, op elk scherm."),
+            ("Altijd actueel", "Nieuw seizoensmenu of feestdag? Met het abonnement passen wij het voor je aan.")],
+       faq=[("Kunnen jullie mijn reserveringssysteem koppelen?", "Ja. Gebruik je al een online reserveringssysteem, dan koppelen we dat. Zo niet, dan kiezen we samen een oplossing die past."),
+            ("Kan de menukaart regelmatig veranderen?", "Zeker. Met het website-abonnement werken we je menu bij wanneer je wilt."),
+            ("Kunnen gasten ook online bestellen voor afhalen?", "Dat kan. We bespreken in het gesprek wat het beste werkt voor jouw keuken.")]),
+  dict(file="website-voor-beautysalons.html", label="Beautysalons", concept="serene", url="serene",
+       title="Website voor beautysalons in Breda | Vizora Digital",
+       desc="Een website voor je beauty- of nagelsalon met behandelingen, online boeken en cadeaubonnen. Vizora Digital uit Breda. Plan een gratis gesprek.",
+       eyebrow="Voor beauty- en nagelsalons in Breda",
+       h1="Een website die <em>rust</em> uitstraalt en boekt",
+       lead="Je klanten komen bij jou om even tot rust te komen. Je website geeft dat gevoel al vanaf de eerste klik, en laat ze direct een behandeling plannen.",
+       intro="Een salonwebsite moet vertrouwen geven: heldere behandelingen met prijzen en duur, een rustige uitstraling en boeken zonder gedoe. Zo kiezen nieuwe klanten voor jou in plaats van voor de salon verderop.",
+       features=["Behandelingen met prijs en duur", "Online boeken", "Cadeaubonnen", "Resultaten van je werk", "Rustige, eigen huisstijl", "Gevonden in Google Maps"],
+       why=[("Vertrouwen vanaf de eerste klik", "Een verzorgde website laat zien dat je net zo zorgvuldig werkt als je behandelingen."),
+            ("Boeken zonder gedoe", "Klanten kiezen hun behandeling en een tijd, wanneer het hen uitkomt."),
+            ("Meer uit je vaste klanten", "Cadeaubonnen en acties maken van tevreden klanten ambassadeurs.")],
+       faq=[("Kan ik mijn bestaande agenda koppelen?", "Ja. Werk je al met een online agenda of boekingssysteem, dan koppelen we dat aan je website."),
+            ("Kunnen klanten online een cadeaubon kopen?", "Dat bespreken we graag. Er zijn verschillende mogelijkheden, afhankelijk van hoe je nu werkt."),
+            ("Kunnen jullie ook mijn Instagram inrichten?", "Ja. In het pakket Compleet richten we je profielen in, in dezelfde stijl als je website.")]),
+  dict(file="website-voor-bakkerijen.html", label="Bakkerijen &amp; winkels", concept="goudkorst", url="goudkorst",
+       title="Website voor bakkerijen in Breda | Vizora Digital",
+       desc="Een website voor je bakkerij of winkel met assortiment, online bestellen en ophalen. Vizora Digital uit Breda. Plan een gratis gesprek.",
+       eyebrow="Voor bakkerijen &amp; winkels in Breda",
+       h1="Vandaag bestellen, morgen <em>vers</em> ophalen",
+       lead="Je klanten willen weten wat er vandaag ligt, wanneer je open bent en of ze hun taart al kunnen bestellen. Je website regelt het, zodat jij kunt doen waar je goed in bent.",
+       intro="Een bakkerij- of winkelwebsite laat je assortiment zien, maakt bestellen makkelijk en zorgt dat buurtbewoners je vinden. Minder telefoontjes, meer bestellingen en een uitstraling die net zo goed is als je producten.",
+       features=["Online bestellen en ophalen", "Assortiment met prijzen", "Taarten op bestelling", "Openingstijden", "Acties van de week", "Gevonden in Google Maps"],
+       why=[("Meer bestellingen", "Klanten bestellen 's avonds voor de volgende ochtend. Jij weet precies wat je moet bakken."),
+            ("Minder telefoontjes", "Geen gebel over openingstijden of taarten: het staat allemaal duidelijk online."),
+            ("Trots op je producten", "Je assortiment verdient een etalage die net zo verzorgd is als je vitrine.")],
+       faq=[("Kunnen klanten online betalen?", "Dat kan, afhankelijk van wat je wilt. We bespreken samen of betalen bij het ophalen of online betalen het beste past."),
+            ("Kan ik acties van de week laten plaatsen?", "Ja. Met het website-abonnement zetten we je acties en nieuwe producten online wanneer je wilt."),
+            ("Werkt dit ook voor andere winkels?", "Zeker. Of je nu een bakkerij, slagerij, bloemenwinkel of boetiek hebt: de aanpak is hetzelfde.")]),
+]
+
+def branche_page(b):
+    html = head(b["file"], b["title"], b["desc"])
+    html += header("")
+    feats = "".join(f"<li>{f}</li>" for f in b["features"])
+    whys = "".join(f'<div class="benefit reveal" data-delay="{i*100}"><div class="icon">{I[ic]}</div><h3>{t}</h3><p>{d}</p></div>'
+                   for i, ((t, d), ic) in enumerate(zip(b["why"], ["inbox", "growth", "shield"])))
+    faqs = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in b["faq"])
+    others = " ".join(f'<a href="{o["file"]}" class="tag">{o["label"]}</a>' for o in BRANCHES if o is not b)
+    html += f'''
+  <main id="main">
+{page_hero(b["eyebrow"], b["h1"], b["lead"])}
+    <section class="section">
+      <div class="container service">
+        <div class="service__visual reveal" aria-hidden="true">
+          <div class="plate plate--sand" style="inset:30px 0 10px 60px;rotate:6deg" data-speed="0.05"></div>
+          <div class="plate plate--soft" style="inset:10px 40px 30px 20px;rotate:-3deg" data-speed="0.02"></div>
+          {win(b["concept"] + "-desktop.jpg", "vizoradigital.nl/concept/" + b["url"], "left:0;right:70px;top:70px", "-0.04")}
+          {iphone(b["concept"] + "-mobile.jpg", "right:0;bottom:0", "-0.1")}
+        </div>
+        <div class="service__copy">
+          <p class="eyebrow reveal">Wat je website moet kunnen</p>
+          <h2 class="split-words">Gemaakt voor <em>jouw</em> vak</h2>
+          <p class="lead reveal">{b["intro"]}</p>
+          <ul class="reveal">{feats}</ul>
+          <div class="hero__actions reveal" style="margin:0">
+            <a href="contact.html?branche={b["label"].split(" ")[0]}" class="btn">Plan een gratis gesprek {I["arrow"]}</a>
+            <a href="{TEL}" class="btn btn--ghost">{I["call"]} Bel direct</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section--dark" style="margin:0;padding:90px 48px;border-radius:40px">
+          <div class="section__head center">
+            <p class="eyebrow reveal">Wat het je oplevert</p>
+            <h2 class="split-words">Meer klanten, <em>minder</em> gedoe</h2>
+          </div>
+          <div class="benefits benefits--3">{whys}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head center">
+          <p class="eyebrow reveal">Prijzen</p>
+          <h2 class="split-words">Duidelijke pakketten, <em>eerlijke</em> prijzen</h2>
+          <p class="reveal">Inclusief een gratis concept van je nieuwe website tijdens het eerste gesprek.</p>
+        </div>
+        <div class="pricing">
+{pricing_cards()}
+        </div>
+        <p class="pricing__foot reveal"><a href="prijzen.html" class="link-arrow">Alle pakketten en abonnementen</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container--narrow">
+        <div class="section__head center">
+          <p class="eyebrow reveal">Vragen</p>
+          <h2 class="split-words">Goed om te weten</h2>
+        </div>
+        <div class="faq reveal">{faqs}</div>
+        <p class="pricing__foot reveal">Ook voor: {others}</p>
+      </div>
+    </section>
+
+{cta()}  </main>
+
+'''
+    return html + FOOTER
+
+branche_pages = [(b["file"], branche_page(b)) for b in BRANCHES]
+
 # ======================= 404 =======================
 nf = head("404.html", "Pagina niet gevonden | Vizora Digital", "Deze pagina bestaat niet (meer).")
 nf += header("")
@@ -974,10 +1195,10 @@ home = home.replace("</head>", '  <script type="application/ld+json">' + json.du
 home = home.replace('<script src="assets/mosaic.js"></script>', '<script src="assets/mosaic.js"></script>\n  <script src="assets/contour.js"></script>')
 home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/concepts/olivo-desktop.jpg">\n  <link rel="stylesheet" href="assets/style.css">')
 
-for name, html in [("index.html", home), ("diensten.html", dien), ("prijzen.html", prijs), ("werkwijze.html", werk), ("over-ons.html", over), ("contact.html", cont), ("404.html", nf)]:
+for name, html in [("index.html", home), ("diensten.html", dien), ("prijzen.html", prijs), ("werkwijze.html", werk), ("over-ons.html", over), ("contact.html", cont), ("404.html", nf)] + branche_pages:
     (OUT / name).write_text(html, encoding="utf-8")
 
 (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /concepts/\nDisallow: /tools/\n\nSitemap: {SITE}/sitemap.xml\n")
-urls = "".join(f"  <url><loc>{SITE}/{'' if p == 'index.html' else p}</loc></url>\n" for p in ["index.html", "diensten.html", "prijzen.html", "werkwijze.html", "over-ons.html", "contact.html"])
+urls = "".join(f"  <url><loc>{SITE}/{'' if p == 'index.html' else p}</loc></url>\n" for p in ["index.html", "diensten.html", "prijzen.html", "werkwijze.html", "over-ons.html", "contact.html"] + [b["file"] for b in BRANCHES])
 (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 print("ok")

@@ -32,4 +32,19 @@ for (const name of names) {
   await shot({ width: 390, height: 844 }, 0.8, `${name}-mobile-thumb.jpg`);
   console.log('✓', name);
 }
+// verouderde versie voor de voor/na-schuif
+{
+  const url = 'file://' + path.join(root, 'concepts', 'oud.html');
+  for (const [vp, scale, file, clip] of [
+    [{ width: 1600, height: 800 }, 1.25, 'oud-desktop.jpg'],
+    [{ width: 390, height: 844 }, 2.4, 'oud-mobile-45.jpg', { x: 0, y: 0, width: 390, height: 488 }],
+  ]) {
+    const page = await browser.newPage({ viewport: vp, deviceScaleFactor: scale });
+    await page.goto(url);
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: path.join(out, file), type: 'jpeg', quality: 84, clip });
+    await page.close();
+  }
+  console.log('✓ oud');
+}
 await browser.close();
