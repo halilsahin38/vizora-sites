@@ -1148,20 +1148,13 @@ a.tag:hover { background: var(--ink); color: var(--bg); }
 .photo--fill { position: absolute; inset: 0; }
 .photo picture { position: absolute; inset: 0; }
 .roof__visual .photo--fill { position: absolute; inset: 0; }
-.concept { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
-.concept__visual { position: relative; height: 600px; }
-.concept__visual > .chip-card { position: absolute; right: -18px; bottom: 40px; }
 .band { position: relative; height: 380px; margin-bottom: 2.4rem; border-radius: 32px; overflow: hidden; }
 .band .photo::after { background: linear-gradient(90deg, rgba(23,20,17,.72) 0%, rgba(23,20,17,.35) 45%, rgba(23,20,17,0) 75%); }
 .band__quote { position: absolute; left: clamp(1.6rem, 5vw, 3.6rem); bottom: clamp(1.6rem, 4vw, 3rem); max-width: 15em; margin: 0; font-family: var(--serif); font-size: clamp(1.6rem, 3.2vw, 2.6rem); line-height: 1.15; color: var(--surface-2); }
 .band__quote em { color: var(--sand); }
 @media (max-width: 980px) {
-  .concept { grid-template-columns: 1fr; }
-  .concept__visual { height: 420px; }
-  .concept__visual > .chip-card { right: 16px; bottom: 16px; }
 }
 @media (max-width: 640px) {
-  .concept__visual { height: 320px; }
   .band { height: 300px; }
   .photo { border-radius: 24px; }
 }

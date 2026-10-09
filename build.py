@@ -449,14 +449,7 @@ home += f'''
     </section>
 
     <section class="section" aria-labelledby="demo-titel">
-      <div class="container concept">
-        <div class="concept__visual reveal">
-          {photo("schets", "Schets van een website-ontwerp op papier met een pen", "photo--fill", "-0.1", w=960, h=720)}
-          <div class="chip-card concept__chip" data-speed="-0.12" aria-hidden="true">
-            <div class="chip-card__icon">{I["pen"]}</div>
-            <div><strong>Van schets tot site</strong><small>eerst zien, dan beslissen</small></div>
-          </div>
-        </div>
+      <div class="container--narrow demo demo--single">
         <div class="demo__controls">
           <div>
             <p class="eyebrow reveal">Gratis websiteconcept</p>

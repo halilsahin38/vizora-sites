@@ -49,7 +49,6 @@ De screenshots komen in `assets/concepts/`.
 De foto's in `assets/foto/` zijn rechtenvrij (CC0, vrij te gebruiken, ook commercieel), gevonden via Openverse:
 
 - `werkplek` – https://www.rawpixel.com/image/8809250/photo-image-books-hands-social-media
-- `schets` – https://stocksnap.io/photo/office-work-PE894KZLRX
 - `groeiplan` – https://www.rawpixel.com/image/11515751/persons-hands-notebook-and-cup-coffee
 
 Ze zijn tijdelijk en kunnen later vervangen worden door eigen foto's of Higgsfield-beelden (zelfde bestandsnaam = direct vervangen).
