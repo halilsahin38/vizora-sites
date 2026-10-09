@@ -277,7 +277,7 @@ SUBSCRIPTION = f'''        <div class="sub reveal" id="abonnement">
 
 # ======================= HOME =======================
 home = head("index.html", "Vizora Digital | Websites die klanten opleveren | Breda",
-            "Vizora Digital uit Breda bouwt websites die klanten opleveren, vergroot je bereik in Google en helpt je stap voor stap groeien. Plan een gratis gesprek en ontvang een gratis websiteconcept.")
+            "Websites die klanten opleveren, meer bereik in Google en een plan om te groeien. Vizora Digital uit Breda. Plan een gratis gesprek en ontvang een gratis concept.")
 home += header("index.html")
 home += f'''
   <main id="main">
@@ -399,7 +399,7 @@ home += f'''
         </div>
         <div class="cards">
           <article class="card reveal">
-            <span class="card__num">01</span>
+            <span class="card__num" aria-hidden="true">01</span>
             <div class="card__icon">{I["web"]}</div>
             <h3>Websites</h3>
             <p>Een moderne website die vertrouwen wekt en bezoekers omzet in klanten. Gemaakt op maat, nooit een standaard template.</p>
@@ -407,7 +407,7 @@ home += f'''
             <a href="diensten.html#websites" class="link-arrow">Meer over websites</a>
           </article>
           <article class="card card--dark reveal" data-delay="120">
-            <span class="card__num">02</span>
+            <span class="card__num" aria-hidden="true">02</span>
             <div class="card__icon">{I["reach"]}</div>
             <h3>Marketing &amp; bereik</h3>
             <p>Meer bereik in jouw regio. Met een sterk Google-profiel, lokale SEO en gerichte advertenties bereik je mensen die nu zoeken.</p>
@@ -415,7 +415,7 @@ home += f'''
             <a href="diensten.html#marketing" class="link-arrow">Meer over marketing</a>
           </article>
           <article class="card reveal" data-delay="240">
-            <span class="card__num">03</span>
+            <span class="card__num" aria-hidden="true">03</span>
             <div class="card__icon">{I["social"]}</div>
             <h3>Social media</h3>
             <p>Wij helpen je op weg: profielen die kloppen, een herkenbare stijl en advies over wat werkt. De content bespreken we samen.</p>
@@ -521,10 +521,10 @@ home += f'''
           <a href="werkwijze.html" class="link-arrow reveal">Bekijk de hele werkwijze</a>
         </div>
         <ol class="steps">
-          <li class="step reveal"><span class="step__n">01</span><h3>Kennismaken</h3><p>Gratis gesprek: bellen, appen, video of bij jou langs in de regio Breda.</p></li>
-          <li class="step reveal" data-delay="100"><span class="step__n">02</span><h3>Concept &amp; groeiplan</h3><p>We laten je websiteconcept zien en bespreken stap voor stap hoe je groeit.</p></li>
-          <li class="step reveal" data-delay="200"><span class="step__n">03</span><h3>Bouwen &amp; lanceren</h3><p>Wij bouwen, testen en zetten alles live. Jij hoeft niks technisch te doen.</p></li>
-          <li class="step reveal" data-delay="300"><span class="step__n">04</span><h3>Blijven groeien</h3><p>Met ons abonnement blijft je website elke maand up-to-date.</p></li>
+          <li class="step reveal"><span class="step__n" aria-hidden="true">01</span><h3>Kennismaken</h3><p>Gratis gesprek: bellen, appen, video of bij jou langs in de regio Breda.</p></li>
+          <li class="step reveal" data-delay="100"><span class="step__n" aria-hidden="true">02</span><h3>Concept &amp; groeiplan</h3><p>We laten je websiteconcept zien en bespreken stap voor stap hoe je groeit.</p></li>
+          <li class="step reveal" data-delay="200"><span class="step__n" aria-hidden="true">03</span><h3>Bouwen &amp; lanceren</h3><p>Wij bouwen, testen en zetten alles live. Jij hoeft niks technisch te doen.</p></li>
+          <li class="step reveal" data-delay="300"><span class="step__n" aria-hidden="true">04</span><h3>Blijven groeien</h3><p>Met ons abonnement blijft je website elke maand up-to-date.</p></li>
         </ol>
       </div>
     </section>
@@ -743,9 +743,9 @@ over += f'''
           <h2 class="split-words">Onze beloftes aan jou</h2>
         </div>
         <div class="values">
-          <div class="value reveal"><span class="value__n">01</span><h3>Persoonlijk</h3><p>Je werkt direct met ons. We kennen je zaak en denken met je mee alsof het onze eigen zaak is.</p></div>
-          <div class="value reveal" data-delay="120"><span class="value__n">02</span><h3>Eerlijk</h3><p>Duidelijke prijzen, heldere afspraken. En als iets niet nodig is, zeggen we dat ook.</p></div>
-          <div class="value reveal" data-delay="240"><span class="value__n">03</span><h3>Gericht op groei</h3><p>Mooi is niet genoeg. Alles wat we maken heeft één doel: meer bereik en meer klanten voor jou.</p></div>
+          <div class="value reveal"><span class="value__n" aria-hidden="true">01</span><h3>Persoonlijk</h3><p>Je werkt direct met ons. We kennen je zaak en denken met je mee alsof het onze eigen zaak is.</p></div>
+          <div class="value reveal" data-delay="120"><span class="value__n" aria-hidden="true">02</span><h3>Eerlijk</h3><p>Duidelijke prijzen, heldere afspraken. En als iets niet nodig is, zeggen we dat ook.</p></div>
+          <div class="value reveal" data-delay="240"><span class="value__n" aria-hidden="true">03</span><h3>Gericht op groei</h3><p>Mooi is niet genoeg. Alles wat we maken heeft één doel: meer bereik en meer klanten voor jou.</p></div>
         </div>
       </div>
     </section>
