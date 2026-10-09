@@ -398,3 +398,59 @@ if (calc) {
 
 /* ---------- Jaar in footer ---------- */
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+/* ---------- Contactknop rechtsonder ---------- */
+const dock = document.querySelector('[data-dock]');
+if (dock) {
+  const fab = dock.querySelector('.dock__fab');
+  const panel = dock.querySelector('.dock__panel');
+  const setOpen = (open) => {
+    panel.hidden = !open;
+    dock.classList.toggle('is-open', open);
+    fab.setAttribute('aria-expanded', open);
+    fab.setAttribute('aria-label', open ? 'Contactopties sluiten' : 'Contactopties openen');
+  };
+  fab.addEventListener('click', () => setOpen(panel.hidden));
+  dock.querySelector('[data-dock-close]').addEventListener('click', () => { setOpen(false); fab.focus(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { setOpen(false); fab.focus(); } });
+
+  // bereikbaar: ma t/m za 09:00 - 18:00 (Nederlandse tijd)
+  const status = dock.querySelector('[data-dock-status]');
+  try {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Amsterdam', weekday: 'short', hour: 'numeric', hour12: false })
+      .formatToParts(new Date()).map((p) => [p.type, p.value]));
+    const hour = parseInt(parts.hour, 10) % 24;
+    const open = parts.weekday !== 'Sun' && hour >= 9 && hour < 18;
+    if (!open) {
+      status.classList.add('is-closed');
+      const nextMonday = parts.weekday === 'Sun' || (parts.weekday === 'Sat' && hour >= 18);
+      const when = nextMonday ? 'maandag ' : (hour >= 18 ? 'morgen ' : '');
+      status.querySelector('span').textContent = `We reageren ${when}vanaf 09:00`;
+    }
+  } catch (e) { /* laat standaardtekst staan */ }
+}
+
+/* ---------- Snel bericht (homepage) ---------- */
+const quick = document.querySelector('[data-quick]');
+if (quick) {
+  const err = quick.querySelector('.reach__error');
+  const val = (n) => quick.elements[n].value.trim();
+  const message = () => [
+    'Hallo Vizora Digital,', '',
+    val('bericht') || 'Ik wil graag meer weten over jullie diensten.', '',
+    `Naam: ${val('naam')}`,
+    val('bedrijf') ? `Bedrijf: ${val('bedrijf')}` : '',
+    `Bereikbaar op: ${val('contact')}`,
+  ].filter((l, i, a) => l !== '' || a[i - 1] !== '').join('\n');
+  const ok = () => {
+    const good = val('naam') && val('contact');
+    err.hidden = !!good;
+    return good;
+  };
+  quick.querySelector('[data-send="wa"]').addEventListener('click', () => {
+    if (ok()) window.open(`https://wa.me/31638705348?text=${encodeURIComponent(message())}`, '_blank', 'noopener');
+  });
+  quick.querySelector('[data-send="mail"]').addEventListener('click', () => {
+    if (ok()) window.location.href = `mailto:halilsahinai@gmail.com?subject=${encodeURIComponent('Vraag via de website - ' + val('naam'))}&body=${encodeURIComponent(message())}`;
+  });
+}

@@ -101,6 +101,7 @@ FOOTER = f'''  <footer class="footer">
             {LOGO}
           </a>
           <p>Websites, bereik en online groei voor ondernemers die verder willen. Vanuit Breda, voor heel Noord-Brabant.</p>
+          <a href="contact.html" class="btn btn--light btn--small footer__cta">Plan een gratis gesprek {I["arrow"]}</a>
         </div>
         <div>
           <h4>Pagina's</h4>
@@ -121,7 +122,6 @@ FOOTER = f'''  <footer class="footer">
             <li><a href="prijzen.html#abonnement">Website-abonnement</a></li>
           </ul>
         </div>
-        </div>
         <div>
           <h4>Contact</h4>
           <ul>
@@ -140,7 +140,18 @@ FOOTER = f'''  <footer class="footer">
     </div>
   </footer>
 
-  <a href="{WA}" class="wa" target="_blank" rel="noopener" aria-label="Stuur ons een WhatsApp-bericht">{WA_SVG}</a>
+  <div class="dock" data-dock>
+    <div class="dock__panel" id="dock-panel" role="dialog" aria-label="Neem contact op" hidden>
+      <button type="button" class="dock__close" data-dock-close aria-label="Sluiten">×</button>
+      <p class="dock__status" data-dock-status><i></i><span>Nu bereikbaar</span></p>
+      <strong class="dock__title">Heb je een vraag?</strong>
+      <p class="dock__text">Stel hem gerust. Je spreekt direct met Halil of Sahin.</p>
+      <a href="{WA}" class="dock__btn dock__btn--wa" target="_blank" rel="noopener">{WA_SVG} WhatsApp ons</a>
+      <a href="{TEL}" class="dock__btn dock__btn--ink">{I["call"]} Bel {TEL_TXT}</a>
+      <a href="mailto:{MAIL}" class="dock__btn">{I["mail"]} Mail ons</a>
+    </div>
+    <button type="button" class="dock__fab" aria-expanded="false" aria-controls="dock-panel" aria-label="Contactopties openen">{WA_SVG}<span class="dock__x" aria-hidden="true">×</span></button>
+  </div>
 
   <script src="assets/main.js"></script>
   <script src="assets/mosaic.js"></script>
@@ -291,50 +302,103 @@ GUARANTEE = f'''        <div class="guarantee reveal">
         </div>
 '''
 
+HOME_FAQ = [
+  ("Wat doet Vizora Digital precies?", "Wij helpen ondernemers online groeien. We maken websites op maat, zorgen dat je beter gevonden wordt in Google en Google Maps, en helpen je op weg met social media. Alles vanuit Breda, met persoonlijk contact."),
+  ("Wat kost een website?", "Onze pakketten beginnen bij €200 (Start), €350 (Groei) en €500 (Compleet), eenmalig. Na het gratis gesprek krijg je altijd eerst een offerte op maat, zodat je precies weet waar je aan toe bent."),
+  ("Wat is het gratis websiteconcept?", "Als je een afspraak plant, maken wij vooraf een eerste ontwerp van jouw website. In het gesprek laten we het zien en nemen we stap voor stap door hoe jouw zaak online kan groeien. Gratis en vrijblijvend."),
+  ("Wat als ik niet tevreden ben?", "Dan betaal je niets. Je ziet eerst het ontwerp en we passen het aan tot het klopt. Pas als jij tevreden bent, gaan we verder en ontvang je de factuur."),
+  ("Hoe lang duurt het voordat mijn website online staat?", "Dat hangt af van je wensen en hoe snel we de teksten en foto's rond hebben. In het eerste gesprek spreken we samen een planning af die bij jou past."),
+  ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein en het livezetten. Jij levert alleen de informatie over je zaak aan; daar helpen we je ook bij."),
+  ("Kan ik later nog dingen laten aanpassen?", "Ja. Met een website-abonnement vanaf €25 per maand passen we elke maand dingen voor je aan en houden we je site veilig en up-to-date. Zonder abonnement kan het ook, dan spreken we per keer een prijs af."),
+  ("Maken jullie ook posts voor social media?", "We richten je profielen in en helpen met stijl en strategie. Content maken of posten valt daarbuiten; dat bespreken we graag samen en kost extra."),
+]
+
+def home_faq():
+    return "\n".join(f'          <details><summary>{q}</summary><p>{a}</p></details>' for q, a in HOME_FAQ)
+
 # ======================= HOME =======================
 home = head("index.html", "Vizora Digital | Websites die klanten opleveren | Breda",
             "Websites die klanten opleveren, meer bereik in Google en een plan om te groeien. Vizora Digital uit Breda. Plan een gratis gesprek en ontvang een gratis concept.")
 home += header("index.html")
 home += f'''
   <main id="main">
-    <section class="hero">
-      <div class="blob blob--1" data-speed="0.12" aria-hidden="true"></div>
-      <div class="blob blob--2" data-speed="-0.1" aria-hidden="true"></div>
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow reveal">Websites · Bereik · Groei</p>
-          <h1 class="split-words">Meer klanten, met een online uitstraling die <em>klopt.</em></h1>
-          <p class="lead reveal" data-delay="400">Wij zorgen dat jouw zaak online gevonden, gekozen en geboekt wordt. Met een website die vertrouwen wekt, meer bereik in Google en een helder plan om te groeien. Vanuit Breda, voor ondernemers in heel Noord-Brabant.</p>
-          <div class="hero__actions reveal" data-delay="550">
-            <a href="contact.html" class="btn">Plan een gratis gesprek {I["arrow"]}</a>
-            <a href="{TEL}" class="btn btn--ghost">{I["call"]} Bel direct</a>
+    <section class="hx">
+      <div class="container">
+        <div class="hx__frame">
+          <div class="hx__copy">
+            <p class="eyebrow reveal">Jouw online partner uit Breda</p>
+            <h1 class="split-words">Meer klanten, met een online uitstraling die <em>klopt.</em></h1>
+            <p class="hx__lead reveal" data-delay="400">Wij zorgen dat jouw zaak online gevonden, gekozen en geboekt wordt. Met een website die vertrouwen wekt, meer bereik in Google en een helder plan om te groeien. Zodat jij je kunt richten op waar je goed in bent: je zaak.</p>
+            <p class="hx__strong reveal" data-delay="500">Gratis websiteconcept bij je eerste gesprek.</p>
+            <div class="hero__actions reveal" data-delay="600">
+              <a href="contact.html" class="btn btn--light">Plan een gratis gesprek {I["arrow"]}</a>
+              <a href="{TEL}" class="btn btn--line">{I["call"]} Bel direct</a>
+            </div>
           </div>
-          <ul class="hero__trust reveal" data-delay="700">
-            <li>Gratis websiteconcept</li>
-            <li>Persoonlijk contact</li>
-            <li>Websites vanaf €200</li>
-          </ul>
+          <div class="hx__visual" aria-hidden="true">
+            <div class="hx__glow" data-speed="0.08"></div>
+            {win("merk-desktop.jpg", "jouwbedrijf.nl", "left:7%;top:15%;width:92%", "-0.04", eager=True)}
+            {iphone("merk-mobile.jpg", "right:7%;bottom:-40px", "-0.1", eager=True)}
+            <div class="chip-card chip-card--a" data-speed="-0.16">
+              <div class="chip-card__icon float">{I["inbox"]}</div>
+              <div><strong>Nieuwe aanvraag</strong><small>via je website</small></div>
+            </div>
+            <div class="chip-card chip-card--b" data-speed="-0.06">
+              <div class="chart"><i style="height:30%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:80%"></i><i style="height:100%"></i></div>
+              <div><strong>Meer bereik</strong><small>Google &amp; Maps</small></div>
+            </div>
+          </div>
         </div>
-
-        <div class="stage reveal" data-delay="200" aria-hidden="true">
-          <div class="stage__plate stage__plate--1" data-speed="0.06"></div>
-          <div class="stage__plate stage__plate--2" data-speed="0.03"></div>
-          {win("merk-desktop.jpg", "jouwbedrijf.nl", "left:0;top:64px;width:88%", "-0.04", eager=True)}
-          {iphone("merk-mobile.jpg", "right:0;bottom:6px", "-0.12", eager=True)}
-          <div class="chip-card chip-card--a" data-speed="-0.18">
-            <div class="chip-card__icon float">{I["cal"]}</div>
-            <div><strong>Nieuwe aanvraag</strong><small>via je website</small></div>
-          </div>
-          <div class="chip-card chip-card--b" data-speed="-0.08">
-            <div class="chart"><i style="height:30%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:80%"></i><i style="height:100%"></i></div>
-            <div><strong>Meer bereik</strong><small>Google &amp; Maps</small></div>
-          </div>
+        <div class="hx__cards">
+          <a href="diensten.html#websites" class="scard reveal">
+            <div class="scard__art scard__art--web"><img src="assets/concepts/merk-thumb.jpg" alt="" width="800" height="400" loading="lazy" decoding="async"></div>
+            <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Websites</h2><p>Een website op maat die vertrouwen wekt en van bezoekers klanten maakt. Van one-pager tot complete site.</p></div>
+          </a>
+          <a href="diensten.html#marketing" class="scard reveal" data-delay="120">
+            <div class="scard__art scard__art--map" aria-hidden="true"><span class="pin">{I["pin"]}</span><span class="rv"><i>★★★★★</i><b></b></span><span class="rv"><i>★★★★★</i><b></b></span><span class="rv"><i>★★★★★</i><b></b></span></div>
+            <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Marketing &amp; bereik</h2><p>Gevonden worden in Google en Google Maps, door mensen in jouw regio die nu zoeken wat jij aanbiedt.</p></div>
+          </a>
+          <a href="diensten.html#social-media" class="scard reveal" data-delay="240">
+            <div class="scard__art scard__art--social" aria-hidden="true"><span class="pf"><i></i><b></b></span><span class="grid"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+            <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Social media</h2><p>Profielen die kloppen, een herkenbare stijl en eerlijk advies over wat werkt. De content bespreken we samen.</p></div>
+          </a>
         </div>
       </div>
-      <div class="hero__scroll" aria-hidden="true"></div>
     </section>
 
     <section class="section">
+      <div class="container roof">
+        <div class="roof__visual reveal" aria-hidden="true">
+          <div class="roof__panel" data-speed="0.05"></div>
+          {iphone("merk-mobile.jpg", "left:50%;top:110px;translate:-50% 0", "-0.08")}
+          <div class="chip-card roof__chip" data-speed="-0.14">
+            <div class="chip-card__icon">{I["pen"]}</div>
+            <div><strong>Jouw concept</strong><small>gratis bij je eerste gesprek</small></div>
+          </div>
+        </div>
+        <div class="roof__copy">
+          <h2 class="roof__title split-words">Alles wat je online nodig hebt, onder <em>één dak.</em></h2>
+          <div class="roof__cols reveal">
+            <div>
+              <p>Van een eerste <a href="diensten.html#websites">website</a> tot een compleet groeiplan: wij bouwen een online basis die past bij jouw zaak en jouw doelen. Alles sluit op elkaar aan, zodat je overal herkenbaar en professioneel overkomt.</p>
+              <p>Daarnaast zorgen we dat je gevonden wordt. Met een sterk <a href="diensten.html#marketing">Google Bedrijfsprofiel</a>, lokale SEO en advies over advertenties bereik je mensen in Breda en omgeving die nu zoeken wat jij aanbiedt.</p>
+            </div>
+            <div>
+              <p>Ook op <a href="diensten.html#social-media">social media</a> helpen we je op weg: profielen die kloppen, een vaste stijl en een duidelijk plan.</p>
+              <p>En is je website klaar? Dan houden we hem met een <a href="prijzen.html#abonnement">website-abonnement</a> elke maand up-to-date, veilig en snel. Je spreekt altijd direct met Halil of Sahin. Geen tussenpersonen, geen wachttijden.</p>
+            </div>
+          </div>
+          <dl class="facts reveal">
+            <div><dt>3 in 1</dt><dd>Website, bereik &amp; social</dd></div>
+            <div><dt>€0</dt><dd>Voor je websiteconcept</dd></div>
+            <div><dt>Ma–za</dt><dd>Bereikbaar 09:00 – 18:00</dd></div>
+          </dl>
+          <a href="diensten.html" class="btn reveal">Bekijk al onze diensten {I["arrow"]}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
       <div class="container split">
         <div>
           <p class="eyebrow reveal">Herkenbaar?</p>
@@ -355,42 +419,6 @@ home += f'''
             <li><div><strong>Groter bereik</strong><span>Gevonden worden in Google en Google Maps, door mensen die nu zoeken wat jij aanbiedt.</span></div></li>
             <li><div><strong>Een plan om te groeien</strong><span>We nemen stap voor stap met je door hoe je zaak groeit, en zorgen dat je website meegroeit.</span></div></li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="diensten-titel">
-      <div class="container">
-        <div class="section__head">
-          <p class="eyebrow reveal">Diensten</p>
-          <h2 id="diensten-titel" class="split-words">Alles voor je online groei, onder één dak</h2>
-          <p class="reveal">Kies wat je nodig hebt, of laat ons het complete plaatje verzorgen. Altijd afgestemd op jouw zaak en jouw doelen.</p>
-        </div>
-        <div class="cards">
-          <article class="card reveal">
-            <span class="card__num" aria-hidden="true">01</span>
-            <div class="card__icon">{I["web"]}</div>
-            <h3>Websites</h3>
-            <p>Een moderne website die vertrouwen wekt en bezoekers omzet in klanten. Gemaakt op maat, nooit een standaard template.</p>
-            <ul><li>Ontwerp op maat</li><li>Online afspraken, reserveren of bestellen</li><li>Perfect op mobiel</li></ul>
-            <a href="diensten.html#websites" class="link-arrow">Meer over websites</a>
-          </article>
-          <article class="card card--dark reveal" data-delay="120">
-            <span class="card__num" aria-hidden="true">02</span>
-            <div class="card__icon">{I["reach"]}</div>
-            <h3>Marketing &amp; bereik</h3>
-            <p>Meer bereik in jouw regio. Met een sterk Google-profiel, lokale SEO en gerichte advertenties bereik je mensen die nu zoeken.</p>
-            <ul><li>Google Bedrijfsprofiel</li><li>Lokale SEO</li><li>Google &amp; Meta advertenties</li></ul>
-            <a href="diensten.html#marketing" class="link-arrow">Meer over marketing</a>
-          </article>
-          <article class="card reveal" data-delay="240">
-            <span class="card__num" aria-hidden="true">03</span>
-            <div class="card__icon">{I["social"]}</div>
-            <h3>Social media</h3>
-            <p>Wij helpen je op weg: profielen die kloppen, een herkenbare stijl en advies over wat werkt. De content bespreken we samen.</p>
-            <ul><li>Profielen inrichten</li><li>Huisstijl &amp; templates</li><li>Advies &amp; strategie</li></ul>
-            <a href="diensten.html#social-media" class="link-arrow">Meer over social media</a>
-          </article>
         </div>
       </div>
     </section>
@@ -470,7 +498,72 @@ home += f'''
       </div>
     </section>
 
-{cta()}  </main>
+    <section class="section" aria-labelledby="faq-titel">
+      <div class="container qa">
+        <div class="qa__head">
+          <p class="eyebrow reveal">FAQ</p>
+          <h2 id="faq-titel" class="split-words">Veelgestelde vragen</h2>
+          <p class="reveal">Alles wat je wilt weten over onze aanpak, de prijzen en hoe we samenwerken, overzichtelijk op een rij.</p>
+          <p class="qa__count reveal"><span>{len(HOME_FAQ)}</span> vragen beantwoord</p>
+          <div class="qa__ask reveal">
+            <strong>Staat je vraag er niet bij?</strong>
+            <span>Bel of app ons gerust. Je krijgt altijd direct antwoord van Halil of Sahin.</span>
+            <div class="hero__actions" style="margin:1rem 0 0">
+              <a href="{TEL}" class="btn btn--small">{I["call"]} Bel direct</a>
+              <a href="{WA}" class="btn btn--ghost btn--small" target="_blank" rel="noopener">WhatsApp ons</a>
+            </div>
+          </div>
+        </div>
+        <div class="faq faq--lines reveal">
+{home_faq()}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight seo">
+      <div class="container">
+        <h2 class="seo__title reveal">Website laten maken in Breda en Noord-Brabant</h2>
+        <p class="seo__intro reveal">Vizora Digital helpt ondernemers groeien met een sterke <a href="diensten.html">online aanwezigheid</a>. Van een snelle, overtuigende <a href="diensten.html#websites">website op maat</a> tot een goed ingericht Google Bedrijfsprofiel en een herkenbare stijl op social media: wij zorgen dat jouw zaak gevonden wordt door de juiste mensen, op het juiste moment. Benieuwd hoe we werken? Lees <a href="werkwijze.html">onze werkwijze</a> of <a href="over-ons.html">wie we zijn</a>.</p>
+        <div class="seo__cols reveal">
+          <div><h3>Webdesign op maat</h3><p>Geen standaard template, maar een <a href="diensten.html#websites">website</a> die past bij jouw zaak. Snel, perfect op mobiel en gebouwd om bezoekers klant te maken.</p></div>
+          <div><h3>Lokale vindbaarheid</h3><p>Met <a href="diensten.html#marketing">lokale SEO</a> en een sterk Google Bedrijfsprofiel word je gevonden in Breda, Etten-Leur, Oosterhout en de rest van Noord-Brabant.</p></div>
+          <div><h3>Social media</h3><p>Wij richten je <a href="diensten.html#social-media">profielen</a> in, zorgen voor een vaste stijl en geven advies over wat werkt. Content maken bespreken we samen.</p></div>
+          <div><h3>Onderhoud &amp; groei</h3><p>Met een <a href="prijzen.html#abonnement">website-abonnement</a> vanaf €25 per maand blijft je site up-to-date, veilig en snel. Elke maand een stap verder.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-titel">
+      <div class="container reach">
+        <div class="reach__copy">
+          <p class="eyebrow reveal">Contact</p>
+          <h2 id="contact-titel" class="split-words">Laten we <em>kennismaken.</em></h2>
+          <p class="lead reveal">Vertel kort wat je zoekt. We nemen zo snel mogelijk contact met je op. Liever meteen iemand spreken? Bel ons gewoon direct.</p>
+          <ul class="reach__list reveal">
+            <li><span class="reach__ic">{I["call"]}</span><div><small>Telefoon</small><a href="{TEL}">{TEL_TXT}</a></div></li>
+            <li><span class="reach__ic">{I["chat"]}</span><div><small>WhatsApp</small><a href="{WA}" target="_blank" rel="noopener">{TEL_TXT}</a></div></li>
+            <li><span class="reach__ic">{I["mail"]}</span><div><small>E-mail</small><a href="mailto:{MAIL}">{MAIL}</a></div></li>
+            <li><span class="reach__ic">{I["pin"]}</span><div><small>Werkgebied</small><b>Breda en heel Noord-Brabant</b></div></li>
+            <li><span class="reach__ic">{I["cal"]}</span><div><small>Bereikbaar</small><b>Maandag t/m zaterdag · 09:00 – 18:00</b></div></li>
+          </ul>
+        </div>
+        <form class="reach__form reveal" data-quick novalidate>
+          <h3>Stuur ons een bericht</h3>
+          <p>Kies hieronder of je het via WhatsApp of e-mail verstuurt.</p>
+          <div class="field"><label for="q-naam">Naam</label><input id="q-naam" name="naam" autocomplete="name" placeholder="Je naam" required></div>
+          <div class="field"><label for="q-bedrijf">Bedrijf <span>(optioneel)</span></label><input id="q-bedrijf" name="bedrijf" autocomplete="organization" placeholder="Naam van je zaak"></div>
+          <div class="field"><label for="q-contact">Telefoon of e-mail</label><input id="q-contact" name="contact" autocomplete="tel" placeholder="Zodat we je kunnen bereiken" required></div>
+          <div class="field"><label for="q-bericht">Bericht</label><textarea id="q-bericht" name="bericht" rows="4" placeholder="Waar kunnen we je mee helpen?"></textarea></div>
+          <p class="reach__error" role="alert" hidden>Vul je naam en telefoonnummer of e-mail in.</p>
+          <div class="reach__send">
+            <button type="button" class="btn" data-send="wa">Verstuur via WhatsApp {I["arrow"]}</button>
+            <button type="button" class="btn btn--ghost" data-send="mail">Via e-mail</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
 
 '''
 home += FOOTER
