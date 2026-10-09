@@ -121,14 +121,6 @@ FOOTER = f'''  <footer class="footer">
             <li><a href="prijzen.html#abonnement">Website-abonnement</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Voor wie</h4>
-          <ul>
-            <li><a href="website-voor-kappers.html">Kappers &amp; barbers</a></li>
-            <li><a href="website-voor-restaurants.html">Restaurants</a></li>
-            <li><a href="website-voor-beautysalons.html">Beautysalons</a></li>
-            <li><a href="website-voor-bakkerijen.html">Bakkerijen &amp; winkels</a></li>
-          </ul>
         </div>
         <div>
           <h4>Contact</h4>
@@ -314,7 +306,7 @@ home += f'''
         <div class="stage reveal" data-delay="200" aria-hidden="true">
           <div class="stage__plate stage__plate--1" data-speed="0.06"></div>
           <div class="stage__plate stage__plate--2" data-speed="0.03"></div>
-          {win("olivo-desktop.jpg", "vizoradigital.nl/concept/olivo", "left:0;top:64px;width:88%", "-0.04", eager=True)}
+          {win("olivo-desktop.jpg", "jouwbedrijf.nl", "left:0;top:64px;width:88%", "-0.04", eager=True)}
           {iphone("noir-mobile.jpg", "right:0;bottom:6px", "-0.12", eager=True)}
           <div class="chip-card chip-card--a" data-speed="-0.18">
             <div class="chip-card__icon float">{I["cal"]}</div>
@@ -327,53 +319,6 @@ home += f'''
         </div>
       </div>
       <div class="hero__scroll" aria-hidden="true"></div>
-    </section>
-
-    <section class="showcase" aria-labelledby="showcase-titel">
-      <div class="container">
-        <div class="section__head section__head--split">
-          <div>
-            <p class="eyebrow reveal">Ons werk</p>
-            <h2 id="showcase-titel" class="split-words">Design dat je <em>voelt.</em></h2>
-          </div>
-          <p class="muted reveal" style="max-width:26em">Klik op het beeld. Dit zijn concepten van websites die wij bouwen: elk ontwerp uniek, en elk ontwerp gemaakt om van bezoekers klanten te maken.</p>
-        </div>
-        <div class="contour reveal" data-contour>
-          <canvas role="img" aria-label="Conceptwebsites van een barbershop, restaurant, beautysalon en bakkerij"></canvas>
-          <span class="contour__hint">Klik om te ontdekken</span>
-          <div class="contour__ui">
-            <div class="contour__caption" aria-live="polite">
-              <span class="contour__count" data-count>Concept 01 / 04</span>
-              <h3 data-title>Barbershop Noir</h3>
-              <p data-text>Online boeken, heldere prijzen en openingstijden in één oogopslag.</p>
-            </div>
-            <button class="contour__next" type="button" data-next aria-label="Volgend concept">{I["arrow"]}</button>
-          </div>
-          <div class="contour__progress" aria-hidden="true"><i></i></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tight" aria-labelledby="concepten">
-      <div class="container">
-        <div class="section__head section__head--split">
-          <div>
-            <p class="eyebrow reveal">Wat we maken</p>
-            <h2 id="concepten" class="split-words">Een website die past bij <em>jouw</em> zaak</h2>
-          </div>
-          <p class="muted reveal" style="max-width:26em">Een barbershop heeft andere klanten dan een bakkerij. Daarom maken we geen standaard websites, maar ontwerpen die precies passen bij jouw zaak, op elk scherm.</p>
-        </div>
-      </div>
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
-            {ROW1}
-        </div>
-      </div>
-      <div class="marquee marquee--reverse" aria-hidden="true">
-        <div class="marquee__track">
-            {ROW2}
-        </div>
-      </div>
     </section>
 
     <section class="section">
@@ -458,7 +403,7 @@ home += f'''
     </section>
 
     <section class="section" aria-labelledby="demo-titel">
-      <div class="container demo" data-demo>
+      <div class="container--narrow demo demo--single">
         <div class="demo__controls">
           <div>
             <p class="eyebrow reveal">Gratis websiteconcept</p>
@@ -471,37 +416,8 @@ home += f'''
             <li><b>Samen je groeiplan</b><span>We nemen door hoe je meer bereik en meer klanten krijgt.</span></li>
           </ol>
           <div class="hero__actions reveal" style="margin:0">
-            <a href="contact.html" class="btn" data-demo-go>Plan mijn gratis concept {I["arrow"]}</a>
+            <a href="contact.html" class="btn">Plan mijn gratis concept {I["arrow"]}</a>
             <a href="{TEL}" class="btn btn--ghost">{I["call"]} Bel direct</a>
-          </div>
-        </div>
-        <div class="demo__side">
-          <div class="demo__try reveal">
-            <label class="demo__label" for="demo-name">Alvast een voorproefje? Typ je bedrijfsnaam</label>
-            <input class="demo__input" id="demo-name" type="text" maxlength="30" placeholder="Bijv. Barbershop Breda" autocomplete="organization" data-demo-input>
-            <div class="choices" role="radiogroup" aria-label="Branche">
-              <div class="choice"><input type="radio" name="demo-type" id="dt1" value="Kapper" checked><label for="dt1">Kapper</label></div>
-              <div class="choice"><input type="radio" name="demo-type" id="dt2" value="Restaurant"><label for="dt2">Restaurant</label></div>
-              <div class="choice"><input type="radio" name="demo-type" id="dt3" value="Salon"><label for="dt3">Salon</label></div>
-              <div class="choice"><input type="radio" name="demo-type" id="dt4" value="Bedrijf"><label for="dt4">Ander bedrijf</label></div>
-            </div>
-          </div>
-          <div class="demo__view reveal" data-demo-view data-theme="barber" aria-live="polite">
-            <div class="site">
-              <div class="site__bar"><span class="win__dots"><i></i><i></i><i></i></span><b data-demo-url>jouwzaak.nl</b></div>
-              <div class="site__nav">
-                <div class="site__brand"><span class="site__logo" data-demo-initial>J</span><span data-demo-name>Jouw Zaak</span></div>
-                <div class="site__links" aria-hidden="true"><i></i><i></i><i></i></div>
-              </div>
-              <div class="site__hero">
-                <small data-demo-name>Jouw Zaak</small>
-                <strong data-demo-head>Fresh cuts, elke dag</strong>
-                <span data-demo-cta>Maak een afspraak</span>
-              </div>
-              <div class="site__cards">
-                <div data-demo-card>Knippen</div><div data-demo-card>Baard</div><div data-demo-card>Styling</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -560,7 +476,7 @@ dien += f'''
           <div class="service__visual reveal" aria-hidden="true">
             <div class="plate plate--sand" style="inset:30px 0 10px 60px;rotate:6deg" data-speed="0.05"></div>
             <div class="plate plate--soft" style="inset:10px 40px 30px 20px;rotate:-3deg" data-speed="0.02"></div>
-            {win("serene-desktop.jpg", "vizoradigital.nl/concept/serene", "left:20px;right:20px;top:90px", "-0.05")}
+            {win("serene-desktop.jpg", "jouwbedrijf.nl", "left:20px;right:20px;top:90px", "-0.05")}
             <div class="chip-card" style="right:0;bottom:40px" data-speed="-0.14"><div class="chip-card__icon">{I["bolt"]}</div><div><strong>Supersnel</strong><small>laadt in een oogwenk</small></div></div>
           </div>
           <div class="service__copy">
@@ -646,19 +562,6 @@ dien += f'''
           <article class="card reveal" data-delay="120"><div class="card__icon">{I["mail"]}</div><h3>Zakelijke e-mail</h3><p>Mailen vanaf info@jouwzaak.nl in plaats van een Gmail-adres. Klein detail, groot verschil in vertrouwen.</p></article>
           <article class="card card--dark reveal" data-delay="240"><div class="card__icon">{I["shield"]}</div><h3>Website-abonnement</h3><p>Vanaf €25 per maand houden we je website up-to-date: nieuwe teksten, prijzen of foto's, onderhoud en beveiliging.</p><a href="prijzen.html#abonnement" class="link-arrow">Meer over het abonnement</a></article>
         </div>
-      </div>
-    </section>
-
-    <section class="section section--tight">
-      <div class="container">
-        <div class="section__head">
-          <p class="eyebrow reveal">Voor wie</p>
-          <h2 class="split-words">Gemaakt voor lokale ondernemers</h2>
-        </div>
-        <ul class="tags reveal">
-          <li><a href="website-voor-kappers.html">Kappers &amp; barbers →</a></li><li><a href="website-voor-restaurants.html">Restaurants &amp; cafés →</a></li><li><a href="website-voor-beautysalons.html">Beautysalons &amp; nagelstudio's →</a></li><li><a href="website-voor-bakkerijen.html">Bakkerijen →</a></li>
-          <li>Winkels</li><li>Sportscholen &amp; personal trainers</li><li>Zorg &amp; fysio</li><li>Bouw &amp; vakmensen</li><li>Starters &amp; zzp'ers</li>
-        </ul>
       </div>
     </section>
 
@@ -959,11 +862,11 @@ BEFORE_AFTER = f'''    <section class="section" aria-labelledby="voorna-titel">
         <div class="section__head center">
           <p class="eyebrow reveal">Voor &amp; na</p>
           <h2 id="voorna-titel" class="split-words">Van verouderd naar <em>Vizora.</em></h2>
-          <p class="reveal">Sleep de schuif en zie het verschil. Dezelfde barbershop, dezelfde prijzen. Alleen nu met een website die vertrouwen wekt en waar klanten direct online boeken.</p>
+          <p class="reveal">Sleep de schuif en zie het verschil. Hetzelfde bedrijf, dezelfde informatie. Alleen nu met een website die vertrouwen wekt en waar klanten direct contact opnemen of boeken.</p>
         </div>
         <div class="ba reveal" data-ba style="--pos:50%">
-          <picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/noir-mobile-45.jpg"><img src="assets/concepts/noir-desktop.jpg" alt="Nieuwe website van de barbershop, ontworpen door Vizora" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture>
-          <div class="ba__before"><picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/oud-mobile-45.jpg"><img src="assets/concepts/oud-desktop.jpg" alt="Oude, verouderde website van dezelfde barbershop" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture></div>
+          <picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/noir-mobile-45.jpg"><img src="assets/concepts/noir-desktop.jpg" alt="Nieuwe website, ontworpen door Vizora" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture>
+          <div class="ba__before"><picture class="ba__img"><source media="(max-width: 640px)" srcset="assets/concepts/oud-mobile-45.jpg"><img src="assets/concepts/oud-desktop.jpg" alt="Oude, verouderde website van hetzelfde bedrijf" width="2000" height="1000" loading="lazy" decoding="async" draggable="false"></picture></div>
           <span class="ba__tag ba__tag--before">Voor</span>
           <span class="ba__tag ba__tag--after">Na · Vizora</span>
           <div class="ba__handle" aria-hidden="true"><span>{SWAP_ICON}</span></div>
@@ -1022,7 +925,6 @@ INTRO = '''<div class="intro" aria-hidden="true">
   '''
 
 home = home.replace('''    <section class="section section--alt" aria-labelledby="diensten-titel">''', BEFORE_AFTER + '''    <section class="section section--alt" aria-labelledby="diensten-titel">''', 1)
-home = home.replace('''    <section class="section section--alt" aria-labelledby="prijzen-titel">''', CALC + '''    <section class="section section--alt" aria-labelledby="prijzen-titel">''', 1)
 home = home.replace('<a class="skip" href="#main">Naar de inhoud</a>', INTRO + '<a class="skip" href="#main">Naar de inhoud</a>', 1)
 
 # ======================= BRANCHE-PAGINA'S =======================
@@ -1192,13 +1094,12 @@ LD = {
   "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}],
 }
 home = home.replace("</head>", '  <script type="application/ld+json">' + json.dumps(LD, ensure_ascii=False) + "</script>\n</head>")
-home = home.replace('<script src="assets/mosaic.js"></script>', '<script src="assets/mosaic.js"></script>\n  <script src="assets/contour.js"></script>')
 home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/concepts/olivo-desktop.jpg">\n  <link rel="stylesheet" href="assets/style.css">')
 
-for name, html in [("index.html", home), ("diensten.html", dien), ("prijzen.html", prijs), ("werkwijze.html", werk), ("over-ons.html", over), ("contact.html", cont), ("404.html", nf)] + branche_pages:
+for name, html in [("index.html", home), ("diensten.html", dien), ("prijzen.html", prijs), ("werkwijze.html", werk), ("over-ons.html", over), ("contact.html", cont), ("404.html", nf)]:
     (OUT / name).write_text(html, encoding="utf-8")
 
 (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /concepts/\nDisallow: /tools/\n\nSitemap: {SITE}/sitemap.xml\n")
-urls = "".join(f"  <url><loc>{SITE}/{'' if p == 'index.html' else p}</loc></url>\n" for p in ["index.html", "diensten.html", "prijzen.html", "werkwijze.html", "over-ons.html", "contact.html"] + [b["file"] for b in BRANCHES])
+urls = "".join(f"  <url><loc>{SITE}/{'' if p == 'index.html' else p}</loc></url>\n" for p in ["index.html", "diensten.html", "prijzen.html", "werkwijze.html", "over-ons.html", "contact.html"])
 (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 print("ok")

@@ -931,9 +931,9 @@ html:not(.js) .intro, .intro-seen .intro { display: none; }
 .tags li { transition: background .3s, color .3s; }
 a.tag { display: inline-block; margin: .25rem .2rem; transition: background .3s, color .3s; }
 a.tag:hover { background: var(--ink); color: var(--bg); }
-.footer__top { grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr; gap: 2.4rem; }
+.footer__top { grid-template-columns: 1.6fr 1fr 1fr 1.3fr; gap: 2.4rem; }
 
-@media (max-width: 1080px) { .footer__top { grid-template-columns: 1fr 1fr 1fr; } }
+@media (max-width: 1080px) { .footer__top { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 980px) {
   .calc { grid-template-columns: 1fr; gap: 2.5rem; }
   .ba__points { grid-template-columns: 1fr; }
@@ -946,3 +946,5 @@ a.tag:hover { background: var(--ink); color: var(--bg); }
   .footer__top > div:first-child { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
+.demo--single { display: block; }
+.demo--single .demo__controls { display: grid; gap: 1.6rem; }
