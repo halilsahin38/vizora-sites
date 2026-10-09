@@ -209,6 +209,12 @@ def iphone(img, style="", speed=None, eager=False):
             </div>
           </div>'''
 
+# Echte foto in een afgerond kader; de foto beweegt zacht mee met scrollen
+def photo(name, alt, cls="", speed="-0.08", w=1024, h=683, pos="center"):
+    return f'''<figure class="photo {cls}">
+            <picture><source srcset="assets/foto/{name}.webp" type="image/webp"><img src="assets/foto/{name}.jpg" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async" data-speed="{speed}" style="object-position:{pos}"></picture>
+          </figure>'''
+
 def shot(img, label):
     return f'''<figure class="shot"><div class="win__bar"><span class="win__dots"><i></i><i></i><i></i></span></div><img src="assets/concepts/{img}" alt="" width="800" height="400" loading="lazy" decoding="async"><figcaption>{label}</figcaption></figure>'''
 
@@ -368,10 +374,9 @@ home += f'''
 
     <section class="section">
       <div class="container roof">
-        <div class="roof__visual reveal" aria-hidden="true">
-          <div class="roof__panel" data-speed="0.05"></div>
-          {iphone("merk-mobile.jpg", "left:50%;top:110px;translate:-50% 0", "-0.08")}
-          <div class="chip-card roof__chip" data-speed="-0.14">
+        <div class="roof__visual reveal">
+          {photo("werkplek", "Werkplek met laptop, notitieboek en koffie op een houten bureau", "photo--fill", "-0.1", pos="45% center")}
+          <div class="chip-card roof__chip" data-speed="-0.14" aria-hidden="true">
             <div class="chip-card__icon">{I["pen"]}</div>
             <div><strong>Jouw concept</strong><small>gratis bij je eerste gesprek</small></div>
           </div>
@@ -444,7 +449,14 @@ home += f'''
     </section>
 
     <section class="section" aria-labelledby="demo-titel">
-      <div class="container--narrow demo demo--single">
+      <div class="container concept">
+        <div class="concept__visual reveal">
+          {photo("schets", "Schets van een website-ontwerp op papier met een pen", "photo--fill", "-0.1", w=960, h=720)}
+          <div class="chip-card concept__chip" data-speed="-0.12" aria-hidden="true">
+            <div class="chip-card__icon">{I["pen"]}</div>
+            <div><strong>Van schets tot site</strong><small>eerst zien, dan beslissen</small></div>
+          </div>
+        </div>
         <div class="demo__controls">
           <div>
             <p class="eyebrow reveal">Gratis websiteconcept</p>
@@ -488,6 +500,10 @@ home += f'''
             <h2 id="werkwijze-titel" class="split-words">Van eerste gesprek tot groei</h2>
           </div>
           <a href="werkwijze.html" class="link-arrow reveal">Bekijk de hele werkwijze</a>
+        </div>
+        <div class="band reveal">
+          {photo("groeiplan", "Notitieboek met plannen voor een website en groeidoelen, naast een laptop en koffie", "photo--fill", "-0.07")}
+          <p class="band__quote">Geen vage beloftes. Wel een duidelijk plan, <em>stap voor stap.</em></p>
         </div>
         <ol class="steps">
           <li class="step reveal"><span class="step__n" aria-hidden="true">01</span><h3>Kennismaken</h3><p>Gratis gesprek: bellen, appen, video of bij jou langs in de regio Breda.</p></li>

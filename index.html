@@ -106,15 +106,11 @@
 
     <section class="section">
       <div class="container roof">
-        <div class="roof__visual reveal" aria-hidden="true">
-          <div class="roof__panel" data-speed="0.05"></div>
-          <div class="iphone" style="left:50%;top:110px;translate:-50% 0" data-speed="-0.08">
-            <div class="iphone__screen">
-              <img src="assets/concepts/merk-mobile.jpg" alt="" width="780" height="1688" loading="lazy" decoding="async">
-              <span class="iphone__island"></span><span class="iphone__glare"></span>
-            </div>
-          </div>
-          <div class="chip-card roof__chip" data-speed="-0.14">
+        <div class="roof__visual reveal">
+          <figure class="photo photo--fill">
+            <picture><source srcset="assets/foto/werkplek.webp" type="image/webp"><img src="assets/foto/werkplek.jpg" alt="Werkplek met laptop, notitieboek en koffie op een houten bureau" width="1024" height="683" loading="lazy" decoding="async" data-speed="-0.1" style="object-position:45% center"></picture>
+          </figure>
+          <div class="chip-card roof__chip" data-speed="-0.14" aria-hidden="true">
             <div class="chip-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="m13 7 4 4"/></svg></div>
             <div><strong>Jouw concept</strong><small>gratis bij je eerste gesprek</small></div>
           </div>
@@ -187,7 +183,16 @@
     </section>
 
     <section class="section" aria-labelledby="demo-titel">
-      <div class="container--narrow demo demo--single">
+      <div class="container concept">
+        <div class="concept__visual reveal">
+          <figure class="photo photo--fill">
+            <picture><source srcset="assets/foto/schets.webp" type="image/webp"><img src="assets/foto/schets.jpg" alt="Schets van een website-ontwerp op papier met een pen" width="960" height="720" loading="lazy" decoding="async" data-speed="-0.1" style="object-position:center"></picture>
+          </figure>
+          <div class="chip-card concept__chip" data-speed="-0.12" aria-hidden="true">
+            <div class="chip-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="m13 7 4 4"/></svg></div>
+            <div><strong>Van schets tot site</strong><small>eerst zien, dan beslissen</small></div>
+          </div>
+        </div>
         <div class="demo__controls">
           <div>
             <p class="eyebrow reveal">Gratis websiteconcept</p>
@@ -301,6 +306,12 @@
             <h2 id="werkwijze-titel" class="split-words">Van eerste gesprek tot groei</h2>
           </div>
           <a href="werkwijze.html" class="link-arrow reveal">Bekijk de hele werkwijze</a>
+        </div>
+        <div class="band reveal">
+          <figure class="photo photo--fill">
+            <picture><source srcset="assets/foto/groeiplan.webp" type="image/webp"><img src="assets/foto/groeiplan.jpg" alt="Notitieboek met plannen voor een website en groeidoelen, naast een laptop en koffie" width="1024" height="683" loading="lazy" decoding="async" data-speed="-0.07" style="object-position:center"></picture>
+          </figure>
+          <p class="band__quote">Geen vage beloftes. Wel een duidelijk plan, <em>stap voor stap.</em></p>
         </div>
         <ol class="steps">
           <li class="step reveal"><span class="step__n" aria-hidden="true">01</span><h3>Kennismaken</h3><p>Gratis gesprek: bellen, appen, video of bij jou langs in de regio Breda.</p></li>
