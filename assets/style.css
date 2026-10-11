@@ -1205,3 +1205,4 @@ a.tag:hover { background: var(--ink); color: var(--bg); }
   .city { height: 560px; border-radius: 26px; }
   .city .photo::after { background: linear-gradient(0deg, rgba(12,11,10,.85) 0%, rgba(12,11,10,.5) 55%, rgba(12,11,10,.1) 100%); }
 }
+.scard__body { padding: 1.6rem 1.6rem 1.8rem; }

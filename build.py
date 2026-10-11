@@ -100,7 +100,7 @@ FOOTER = f'''  <footer class="footer">
           <a href="index.html" class="logo">
             {LOGO}
           </a>
-          <p>Websites, bereik en online groei voor ondernemers die verder willen. Vanuit Breda, voor heel Noord-Brabant.</p>
+          <p>Websites, bereik en online groei voor ondernemers die verder willen. Vanuit Breda, voor ondernemers in heel Nederland.</p>
           <a href="contact.html" class="btn btn--light btn--small footer__cta">Plan een gratis gesprek {I["arrow"]}</a>
         </div>
         <div>
@@ -334,7 +334,7 @@ home += f'''
       <div class="container">
         <div class="hx__frame">
           <div class="hx__copy">
-            <p class="eyebrow reveal">Jouw online partner uit Breda</p>
+            <p class="eyebrow reveal">Webdesign voor ondernemers in heel Nederland</p>
             <h1 class="split-words">Meer klanten, met een online uitstraling die <em>klopt.</em></h1>
             <p class="hx__lead reveal" data-delay="400">Wij zorgen dat jouw zaak online gevonden, gekozen en geboekt wordt. Met een website die vertrouwen wekt, meer bereik in Google en een helder plan om te groeien. Zodat jij je kunt richten op waar je goed in bent: je zaak.</p>
             <p class="hx__strong reveal" data-delay="500">Gratis websiteconcept bij je eerste gesprek.</p>
@@ -357,15 +357,12 @@ home += f'''
         </div>
         <div class="hx__cards">
           <a href="diensten.html#websites" class="scard reveal">
-            <div class="scard__art"><picture><source srcset="assets/foto/laptop-breed.webp" type="image/webp"><img src="assets/foto/laptop-breed.jpg" alt="" width="1400" height="1065" loading="lazy" decoding="async" style="object-position:center 35%"></picture></div>
             <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Websites</h2><p>Een website op maat die vertrouwen wekt en van bezoekers klanten maakt. Van one-pager tot complete site.</p></div>
           </a>
           <a href="diensten.html#marketing" class="scard reveal" data-delay="120">
-            <div class="scard__art"><picture><source srcset="assets/foto/ondernemer-telefoon.webp" type="image/webp"><img src="assets/foto/ondernemer-telefoon.jpg" alt="" width="1400" height="933" loading="lazy" decoding="async" style="object-position:center 30%"></picture></div>
             <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Marketing &amp; bereik</h2><p>Gevonden worden in Google en Google Maps, door mensen in jouw regio die nu zoeken wat jij aanbiedt.</p></div>
           </a>
           <a href="diensten.html#social-media" class="scard reveal" data-delay="240">
-            <div class="scard__art"><picture><source srcset="assets/foto/ondernemer-tablet.webp" type="image/webp"><img src="assets/foto/ondernemer-tablet.jpg" alt="" width="1400" height="933" loading="lazy" decoding="async" style="object-position:center 30%"></picture></div>
             <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Social media</h2><p>Profielen die kloppen, een herkenbare stijl en eerlijk advies over wat werkt. De content bespreken we samen.</p></div>
           </a>
         </div>
@@ -375,21 +372,14 @@ home += f'''
     <section class="section">
       <div class="container roof">
         <div class="roof__visual reveal">
-          {photo("ondernemer-atelier", "Ondernemer aan het werk in haar atelier", "roof__a", "-0.06", w=1200, h=1800, pos="center 40%")}
-          <div class="roof__b" data-speed="-0.14">
-            {photo("ondernemer-winkel", "Eigenaar van een winkel tussen haar kledingrekken", "", None, pos="center 30%")}
-          </div>
-          <div class="chip-card roof__chip" data-speed="-0.2" aria-hidden="true">
-            <div class="chip-card__icon">{I["pen"]}</div>
-            <div><strong>Jouw concept</strong><small>gratis bij je eerste gesprek</small></div>
-          </div>
+          {photo("laptop", "Laptop op een houten bureau met een website van Vizora op het scherm", "photo--fill", "-0.07", w=1400, h=1733, pos="center 62%")}
         </div>
         <div class="roof__copy">
           <h2 class="roof__title reveal">Alles wat je online nodig hebt, onder <em>één dak.</em></h2>
           <div class="roof__cols reveal">
             <div>
               <p>Van een eerste <a href="diensten.html#websites">website</a> tot een compleet groeiplan: wij bouwen een online basis die past bij jouw zaak en jouw doelen. Alles sluit op elkaar aan, zodat je overal herkenbaar en professioneel overkomt.</p>
-              <p>Daarnaast zorgen we dat je gevonden wordt. Met een sterk <a href="diensten.html#marketing">Google Bedrijfsprofiel</a>, lokale SEO en advies over advertenties bereik je mensen in Breda en omgeving die nu zoeken wat jij aanbiedt.</p>
+              <p>Daarnaast zorgen we dat je gevonden wordt. Met een sterk <a href="diensten.html#marketing">Google Bedrijfsprofiel</a>, lokale SEO en advies over advertenties bereik je mensen in jouw omgeving die nu zoeken wat jij aanbiedt.</p>
             </div>
             <div>
               <p>Ook op <a href="diensten.html#social-media">social media</a> helpen we je op weg: profielen die kloppen, een vaste stijl en een duidelijk plan.</p>
@@ -403,21 +393,6 @@ home += f'''
           </dl>
           <a href="diensten.html" class="btn reveal">Bekijk al onze diensten {I["arrow"]}</a>
         </div>
-      </div>
-    </section>
-
-    <section class="section section--tight people" aria-labelledby="people-titel">
-      <div class="container">
-        <div class="people__head">
-          <h2 id="people-titel" class="reveal">Voor ondernemers die <em>verder</em> willen.</h2>
-          <p class="reveal">Of je nu net begint of al jaren je eigen zaak hebt: wij zorgen dat de mensen in jouw omgeving je vinden, vertrouwen en kiezen.</p>
-        </div>
-      </div>
-      <div class="people__row">
-        <div class="people__item" data-speed="-0.05">{photo("ondernemer-zaak", "Lachende ondernemer in haar zaak", "", None)}</div>
-        <div class="people__item people__item--low" data-speed="-0.14">{photo("vakman", "Vakman aan het werk in zijn werkplaats", "", None)}</div>
-        <div class="people__item" data-speed="-0.08">{photo("ondernemer-telefoon", "Ondernemer achter de toonbank met zijn telefoon", "", None, pos="center 30%")}</div>
-        <div class="people__item people__item--low" data-speed="-0.17">{photo("ondernemer-tablet", "Ondernemer met een tablet aan tafel", "", None)}</div>
       </div>
     </section>
 
@@ -460,7 +435,7 @@ home += f'''
             <div class="benefit reveal" data-delay="200"><div class="icon">{I["inbox"]}</div><h3>Meer aanvragen</h3><p>Duidelijke knoppen, online afspraken en WhatsApp: we maken het je klanten zo makkelijk mogelijk om contact op te nemen.</p></div>
             <div class="benefit reveal"><div class="icon">{I["route"]}</div><h3>Een plan, stap voor stap</h3><p>We nemen samen door waar je nu staat, waar je naartoe wilt en hoe we daar komen. Geen vage beloftes, wel een duidelijk plan.</p></div>
             <div class="benefit reveal" data-delay="100"><div class="icon">{I["call"]}</div><h3>Direct contact</h3><p>Bellen, appen of mailen: je spreekt altijd direct met Halil of Sahin. Geen tussenpersonen, geen wachttijden.</p></div>
-            <div class="benefit reveal" data-delay="200"><div class="icon">{I["shield"]}</div><h3>Eerlijk &amp; lokaal</h3><p>Vanuit Breda, met duidelijke prijzen vooraf. En als iets niet nodig is voor jouw zaak, zeggen we dat ook.</p></div>
+            <div class="benefit reveal" data-delay="200"><div class="icon">{I["shield"]}</div><h3>Eerlijk &amp; persoonlijk</h3><p>Persoonlijk contact, met duidelijke prijzen vooraf. En als iets niet nodig is voor jouw zaak, zeggen we dat ook.</p></div>
           </div>
         </div>
       </div>
@@ -512,30 +487,12 @@ home += f'''
           </div>
           <a href="werkwijze.html" class="link-arrow reveal">Bekijk de hele werkwijze</a>
         </div>
-        <div class="band reveal">
-          {photo("koffie", "Twee mensen met een kop koffie aan tafel tijdens een gesprek", "photo--fill", "-0.07", w=2000, h=1333, pos="center 45%")}
-          <p class="band__quote">Geen vage beloftes. Wel een duidelijk plan, <em>stap voor stap.</em></p>
-        </div>
         <ol class="steps">
-          <li class="step reveal"><span class="step__n" aria-hidden="true">01</span><h3>Kennismaken</h3><p>Gratis gesprek: bellen, appen, video of bij jou langs in de regio Breda.</p></li>
+          <li class="step reveal"><span class="step__n" aria-hidden="true">01</span><h3>Kennismaken</h3><p>Gratis gesprek: bellen, appen of via video. Waar je ook zit in Nederland.</p></li>
           <li class="step reveal" data-delay="100"><span class="step__n" aria-hidden="true">02</span><h3>Concept &amp; groeiplan</h3><p>We laten je websiteconcept zien en bespreken stap voor stap hoe je groeit.</p></li>
           <li class="step reveal" data-delay="200"><span class="step__n" aria-hidden="true">03</span><h3>Bouwen &amp; lanceren</h3><p>Wij bouwen, testen en zetten alles live. Jij hoeft niks technisch te doen.</p></li>
           <li class="step reveal" data-delay="300"><span class="step__n" aria-hidden="true">04</span><h3>Blijven groeien</h3><p>Met ons abonnement blijft je website elke maand up-to-date.</p></li>
         </ol>
-      </div>
-    </section>
-
-    <section class="section section--tight">
-      <div class="container">
-        <div class="city reveal">
-          {photo("breda", "De Grote Markt in Breda met de Grote Kerk", "photo--fill", "-0.08", w=1600, h=2133, pos="center 62%")}
-          <div class="city__copy">
-            <p class="eyebrow">Vanuit Breda</p>
-            <h2>Gewoon dichtbij, <em>in Noord-Brabant.</em></h2>
-            <p>Geen bureau op afstand, maar twee vaste aanspreekpunten uit Breda. Even langskomen voor een kop koffie en je concept? Dat kan altijd.</p>
-            <a href="contact.html" class="btn btn--light">Plan een gratis gesprek {I["arrow"]}</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -563,11 +520,11 @@ home += f'''
 
     <section class="section section--tight seo">
       <div class="container">
-        <h2 class="seo__title reveal">Website laten maken in Breda en Noord-Brabant</h2>
+        <h2 class="seo__title reveal">Website laten maken, in heel Nederland</h2>
         <p class="seo__intro reveal">Vizora Digital helpt ondernemers groeien met een sterke <a href="diensten.html">online aanwezigheid</a>. Van een snelle, overtuigende <a href="diensten.html#websites">website op maat</a> tot een goed ingericht Google Bedrijfsprofiel en een herkenbare stijl op social media: wij zorgen dat jouw zaak gevonden wordt door de juiste mensen, op het juiste moment. Benieuwd hoe we werken? Lees <a href="werkwijze.html">onze werkwijze</a> of <a href="over-ons.html">wie we zijn</a>.</p>
         <div class="seo__cols reveal">
           <div><h3>Webdesign op maat</h3><p>Geen standaard template, maar een <a href="diensten.html#websites">website</a> die past bij jouw zaak. Snel, perfect op mobiel en gebouwd om bezoekers klant te maken.</p></div>
-          <div><h3>Lokale vindbaarheid</h3><p>Met <a href="diensten.html#marketing">lokale SEO</a> en een sterk Google Bedrijfsprofiel word je gevonden in Breda, Etten-Leur, Oosterhout en de rest van Noord-Brabant.</p></div>
+          <div><h3>Lokale vindbaarheid</h3><p>Met <a href="diensten.html#marketing">lokale SEO</a> en een sterk Google Bedrijfsprofiel word je gevonden door mensen in jouw stad of regio, waar in Nederland je ook zit.</p></div>
           <div><h3>Social media</h3><p>Wij richten je <a href="diensten.html#social-media">profielen</a> in, zorgen voor een vaste stijl en geven advies over wat werkt. Content maken bespreken we samen.</p></div>
           <div><h3>Onderhoud &amp; groei</h3><p>Met een <a href="prijzen.html#abonnement">website-abonnement</a> vanaf €25 per maand blijft je site up-to-date, veilig en snel. Elke maand een stap verder.</p></div>
         </div>
@@ -584,7 +541,7 @@ home += f'''
             <li><span class="reach__ic">{I["call"]}</span><div><small>Telefoon</small><a href="{TEL}">{TEL_TXT}</a></div></li>
             <li><span class="reach__ic">{I["chat"]}</span><div><small>WhatsApp</small><a href="{WA}" target="_blank" rel="noopener">{TEL_TXT}</a></div></li>
             <li><span class="reach__ic">{I["mail"]}</span><div><small>E-mail</small><a href="mailto:{MAIL}">{MAIL}</a></div></li>
-            <li><span class="reach__ic">{I["pin"]}</span><div><small>Werkgebied</small><b>Breda en heel Noord-Brabant</b></div></li>
+            <li><span class="reach__ic">{I["pin"]}</span><div><small>Werkgebied</small><b>Heel Nederland (vanuit Breda)</b></div></li>
             <li><span class="reach__ic">{I["cal"]}</span><div><small>Bereikbaar</small><b>Maandag t/m zaterdag · 09:00 – 18:00</b></div></li>
           </ul>
         </div>
@@ -644,7 +601,11 @@ dien += f'''
 
         <div class="service service--flip" id="marketing">
           <div class="service__visual reveal" aria-hidden="true">
-            {photo("ondernemer-telefoon", "Ondernemer achter de toonbank die op zijn telefoon kijkt", "photo--fill", "-0.07", pos="center 30%")}
+            <div class="dash" style="left:40px;right:40px;top:110px" data-speed="-0.05">
+              <small>Websitebezoekers</small>
+              <strong>Meer bezoekers</strong>
+              {dash_svg}
+            </div>
             <div class="chip-card" style="right:0;top:10px" data-speed="-0.15"><div class="chip-card__icon">{I["search"]}</div><div><strong>Google</strong><small>gevonden worden</small></div></div>
             <div class="chip-card" style="left:0;bottom:30px" data-speed="-0.1"><div class="chip-card__icon">{I["pin"]}</div><div><strong>Google Maps</strong><small>lokaal zichtbaar</small></div></div>
           </div>
@@ -744,7 +705,7 @@ werk += f'''
           <details><summary>Kan ik later nog dingen laten aanpassen?</summary><p>Ja. Met ons website-abonnement (vanaf €25 per maand) werken we je website elke maand bij. Zonder abonnement kan het ook; dan spreken we per aanpassing een prijs af.</p></details>
           <details><summary>Maken jullie ook posts voor social media?</summary><p>Dat bespreken we graag. We richten je profielen in en helpen met stijl en strategie. Content maken of posten valt buiten de pakketten en kost extra.</p></details>
           <details><summary>Ik heb al een website. Kunnen jullie die verbeteren?</summary><p>Zeker. We kijken eerst gratis naar je huidige site en vertellen eerlijk of verbeteren of opnieuw bouwen slimmer is.</p></details>
-          <details><summary>Waar zitten jullie?</summary><p>We zitten in Breda en komen graag bij je langs in Noord-Brabant. Daarbuiten werken we net zo makkelijk via video of telefoon.</p></details>
+          <details><summary>Waar zitten jullie?</summary><p>We zitten in Breda en werken voor ondernemers in heel Nederland. Kennismaken en overleggen gaat makkelijk via telefoon, WhatsApp of video.</p></details>
         </div>
       </div>
     </section>
@@ -827,7 +788,7 @@ cont += f'''
             <li><a href="{WA}" target="_blank" rel="noopener"><span class="icon">{I["chat"]}</span><div><strong>WhatsApp</strong><span>{TEL_TXT}</span></div></a></li>
             <li><a href="mailto:{MAIL}"><span class="icon">{I["mail"]}</span><div><strong>E-mail</strong><span>{MAIL}</span></div></a></li>
           </ul>
-          <p class="area reveal">{I["pin"]} Breda &amp; Noord-Brabant · ma t/m za 09:00 – 18:00</p>
+          <p class="area reveal">{I["pin"]} Heel Nederland · ma t/m za 09:00 – 18:00</p>
           <div class="promise reveal" style="margin-top:1.2rem">
             <h3>Wat je van het gesprek krijgt</h3>
             <ul>
@@ -845,7 +806,7 @@ cont += f'''
             <div class="choices">
               <div class="choice"><input type="radio" name="vorm" id="v1" value="Videogesprek" checked><label for="v1">Videogesprek</label></div>
               <div class="choice"><input type="radio" name="vorm" id="v2" value="Telefonisch gesprek"><label for="v2">Telefonisch</label></div>
-              <div class="choice"><input type="radio" name="vorm" id="v3" value="Afspraak op locatie"><label for="v3">Op locatie <small>regio Breda</small></label></div>
+              <div class="choice"><input type="radio" name="vorm" id="v3" value="Afspraak op locatie"><label for="v3">Op locatie <small>in overleg</small></label></div>
             </div>
           </fieldset>
 
@@ -1222,12 +1183,12 @@ LD = {
   "url": SITE,
   "logo": SITE + "/assets/logo.svg",
   "image": SITE + "/assets/og.png",
-  "description": "Websites, social media en marketing voor ondernemers in Breda en Noord-Brabant.",
+  "description": "Websites, social media en marketing voor ondernemers in heel Nederland. Vanuit Breda.",
   "telephone": "+31638705348",
   "email": MAIL,
   "priceRange": "€€",
   "address": {"@type": "PostalAddress", "addressLocality": "Breda", "addressRegion": "Noord-Brabant", "addressCountry": "NL"},
-  "areaServed": [{"@type": "City", "name": "Breda"}, {"@type": "AdministrativeArea", "name": "Noord-Brabant"}],
+  "areaServed": {"@type": "Country", "name": "Nederland"},
   "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "18:00"}],
   "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}],
