@@ -5,8 +5,8 @@ FILE = "over-ons.html"
 # Foto van Halil & Sahin: zodra die er is, zet hier de bestandsnaam (zonder extensie) uit assets/foto/,
 # bijvoorbeeld "halil-sahin" (met halil-sahin.webp + halil-sahin.jpg, staand, liefst 4:5, bv. 1200x1500).
 # De opmaak staat al klaar (.duo__photo in assets/css/over-ons.css).
-PHOTO = None
-PHOTO_SIZE = (1200, 1500)
+PHOTO = "halil"
+PHOTO_SIZE = (640, 800)
 
 PROMISES = [
     ("Persoonlijk", "Je spreekt altijd Halil of Sahin. Geen accountmanager, geen ticketnummer, geen wachtrij. We kennen je zaak en denken mee alsof het onze eigen zaak is."),
@@ -21,7 +21,7 @@ def photo_slot():
     if not PHOTO:
         return "<!-- foto Halil & Sahin -->"
     w, h = PHOTO_SIZE
-    return f'<figure class="duo__photo" data-clip>{pic(PHOTO, "Halil en Sahin, de oprichters van Vizora Digital", w, h)}</figure>'
+    return f'<figure class="duo__photo" data-clip>{pic(PHOTO, "Halil, medeoprichter van Vizora Digital", w, h)}</figure>'
 
 
 def render():
