@@ -1,0 +1,85 @@
+/* =========================================================
+   Over ons
+   ========================================================= */
+
+/* ---------- wie we zijn ---------- */
+.duo { padding-bottom: clamp(80px, 9vw, 140px); }
+.duo__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); gap: var(--gap); align-items: start; }
+.duo__grid::before { content: ""; grid-column: 1 / -1; height: 1px; background: var(--ink); margin-bottom: clamp(20px, 2.6vw, 36px); }
+.duo__side .label { padding-top: .2em; }
+.duo__main { min-width: 0; }
+.duo__names { font-weight: 500; font-size: clamp(3.6rem, 12.4vw, 13rem); line-height: .84; letter-spacing: -.065em; margin-left: -.05em; }
+.duo__names span { color: var(--faint); font-weight: 300; }
+.duo__lead { margin-top: clamp(2rem, 3.4vw, 3.2rem); font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.4; letter-spacing: -.015em; max-width: 34em; }
+.duo__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-top: clamp(1.8rem, 3vw, 2.6rem); color: var(--muted); max-width: 60em; }
+.duo__facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin-top: clamp(2.6rem, 4.4vw, 4rem); max-width: 60em; }
+.duo__facts div { border-top: 1px solid var(--rule); padding-top: 1rem; }
+.duo__facts dt { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.duo__facts dd { font-weight: 500; font-size: clamp(1.2rem, 1.8vw, 1.6rem); letter-spacing: -.03em; margin-top: .4rem; }
+
+/* plek voor de foto van Halil & Sahin (staand portret, zie PHOTO in src/pages/over_ons.py) */
+.duo__photo { margin: clamp(1.6rem, 2.6vw, 2.4rem) 0 0; max-width: 420px; aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: var(--beige); }
+.duo__photo picture, .duo__photo img { width: 100%; height: 100%; }
+.duo__photo img { object-fit: cover; }
+
+/* ---------- ons verhaal ---------- */
+.story { border-top: 1px solid var(--rule); }
+.story__lead { margin-top: clamp(1.8rem, 3vw, 2.6rem); font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.4; letter-spacing: -.015em; max-width: 34em; }
+.story__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-top: clamp(1.6rem, 2.6vw, 2.2rem); color: var(--muted); max-width: 60em; }
+.name { margin-top: clamp(3.6rem, 6vw, 5.6rem); }
+.name > .label { padding-bottom: 1rem; }
+.name__list { border-top: 1px solid var(--rule); }
+.name__list div { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--gap); align-items: baseline; padding: clamp(16px, 1.8vw, 24px) 0; border-bottom: 1px solid var(--rule); }
+.name__list dt { font-weight: 500; font-size: clamp(1.9rem, 3.2vw, 3.1rem); line-height: 1; letter-spacing: -.05em; }
+.name__list dd { color: var(--muted); font-size: .98rem; max-width: 24em; }
+.name__list .name__sum { border-top: 1px solid var(--ink); margin-top: -1px; border-bottom: 0; }
+.name__sum dt { color: var(--terra); }
+.name__sum dd { color: var(--ink); font-weight: 500; }
+
+/* ---------- citaat ---------- */
+.quote { background: var(--beige); padding-block: clamp(90px, 11vw, 170px); }
+.quote__in { margin-block: 0; }
+.quote__text { margin: 0; }
+.quote__text p { font-weight: 500; font-size: clamp(2.2rem, 5.6vw, 6rem); line-height: .98; letter-spacing: -.05em; max-width: 14em; text-wrap: balance; }
+.quote__text span { color: var(--terra-ink); }
+.quote__in figcaption { margin-top: clamp(1.8rem, 3vw, 2.6rem); }
+
+/* ---------- beloftes ---------- */
+.pr__list { margin-top: clamp(48px, 6vw, 90px); border-top: 1px solid var(--ink); }
+.pr__row { display: grid; grid-template-columns: calc((100% - var(--gap)) / 3.6) minmax(0, 1.15fr) minmax(0, 1.45fr); gap: var(--gap); align-items: baseline; padding: clamp(22px, 2.6vw, 38px) 0; border-bottom: 1px solid var(--rule); }
+.pr__t { font-weight: 500; font-size: clamp(2rem, 3.8vw, 3.6rem); line-height: 1; letter-spacing: -.05em; }
+.pr__d { color: var(--muted); font-size: 1rem; max-width: 30em; }
+
+/* ---------- direct contact ---------- */
+.direct { background: var(--beige); padding-block: clamp(80px, 10vw, 150px); }
+.direct__text { margin-top: 1.6rem; color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 34em; }
+.direct__tel {
+  display: inline-block; margin-top: clamp(2rem, 4vw, 3.4rem); white-space: nowrap;
+  font-weight: 500; font-size: clamp(2.6rem, 7.2vw, 7.6rem); line-height: 1; letter-spacing: -.055em;
+  border-bottom: 2px solid currentColor; padding-bottom: .06em; transition: color .3s;
+}
+.direct__tel:hover { color: var(--terra-ink); }
+.direct__actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: clamp(2rem, 3.4vw, 2.8rem); }
+.direct__more { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-top: 1.6rem; }
+
+/* ---------- responsief ---------- */
+@media (max-width: 1100px) {
+  .pr__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); }
+  .pr__n { grid-column: 1 / -1; }
+}
+@media (max-width: 960px) {
+  .duo__grid { grid-template-columns: 1fr; row-gap: 1.6rem; }
+  .duo__grid::before { margin-bottom: .4rem; }
+  .duo__photo { max-width: 480px; }
+  .duo__names { font-size: clamp(3.6rem, 21vw, 9rem); }
+  .name__list div { grid-template-columns: 1fr; gap: .4rem; }
+}
+@media (max-width: 560px) {
+  .duo__cols, .story__cols { grid-template-columns: 1fr; gap: 1rem; }
+  .duo__facts { grid-template-columns: 1fr; gap: 0; }
+  .duo__facts div { display: flex; justify-content: space-between; align-items: baseline; padding: .9rem 0; }
+  .duo__facts dd { margin: 0; font-size: 1.15rem; }
+  .pr__row { grid-template-columns: 1fr; gap: .6rem; }
+  .direct__tel { font-size: 11.2vw; }
+  .direct__actions .btn { width: 100%; }
+}
