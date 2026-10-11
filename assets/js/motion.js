@@ -8,7 +8,6 @@
  *   data-grow         groot beeld groeit mee tijdens het scrollen (hero)
  *   data-speed="-0.1" parallax: beweegt langzamer/sneller dan de pagina
  *   data-hscroll      sectie met horizontale galerij (pin op desktop); track = [data-hscroll-track]
- *   .st               gestapelde kaarten: de onderste kaart krimpt licht als de volgende eroverheen schuift
  *
  * Bij prefers-reduced-motion of zonder GSAP blijft alles gewoon zichtbaar en statisch.
  */
@@ -138,17 +137,6 @@
       });
     });
   }
-
-  /* gestapelde kaarten */
-  const cards = gsap.utils.toArray('.st');
-  cards.forEach((card, i) => {
-    const next = cards[i + 1];
-    if (!next) return;
-    gsap.to(card.querySelector('.st__in'), {
-      scale: 0.95, '--dim': 0.45, ease: 'none',
-      scrollTrigger: { trigger: next, start: 'top 85%', end: 'top 20%', scrub: true },
-    });
-  });
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
 })();

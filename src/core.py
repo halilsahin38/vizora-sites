@@ -53,17 +53,6 @@ GUARANTEES = [
     ("Domein op jouw naam", "Je domeinnaam is en blijft van jou. Geen gedoe als je ooit wilt overstappen."),
     ("Maandelijks opzegbaar", "Het abonnement loopt per maand. Geen jaarcontract, geen kleine lettertjes."),
 ]
-FAQ = [
-    ("Wat doet Vizora Digital precies?", "Wij maken websites op maat en zorgen dat je gevonden wordt in Google en Google Maps. Daarnaast helpen we je op weg met social media. Eén vast team, persoonlijk contact, voor ondernemers in heel Nederland."),
-    ("Wat kost een website?", "Onze pakketten beginnen bij €200 (Start), €350 (Groei) en €500 (Compleet), eenmalig. Na het gratis gesprek krijg je altijd eerst een offerte op maat, zodat je precies weet waar je aan toe bent."),
-    ("Wat is het gratis websiteconcept?", "Als je een gesprek plant, maken wij vooraf een eerste ontwerp van jouw website. In het gesprek laten we het zien en bespreken we stap voor stap hoe jouw zaak online kan groeien. Gratis en vrijblijvend."),
-    ("Wat als ik niet tevreden ben?", "Dan betaal je niets. Je ziet eerst het ontwerp en we passen het twee keer aan naar jouw wensen. Pas als jij tevreden bent, gaan we verder en ontvang je de factuur."),
-    ("Hoe lang duurt het voordat mijn website online staat?", "Dat hangt af van je wensen en hoe snel de teksten en foto's rond zijn. In het eerste gesprek spreken we samen een planning af die bij jou past."),
-    ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; daar helpen we je ook bij."),
-    ("Kan ik later nog dingen laten aanpassen?", "Ja. Met een website-abonnement vanaf €25 per maand passen we elke maand dingen voor je aan en houden we je site veilig en up-to-date. Zonder abonnement kan het ook, dan spreken we per keer een prijs af."),
-    ("Maken jullie ook posts voor social media?", "We richten je profielen in en helpen met stijl en strategie. Content maken of posten valt daarbuiten; dat bespreken we graag samen en kost extra."),
-]
-
 LD = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -248,19 +237,6 @@ def price_columns():
             <ul class="pk__list">{feats}</ul>
             <a href="contact.html?pakket={p["name"]}" class="btn{"" if p["featured"] else " btn--ghost"} pk__btn">Kies {p["name"]} {I["arrow"]}</a>
           </article>''')
-    return "\n".join(out)
-
-
-def sub_rows():
-    out = []
-    for t in SUB_TIERS:
-        feats = " · ".join(t["feats"])
-        out.append(f'''          <a class="sub__row" href="contact.html?pakket=Abonnement%20{t["name"]}">
-            <span class="sub__name">{t["name"]}</span>
-            <span class="sub__feats">{feats}</span>
-            <span class="sub__price">€{t["price"]}<small> p/m</small></span>
-            <span class="sub__go">{I["arrow"]}</span>
-          </a>''')
     return "\n".join(out)
 
 
