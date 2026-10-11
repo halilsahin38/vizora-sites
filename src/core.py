@@ -74,9 +74,8 @@ LD = {
 
 # ---------- helpers ----------
 def label(num, text):
-    """Kleine mono-label zoals '(01) Wat we doen'."""
-    n = f"({num}) " if num else ""
-    return f'<p class="label">{n}{text}</p>'
+    """Kleine mono-label. Nummers ('(01) …') laten we bewust weg: rustiger en minder sjabloon."""
+    return f'<p class="label">{text}</p>'
 
 
 def pic(name, alt, w, h, cls="", eager=False, pos=None, attrs=""):
@@ -155,7 +154,7 @@ def footer(active=""):
     return f'''  <footer class="ft" data-theme="dark">
     <div class="wrap">
       <div class="ft__cta">
-        <p class="label">(→) Volgende stap</p>
+        <p class="label">Volgende stap</p>
         <h2 class="ft__title">Klaar voor meer klanten?<br><span>Begin met je gratis concept.</span></h2>
         <div class="ft__actions">
           <a href="{plan}" class="btn btn--light">Plan je gratis concept {I["arrow"]}</a>
