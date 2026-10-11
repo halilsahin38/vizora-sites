@@ -103,7 +103,7 @@
 .pk__note { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: .7rem; }
 .pk__title { font-weight: 500; font-size: 1.45rem; letter-spacing: -.03em; margin-top: 2rem; }
 .pk__desc { color: var(--muted); margin-top: .5rem; min-height: 3.2em; }
-.pk__list { margin-top: 1.6rem; display: grid; gap: .65rem; flex: 1; }
+.pk__list { margin-top: 1.6rem; display: grid; gap: .65rem; flex: 1; align-content: start; }
 .pk__list li { display: grid; grid-template-columns: 18px 1fr; gap: .7rem; font-size: .98rem; }
 .pk__list li::before { content: ""; width: 10px; height: 1.5px; background: var(--ink); margin-top: .78em; }
 .pk__btn { margin-top: 2.2rem; width: 100%; }
@@ -148,6 +148,7 @@
 .qa__title { margin-top: 1.2rem; }
 .qa__help { margin-top: 1.4rem; color: var(--muted); max-width: 22em; }
 .qa__help a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.qa__help a:hover { color: var(--terra-ink); }
 .qa .split { grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); }
 
 /* ---------- responsief ---------- */
