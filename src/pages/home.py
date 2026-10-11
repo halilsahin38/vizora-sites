@@ -142,8 +142,11 @@ def render():
         <div class="about__body">
           {label("", "Wie zijn wij")}
           <h2 id="ab-title" class="h2 home__h2" data-reveal>Halil &amp; Sahin. Twee broers, één aanspreekpunt.</h2>
-          <p class="about__text" data-reveal>Wij bouwen elke website zelf, van eerste schets tot livegang. Geen accountmanagers of wachtrijen: je spreekt altijd een van ons tweeën, gewoon via WhatsApp of telefoon.</p>
-          <p class="about__honest" data-reveal><strong>Eerlijk is eerlijk:</strong> Vizora is nieuw, dus reviews van klanten hebben we nog niet. Zekerheid wel: je ziet eerst je concept, je betaalt pas als je blij bent en je domein staat op jouw naam.</p>
+          <p class="about__text" data-reveal>Wij zijn Halil en Sahin, twee broers uit Breda. Wij bouwen je website én zorgen voor je marketing: je Google Bedrijfsprofiel, je vindbaarheid in je regio en hulp bij je social media. Alles in één hand, en je spreekt altijd een van ons tweeën.</p>
+          <blockquote class="about__why" data-reveal>
+            <p class="label">Waarom we zijn begonnen</p>
+            <p>We zagen hoe vaak ondernemers te veel betalen voor een website die hen niet helpt. Mooi om naar te kijken, maar er komen geen klanten van. Dat willen wij voorkomen. Daarom zie je bij ons eerst gratis je website, betaal je een eerlijke prijs en zorgen we dat klanten je ook echt vinden.</p>
+          </blockquote>
           <a href="over-ons.html" class="link" data-reveal>Meer over ons {I["arrow"]}</a>
         </div>
       </div>

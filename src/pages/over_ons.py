@@ -65,10 +65,10 @@ def render():
         {label("02", "Ons verhaal")}
         <div>
           <h2 id="story-title" class="h2" data-reveal>Waarom we Vizora<br><span>zijn begonnen.</span></h2>
-          <p class="story__lead" data-reveal>We zagen het steeds weer: ondernemers die keihard werken en echt goed zijn in hun vak, maar online bijna niet te vinden zijn. Of een website hebben die niet laat zien hoe goed ze zijn.</p>
+          <p class="story__lead" data-reveal>We zagen het steeds weer: ondernemers die te veel betalen voor een website die hen niet helpt. Mooi om naar te kijken, maar er komen geen klanten van. Of ondernemers die echt goed zijn in hun vak, maar online bijna niet te vinden zijn.</p>
           <div class="story__cols" data-reveal>
             <p>Een groot bureau is vaak duur, en je spreekt steeds iemand anders. Zelf een website maken kost veel tijd, en dan moet je nog gevonden worden.</p>
-            <p>Daarom zijn we Vizora begonnen: een website op maat en een plan om te groeien, voor een eerlijke prijs. Van twee mensen die je gewoon kunt bellen of appen.</p>
+            <p>Dat willen wij voorkomen. Daarom zijn we Vizora begonnen: een website op maat en een plan om te groeien, voor een eerlijke prijs. Van twee mensen die je gewoon kunt bellen of appen.</p>
           </div>
           <div class="name" data-reveal>
             <p class="label">Waar de naam vandaan komt</p>
