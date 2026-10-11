@@ -1,0 +1,7 @@
+# alleen de website zelf online zetten, niet de bronbestanden
+src/
+tools/
+concepts/
+build.py
+README.md
+CLAUDE.md

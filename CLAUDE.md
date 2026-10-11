@@ -37,6 +37,6 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 
 ## Techniek
 - Alle pagina's worden gegenereerd door `python3 build.py` (f-strings: letterlijke accolades als `{{ }}`).
-- Stijl in `assets/style.css`, gedrag in `assets/main.js`.
+- Teksten en pagina's in `src/` (core.py + pages/), stijl in `assets/css/`, gedrag in `assets/js/` (site.js, motion.js).
 - CSP in `vercel.json` bevat een hash van het inline script; herberekenen als `INLINE_JS` verandert.
 - Testscreenshots en tijdelijke bestanden nooit in deze map zetten (gebruik een scratchpad).

@@ -33,7 +33,7 @@ for file, mod in PAGES:
     (ROOT / file).write_text(html, encoding="utf-8")
     built.append(file)
 
-(ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /concepts/\nDisallow: /tools/\nDisallow: /src/\n\nSitemap: {core.SITE}/sitemap.xml\n")
+(ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /src/\n\nSitemap: {core.SITE}/sitemap.xml\n")
 urls = "".join(f"  <url><loc>{core.SITE}/{'' if p == 'index.html' else p}</loc></url>\n"
                for p, _ in PAGES if p != "404.html")
 (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
