@@ -65,19 +65,19 @@ def _packs():
 def render():
     promises = "".join(f"<li>{t}</li>" for t, _ in GUARANTEES)
 
-    html = head(FILE, "Vizora Digital | Een website die je klanten oplevert",
+    html = head(FILE, "Vizora Digital | Je nieuwe website zie je al in het eerste gesprek",
                 "Vizora Digital bouwt websites die klanten opleveren en zorgt dat je gevonden wordt in Google. Eerst gratis je concept zien, dan pas beslissen. Voor ondernemers in heel Nederland.",
                 css=("home",), preload="assets/foto/licht-laptop.webp", ld=True)
     html += header(FILE)
     html += f'''
   <main id="main">
     <section class="hero wrap">
-      <h1 class="hero__title" data-lines>Een website die je <em>klanten</em> oplevert.</h1>
+      <h1 class="hero__title" data-lines>Je nieuwe website zie je al in het <em>eerste gesprek</em>.</h1>
       <div class="hero__row">
-        <p class="hero__lead" data-reveal>Wij bouwen je website én zorgen dat klanten je vinden in Google. Je ziet je nieuwe website al in het eerste gesprek, gratis.</p>
+        <p class="hero__lead" data-reveal>Wij maken vooraf gratis een concept van jouw website. Daarna zorgen we dat klanten je vinden in Google. Pas betalen als je blij bent.</p>
         <div class="hero__cta" data-reveal>
           <a href="contact.html" class="btn">Plan je gratis concept {I["arrow"]}</a>
-          <p class="hero__trust label">Gratis concept · Vanaf €200 · Niet blij = niet betalen</p>
+          <p class="hero__trust label">Gratis concept · Vanaf €200 · Reactie dezelfde dag</p>
         </div>
       </div>
       <div class="hero__media" data-grow>
@@ -126,7 +126,7 @@ def render():
           {label("", "Prijzen")}
           <div>
             <h2 id="pr-title" class="h2 home__h2" data-reveal>Duidelijke prijzen, eenmalig.</h2>
-            <p class="prices__intro" data-reveal>Hosting gratis inbegrepen. Na het gratis gesprek krijg je altijd eerst een vaste prijs op maat.</p>
+            <p class="prices__intro" data-reveal>Alle prijzen exclusief btw, hosting gratis inbegrepen. Na het gratis gesprek krijg je altijd eerst een vaste prijs op maat.</p>
           </div>
         </div>
         <div class="pk__grid" data-reveal>

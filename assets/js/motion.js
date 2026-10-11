@@ -48,7 +48,8 @@
       lines[lines.length - 1].push(w);
     });
     const html = lines.map((ws) => {
-      const inner = ws.map((w) => w.outerHTML).join(' ');
+      // geen spatie vóór leestekens die direct aan het vorige woord vastzitten (bv. 'gesprek</em>.')
+      const inner = ws.map((w, k) => (k && !/^[.,!?:;]/.test(w.textContent) ? ' ' : '') + w.outerHTML).join('');
       return `<span class="tl"><span class="tl__in">${inner}</span></span>`;
     }).join('');
     el.setAttribute('aria-label', el.textContent.trim());

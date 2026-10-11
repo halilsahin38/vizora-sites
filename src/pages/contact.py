@@ -107,7 +107,7 @@ def _form():
               <button type="submit" class="btn bk__wa">{WA_SVG} Verstuur via WhatsApp</button>
               <button type="button" class="btn btn--ghost" data-email>{I["mail"]} Liever via e-mail</button>
             </div>
-            <p class="bk__note"><b>Je bericht staat klaar in WhatsApp. Druk daar nog op verzenden, dan is het geregeld.</b> We bevestigen je afspraak zo snel mogelijk. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
+            <p class="bk__note"><b>Je bericht staat klaar in WhatsApp. Druk daar nog op verzenden, dan is het geregeld.</b> Binnen werktijd (ma–za 9–18 uur) hoor je dezelfde dag van ons. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
           </div>
         </form>'''
 

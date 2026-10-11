@@ -173,7 +173,7 @@ def footer(active=""):
         </div>
         <div>
           <p class="label">Bereikbaar</p>
-          <ul><li>Maandag t/m zaterdag</li><li>09:00 – 18:00</li><li>Vanuit Breda, voor heel Nederland</li></ul>
+          <ul><li>Maandag t/m zaterdag</li><li>09:00 – 18:00</li><li>Antwoord dezelfde dag</li><li>Vanuit Breda, voor heel Nederland</li></ul>
         </div>
       </div>
       <p class="ft__word" aria-hidden="true">Vizora</p>
@@ -188,7 +188,7 @@ def footer(active=""):
     <div class="dock__panel" id="dock-panel" role="dialog" aria-label="Neem contact op" hidden>
       <p class="dock__status" data-dock-status><i></i><span>Nu bereikbaar</span></p>
       <p class="dock__title">Vraag? Stel hem gerust.</p>
-      <p class="dock__text">Je spreekt direct met Halil of Sahin.</p>
+      <p class="dock__text">Je spreekt direct met Halil of Sahin. Binnen werktijd hoor je dezelfde dag van ons.</p>
       <a href="{WA}" class="dock__btn dock__btn--wa" target="_blank" rel="noopener">{WA_SVG} WhatsApp</a>
       <a href="{TEL}" class="dock__btn">{I["call"]} Bel {TEL_TXT}</a>
       <a href="mailto:{MAIL}" class="dock__btn">{I["mail"]} Mail ons</a>
@@ -230,7 +230,7 @@ def price_columns():
         out.append(f'''          <article class="pk{" pk--featured" if p["featured"] else ""}" data-reveal>
             <div class="pk__top"><p class="label">{p["name"]}</p>{badge}</div>
             <p class="pk__price"><span class="pk__from">vanaf</span>€{p["price"]}</p>
-            <p class="pk__note">eenmalig</p>
+            <p class="pk__note">eenmalig · excl. btw</p>
             <h3 class="pk__title">{p["title"]}</h3>
             <p class="pk__desc">{p["desc"]}</p>
             <ul class="pk__list">{feats}</ul>

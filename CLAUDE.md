@@ -7,18 +7,20 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 ## Wat Vizora is
 - Vizora verkoopt **websites + online groei** (vindbaarheid in Google, marketing, hulp bij social media)
   aan ondernemers in **heel Nederland** (vanuit Breda). Niet alleen Noord-Brabant.
-- Hoofdboodschap: een website die je meer klanten oplevert.
+- Hoofdtitel (gekozen door Halil): "Je nieuwe website zie je al in het eerste gesprek." Boodschap eronder: meer klanten via Google.
+  ("Websites die klanten opleveren" gebruikt concurrent WebBreda al.)
 - Haakje: gratis websiteconcept bij het eerste (gepland) gesprek, plus groeiplan stap voor stap.
 - Tevredenheidsgarantie: pas betalen als je blij bent met het ontwerp.
 - Toekomst: e-commerce / Shopify. Focus nu: Vizora.
 
 ## Contact en praktisch
 - E-mail halilsahinai@gmail.com · WhatsApp/bellen 06 38 70 53 48 (wa.me/31638705348, tel:+31638705348)
-- Ma t/m za 09:00–18:00 (afspraken 09:00–17:00). Geen Instagram nog. KvK-nummer volgt.
+- Ma t/m za 09:00–18:00 (afspraken 09:00–17:00). Belofte: binnen werktijd antwoord dezelfde dag. Geen Instagram nog. KvK-nummer volgt.
 - Agenda komt later via Cal.com (Halil stuurt de link).
 - Online zetten via Vercel/merge alleen na expliciete toestemming van Halil.
 
 ## Prijzen (huidige stand op de site)
+- Alle prijzen exclusief btw.
 - Pakketten eenmalig: Start €200 · Groei €350 · Compleet €500.
 - Abonnementen per maand, maandelijkse factuur: Basis €25 · Plus €49 · Pro €79 (Pro = tot 6 aanpassingen, niet onbeperkt).
 - Hosting gratis inbegrepen bij elk pakket; klant betaalt zelf de domeinnaam (ca. €10–15 per jaar).

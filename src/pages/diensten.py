@@ -99,7 +99,7 @@ def render():
 
     <section class="svc" id="websites" aria-labelledby="websites-title">
       <div class="svc__grid wrap">
-        {side("01", "Websites", [("Voor wie", "Starters, zzp'ers en ondernemers die online meer klanten willen"), ("Prijs", f"Vanaf €{P['Start']}, eenmalig"), ("Daarna", f"Abonnement vanaf €{S['Basis']} p/m, niet verplicht")])}
+        {side("01", "Websites", [("Voor wie", "Starters, zzp'ers en ondernemers die online meer klanten willen"), ("Prijs", f"Vanaf €{P['Start']}, eenmalig, excl. btw"), ("Daarna", f"Abonnement vanaf €{S['Basis']} p/m, niet verplicht")])}
         <div class="svc__main">
           <h2 id="websites-title" class="h2" data-reveal>Een website die werkt<br><span>als je beste verkoper.</span></h2>
           <p class="svc__lead" data-reveal>Je website is vaak het eerste wat een klant van je ziet. Wij zorgen dat die eerste indruk klopt, en dat bezoekers ook echt iets doen: bellen, appen, een afspraak maken of reserveren.</p>

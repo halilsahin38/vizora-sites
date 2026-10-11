@@ -87,7 +87,7 @@ def _tiers():
         feats = "".join(f"<li>{f}</li>" for f in t["feats"])
         out.append(f'''          <article class="tier" data-reveal>
             <h3 class="tier__name">{t["name"]}</h3>
-            <p class="tier__price">€{t["price"]}<span>per maand</span></p>
+            <p class="tier__price">€{t["price"]}<span>per maand · excl. btw</span></p>
             <ul class="tier__list">{feats}</ul>
             <a href="contact.html?pakket=Abonnement%20{t["name"]}" class="btn btn--line tier__btn">Kies {t["name"]} {I["arrow"]}</a>
           </article>''')
@@ -124,7 +124,7 @@ def render():
       <div class="pk__grid">
 {price_columns()}
       </div>
-      <p class="pp__foot" data-reveal>Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen en hoor je vooraf.</p>
+      <p class="pp__foot" data-reveal>Alle prijzen zijn exclusief btw. Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen en hoor je vooraf.</p>
     </section>
 
     <section class="sec cmp wrap" id="vergelijken" aria-labelledby="cmp-title">
