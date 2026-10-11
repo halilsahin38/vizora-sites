@@ -49,7 +49,7 @@ def head(file, title, desc):
   <title>{title}</title>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{url}">
-  <meta name="theme-color" content="#f3ece1">
+  <meta name="theme-color" content="#faf8f4">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:site_name" content="Vizora Digital">
@@ -167,7 +167,7 @@ def cta(title="Klaar om te <em>groeien?</em>", text=DEFAULT_CTA):
         <div class="cta reveal" data-mosaic>
           <div class="cta__glow cta__glow--1" aria-hidden="true"></div>
           <div class="cta__glow cta__glow--2" aria-hidden="true"></div>
-          <h2 class="split-words">{title}</h2>
+          <h2 class="reveal">{title}</h2>
           <p>{text}</p>
           <div class="cta__actions">
             <a href="contact.html" class="btn btn--light">Plan een gratis gesprek {I["arrow"]}</a>
@@ -210,9 +210,11 @@ def iphone(img, style="", speed=None, eager=False):
           </div>'''
 
 # Echte foto in een afgerond kader; de foto beweegt zacht mee met scrollen
-def photo(name, alt, cls="", speed="-0.08", w=1024, h=683, pos="center"):
+def photo(name, alt, cls="", speed="-0.08", w=1400, h=933, pos="center", eager=False):
+    load = 'fetchpriority="high"' if eager else 'loading="lazy"'
+    sp = f' data-speed="{speed}"' if speed else ""
     return f'''<figure class="photo {cls}">
-            <picture><source srcset="assets/foto/{name}.webp" type="image/webp"><img src="assets/foto/{name}.jpg" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async" data-speed="{speed}" style="object-position:{pos}"></picture>
+            <picture><source srcset="assets/foto/{name}.webp" type="image/webp"><img src="assets/foto/{name}.jpg" alt="{alt}" width="{w}" height="{h}" {load} decoding="async"{sp} style="object-position:{pos}"></picture>
           </figure>'''
 
 def shot(img, label):
@@ -337,19 +339,17 @@ home += f'''
             <p class="hx__lead reveal" data-delay="400">Wij zorgen dat jouw zaak online gevonden, gekozen en geboekt wordt. Met een website die vertrouwen wekt, meer bereik in Google en een helder plan om te groeien. Zodat jij je kunt richten op waar je goed in bent: je zaak.</p>
             <p class="hx__strong reveal" data-delay="500">Gratis websiteconcept bij je eerste gesprek.</p>
             <div class="hero__actions reveal" data-delay="600">
-              <a href="contact.html" class="btn btn--light">Plan een gratis gesprek {I["arrow"]}</a>
-              <a href="{TEL}" class="btn btn--line">{I["call"]} Bel direct</a>
+              <a href="contact.html" class="btn">Plan een gratis gesprek {I["arrow"]}</a>
+              <a href="{TEL}" class="btn btn--ghost">{I["call"]} Bel direct</a>
             </div>
           </div>
-          <div class="hx__visual" aria-hidden="true">
-            <div class="hx__glow" data-speed="0.08"></div>
-            {win("merk-desktop.jpg", "jouwbedrijf.nl", "left:7%;top:15%;width:92%", "-0.04", eager=True)}
-            {iphone("merk-mobile.jpg", "right:7%;bottom:-40px", "-0.1", eager=True)}
-            <div class="chip-card chip-card--a" data-speed="-0.16">
+          <div class="hx__visual">
+            {photo("telefoon", "Hand met een telefoon waarop een website staat die Vizora heeft ontworpen", "photo--fill", "-0.07", w=1280, h=1496, pos="55% center", eager=True)}
+            <div class="chip-card chip-card--a" data-speed="-0.16" aria-hidden="true">
               <div class="chip-card__icon float">{I["inbox"]}</div>
               <div><strong>Nieuwe aanvraag</strong><small>via je website</small></div>
             </div>
-            <div class="chip-card chip-card--b" data-speed="-0.06">
+            <div class="chip-card chip-card--b" data-speed="-0.06" aria-hidden="true">
               <div class="chart"><i style="height:30%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:80%"></i><i style="height:100%"></i></div>
               <div><strong>Meer bereik</strong><small>Google &amp; Maps</small></div>
             </div>
@@ -357,15 +357,15 @@ home += f'''
         </div>
         <div class="hx__cards">
           <a href="diensten.html#websites" class="scard reveal">
-            <div class="scard__art scard__art--web"><img src="assets/concepts/merk-thumb.jpg" alt="" width="800" height="400" loading="lazy" decoding="async"></div>
+            <div class="scard__art"><picture><source srcset="assets/foto/laptop-breed.webp" type="image/webp"><img src="assets/foto/laptop-breed.jpg" alt="" width="1400" height="1065" loading="lazy" decoding="async" style="object-position:center 35%"></picture></div>
             <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Websites</h2><p>Een website op maat die vertrouwen wekt en van bezoekers klanten maakt. Van one-pager tot complete site.</p></div>
           </a>
           <a href="diensten.html#marketing" class="scard reveal" data-delay="120">
-            <div class="scard__art scard__art--map" aria-hidden="true"><span class="pin">{I["pin"]}</span><span class="rv"><i>★★★★★</i><b></b></span><span class="rv"><i>★★★★★</i><b></b></span><span class="rv"><i>★★★★★</i><b></b></span></div>
+            <div class="scard__art"><picture><source srcset="assets/foto/ondernemer-telefoon.webp" type="image/webp"><img src="assets/foto/ondernemer-telefoon.jpg" alt="" width="1400" height="933" loading="lazy" decoding="async" style="object-position:center 30%"></picture></div>
             <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Marketing &amp; bereik</h2><p>Gevonden worden in Google en Google Maps, door mensen in jouw regio die nu zoeken wat jij aanbiedt.</p></div>
           </a>
           <a href="diensten.html#social-media" class="scard reveal" data-delay="240">
-            <div class="scard__art scard__art--social" aria-hidden="true"><span class="pf"><i></i><b></b></span><span class="grid"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+            <div class="scard__art"><picture><source srcset="assets/foto/ondernemer-tablet.webp" type="image/webp"><img src="assets/foto/ondernemer-tablet.jpg" alt="" width="1400" height="933" loading="lazy" decoding="async" style="object-position:center 30%"></picture></div>
             <div class="scard__body"><span class="scard__arrow" aria-hidden="true">↗</span><h2 class="scard__title">Social media</h2><p>Profielen die kloppen, een herkenbare stijl en eerlijk advies over wat werkt. De content bespreken we samen.</p></div>
           </a>
         </div>
@@ -375,14 +375,17 @@ home += f'''
     <section class="section">
       <div class="container roof">
         <div class="roof__visual reveal">
-          {photo("werkplek", "Werkplek met laptop, notitieboek en koffie op een houten bureau", "photo--fill", "-0.1", pos="45% center")}
-          <div class="chip-card roof__chip" data-speed="-0.14" aria-hidden="true">
+          {photo("ondernemer-atelier", "Ondernemer aan het werk in haar atelier", "roof__a", "-0.06", w=1200, h=1800, pos="center 40%")}
+          <div class="roof__b" data-speed="-0.14">
+            {photo("ondernemer-winkel", "Eigenaar van een winkel tussen haar kledingrekken", "", None, pos="center 30%")}
+          </div>
+          <div class="chip-card roof__chip" data-speed="-0.2" aria-hidden="true">
             <div class="chip-card__icon">{I["pen"]}</div>
             <div><strong>Jouw concept</strong><small>gratis bij je eerste gesprek</small></div>
           </div>
         </div>
         <div class="roof__copy">
-          <h2 class="roof__title split-words">Alles wat je online nodig hebt, onder <em>één dak.</em></h2>
+          <h2 class="roof__title reveal">Alles wat je online nodig hebt, onder <em>één dak.</em></h2>
           <div class="roof__cols reveal">
             <div>
               <p>Van een eerste <a href="diensten.html#websites">website</a> tot een compleet groeiplan: wij bouwen een online basis die past bij jouw zaak en jouw doelen. Alles sluit op elkaar aan, zodat je overal herkenbaar en professioneel overkomt.</p>
@@ -403,11 +406,26 @@ home += f'''
       </div>
     </section>
 
+    <section class="section section--tight people" aria-labelledby="people-titel">
+      <div class="container">
+        <div class="people__head">
+          <h2 id="people-titel" class="reveal">Voor ondernemers die <em>verder</em> willen.</h2>
+          <p class="reveal">Of je nu net begint of al jaren je eigen zaak hebt: wij zorgen dat de mensen in jouw omgeving je vinden, vertrouwen en kiezen.</p>
+        </div>
+      </div>
+      <div class="people__row">
+        <div class="people__item" data-speed="-0.05">{photo("ondernemer-zaak", "Lachende ondernemer in haar zaak", "", None)}</div>
+        <div class="people__item people__item--low" data-speed="-0.14">{photo("vakman", "Vakman aan het werk in zijn werkplaats", "", None)}</div>
+        <div class="people__item" data-speed="-0.08">{photo("ondernemer-telefoon", "Ondernemer achter de toonbank met zijn telefoon", "", None, pos="center 30%")}</div>
+        <div class="people__item people__item--low" data-speed="-0.17">{photo("ondernemer-tablet", "Ondernemer met een tablet aan tafel", "", None)}</div>
+      </div>
+    </section>
+
     <section class="section section--alt">
       <div class="container split">
         <div>
           <p class="eyebrow reveal">Herkenbaar?</p>
-          <h2 class="split-words">Goed in je vak, maar online <em>onzichtbaar?</em></h2>
+          <h2 class="reveal">Goed in je vak, maar online <em>onzichtbaar?</em></h2>
           <p class="lead reveal">Bijna elke klant zoekt eerst online. Vinden ze je niet, of ziet je website er verouderd uit? Dan kiezen ze binnen een paar seconden voor de zaak verderop. Zonde, want misschien ben jij wel de beste.</p>
           <ul class="pain reveal">
             <li><div><strong>Geen of een verouderde website</strong><span>Bezoekers haken af voordat ze hebben gebeld of een afspraak hebben gemaakt.</span></div></li>
@@ -417,7 +435,7 @@ home += f'''
         </div>
         <div>
           <p class="eyebrow reveal">Met Vizora</p>
-          <h2 class="split-words">Wij laten je groeien, jij krijgt de <em>klanten.</em></h2>
+          <h2 class="reveal">Wij laten je groeien, jij krijgt de <em>klanten.</em></h2>
           <p class="lead reveal">Eén vast team voor je website, je vindbaarheid en je online groei. Alles sluit op elkaar aan en heeft één doel: meer klanten voor jouw zaak.</p>
           <ul class="pain pain--good reveal">
             <li><div><strong>Een website die verkoopt</strong><span>Snel, mooi en gebouwd om van bezoekers klanten te maken: afspraken, reserveringen of aanvragen.</span></div></li>
@@ -433,7 +451,7 @@ home += f'''
         <div class="section--dark" style="margin:0;padding:90px 48px;border-radius:40px">
           <div class="section__head center">
             <p class="eyebrow reveal">Waarom Vizora</p>
-            <h2 class="split-words">Vizora helpt je <em>groeien.</em></h2>
+            <h2 class="reveal">Vizora helpt je <em>groeien.</em></h2>
             <p class="reveal">Geen website die alleen mooi is. Alles wat we doen is gericht op meer bereik, meer aanvragen en meer omzet voor jouw zaak.</p>
           </div>
           <div class="benefits benefits--3">
@@ -453,7 +471,7 @@ home += f'''
         <div class="demo__controls">
           <div>
             <p class="eyebrow reveal">Gratis websiteconcept</p>
-            <h2 id="demo-titel" class="split-words">Zie hoe <em>jouw</em> website eruit kan zien</h2>
+            <h2 id="demo-titel" class="reveal">Zie hoe <em>jouw</em> website eruit kan zien</h2>
             <p class="lead reveal">Plan een afspraak en wij maken vooraf een concept van jouw nieuwe website. In het gesprek nemen we het samen door, en bespreken we stap voor stap hoe jouw zaak gaat groeien en wat wij daarvoor doen. Gratis en vrijblijvend.</p>
           </div>
           <ol class="concept-steps reveal">
@@ -473,7 +491,7 @@ home += f'''
       <div class="container">
         <div class="section__head center">
           <p class="eyebrow reveal">Prijzen</p>
-          <h2 id="prijzen-titel" class="split-words">Duidelijke pakketten, <em>eerlijke</em> prijzen</h2>
+          <h2 id="prijzen-titel" class="reveal">Duidelijke pakketten, <em>eerlijke</em> prijzen</h2>
           <p class="reveal">Geen verrassingen achteraf. Kies een pakket als startpunt; je krijgt altijd eerst een offerte op maat.</p>
         </div>
         <div class="pricing">
@@ -490,12 +508,12 @@ home += f'''
         <div class="section__head section__head--split">
           <div>
             <p class="eyebrow reveal">Werkwijze</p>
-            <h2 id="werkwijze-titel" class="split-words">Van eerste gesprek tot groei</h2>
+            <h2 id="werkwijze-titel" class="reveal">Van eerste gesprek tot groei</h2>
           </div>
           <a href="werkwijze.html" class="link-arrow reveal">Bekijk de hele werkwijze</a>
         </div>
         <div class="band reveal">
-          {photo("groeiplan", "Notitieboek met plannen voor een website en groeidoelen, naast een laptop en koffie", "photo--fill", "-0.07")}
+          {photo("koffie", "Twee mensen met een kop koffie aan tafel tijdens een gesprek", "photo--fill", "-0.07", w=2000, h=1333, pos="center 45%")}
           <p class="band__quote">Geen vage beloftes. Wel een duidelijk plan, <em>stap voor stap.</em></p>
         </div>
         <ol class="steps">
@@ -507,11 +525,25 @@ home += f'''
       </div>
     </section>
 
+    <section class="section section--tight">
+      <div class="container">
+        <div class="city reveal">
+          {photo("breda", "De Grote Markt in Breda met de Grote Kerk", "photo--fill", "-0.08", w=1600, h=2133, pos="center 62%")}
+          <div class="city__copy">
+            <p class="eyebrow">Vanuit Breda</p>
+            <h2>Gewoon dichtbij, <em>in Noord-Brabant.</em></h2>
+            <p>Geen bureau op afstand, maar twee vaste aanspreekpunten uit Breda. Even langskomen voor een kop koffie en je concept? Dat kan altijd.</p>
+            <a href="contact.html" class="btn btn--light">Plan een gratis gesprek {I["arrow"]}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="faq-titel">
       <div class="container qa">
         <div class="qa__head">
           <p class="eyebrow reveal">FAQ</p>
-          <h2 id="faq-titel" class="split-words">Veelgestelde vragen</h2>
+          <h2 id="faq-titel" class="reveal">Veelgestelde vragen</h2>
           <p class="reveal">Alles wat je wilt weten over onze aanpak, de prijzen en hoe we samenwerken, overzichtelijk op een rij.</p>
           <p class="qa__count reveal"><span>{len(HOME_FAQ)}</span> vragen beantwoord</p>
           <div class="qa__ask reveal">
@@ -546,7 +578,7 @@ home += f'''
       <div class="container reach">
         <div class="reach__copy">
           <p class="eyebrow reveal">Contact</p>
-          <h2 id="contact-titel" class="split-words">Laten we <em>kennismaken.</em></h2>
+          <h2 id="contact-titel" class="reveal">Laten we <em>kennismaken.</em></h2>
           <p class="lead reveal">Vertel kort wat je zoekt. We nemen zo snel mogelijk contact met je op. Liever meteen iemand spreken? Bel ons gewoon direct.</p>
           <ul class="reach__list reveal">
             <li><span class="reach__ic">{I["call"]}</span><div><small>Telefoon</small><a href="{TEL}">{TEL_TXT}</a></div></li>
@@ -590,14 +622,12 @@ dien += f'''
       <div class="container">
         <div class="service" id="websites">
           <div class="service__visual reveal" aria-hidden="true">
-            <div class="plate plate--sand" style="inset:30px 0 10px 60px;rotate:6deg" data-speed="0.05"></div>
-            <div class="plate plate--soft" style="inset:10px 40px 30px 20px;rotate:-3deg" data-speed="0.02"></div>
-            {win("merk-desktop.jpg", "jouwbedrijf.nl", "left:20px;right:20px;top:90px", "-0.05")}
+            {photo("laptop", "Laptop op een houten bureau met een website van Vizora op het scherm", "photo--fill", "-0.07", w=1400, h=1733, pos="center 60%")}
             <div class="chip-card" style="right:0;bottom:40px" data-speed="-0.14"><div class="chip-card__icon">{I["bolt"]}</div><div><strong>Supersnel</strong><small>laadt in een oogwenk</small></div></div>
           </div>
           <div class="service__copy">
             <p class="eyebrow reveal">01 · Websites</p>
-            <h2 class="split-words">Een website die werkt als je <em>beste verkoper</em></h2>
+            <h2 class="reveal">Een website die werkt als je <em>beste verkoper</em></h2>
             <p class="lead reveal">Je website is vaak het eerste wat een klant van je ziet, en dat moment telt. Wij zorgen dat die eerste indruk klopt én dat bezoekers ook echt iets doen: bellen, appen, een afspraak maken of reserveren.</p>
             <p class="muted reveal">Elke website ontwerpen we op maat, rond jouw klanten en jouw doelen. Geen standaard template, wel een site die laat zien hoe goed je bent. En met ons abonnement blijft hij elke maand up-to-date.</p>
             <ul class="reveal">
@@ -614,18 +644,13 @@ dien += f'''
 
         <div class="service service--flip" id="marketing">
           <div class="service__visual reveal" aria-hidden="true">
-            <div class="plate plate--soft" style="inset:20px 30px 40px 30px;rotate:4deg" data-speed="0.03"></div>
-            <div class="dash" style="left:40px;right:40px;top:110px" data-speed="-0.05">
-              <small>Websitebezoekers</small>
-              <strong>Meer bezoekers</strong>
-              {dash_svg}
-            </div>
+            {photo("ondernemer-telefoon", "Ondernemer achter de toonbank die op zijn telefoon kijkt", "photo--fill", "-0.07", pos="center 30%")}
             <div class="chip-card" style="right:0;top:10px" data-speed="-0.15"><div class="chip-card__icon">{I["search"]}</div><div><strong>Google</strong><small>gevonden worden</small></div></div>
             <div class="chip-card" style="left:0;bottom:30px" data-speed="-0.1"><div class="chip-card__icon">{I["pin"]}</div><div><strong>Google Maps</strong><small>lokaal zichtbaar</small></div></div>
           </div>
           <div class="service__copy">
             <p class="eyebrow reveal">02 · Marketing &amp; bereik</p>
-            <h2 class="split-words">Meer bereik, precies in <em>jouw</em> regio</h2>
+            <h2 class="reveal">Meer bereik, precies in <em>jouw</em> regio</h2>
             <p class="lead reveal">De beste klanten zitten vaak om de hoek. Met een sterk Google-profiel, lokale SEO en gerichte advertenties bereik je mensen die nú zoeken naar wat jij aanbiedt.</p>
             <p class="muted reveal">We beginnen met de basis die het meeste oplevert, en bouwen daarna stap voor stap verder. Zo weet je precies waar je geld naartoe gaat, en wat het oplevert.</p>
             <ul class="reveal">
@@ -642,15 +667,13 @@ dien += f'''
 
         <div class="service" id="social-media">
           <div class="service__visual reveal" aria-hidden="true">
-            <div class="plate plate--sand" style="inset:40px 50px 0 0;rotate:-6deg" data-speed="0.05"></div>
-            <div class="plate plate--soft" style="inset:20px 10px 30px 60px;rotate:3deg" data-speed="0.02"></div>
-            {iphone("merk-mobile.jpg", "left:50%;top:10px;translate:-50% 0", "-0.08")}
+            {photo("telefoon", "Hand met een telefoon waarop een website staat", "photo--fill", "-0.07", w=1280, h=1496, pos="55% center")}
             <div class="chip-card" style="left:0;top:80px" data-speed="-0.16"><div class="chip-card__icon">{I["social"]}</div><div><strong>Profiel ingericht</strong><small>Instagram &amp; Facebook</small></div></div>
             <div class="chip-card" style="right:0;bottom:50px" data-speed="-0.12"><div class="chip-card__icon">{I["pen"]}</div><div><strong>Herkenbare stijl</strong><small>overal hetzelfde gevoel</small></div></div>
           </div>
           <div class="service__copy">
             <p class="eyebrow reveal">03 · Social media</p>
-            <h2 class="split-words">Social media: wij helpen je <em>op weg</em></h2>
+            <h2 class="reveal">Social media: wij helpen je <em>op weg</em></h2>
             <p class="lead reveal">Social media werkt het best als het echt van jou is. Jij kent je zaak, je klanten en je verhaal het beste. Wij zorgen dat je profielen professioneel zijn ingericht, alles herkenbaar in jouw stijl is en je weet wat werkt.</p>
             <p class="muted reveal">De content (foto's en video's) komt in principe van jou. Wil je dat wij meer doen, zoals content maken of posten? Dat bespreken we graag samen; dit valt buiten de pakketten en kost extra.</p>
             <ul class="reveal">
@@ -671,7 +694,7 @@ dien += f'''
       <div class="container">
         <div class="section__head">
           <p class="eyebrow reveal">Extra</p>
-          <h2 class="split-words">Handig om erbij te nemen</h2>
+          <h2 class="reveal">Handig om erbij te nemen</h2>
         </div>
         <div class="cards">
           <article class="card reveal"><div class="card__icon">{I["pen"]}</div><h3>Logo &amp; huisstijl</h3><p>Een herkenbaar logo, kleuren en lettertypes die overal terugkomen: van je website tot je visitekaartje en Instagram.</p></article>
@@ -711,7 +734,7 @@ werk += f'''
       <div class="container--narrow">
         <div class="section__head center">
           <p class="eyebrow reveal">FAQ</p>
-          <h2 class="split-words">Veelgestelde vragen</h2>
+          <h2 class="reveal">Veelgestelde vragen</h2>
         </div>
         <div class="faq reveal">
           <details><summary>Krijg ik vooraf een ontwerp te zien?</summary><p>Ja. Als je een afspraak plant, maken we gratis een concept van jouw website. Zo zie je meteen hoe het eruit kan zien, nog voordat je iets beslist.</p></details>
@@ -747,7 +770,7 @@ over += f'''
         </div>
         <div>
           <p class="eyebrow reveal">Ons verhaal</p>
-          <h2 class="split-words">Waarom we Vizora zijn <em>begonnen</em></h2>
+          <h2 class="reveal">Waarom we Vizora zijn <em>begonnen</em></h2>
           <p class="lead reveal">We zagen het overal om ons heen: ondernemers die keihard werken en echt goed zijn in hun vak, maar online bijna niet te vinden zijn. Of een website hebben die niet laat zien hoe goed ze eigenlijk zijn.</p>
           <p class="muted reveal">Grote bureaus zijn vaak duur en onpersoonlijk. Zelf doen kost te veel tijd. Daarom zijn we Vizora Digital gestart: een bureau dat de kwaliteit levert van een groot bureau, met de aandacht en snelheid van mensen die je gewoon even kunt bellen of appen.</p>
           <p class="muted reveal">De naam Vizora komt van <em>visie</em> en <em>zichtbaarheid.</em> Precies waar we je mee helpen: een duidelijk plan, en een zaak die gezien wordt.</p>
@@ -761,7 +784,7 @@ over += f'''
 
     <section class="section section--dark">
       <div class="container">
-        <p class="quote split-words">“Jouw succes is ons visitekaartje. Als jouw zaak groeit, <em>groeien wij mee.</em>”</p>
+        <p class="quote reveal">“Jouw succes is ons visitekaartje. Als jouw zaak groeit, <em>groeien wij mee.</em>”</p>
         <p class="quote-by reveal">Halil &amp; Sahin</p>
       </div>
     </section>
@@ -770,7 +793,7 @@ over += f'''
       <div class="container">
         <div class="section__head">
           <p class="eyebrow reveal">Waar we voor staan</p>
-          <h2 class="split-words">Onze beloftes aan jou</h2>
+          <h2 class="reveal">Onze beloftes aan jou</h2>
         </div>
         <div class="values">
           <div class="value reveal"><span class="value__n" aria-hidden="true">01</span><h3>Persoonlijk</h3><p>Je werkt direct met ons. We kennen je zaak en denken met je mee alsof het onze eigen zaak is.</p></div>
@@ -798,7 +821,7 @@ cont += f'''
       <div class="container contact">
         <aside class="contact__aside">
           <p class="eyebrow reveal">Direct contact</p>
-          <h2 class="split-words" style="font-size:clamp(1.7rem,3vw,2.3rem)">Bel, app of mail ons</h2>
+          <h2 class="reveal" style="font-size:clamp(1.7rem,3vw,2.3rem)">Bel, app of mail ons</h2>
           <ul class="contact__list reveal">
             <li><a href="{TEL}"><span class="icon">{I["call"]}</span><div><strong>Bel direct</strong><span>{TEL_TXT}</span></div></a></li>
             <li><a href="{WA}" target="_blank" rel="noopener"><span class="icon">{I["chat"]}</span><div><strong>WhatsApp</strong><span>{TEL_TXT}</span></div></a></li>
@@ -921,7 +944,7 @@ prijs += f"""
       <div class="container">
         <div class="section__head">
           <p class="eyebrow reveal">Vergelijken</p>
-          <h2 class="split-words">Wat zit er in elk pakket?</h2>
+          <h2 class="reveal">Wat zit er in elk pakket?</h2>
         </div>
         <div class="table-wrap reveal">
           <table class="compare">
@@ -938,7 +961,7 @@ prijs += f"""
       <div class="container">
         <div class="section__head">
           <p class="eyebrow reveal">Uitbreiden</p>
-          <h2 class="split-words">Verder groeien, <em>wanneer</em> jij wilt</h2>
+          <h2 class="reveal">Verder groeien, <em>wanneer</em> jij wilt</h2>
           <p class="reveal">Klaar voor de volgende stap? Deze diensten stemmen we samen af op jouw zaak.</p>
         </div>
         <div class="cards">
@@ -953,7 +976,7 @@ prijs += f"""
       <div class="container--narrow">
         <div class="section__head center">
           <p class="eyebrow reveal">Vragen over prijzen</p>
-          <h2 class="split-words">Goed om te weten</h2>
+          <h2 class="reveal">Goed om te weten</h2>
         </div>
         <div class="faq reveal">
           <details><summary>Waarom staat er "vanaf"?</summary><p>Elke zaak is anders. De vanaf-prijs is wat je minimaal betaalt voor het pakket. Na het gratis gesprek krijg je een vaste prijs, zonder verrassingen.</p></details>
@@ -979,7 +1002,7 @@ BEFORE_AFTER = f'''    <section class="section" aria-labelledby="voorna-titel">
       <div class="container">
         <div class="section__head center">
           <p class="eyebrow reveal">Voor &amp; na</p>
-          <h2 id="voorna-titel" class="split-words">Van verouderd naar <em>Vizora.</em></h2>
+          <h2 id="voorna-titel" class="reveal">Van verouderd naar <em>Vizora.</em></h2>
           <p class="reveal">Sleep de schuif en zie het verschil. Hetzelfde bedrijf, dezelfde informatie. Alleen nu met een website die vertrouwen wekt en waar klanten direct contact opnemen of boeken.</p>
         </div>
         <div class="ba reveal" data-ba style="--pos:50%">
@@ -1004,7 +1027,7 @@ CALC = f'''    <section class="section" aria-labelledby="calc-titel">
       <div class="container calc" data-calc>
         <div class="calc__form">
           <p class="eyebrow reveal">Rekenvoorbeeld</p>
-          <h2 id="calc-titel" class="split-words">Wat levert een betere website <em>jou</em> op?</h2>
+          <h2 id="calc-titel" class="reveal">Wat levert een betere website <em>jou</em> op?</h2>
           <p class="lead reveal">Vul je eigen cijfers in en zie hoe snel een nieuwe website zichzelf terugverdient. Schuif gerust: het zijn jouw getallen.</p>
           <div class="calc__fields reveal">
             <div class="choices" role="radiogroup" aria-label="Jouw branche">
@@ -1042,7 +1065,6 @@ INTRO = '''<div class="intro" aria-hidden="true">
   </div>
   '''
 
-home = home.replace('<a class="skip" href="#main">Naar de inhoud</a>', INTRO + '<a class="skip" href="#main">Naar de inhoud</a>', 1)
 
 # ======================= BRANCHE-PAGINA'S =======================
 BRANCHES = [
@@ -1125,7 +1147,7 @@ def branche_page(b):
         </div>
         <div class="service__copy">
           <p class="eyebrow reveal">Wat je website moet kunnen</p>
-          <h2 class="split-words">Gemaakt voor <em>jouw</em> vak</h2>
+          <h2 class="reveal">Gemaakt voor <em>jouw</em> vak</h2>
           <p class="lead reveal">{b["intro"]}</p>
           <ul class="reveal">{feats}</ul>
           <div class="hero__actions reveal" style="margin:0">
@@ -1141,7 +1163,7 @@ def branche_page(b):
         <div class="section--dark" style="margin:0;padding:90px 48px;border-radius:40px">
           <div class="section__head center">
             <p class="eyebrow reveal">Wat het je oplevert</p>
-            <h2 class="split-words">Meer klanten, <em>minder</em> gedoe</h2>
+            <h2 class="reveal">Meer klanten, <em>minder</em> gedoe</h2>
           </div>
           <div class="benefits benefits--3">{whys}</div>
         </div>
@@ -1152,7 +1174,7 @@ def branche_page(b):
       <div class="container">
         <div class="section__head center">
           <p class="eyebrow reveal">Prijzen</p>
-          <h2 class="split-words">Duidelijke pakketten, <em>eerlijke</em> prijzen</h2>
+          <h2 class="reveal">Duidelijke pakketten, <em>eerlijke</em> prijzen</h2>
           <p class="reveal">Inclusief een gratis concept van je nieuwe website tijdens het eerste gesprek.</p>
         </div>
         <div class="pricing">
@@ -1166,7 +1188,7 @@ def branche_page(b):
       <div class="container--narrow">
         <div class="section__head center">
           <p class="eyebrow reveal">Vragen</p>
-          <h2 class="split-words">Goed om te weten</h2>
+          <h2 class="reveal">Goed om te weten</h2>
         </div>
         <div class="faq reveal">{faqs}</div>
         <p class="pricing__foot reveal">Ook voor: {others}</p>
@@ -1211,7 +1233,7 @@ LD = {
   "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}],
 }
 home = home.replace("</head>", '  <script type="application/ld+json">' + json.dumps(LD, ensure_ascii=False) + "</script>\n</head>")
-home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/concepts/merk-desktop.jpg">\n  <link rel="stylesheet" href="assets/style.css">')
+home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/foto/telefoon.webp" type="image/webp">\n  <link rel="stylesheet" href="assets/style.css">')
 
 for name, html in [("index.html", home), ("diensten.html", dien), ("prijzen.html", prijs), ("werkwijze.html", werk), ("over-ons.html", over), ("contact.html", cont), ("404.html", nf)]:
     (OUT / name).write_text(html, encoding="utf-8")

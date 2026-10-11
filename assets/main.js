@@ -258,28 +258,6 @@ if (demo) {
 /* ---------- Verfijning voor muis-gebruikers ---------- */
 const finePointer = window.matchMedia('(pointer: fine)').matches;
 if (finePointer && !reduceMotion) {
-  // cursor-ring die zacht meebeweegt
-  const ring = document.createElement('div');
-  ring.className = 'cursor';
-  ring.setAttribute('aria-hidden', 'true');
-  document.body.append(ring);
-  let mx = -100, my = -100, rx = -100, ry = -100, raf = null;
-  const follow = () => {
-    rx += (mx - rx) * 0.2;
-    ry += (my - ry) * 0.2;
-    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
-    raf = Math.abs(mx - rx) + Math.abs(my - ry) > 0.3 ? requestAnimationFrame(follow) : null;
-  };
-  window.addEventListener('pointermove', (e) => {
-    mx = e.clientX; my = e.clientY;
-    ring.classList.add('is-active');
-    if (!raf) raf = requestAnimationFrame(follow);
-  }, { passive: true });
-  document.addEventListener('pointerleave', () => ring.classList.remove('is-active'));
-  document.addEventListener('pointerover', (e) => {
-    ring.classList.toggle('is-hover', !!e.target.closest('a, button, label, input, textarea, [data-contour]'));
-  });
-
   // magnetische knoppen
   document.querySelectorAll('.btn').forEach((btn) => {
     btn.addEventListener('pointermove', (e) => {
