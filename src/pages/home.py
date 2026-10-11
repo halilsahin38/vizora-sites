@@ -78,7 +78,7 @@ def render():
 
     <section class="sec intro wrap" aria-label="Wat we doen">
       {label("01", "Wat we doen")}
-      <p class="intro__text" data-fill>Wij bouwen je website en zorgen dat klanten je vinden in Google. Eén vast team voor je website, je vindbaarheid en je groei, zodat jij je kunt richten op je zaak.</p>
+      <p class="intro__text" data-fill>Een mooie website alleen is niet genoeg. Wij zorgen ook dat je gevonden wordt. Eén vast team voor je website, je vindbaarheid en je groei, zodat jij je kunt richten op je zaak.</p>
     </section>
 
     <section class="work" data-theme="dark" aria-labelledby="work-title" data-hscroll>
@@ -158,7 +158,7 @@ def render():
         <div>
           <h2 id="ab-title" class="h2" data-reveal>Halil &amp; Sahin.<br><span>Twee broers, één aanspreekpunt.</span></h2>
           <div class="about__cols" data-reveal>
-            <p>Wij zijn een jong bureau uit Breda. Dat betekent: geen accountmanagers of wachtrijen, maar alle aandacht voor jouw project. Je spreekt altijd een van ons twee.</p>
+            <p>Wij zijn een jong bureau uit Breda. Dat betekent: geen accountmanagers of wachtrijen, maar alle aandacht voor jouw project. Je spreekt altijd een van ons tweeën.</p>
             <p>We bouwen elke website zelf, van eerste schets tot livegang, en blijven daarna bereikbaar voor vragen en aanpassingen. Gewoon via WhatsApp of telefoon.</p>
           </div>
           <dl class="about__facts" data-reveal>

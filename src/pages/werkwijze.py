@@ -68,13 +68,13 @@ QA = [
 def render():
     glance = "\n".join(f'        <div><dt>{t}</dt><dd>{d}</dd></div>' for t, d in GLANCE)
 
-    steps = "\n".join(f'''        <li class="tl__step">
-          <p class="tl__n" aria-hidden="true">0{i}</p>
-          <div class="tl__body" data-reveal>
+    steps = "\n".join(f'''        <li class="trj__step">
+          <p class="trj__n" aria-hidden="true">0{i}</p>
+          <div class="trj__body" data-reveal>
             <p class="label">Stap {i} van {len(STEPS)}</p>
-            <h3 class="tl__t">{t}</h3>
-            <p class="tl__d">{d}</p>
-            <ul class="tl__tags" aria-label="In het kort">{"".join(f"<li>{x}</li>" for x in tags)}</ul>
+            <h3 class="trj__t">{t}</h3>
+            <p class="trj__d">{d}</p>
+            <ul class="trj__tags" aria-label="In het kort">{"".join(f"<li>{x}</li>" for x in tags)}</ul>
           </div>
         </li>''' for i, (t, d, tags) in enumerate(STEPS, 1))
 
@@ -102,7 +102,7 @@ def render():
           <p class="tls__intro" data-reveal>Vijf stappen, zonder verrassingen. Je beslist pas bij stap drie, als je jouw website al hebt gezien.</p>
         </div>
       </div>
-      <ol class="tl">
+      <ol class="trj">
 {steps}
       </ol>
     </section>

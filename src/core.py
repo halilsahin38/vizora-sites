@@ -40,7 +40,7 @@ PACKAGES = [
          feats=["Website tot 5 pagina's", "Uniek ontwerp met animaties", "Online afspraken, reserveren of bestellen", "Google Bedrijfsprofiel ingericht", "Teksten die overtuigen", "Lokale SEO voor jouw regio"]),
     dict(name="Compleet", title="Alles geregeld", price="500", featured=False,
          desc="Website, bereik en een helder groeiplan in één keer goed.",
-         feats=["Alles uit Groei", "Logo en huisstijl", "Social media profielen ingericht", "Persoonlijk groeiplan", "Advies voor advertenties", "1 maand gratis aanpassingen"]),
+         feats=["Alles uit Groei", "Logo en huisstijl", "Profielen op social media ingericht", "Persoonlijk groeiplan", "Advies voor advertenties", "1 maand gratis aanpassingen"]),
 ]
 SUB_TIERS = [
     dict(name="Basis", price="25", feats=["Onderhoud &amp; beveiliging", "1 kleine aanpassing per maand", "Hulp via WhatsApp"]),

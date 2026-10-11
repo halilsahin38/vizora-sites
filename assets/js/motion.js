@@ -70,7 +70,7 @@
 
   /* soepel scrollen (alleen met muis/trackpad) */
   if (Lenis && desktop) {
-    const lenis = new Lenis({ autoRaf: false, anchors: { offset: -90 }, lerp: 0.1 });
+    const lenis = new Lenis({ autoRaf: false, anchors: true, lerp: 0.1 }); // anchors volgen scroll-padding-top uit base.css
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((t) => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);

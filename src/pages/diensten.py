@@ -157,7 +157,7 @@ def render():
             </div>
           </div>
           {gets(["Profielen inrichten op Instagram en Facebook", "Huisstijl en templates", "Bio, links en highlights", "Advies en een contentplan", "Koppeling met je website", "Content maken of posten: in overleg, meerprijs"])}
-          {packs([("Compleet", "Social media profielen ingericht, logo en huisstijl en een persoonlijk groeiplan", f"€{P['Compleet']}"), ("Los", "Alleen hulp bij social media, of content laten maken? Dat bespreken we samen.", "in overleg")])}
+          {packs([("Compleet", "Profielen op social media ingericht, logo en huisstijl en een persoonlijk groeiplan", f"€{P['Compleet']}"), ("Los", "Alleen hulp bij social media, of content laten maken? Dat bespreken we samen.", "in overleg")])}
           <div class="svc__actions" data-reveal>
             <a href="contact.html" class="btn">Bespreek social media {I["arrow"]}</a>
           </div>
@@ -167,7 +167,7 @@ def render():
 
     <section class="xtr wrap" aria-labelledby="xtr-title">
       <div class="split">
-        {label("", "Extra")}
+        {label("04", "Extra")}
         <div>
           <h2 id="xtr-title" class="h2" data-reveal>Handig om<br><span>erbij te nemen.</span></h2>
           <p class="xtr__intro" data-reveal>Los te combineren met elke website. Wat het kost, hoor je vooraf; zonder verrassingen achteraf.</p>
@@ -180,7 +180,7 @@ def render():
 
     <section class="help" aria-labelledby="help-title">
       <div class="wrap split">
-        {label("", "Twijfel je?")}
+        {label("05", "Twijfel je?")}
         <div>
           <h2 id="help-title" class="h2" data-reveal>Niet zeker wat je<br><span>nodig hebt?</span></h2>
           <p class="help__text" data-reveal>Geen probleem. In een gratis gesprek kijken we samen wat het meeste oplevert voor jouw zaak, en wat je beter (nog) niet kunt doen. Even bellen of appen mag ook gewoon.</p>

@@ -43,7 +43,7 @@
   background: var(--terra); color: #fff; padding: clamp(24px, 2.6vw, 40px); display: flex; flex-direction: column; justify-content: space-between;
   min-height: clamp(300px, 34vw, 560px); transition: background .4s;
 }
-.wk--end .label { color: rgba(255,255,255,.75); }
+.wk--end .label { color: #fff; }
 .wk--end strong { font-weight: 500; font-size: clamp(2.2rem, 3.6vw, 3.6rem); line-height: .95; letter-spacing: -.05em; }
 .wk__endcta { display: inline-flex; align-items: center; gap: .6rem; font-weight: 500; border-bottom: 1.5px solid currentColor; align-self: flex-start; padding-bottom: 2px; }
 .wk--end:hover { background: var(--terra-ink); }
@@ -67,8 +67,8 @@
 .st__n { font-weight: 500; font-size: clamp(4rem, 9vw, 9rem); line-height: .8; letter-spacing: -.06em; color: var(--terra); }
 .st__body { display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; }
 .st h3 { font-weight: 500; font-size: clamp(2rem, 4vw, 3.8rem); line-height: .95; letter-spacing: -.048em; }
-.st p { font-size: clamp(1.05rem, 1.3vw, 1.2rem); color: var(--muted); max-width: 32em; }
-.st:nth-child(3) p { color: var(--on-dark-muted); }
+.st__body p { font-size: clamp(1.05rem, 1.3vw, 1.2rem); color: var(--muted); max-width: 32em; }
+.st:nth-child(3) .st__body p { color: var(--on-dark-muted); }
 .st ul { display: flex; flex-wrap: wrap; gap: .5rem; }
 .st li { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: .5rem .8rem; border: 1px solid var(--rule); border-radius: 99px; }
 .st:nth-child(3) li { border-color: var(--rule-dark); }

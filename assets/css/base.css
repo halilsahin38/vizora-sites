@@ -114,6 +114,7 @@ em { font-style: normal; color: var(--terra); }
 .hd { position: fixed; inset: 0 0 auto; z-index: 100; transition: background-color .4s, box-shadow .4s, transform .5s var(--ease); }
 .hd.is-scrolled { background: rgba(250, 248, 244, .9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--rule); }
 .hd.is-hidden { transform: translateY(-100%); }
+.hd.is-hidden:has(:focus-visible) { transform: none; } /* toetsenbord: kop altijd zichtbaar bij focus */
 .hd__in { height: var(--hd); display: grid; grid-template-columns: 1fr 1fr 1.6fr auto; align-items: center; gap: var(--gap); }
 .logo { display: inline-flex; align-items: center; gap: .55rem; font-weight: 600; font-size: 1.3rem; letter-spacing: -.04em; }
 .logo__mark { width: 30px; height: 30px; }
@@ -183,7 +184,7 @@ em { font-style: normal; color: var(--terra); }
 .ft__cols a { transition: color .25s; overflow-wrap: anywhere; }
 .ft__cols a:hover { color: var(--terra); }
 .ft__word { font-weight: 600; font-size: clamp(5rem, 27vw, 27rem); line-height: .8; letter-spacing: -.07em; color: var(--on-dark); margin: clamp(60px, 8vw, 120px) 0 0 -.04em; white-space: nowrap; }
-.ft__bottom { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1.6rem 0 2rem; border-top: 1px solid var(--rule-dark); margin-top: 1.4rem; font-size: 14px; color: var(--on-dark-muted); }
+.ft__bottom { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1.6rem 76px 2rem 0; border-top: 1px solid var(--rule-dark); margin-top: 1.4rem; font-size: 14px; color: var(--on-dark-muted); }
 
 /* ---------- contactknop ---------- */
 .dock { position: fixed; right: 20px; bottom: 20px; z-index: 90; display: grid; justify-items: end; gap: 12px; }

@@ -21,7 +21,7 @@ DIENST = [
 GAINS = [
     "Een gratis concept van je nieuwe website",
     "Een eerlijke blik op je online uitstraling",
-    "Een stappenplan om stap voor stap te groeien",
+    "Een groeiplan, stap voor stap",
     "100% vrijblijvend",
 ]
 

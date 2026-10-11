@@ -14,36 +14,36 @@
 /* ---------- het traject (tijdlijn) ---------- */
 .tls { padding-bottom: clamp(48px, 6vw, 96px); }
 .tls__intro { margin-top: 1.6rem; color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 34em; }
-.tl {
+.trj {
   --rail: calc((100% - var(--gap)) / 3.6 + var(--gap));
   --pt: clamp(44px, 5.4vw, 84px);
   position: relative; margin-top: clamp(48px, 6vw, 90px); border-top: 1px solid var(--ink);
 }
 /* lijn: grijs, met een terracotta deel dat meeloopt tijdens het scrollen */
-.tl::before, .tl::after { content: ""; position: absolute; left: var(--rail); top: calc(var(--pt) + 8px); bottom: var(--pt); width: 1px; background: var(--rule); }
-.tl::after { display: none; width: 2px; margin-left: -.5px; background: var(--terra); transform-origin: 50% 0; }
+.trj::before, .trj::after { content: ""; position: absolute; left: var(--rail); top: calc(var(--pt) + 8px); bottom: var(--pt); width: 1px; background: var(--rule); }
+.trj::after { display: none; width: 2px; margin-left: -.5px; background: var(--terra); transform-origin: 50% 0; }
 
-.tl__step { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); gap: var(--gap); padding-top: var(--pt); }
-.tl__step:last-child { padding-bottom: var(--pt); }
+.trj__step { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); gap: var(--gap); padding-top: var(--pt); }
+.trj__step:last-child { padding-bottom: var(--pt); }
 /* punt op de lijn */
-.tl__step::after {
+.trj__step::after {
   content: ""; position: absolute; left: calc(var(--rail) - 5.5px); top: calc(var(--pt) + 3px);
   width: 11px; height: 11px; border-radius: 50%; background: var(--paper); border: 1.5px solid var(--ink);
 }
-.tl__n { font-weight: 500; font-size: clamp(4rem, 9vw, 9rem); line-height: .8; letter-spacing: -.065em; color: var(--terra); margin-left: -.04em; }
-.tl__body { padding-left: clamp(28px, 3.6vw, 60px); min-width: 0; }
-.tl__t { margin-top: 1.2rem; font-weight: 500; font-size: clamp(2.2rem, 4.4vw, 4.2rem); line-height: .95; letter-spacing: -.05em; }
-.tl__d { margin-top: clamp(1.2rem, 2vw, 1.8rem); font-size: clamp(1.05rem, 1.3vw, 1.2rem); color: var(--muted); max-width: 36em; }
-.tl__tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: clamp(1.4rem, 2.2vw, 2rem); }
-.tl__tags li { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: .5rem .8rem; border: 1px solid var(--rule); border-radius: 99px; }
+.trj__n { font-weight: 500; font-size: clamp(4rem, 9vw, 9rem); line-height: .8; letter-spacing: -.065em; color: var(--terra); margin-left: -.04em; }
+.trj__body { padding-left: clamp(28px, 3.6vw, 60px); min-width: 0; }
+.trj__t { margin-top: 1.2rem; font-weight: 500; font-size: clamp(2.2rem, 4.4vw, 4.2rem); line-height: .95; letter-spacing: -.05em; }
+.trj__d { margin-top: clamp(1.2rem, 2vw, 1.8rem); font-size: clamp(1.05rem, 1.3vw, 1.2rem); color: var(--muted); max-width: 36em; }
+.trj__tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: clamp(1.4rem, 2.2vw, 2rem); }
+.trj__tags li { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: .5rem .8rem; border: 1px solid var(--rule); border-radius: 99px; }
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .tl { view-timeline: --tl block; }
-    .tl::after { display: block; animation: tl-grow linear both; animation-timeline: --tl; animation-range: entry 50% exit 50%; }
-    .tl__step { view-timeline: --step block; }
-    .tl__n { animation: tl-num linear both; animation-timeline: --step; animation-range: cover calc(50vh + 20px) cover calc(50vh + 120px); }
-    .tl__step::after { animation: tl-dot linear both; animation-timeline: --step; animation-range: cover calc(50vh + 20px) cover calc(50vh + 60px); }
+    .trj { view-timeline: --tl block; }
+    .trj::after { display: block; animation: tl-grow linear both; animation-timeline: --tl; animation-range: entry 50% exit 50%; }
+    .trj__step { view-timeline: --step block; }
+    .trj__n { animation: tl-num linear both; animation-timeline: --step; animation-range: cover calc(50vh + 20px) cover calc(50vh + 120px); }
+    .trj__step::after { animation: tl-dot linear both; animation-timeline: --step; animation-range: cover calc(50vh + 20px) cover calc(50vh + 60px); }
   }
 }
 @keyframes tl-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
@@ -107,14 +107,14 @@
   .glance__list div:nth-child(n + 3) { border-top: 1px solid var(--rule); }
   .glance__list dd { margin-top: 1rem; }
 
-  .tl { --rail: 5px; --pt: 44px; }
-  .tl::before, .tl::after { top: calc(var(--pt) + 20px); }
-  .tl__step { grid-template-columns: 1fr; gap: 0; }
-  .tl__step::after { top: calc(var(--pt) + 15px); }
-  .tl__n, .tl__body { padding-left: 34px; }
-  .tl__n { font-size: clamp(3.4rem, 15vw, 4.6rem); margin-left: 0; }
-  .tl__body .label { margin-top: 1.4rem; }
-  .tl__t { margin-top: .8rem; }
+  .trj { --rail: 5px; --pt: 44px; }
+  .trj::before, .trj::after { top: calc(var(--pt) + 20px); }
+  .trj__step { grid-template-columns: 1fr; gap: 0; }
+  .trj__step::after { top: calc(var(--pt) + 15px); }
+  .trj__n, .trj__body { padding-left: 34px; }
+  .trj__n { font-size: clamp(3.4rem, 15vw, 4.6rem); margin-left: 0; }
+  .trj__body .label { margin-top: 1.4rem; }
+  .trj__t { margin-top: .8rem; }
 
   .see__media { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 14px; }
   .who__grid { grid-template-columns: 1fr; }

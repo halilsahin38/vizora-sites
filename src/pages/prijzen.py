@@ -24,7 +24,7 @@ COMPARE = [
     ]),
     ("Merk &amp; groei", [
         ("Logo &amp; huisstijl", False, False, True),
-        ("Social media profielen ingericht", False, False, True),
+        ("Profielen op social media ingericht", False, False, True),
         ("Persoonlijk groeiplan", False, False, True),
         ("Advies voor advertenties", False, False, True),
         ("1 maand gratis aanpassingen", False, False, True),
@@ -32,7 +32,7 @@ COMPARE = [
 ]
 
 EXTRAS = [
-    ("Advertenties", "Google- en Meta-campagnes die nieuwe klanten opleveren, met duidelijke rapportages.", "Prijs op aanvraag"),
+    ("Advertenties", "Campagnes in Google en op Instagram en Facebook, met duidelijke rapportages.", "Prijs op aanvraag"),
     ("Social media content", "Content maken of posten voor jouw zaak. Wat je nodig hebt en wat het kost, bespreken we samen.", "In overleg"),
     ("Losse aanpassingen", "Geen abonnement? Dan kan het ook. We spreken per aanpassing vooraf een prijs af.", "Per keer"),
 ]
