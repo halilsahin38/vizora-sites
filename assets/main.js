@@ -432,3 +432,27 @@ if (quick) {
     if (ok()) window.location.href = `mailto:halilsahinai@gmail.com?subject=${encodeURIComponent('Vraag via de website - ' + val('naam'))}&body=${encodeURIComponent(message())}`;
   });
 }
+
+/* ---------- Voorbeeldstijlen wisselen ---------- */
+const stylesStage = document.querySelector('[data-styles]');
+if (stylesStage) {
+  const tabs = [...document.querySelectorAll('.styles__tab')];
+  const select = (tab) => {
+    const key = tab.dataset.style;
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+    });
+    stylesStage.querySelectorAll('.styles__img').forEach((img) => img.classList.toggle('is-active', img.dataset.style === key));
+  };
+  tabs.forEach((tab, i) => {
+    tab.tabIndex = i === 0 ? 0 : -1;
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      next.focus(); select(next);
+    });
+  });
+}

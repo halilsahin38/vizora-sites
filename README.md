@@ -47,17 +47,9 @@ De screenshots komen in `assets/concepts/`.
 ## Foto's
 
 De foto's in `assets/foto/` komen van Unsplash en vallen onder de Unsplash-licentie (gratis te gebruiken, ook commercieel, naamsvermelding niet verplicht).
-Op `telefoon` en `laptop` is het voorbeeldontwerp uit `concepts/merk.html` op het scherm gezet.
+Op de telefoon- en laptopfoto's zijn de voorbeeldontwerpen uit `concepts/merk.html`, `licht.html` en `warm.html` op het scherm gezet (`merk-`, `licht-`, `warm-`).
 
-- `telefoon` – https://unsplash.com/photos/person-holding-white-iphone-5-c-ikAlhV_zCHo
-- `laptop` – https://unsplash.com/photos/black-and-silver-laptop-computer-on-brown-wooden-table-1Ps-Oi64lOA
-- `ondernemer-winkel` – https://unsplash.com/photos/elderly-woman-smiling-in-a-room-filled-with-clothes-UZCqtOcY8b4
-- `ondernemer-atelier` – https://unsplash.com/photos/woman-working-at-a-desk-with-craft-supplies-ag5H7Nqbf9U
-- `ondernemer-zaak` – https://unsplash.com/photos/woman-sitting-in-front-of-brown-wooden-table-NoRsyXmHGpI
-- `ondernemer-telefoon` – https://unsplash.com/photos/a-man-in-an-apron-looking-at-a-cell-phone-uk3ey_vhDKA
-- `ondernemer-tablet` – https://unsplash.com/photos/woman-sitting-around-table-holding-tablet-JBwcenOuRCg
-- `vakman` – https://unsplash.com/photos/a-man-playing-a-piano-96-ZnaO4NfI
-- `koffie` – https://unsplash.com/photos/two-people-holding-gray-mugs-at-table-K8XYGbw4Ahg
-- `breda` – https://unsplash.com/photos/a-group-of-people-walking-down-a-street-next-to-tall-buildings-U355VSVlL9E
+- telefoonfoto (`*-telefoon`) – https://unsplash.com/photos/person-holding-white-iphone-5-c-ikAlhV_zCHo
+- laptopfoto (`*-laptop`) – https://unsplash.com/photos/black-and-silver-laptop-computer-on-brown-wooden-table-1Ps-Oi64lOA
 
 Vervang een foto door een bestand met dezelfde naam (.jpg en .webp) om hem te wisselen.

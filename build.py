@@ -334,9 +334,9 @@ home += f'''
       <div class="container">
         <div class="hx__frame">
           <div class="hx__copy">
-            <p class="eyebrow reveal">Webdesign voor ondernemers in heel Nederland</p>
-            <h1 class="split-words">Meer klanten, met een online uitstraling die <em>klopt.</em></h1>
-            <p class="hx__lead reveal" data-delay="400">Wij zorgen dat jouw zaak online gevonden, gekozen en geboekt wordt. Met een website die vertrouwen wekt, meer bereik in Google en een helder plan om te groeien. Zodat jij je kunt richten op waar je goed in bent: je zaak.</p>
+            <p class="eyebrow reveal">Websites &amp; online groei · heel Nederland</p>
+            <h1 class="split-words">Een website die je <em>meer klanten</em> oplevert.</h1>
+            <p class="hx__lead reveal" data-delay="400">Wij bouwen je professionele website én zorgen dat je gevonden wordt in Google. Eén vast team voor je website en je groei, zodat jij je kunt richten op je zaak.</p>
             <p class="hx__strong reveal" data-delay="500">Gratis websiteconcept bij je eerste gesprek.</p>
             <div class="hero__actions reveal" data-delay="600">
               <a href="contact.html" class="btn">Plan een gratis gesprek {I["arrow"]}</a>
@@ -344,7 +344,7 @@ home += f'''
             </div>
           </div>
           <div class="hx__visual">
-            {photo("telefoon", "Hand met een telefoon waarop een website staat die Vizora heeft ontworpen", "photo--fill", "-0.07", w=1280, h=1496, pos="55% center", eager=True)}
+            {photo("merk-telefoon", "Hand met een telefoon waarop een voorbeeldwebsite van Vizora staat", "photo--fill", "-0.07", w=1100, h=1286, pos="55% center", eager=True)}
             <div class="chip-card chip-card--a" data-speed="-0.16" aria-hidden="true">
               <div class="chip-card__icon float">{I["inbox"]}</div>
               <div><strong>Nieuwe aanvraag</strong><small>via je website</small></div>
@@ -369,10 +369,42 @@ home += f'''
       </div>
     </section>
 
+    <section class="section styles" aria-labelledby="stijl-titel">
+      <div class="container">
+        <div class="section__head section__head--split">
+          <div>
+            <p class="eyebrow reveal">Voorbeelden</p>
+            <h2 id="stijl-titel" class="reveal">Zo kan <em>jouw</em> website eruitzien.</h2>
+          </div>
+          <p class="reveal styles__intro">Drie voorbeeldontwerpen in verschillende stijlen. Jouw website maken we altijd op maat, in jouw kleuren en met jouw teksten.</p>
+        </div>
+        <div class="styles__stage reveal" id="stijl-paneel" role="tabpanel" aria-live="polite" data-styles>
+          <div class="styles__laptop">
+              <picture class="styles__img is-active" data-style="merk"><source srcset="assets/foto/merk-laptop.webp" type="image/webp"><img src="assets/foto/merk-laptop.jpg" alt="Voorbeeldwebsite in de stijl Donker en luxe op een laptop" width="1500" height="1213" loading="lazy" decoding="async"></picture>
+              <picture class="styles__img" data-style="licht"><source srcset="assets/foto/licht-laptop.webp" type="image/webp"><img src="assets/foto/licht-laptop.jpg" alt="Voorbeeldwebsite in de stijl Licht en strak op een laptop" width="1500" height="1213" loading="lazy" decoding="async"></picture>
+              <picture class="styles__img" data-style="warm"><source srcset="assets/foto/warm-laptop.webp" type="image/webp"><img src="assets/foto/warm-laptop.jpg" alt="Voorbeeldwebsite in de stijl Warm en persoonlijk op een laptop" width="1500" height="1213" loading="lazy" decoding="async"></picture>
+          </div>
+          <div class="styles__phone">
+              <picture class="styles__img is-active" data-style="merk"><source srcset="assets/foto/merk-telefoon.webp" type="image/webp"><img src="assets/foto/merk-telefoon.jpg" alt="Dezelfde voorbeeldwebsite op een telefoon" width="1100" height="1286" loading="lazy" decoding="async"></picture>
+              <picture class="styles__img" data-style="licht"><source srcset="assets/foto/licht-telefoon.webp" type="image/webp"><img src="assets/foto/licht-telefoon.jpg" alt="Dezelfde voorbeeldwebsite op een telefoon" width="1100" height="1286" loading="lazy" decoding="async"></picture>
+              <picture class="styles__img" data-style="warm"><source srcset="assets/foto/warm-telefoon.webp" type="image/webp"><img src="assets/foto/warm-telefoon.jpg" alt="Dezelfde voorbeeldwebsite op een telefoon" width="1100" height="1286" loading="lazy" decoding="async"></picture>
+          </div>
+        </div>
+        <div class="styles__bar reveal">
+          <div class="styles__tabs" role="tablist" aria-label="Kies een stijl">
+            <button type="button" role="tab" class="styles__tab" id="tab-merk" aria-controls="stijl-paneel" aria-selected="true" data-style="merk"><b>Donker &amp; luxe</b><span>Diep zwart met warm goud. Stijlvol en exclusief, voor een zaak die indruk wil maken.</span></button>
+            <button type="button" role="tab" class="styles__tab" id="tab-licht" aria-controls="stijl-paneel" aria-selected="false" data-style="licht"><b>Licht &amp; strak</b><span>Veel wit, strakke letters en één rustige kleur. Helder, modern en zakelijk.</span></button>
+            <button type="button" role="tab" class="styles__tab" id="tab-warm" aria-controls="stijl-paneel" aria-selected="false" data-style="warm"><b>Warm &amp; persoonlijk</b><span>Zachte tinten en ronde vormen. Vriendelijk en uitnodigend, alsof je even binnenloopt.</span></button>
+          </div>
+          <a href="contact.html" class="btn">Ontvang jouw gratis concept {I["arrow"]}</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container roof">
         <div class="roof__visual reveal">
-          {photo("laptop", "Laptop op een houten bureau met een website van Vizora op het scherm", "photo--fill", "-0.07", w=1400, h=1733, pos="center 62%")}
+          {photo("warm-laptop", "Laptop op een houten bureau met een voorbeeldwebsite op het scherm", "photo--fill", "-0.07", w=1500, h=1213, pos="40% center")}
         </div>
         <div class="roof__copy">
           <h2 class="roof__title reveal">Alles wat je online nodig hebt, onder <em>één dak.</em></h2>
@@ -579,7 +611,7 @@ dien += f'''
       <div class="container">
         <div class="service" id="websites">
           <div class="service__visual reveal" aria-hidden="true">
-            {photo("laptop", "Laptop op een houten bureau met een website van Vizora op het scherm", "photo--fill", "-0.07", w=1400, h=1733, pos="center 60%")}
+            {photo("licht-laptop", "Laptop op een houten bureau met een voorbeeldwebsite op het scherm", "photo--fill", "-0.07", w=1500, h=1213)}
             <div class="chip-card" style="right:0;bottom:40px" data-speed="-0.14"><div class="chip-card__icon">{I["bolt"]}</div><div><strong>Supersnel</strong><small>laadt in een oogwenk</small></div></div>
           </div>
           <div class="service__copy">
@@ -628,7 +660,7 @@ dien += f'''
 
         <div class="service" id="social-media">
           <div class="service__visual reveal" aria-hidden="true">
-            {photo("telefoon", "Hand met een telefoon waarop een website staat", "photo--fill", "-0.07", w=1280, h=1496, pos="55% center")}
+            {photo("warm-telefoon", "Hand met een telefoon waarop een voorbeeldwebsite staat", "photo--fill", "-0.07", w=1100, h=1286, pos="55% center")}
             <div class="chip-card" style="left:0;top:80px" data-speed="-0.16"><div class="chip-card__icon">{I["social"]}</div><div><strong>Profiel ingericht</strong><small>Instagram &amp; Facebook</small></div></div>
             <div class="chip-card" style="right:0;bottom:50px" data-speed="-0.12"><div class="chip-card__icon">{I["pen"]}</div><div><strong>Herkenbare stijl</strong><small>overal hetzelfde gevoel</small></div></div>
           </div>
@@ -1194,7 +1226,7 @@ LD = {
   "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}],
 }
 home = home.replace("</head>", '  <script type="application/ld+json">' + json.dumps(LD, ensure_ascii=False) + "</script>\n</head>")
-home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/foto/telefoon.webp" type="image/webp">\n  <link rel="stylesheet" href="assets/style.css">')
+home = home.replace('<link rel="stylesheet" href="assets/style.css">', '<link rel="preload" as="image" href="assets/foto/merk-telefoon.webp" type="image/webp">\n  <link rel="stylesheet" href="assets/style.css">')
 
 for name, html in [("index.html", home), ("diensten.html", dien), ("prijzen.html", prijs), ("werkwijze.html", werk), ("over-ons.html", over), ("contact.html", cont), ("404.html", nf)]:
     (OUT / name).write_text(html, encoding="utf-8")

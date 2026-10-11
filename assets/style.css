@@ -1206,3 +1206,30 @@ a.tag:hover { background: var(--ink); color: var(--bg); }
   .city .photo::after { background: linear-gradient(0deg, rgba(12,11,10,.85) 0%, rgba(12,11,10,.5) 55%, rgba(12,11,10,.1) 100%); }
 }
 .scard__body { padding: 1.6rem 1.6rem 1.8rem; }
+
+/* ---------- Voorbeeldstijlen ---------- */
+.styles__intro { max-width: 30em; color: var(--muted); margin: 0; }
+.styles__stage { display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; height: clamp(320px, 42vw, 560px); }
+.styles__laptop, .styles__phone { position: relative; overflow: hidden; border-radius: 28px; background: #191714; }
+.styles__img { position: absolute; inset: 0; opacity: 0; transition: opacity .6s var(--ease); }
+.styles__img.is-active { opacity: 1; }
+.styles__img img { width: 100%; height: 100%; object-fit: cover; }
+.styles__laptop .styles__img img { object-position: 40% 55%; }
+.styles__phone .styles__img img { object-position: 52% 40%; }
+.styles__bar { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 1.4rem; flex-wrap: wrap; }
+.styles__tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; flex: 1; min-width: min(100%, 640px); }
+.styles__tab { text-align: left; padding: 1rem 1.2rem; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; transition: border-color .3s, box-shadow .3s, background .3s; font: inherit; color: var(--ink); }
+.styles__tab b { display: block; font-family: var(--serif); font-size: 1.1rem; font-weight: 600; margin-bottom: .2rem; }
+.styles__tab span { display: block; font-size: .86rem; color: var(--muted); line-height: 1.5; }
+.styles__tab:hover { border-color: rgba(18,17,16,.3); }
+.styles__tab[aria-selected="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.styles__tab[aria-selected="true"] b::after { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-left: .5rem; vertical-align: middle; }
+@media (prefers-reduced-motion: reduce) { .styles__img { transition: none; } }
+@media (max-width: 760px) {
+  .styles__stage { grid-template-columns: 1fr; height: auto; }
+  .styles__laptop { height: 260px; }
+  .styles__phone { display: none; }
+  .styles__tabs { grid-template-columns: 1fr; }
+  .styles__tab span { display: none; }
+  .styles__bar .btn { width: 100%; }
+}
