@@ -166,7 +166,7 @@ def render():
         <div>
           {label("04", "Vragen")}
           <h2 id="qa-title" class="h2 qa__title" data-reveal>Vragen over de werkwijze</h2>
-          <p class="qa__help" data-reveal>Staat je vraag er niet bij? <a href="{WA}" target="_blank" rel="noopener">App ons</a> of bel <a href="{TEL}">{TEL_TXT}</a>. Ma t/m za, 09:00–18:00.</p>
+          <p class="qa__help" data-reveal>Staat je vraag er niet bij? <a href="{WA}" target="_blank" rel="noopener">App</a>, <a href="mailto:{MAIL}">mail</a> of bel <a href="{TEL}">{TEL_TXT}</a>. Ma t/m za, 09:00–18:00.</p>
         </div>
         <div class="qa__list" data-reveal>
 {faq_list(QA)}

@@ -160,6 +160,7 @@ def footer(active=""):
           <a href="{plan}" class="btn btn--light">Plan je gratis concept {I["arrow"]}</a>
           <a href="{TEL}" class="btn btn--line">{I["call"]} Bel {TEL_TXT}</a>
           <a href="{WA}" class="btn btn--line" target="_blank" rel="noopener">{WA_SVG} WhatsApp</a>
+          <a href="mailto:{MAIL}" class="btn btn--line">{I["mail"]} Mail ons</a>
         </div>
       </div>
       <div class="ft__cols">

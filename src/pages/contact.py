@@ -21,7 +21,7 @@ DIENST = [
 # Zo gaat het (onder de intro bovenaan)
 HOW = [
     "Je kiest een moment of laat het aan ons (1 minuut).",
-    "Wij bevestigen via WhatsApp en maken alvast je concept.",
+    "Wij bevestigen via WhatsApp of e-mail en maken alvast je concept.",
     "In het gesprek (± 30 min) zie je je website. Daarna beslis jij.",
 ]
 
@@ -105,9 +105,9 @@ def _form():
             <p class="booking__error" role="alert"></p>
             <div class="bk__actions">
               <button type="submit" class="btn bk__wa">{WA_SVG} Verstuur via WhatsApp</button>
-              <button type="button" class="btn btn--ghost" data-email>{I["mail"]} Liever via e-mail</button>
+              <button type="button" class="btn btn--ghost" data-email>{I["mail"]} Verstuur via e-mail</button>
             </div>
-            <p class="bk__note"><b>Je bericht staat klaar in WhatsApp. Druk daar nog op verzenden, dan is het geregeld.</b> Binnen werktijd (ma–za 9–18 uur) hoor je dezelfde dag van ons. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
+            <p class="bk__note"><b>Je bericht staat daarna klaar in WhatsApp of in je mail. Druk daar nog op verzenden, dan is het geregeld.</b> Binnen werktijd (ma–za 9–18 uur) hoor je dezelfde dag van ons. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
           </div>
         </form>'''
 
@@ -128,7 +128,7 @@ def render():
     html += header(FILE)
     html += f'''
   <main id="main">
-{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen of appen? Dat kan natuurlijk ook.", how)}
+{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen, appen of mailen? Dat kan natuurlijk ook.", how)}
     <section class="cd wrap" aria-label="Direct contact">
       <ul class="cd__list" data-reveal>
 {_direct()}

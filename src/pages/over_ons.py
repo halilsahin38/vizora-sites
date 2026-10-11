@@ -13,7 +13,7 @@ PROMISES = [
     ("Zelf gemaakt", "We ontwerpen en bouwen elke website zelf, van eerste schets tot livegang. Daardoor weten we precies hoe jouw site in elkaar zit en kunnen we snel schakelen."),
     ("Eerlijk", "Duidelijke prijzen en een vaste prijs vooraf. Ben je niet blij met het ontwerp, dan betaal je niets. En als iets niet nodig is, zeggen we dat ook."),
     ("Gericht op groei", "Mooi is niet genoeg. Alles wat we maken moet je iets opleveren: meer bereik, meer aanvragen, meer klanten."),
-    ("Bereikbaar", "Maandag t/m zaterdag van 09:00 tot 18:00, via WhatsApp of telefoon. Ook na de livegang blijven we gewoon je aanspreekpunt."),
+    ("Bereikbaar", "Maandag t/m zaterdag van 09:00 tot 18:00, via WhatsApp, telefoon of e-mail. Ook na de livegang blijven we gewoon je aanspreekpunt."),
 ]
 
 

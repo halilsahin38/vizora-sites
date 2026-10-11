@@ -132,7 +132,7 @@ def render():
         <div class="cmp__aside">
           {label("02", "Vergelijken")}
           <h2 id="cmp-title" class="h2 cmp__title" data-reveal>Wat zit er in elk pakket?</h2>
-          <p class="cmp__help" data-reveal>Twijfel je tussen twee pakketten? <a href="{WA}" target="_blank" rel="noopener">App ons</a> of bel <a href="{TEL}">{TEL_TXT}</a>. We adviseren eerlijk, ook als een kleiner pakket genoeg is.</p>
+          <p class="cmp__help" data-reveal>Twijfel je tussen twee pakketten? <a href="{WA}" target="_blank" rel="noopener">App</a>, <a href="mailto:{MAIL}">mail</a> of bel <a href="{TEL}">{TEL_TXT}</a>. We adviseren eerlijk, ook als een kleiner pakket genoeg is.</p>
         </div>
         <div class="cmp__wrap" data-reveal>
 {_compare()}

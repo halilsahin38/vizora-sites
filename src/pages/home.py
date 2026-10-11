@@ -142,7 +142,7 @@ def render():
         <div class="about__body">
           {label("", "Wie zijn wij")}
           <h2 id="ab-title" class="h2 home__h2" data-reveal>Halil &amp; Sahin. Twee broers, één aanspreekpunt.</h2>
-          <p class="about__text" data-reveal>Wij zijn Halil en Sahin, twee broers uit de omgeving van Breda. Wij bouwen je website en helpen je met je marketing: je Google Bedrijfsprofiel, je vindbaarheid in je regio en je social media. Alles in één hand, en je spreekt altijd een van ons tweeën.</p>
+          <p class="about__text" data-reveal>Wij zijn Halil en Sahin, twee broers uit de omgeving van Breda. Wij bouwen je website en helpen je met je marketing: je Google Bedrijfsprofiel, je vindbaarheid in je regio en je social media. Alles in één hand, en je spreekt altijd een van ons tweeën: via WhatsApp, telefoon of e-mail.</p>
           <blockquote class="about__why" data-reveal>
             <p class="label">Waarom we zijn begonnen</p>
             <p>We zagen hoe vaak ondernemers te veel betalen voor een website die hen niet verder helpt. Dat vonden we zonde, en dat willen wij voorkomen. Daarom werken we anders: eerst plannen we samen een gesprek, en daarin laten we je al zien hoe jouw nieuwe website eruit kan zien. Pas als je blij bent, gaan we verder. Daarna helpen we je om online gevonden te worden.</p>
