@@ -7,7 +7,7 @@
  *   data-clip         beeld opent als een gordijn en zoomt licht uit
  *   data-grow         groot beeld groeit mee tijdens het scrollen (hero)
  *   data-speed="-0.1" parallax: beweegt langzamer/sneller dan de pagina
- *   data-hscroll      sectie met horizontale galerij (pin op desktop); track = [data-hscroll-track]
+ *   data-switcher     voorbeelden: knoppen wisselen de website op laptop/telefoon; op desktop ook door te scrollen (pin)
  *
  * Bij prefers-reduced-motion of zonder GSAP blijft alles gewoon zichtbaar en statisch.
  */
@@ -56,6 +56,30 @@
     el.querySelectorAll('.tl').forEach((l) => l.setAttribute('aria-hidden', 'true'));
     return el.querySelectorAll('.tl__in');
   };
+
+  /* voorbeelden: één scherm, drie websites (knoppen werken altijd, ook zonder GSAP) */
+  const sw = document.querySelector('[data-switcher]');
+  let swSet = () => {};
+  if (sw) {
+    const tabs = [...sw.querySelectorAll('[data-sw-tab]')];
+    const shots = [...sw.querySelectorAll('[data-sw-shot]')];
+    let cur = 0;
+    swSet = (i) => {
+      if (i === cur) return;
+      cur = i;
+      tabs.forEach((t, k) => { t.classList.toggle('is-on', k === i); t.setAttribute('aria-pressed', String(k === i)); });
+      shots.forEach((s, k) => { s.classList.toggle('is-on', k === i); if (k === i) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });
+    };
+    tabs.forEach((t, i) => t.addEventListener('click', () => {
+      // vastgezet: naar het stuk van de sectie scrollen dat bij deze stijl hoort
+      if (sw.classList.contains('is-pinned')) {
+        const top = sw.getBoundingClientRect().top + window.scrollY;
+        const y = top + (sw.offsetHeight - window.innerHeight) * (i + 0.5) / tabs.length;
+        if (window.__lenis) window.__lenis.scrollTo(y); else window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      swSet(i);
+    }));
+  }
 
   if (!gsap || !ScrollTrigger || reduce) {
     document.querySelectorAll('[data-fill]').forEach((el) => el.classList.add('is-static'));
@@ -124,17 +148,13 @@
     gsap.fromTo(el, { yPercent: -s * 100 }, { yPercent: s * 100, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
 
-  /* horizontale galerij (alleen desktop; mobiel = native swipe) */
-  if (desktop) {
-    document.querySelectorAll('[data-hscroll]').forEach((sec) => {
-      const track = sec.querySelector('[data-hscroll-track]');
-      const viewport = track.parentElement;
-      const dist = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-      sec.classList.add('is-pinned');
-      gsap.to(track, {
-        x: () => -dist(), ease: 'none',
-        scrollTrigger: { trigger: viewport, start: 'center center', end: () => '+=' + dist(), pin: sec, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1 },
-      });
+  /* voorbeelden vastzetten op desktop: scrollen wisselt de website */
+  if (sw && desktop) {
+    const n = sw.querySelectorAll('[data-sw-tab]').length;
+    sw.classList.add('is-pinned');
+    ScrollTrigger.create({
+      trigger: sw, start: 'top top', end: 'bottom bottom',
+      onUpdate: (st) => swSet(Math.min(n - 1, Math.floor(st.progress * n))),
     });
   }
 
