@@ -42,4 +42,6 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 - Alle pagina's worden gegenereerd door `python3 build.py` (f-strings: letterlijke accolades als `{{ }}`).
 - Teksten en pagina's in `src/` (core.py + pages/), stijl in `assets/css/`, gedrag in `assets/js/` (site.js, motion.js).
 - CSP in `vercel.json` bevat een hash van het inline script; herberekenen als `INLINE_JS` verandert.
+- Beveiliging: alles komt van eigen domein (lettertypes lokaal in `assets/fonts/`, geen Google Fonts of andere externe
+  bronnen), strenge headers in `vercel.json`. `/.well-known/security.txt` verloopt op `SECURITY_EXPIRES` in core.py: jaarlijks verlengen.
 - Testscreenshots en tijdelijke bestanden nooit in deze map zetten (gebruik een scratchpad).
