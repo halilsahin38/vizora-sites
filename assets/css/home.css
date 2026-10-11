@@ -25,7 +25,9 @@
 .work__head .label { align-self: start; padding-top: .9em; }
 .work__head .h2 { color: var(--on-dark); }
 .work__intro { color: var(--on-dark-muted); max-width: 26em; }
-.work__viewport { overflow: hidden; }
+.work__viewport { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: var(--rule-dark) transparent; }
+/* vastgezet op desktop (motion.js zet .is-pinned): GSAP schuift de strook, dus zelf niet scrollen */
+.work.is-pinned .work__viewport { overflow: hidden; }
 .work__track { display: flex; gap: clamp(16px, 1.8vw, 28px); padding-inline: var(--pad); width: max-content; will-change: transform; }
 .wk { flex: none; margin: 0; display: grid; gap: 1rem; align-content: start; }
 .wk--laptop { width: clamp(300px, 52vw, 860px); }

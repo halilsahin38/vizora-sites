@@ -131,6 +131,7 @@
       const track = sec.querySelector('[data-hscroll-track]');
       const viewport = track.parentElement;
       const dist = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+      sec.classList.add('is-pinned');
       gsap.to(track, {
         x: () => -dist(), ease: 'none',
         scrollTrigger: { trigger: viewport, start: 'center center', end: () => '+=' + dist(), pin: sec, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1 },
