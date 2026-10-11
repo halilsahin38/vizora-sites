@@ -2,6 +2,43 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Mail- en bellinks ----------
+     In een ingebedde weergave (zoals de voorbeeldlink) blokkeert de browser mailto:/tel: in het frame zelf
+     ("inhoud geblokkeerd"). Daar openen we ze in een nieuw venster; lukt ook dat niet, dan tonen we het adres. */
+  const framed = window.top !== window.self;
+  let toastEl = null;
+  const showToast = (html) => {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'toast'; toastEl.setAttribute('role', 'status');
+      document.body.append(toastEl);
+    }
+    toastEl.innerHTML = html;
+    toastEl.classList.add('is-shown');
+    clearTimeout(showToast.t);
+    showToast.t = setTimeout(() => toastEl.classList.remove('is-shown'), 7000);
+  };
+  const openExternal = (url) => {
+    if (!framed) { window.location.href = url; return; }
+    let w = null;
+    try { w = window.open(url, '_blank'); } catch (e) { /* geblokkeerd */ }
+    if (w) { try { w.opener = null; } catch (e) { /* ander domein */ } return; }
+    const [scheme, rest] = url.split(':');
+    const value = decodeURIComponent(rest.split('?')[0]);
+    showToast(scheme === 'tel'
+      ? `Bel ons op <b>${value.replace('+31', '0').replace(/^(06)(\d{2})(\d{2})(\d{2})(\d{2})$/, '$1 $2 $3 $4 $5')}</b>`
+      : `Mail ons op <b>${value}</b>`);
+    if (navigator.clipboard) navigator.clipboard.writeText(value).catch(() => {});
+  };
+  if (framed) {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+      if (!a || e.defaultPrevented) return;
+      e.preventDefault();
+      openExternal(a.getAttribute('href'));
+    });
+  }
+
   /* ---------- Kop: achtergrond bij scrollen, verbergen bij naar beneden scrollen ---------- */
   const hd = document.querySelector('[data-header]');
   if (hd) {
@@ -175,7 +212,7 @@
     booking.querySelector('[data-email]')?.addEventListener('click', () => {
       if (!validate()) return;
       const subject = `Kennismakingsgesprek - ${booking.naam.value.trim()}`;
-      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildMessage())}`;
+      openExternal(`mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildMessage())}`);
     });
 
     // vooraf invullen vanuit een link, bv. contact.html?pakket=Groei

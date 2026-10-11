@@ -255,3 +255,12 @@ html.js:not(.ready) [data-lines] { opacity: 0; }
   .qa__a p { padding-right: 0; }
   .dock { right: 14px; bottom: 14px; }
 }
+
+/* ---------- melding (bv. e-mailadres in een ingebedde weergave) ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 24px; z-index: 300; transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+  max-width: calc(100vw - 40px); padding: .9rem 1.2rem; border-radius: 12px; background: var(--ink); color: var(--on-dark);
+  font-size: .95rem; box-shadow: 0 20px 40px -20px rgba(18, 17, 16, .6); transition: opacity .3s, transform .4s var(--ease); user-select: text;
+}
+.toast.is-shown { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.toast b { font-weight: 500; color: #fff; }
