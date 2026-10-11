@@ -117,7 +117,6 @@ def render():
         <h2 id="ab-title" class="h2" data-reveal>Halil &amp; Sahin.<br><span>Twee broers, één aanspreekpunt.</span></h2>
         <p class="about__text" data-reveal>Wij bouwen elke website zelf, van eerste schets tot livegang. Geen accountmanagers of wachtrijen: je spreekt altijd een van ons tweeën, gewoon via WhatsApp of telefoon. Voor ondernemers in heel Nederland.</p>
         <div class="about__cta" data-reveal>
-          <a href="contact.html" class="btn">Plan je gratis concept {I["arrow"]}</a>
           <a href="over-ons.html" class="link">Meer over ons {I["arrow"]}</a>
         </div>
       </div>

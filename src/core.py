@@ -156,7 +156,7 @@ def footer(active=""):
     <div class="wrap">
       <div class="ft__cta">
         <p class="label">(→) Volgende stap</p>
-        <h2 class="ft__title">Eerst je website zien.<br><span>Dan pas beslissen.</span></h2>
+        <h2 class="ft__title">Klaar voor meer klanten?<br><span>Begin met je gratis concept.</span></h2>
         <div class="ft__actions">
           <a href="{plan}" class="btn btn--light">Plan je gratis concept {I["arrow"]}</a>
           <a href="{TEL}" class="btn btn--line">{I["call"]} Bel {TEL_TXT}</a>
