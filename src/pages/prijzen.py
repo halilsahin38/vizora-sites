@@ -157,6 +157,7 @@ def render():
           <div><dt>Opzeggen</dt><dd>Per maand</dd></div>
           <div><dt>Jaarcontract</dt><dd>Geen</dd></div>
         </dl>
+        <p class="abo__free" data-reveal><b>Nooit vastzitten.</b> Geen opstartkosten, geen jaarcontract en je domein staat op jouw naam. Stop je met het abonnement? Dan blijft je website gewoon van jou.</p>
       </div>
     </section>
 

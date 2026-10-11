@@ -110,30 +110,50 @@
       const datum = val('datum'); const tijd = val('tijd'); const vorm = val('vorm');
       summary.textContent = datum || tijd
         ? `${vorm || 'Gesprek'}${datum ? ` op ${datum}` : ''}${tijd ? ` om ${tijd}` : ''}`
-        : 'Kies hierboven een dag en tijd';
+        : 'Geen dag gekozen? Dan stellen wij een moment voor.';
     };
     booking.addEventListener('change', updateSummary);
     updateSummary();
 
+    // dag en tijd zijn optioneel: nog een keer klikken op je keuze zet hem weer uit
+    ['datum', 'tijd'].forEach((name) => {
+      let last = val(name) || null;
+      booking.addEventListener('change', (e) => { if (e.target.name === name) last = e.target.value; });
+      booking.addEventListener('click', (e) => {
+        const input = e.target.closest?.(`input[name="${name}"]`);
+        if (!input) return;
+        if (last === input.value) { input.checked = false; last = null; updateSummary(); } else last = input.value;
+      });
+    });
+
+    const preference = () => {
+      const datum = val('datum'); const tijd = val('tijd');
+      if (datum && tijd) return `${datum} om ${tijd}`;
+      if (datum) return `${datum}, tijd maakt niet uit`;
+      if (tijd) return `${tijd}, dag maakt niet uit`;
+      return 'geen, stel zelf een moment voor';
+    };
+
     const buildMessage = () => {
       const f = new FormData(booking);
+      const field = (name) => (f.get(name) || '').toString().trim();
       return [
         'Hoi Vizora Digital! Ik wil graag een gratis kennismakingsgesprek plannen.',
         '',
-        `Voorkeur: ${val('vorm')} op ${val('datum')} om ${val('tijd')}`,
+        `Gesprek: ${val('vorm') || 'maakt niet uit'}`,
+        `Voorkeur: ${preference()}`,
         `Interesse in: ${f.getAll('dienst').join(', ') || 'nog niet zeker'}`,
         '',
-        `Naam: ${f.get('naam')}`,
-        f.get('bedrijf') ? `Bedrijf: ${f.get('bedrijf')}` : null,
-        `Telefoon: ${f.get('telefoon')}`,
-        f.get('bericht') ? `\nToelichting: ${f.get('bericht')}` : null,
+        `Naam: ${field('naam')}`,
+        field('bedrijf') ? `Bedrijf: ${field('bedrijf')}` : null,
+        `Telefoon: ${field('telefoon')}`,
+        field('website') ? `Huidige website/Instagram: ${field('website')}` : null,
+        field('bericht') ? `\nToelichting: ${field('bericht')}` : null,
       ].filter((l) => l !== null).join('\n');
     };
 
     const validate = () => {
       const missing = [];
-      if (!val('datum')) missing.push('een dag');
-      if (!val('tijd')) missing.push('een tijd');
       if (!booking.naam.value.trim()) missing.push('je naam');
       if (!booking.telefoon.value.trim()) missing.push('je telefoonnummer');
       if (missing.length) {

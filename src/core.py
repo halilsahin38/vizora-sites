@@ -207,12 +207,12 @@ def footer(active=""):
 '''
 
 
-def page_head(num, label_text, title, lead):
-    """Kop voor subpagina's: groot, links uitgelijnd, met label."""
+def page_head(num, label_text, title, lead, extra=""):
+    """Kop voor subpagina's: groot, links uitgelijnd, met label. extra = HTML onder de intro (optioneel)."""
     return f'''    <section class="ph wrap">
       {label(num, label_text)}
       <h1 class="ph__title" data-lines>{title}</h1>
-      <p class="ph__lead" data-reveal>{lead}</p>
+      <p class="ph__lead" data-reveal>{lead}</p>{extra}
     </section>
 '''
 
@@ -227,7 +227,7 @@ def price_columns():
     out = []
     for p in PACKAGES:
         feats = "".join(f"<li>{f}</li>" for f in p["feats"])
-        badge = '<span class="tag">Meest gekozen</span>' if p["featured"] else ""
+        badge = '<span class="tag">Onze aanrader</span>' if p["featured"] else ""
         out.append(f'''          <article class="pk{" pk--featured" if p["featured"] else ""}" data-reveal>
             <div class="pk__top"><p class="label">{p["name"]}</p>{badge}</div>
             <p class="pk__price"><span class="pk__from">vanaf</span>€{p["price"]}</p>

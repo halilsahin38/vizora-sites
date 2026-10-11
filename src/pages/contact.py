@@ -18,6 +18,13 @@ DIENST = [
     ("Website-abonnement", "Website-abonnement"),
     ("Weet ik nog niet", "Weet ik nog niet"),
 ]
+# Zo gaat het (onder de intro bovenaan)
+HOW = [
+    "Je kiest een moment of laat het aan ons (1 minuut).",
+    "Wij bevestigen via WhatsApp en maken alvast je concept.",
+    "In het gesprek (± 30 min) zie je je website. Daarna beslis jij.",
+]
+
 GAINS = [
     "Een gratis concept van je nieuwe website",
     "Een eerlijke blik op je online uitstraling",
@@ -58,13 +65,13 @@ def _form():
           </fieldset>
 
           <fieldset class="bk__step">
-            <legend><span class="bk__n">02</span>Kies een dag</legend>
-            <p class="bk__hint">Maandag t/m zaterdag. De komende twaalf dagen.</p>
+            <legend><span class="bk__n">02</span>Kies een dag <span class="bk__opt">optioneel</span></legend>
+            <p class="bk__hint">Maandag t/m zaterdag, de komende twaalf dagen. Geen voorkeur? Sla dit over, dan stellen wij een moment voor.</p>
             <div class="dates"></div>
           </fieldset>
 
           <fieldset class="bk__step">
-            <legend><span class="bk__n">03</span>Kies een tijd</legend>
+            <legend><span class="bk__n">03</span>Kies een tijd <span class="bk__opt">optioneel</span></legend>
             <div class="bk__times">
 {tijd}
             </div>
@@ -84,6 +91,7 @@ def _form():
               <label class="bk__field"><span class="bk__lab">Naam <span aria-hidden="true">*</span></span><input name="naam" type="text" required autocomplete="name" maxlength="80"></label>
               <label class="bk__field"><span class="bk__lab">Telefoonnummer <span aria-hidden="true">*</span></span><input name="telefoon" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20"></label>
               <label class="bk__field"><span class="bk__lab">Bedrijfsnaam</span><input name="bedrijf" type="text" autocomplete="organization" maxlength="80"></label>
+              <div class="bk__field bk__field--full"><label class="bk__lab" for="bk-website">Link naar je huidige website of Instagram (optioneel)</label><input id="bk-website" name="website" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" maxlength="200" aria-describedby="bk-website-hint"><span class="bk__fhint" id="bk-website-hint">Helpt ons bij je concept</span></div>
               <label class="bk__field bk__field--full"><span class="bk__lab">Waar kunnen we je mee helpen? (optioneel)</span><textarea name="bericht" rows="3" maxlength="1000"></textarea></label>
             </div>
             <p class="bk__req">Velden met * zijn verplicht.</p>
@@ -92,20 +100,26 @@ def _form():
           <div class="bk__send">
             <div class="bk__sum">
               <p class="label">Je aanvraag</p>
-              <p class="bk__sumt" data-summary aria-live="polite">Kies hierboven een dag en tijd</p>
+              <p class="bk__sumt" data-summary aria-live="polite">Geen dag gekozen? Dan stellen wij een moment voor.</p>
             </div>
             <p class="booking__error" role="alert"></p>
             <div class="bk__actions">
               <button type="submit" class="btn bk__wa">{WA_SVG} Verstuur via WhatsApp</button>
               <button type="button" class="btn btn--ghost" data-email>{I["mail"]} Liever via e-mail</button>
             </div>
-            <p class="bk__note">Er opent een bericht met je gegevens; jij verstuurt het zelf. We bevestigen je afspraak zo snel mogelijk. Past het moment niet? Dan stellen we een ander tijdstip voor.</p>
+            <p class="bk__note"><b>Je bericht staat klaar in WhatsApp. Druk daar nog op verzenden, dan is het geregeld.</b> We bevestigen je afspraak zo snel mogelijk. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
           </div>
         </form>'''
 
 
 def render():
     gains = "".join(f'<li><span class="label">0{i}</span><span>{g}</span></li>' for i, g in enumerate(GAINS, 1))
+    how_items = "".join(f'<li><span class="label" aria-hidden="true">0{i}</span><span>{t}</span></li>' for i, t in enumerate(HOW, 1))
+    how = f'''
+      <div class="how" data-reveal>
+        <h2 class="label" id="how-title">Zo gaat het</h2>
+        <ol class="how__list">{how_items}</ol>
+      </div>'''
 
     html = head(FILE, "Contact | Plan een gratis gesprek | Vizora Digital",
                 f"Plan een gratis gesprek met Vizora Digital en zie vooraf een gratis concept van je website. "
@@ -114,7 +128,7 @@ def render():
     html += header(FILE)
     html += f'''
   <main id="main">
-{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen of appen? Dat kan natuurlijk ook.")}
+{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen of appen? Dat kan natuurlijk ook.", how)}
     <section class="cd wrap" aria-label="Direct contact">
       <ul class="cd__list" data-reveal>
 {_direct()}

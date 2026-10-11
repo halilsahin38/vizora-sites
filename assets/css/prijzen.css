@@ -73,6 +73,8 @@
 .abo__terms div { border-top: 1px solid var(--rule-dark); padding-top: 1rem; }
 .abo__terms dt { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--on-dark-muted); }
 .abo__terms dd { margin: .4rem 0 0; font-weight: 500; font-size: clamp(1.2rem, 1.8vw, 1.6rem); letter-spacing: -.03em; }
+.abo__free { margin-top: clamp(2rem, 3.4vw, 2.8rem); max-width: 40em; color: var(--on-dark-muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); }
+.abo__free b { font-weight: 500; color: var(--on-dark); }
 
 /* ---------- garanties ---------- */
 .gu { background: var(--beige); padding-block: clamp(80px, 10vw, 150px); }

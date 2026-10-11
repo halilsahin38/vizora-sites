@@ -47,10 +47,10 @@ def packs(rows, more=True):
           </div>'''
 
 
-def note(text):
+def note(*texts):
+    paras = "".join(f'\n            <p class="svc__note">{t}</p>' for t in texts)
     return f'''<div class="svc__block svc__block--note" data-reveal>
-            <p class="label">Goed om te weten</p>
-            <p class="svc__note">{text}</p>
+            <p class="label">Goed om te weten</p>{paras}
           </div>'''
 
 
@@ -135,7 +135,8 @@ def render():
           </div>
           {gets(["Google Bedrijfsprofiel inrichten", "Lokale SEO voor jouw regio", "Meer en betere reviews", "Google Ads-campagnes", "Advertenties op Instagram en Facebook", "Duidelijke rapportages"])}
           {packs([("Start", "Basis vindbaarheid in Google", f"€{P['Start']}"), ("Groei", "Google Bedrijfsprofiel ingericht en lokale SEO voor jouw regio", f"€{P['Groei']}"), ("Compleet", "Alles uit Groei, plus een persoonlijk groeiplan en advies voor advertenties", f"€{P['Compleet']}"), ("Plus", "Abonnement: Google Bedrijfsprofiel bijhouden en maandelijkse groeitips", f"€{S['Plus']}<small> p/m</small>")])}
-          {note("Advertentiecampagnes zitten niet in de pakketten. In Compleet krijg je advies; het opzetten en beheren van campagnes spreken we op maat met je af.")}
+          {note("We beloven geen plek 1 in Google; dat kan niemand eerlijk. Wel dat alles goed staat: je Google Bedrijfsprofiel, je pagina's en je regio.",
+               "Advertentiecampagnes zitten niet in de pakketten. In Compleet krijg je advies; het opzetten en beheren van campagnes spreken we op maat met je af.")}
           <div class="svc__actions" data-reveal>
             <a href="contact.html" class="btn">Bespreek marketing {I["arrow"]}</a>
           </div>

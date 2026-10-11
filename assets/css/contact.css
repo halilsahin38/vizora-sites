@@ -3,6 +3,15 @@
    (direct contact, gesprek plannen met het #booking-formulier)
    ========================================================= */
 
+/* ---------- zo gaat het (onder de intro, zelfde kolom) ---------- */
+.how { font-size: clamp(1.1rem, 1.45vw, 1.3rem); max-width: 36em; margin: clamp(2.4rem, 4vw, 3.4rem) 0 0 auto; }
+.how__list { margin-top: 1rem; border-top: 1px solid var(--ink); }
+.how__list li {
+  display: grid; grid-template-columns: 2.6rem 1fr; align-items: baseline; gap: .4rem;
+  padding: .95rem 0 1rem; border-bottom: 1px solid var(--rule);
+  font-weight: 500; font-size: 1.08rem; line-height: 1.3; letter-spacing: -.015em;
+}
+
 /* ---------- direct contact ---------- */
 .cd { padding-bottom: clamp(72px, 9vw, 130px); }
 .cd__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
@@ -54,6 +63,7 @@
 }
 .bk__step legend + * { clear: both; padding-top: 1.4rem; }
 .bk__step legend + .bk__hint { padding-top: .5rem; }
+.bk__opt { margin-left: .6rem; font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); white-space: nowrap; vertical-align: .35em; }
 .bk__n { display: inline-block; min-width: 3.4rem; font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: .04em; color: var(--muted); vertical-align: .35em; }
 .bk__hint { color: var(--muted); font-size: .95rem; }
 .bk__hint + * { margin-top: 1.2rem; }
@@ -115,6 +125,7 @@
 .bk__field textarea { resize: vertical; min-height: 6.6rem; }
 .bk__field input:hover, .bk__field textarea:hover { border-bottom-color: var(--ink); }
 .bk__field input:focus, .bk__field textarea:focus { outline: none; border-bottom-color: var(--terra); box-shadow: 0 1px 0 var(--terra); }
+.bk__fhint { font-size: .9rem; color: var(--muted); }
 .bk__req { margin-top: 1.2rem; font-size: .9rem; color: var(--muted); }
 
 /* versturen */
@@ -130,6 +141,7 @@
 @keyframes bk-in { from { opacity: 0; transform: translateY(-4px); } }
 .bk__actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: .4rem; }
 .bk__note { color: var(--muted); font-size: .92rem; max-width: 40em; }
+.bk__note b { display: block; margin-bottom: .2rem; font-weight: 500; color: var(--ink); }
 
 /* ---------- responsief ---------- */
 @media (min-width: 961px) and (min-height: 760px) {
