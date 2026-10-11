@@ -10,8 +10,10 @@
       const y = window.scrollY;
       hd.classList.toggle('is-scrolled', y > 10);
       const menuOpen = hd.classList.contains('is-open');
-      hd.classList.toggle('is-hidden', !menuOpen && y > 400 && y > lastY + 4);
-      if (y < lastY - 4 || y < 400) hd.classList.remove('is-hidden');
+      // alleen bij duidelijk naar beneden verbergen, alleen bij naar boven weer tonen
+      // (bij soepel scrollen zijn de laatste stapjes klein; die mogen niets veranderen)
+      if (!menuOpen && y > 400 && y > lastY + 4) hd.classList.add('is-hidden');
+      else if (menuOpen || y < 400 || y < lastY - 4) hd.classList.remove('is-hidden');
       lastY = y;
     };
     onScroll();
