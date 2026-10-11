@@ -38,6 +38,11 @@ urls = "".join(f"  <url><loc>{core.SITE}/{'' if p == 'index.html' else p}</loc><
                for p, _ in PAGES if p != "404.html")
 (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 
+# meldpunt voor beveiligingsproblemen (RFC 9116); verloopt na een jaar, dus jaarlijks opnieuw bouwen
+(ROOT / ".well-known").mkdir(exist_ok=True)
+(ROOT / ".well-known" / "security.txt").write_text(
+    f"Contact: mailto:{core.MAIL}\nExpires: {core.SECURITY_EXPIRES}\nPreferred-Languages: nl, en\nCanonical: {core.SITE}/.well-known/security.txt\n")
+
 csp_hash = base64.b64encode(hashlib.sha256(core.INLINE_JS.encode()).digest()).decode()
 vercel = (ROOT / "vercel.json").read_text()
 if csp_hash not in vercel:

@@ -10,6 +10,7 @@ SITE = "https://vizoradigital.nl"
 WA = "https://wa.me/31638705348"
 TEL = "tel:+31638705348"
 TEL_TXT = "06 38 70 53 48"
+SECURITY_EXPIRES = "2027-10-01T00:00:00.000Z"  # security.txt: uiterlijk dan verlengen
 MAIL = "halilsahinai@gmail.com"
 
 # Inline script: zet de class "js" (voor begintoestanden van animaties) en zorgt dat alles
@@ -88,7 +89,7 @@ def pic(name, alt, w, h, cls="", eager=False, pos=None, attrs=""):
 
 def head(file, title, desc, css=(), preload=None, ld=False):
     url = SITE + "/" + ("" if file == "index.html" else file)
-    links = "\n".join(f'  <link rel="stylesheet" href="assets/css/{c}.css">' for c in ("base", *css))
+    links = "\n".join(f'  <link rel="stylesheet" href="assets/css/{c}.css">' for c in ("fonts", "base", *css))
     pre = f'\n  <link rel="preload" as="image" href="{preload}" type="image/webp">' if preload else ""
     ldj = f'\n  <script type="application/ld+json">{json.dumps(LD, ensure_ascii=False)}</script>' if ld else ""
     return f'''<!doctype html>
@@ -109,9 +110,7 @@ def head(file, title, desc, css=(), preload=None, ld=False):
   <meta property="og:image" content="{SITE}/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">{pre}
+  <link rel="preload" href="assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>{pre}
 {links}
   <script>{INLINE_JS}</script>{ldj}
 </head>

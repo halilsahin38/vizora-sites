@@ -7,13 +7,14 @@
      ("inhoud geblokkeerd"). Daar openen we ze in een nieuw venster; lukt ook dat niet, dan tonen we het adres. */
   const framed = window.top !== window.self;
   let toastEl = null;
-  const showToast = (html) => {
+  const showToast = (text, strong) => {
     if (!toastEl) {
       toastEl = document.createElement('div');
       toastEl.className = 'toast'; toastEl.setAttribute('role', 'status');
       document.body.append(toastEl);
     }
-    toastEl.innerHTML = html;
+    const b = document.createElement('b'); b.textContent = strong;
+    toastEl.replaceChildren(text, b);
     toastEl.classList.add('is-shown');
     clearTimeout(showToast.t);
     showToast.t = setTimeout(() => toastEl.classList.remove('is-shown'), 7000);
@@ -25,9 +26,8 @@
     if (w) { try { w.opener = null; } catch (e) { /* ander domein */ } return; }
     const [scheme, rest] = url.split(':');
     const value = decodeURIComponent(rest.split('?')[0]);
-    showToast(scheme === 'tel'
-      ? `Bel ons op <b>${value.replace('+31', '0').replace(/^(06)(\d{2})(\d{2})(\d{2})(\d{2})$/, '$1 $2 $3 $4 $5')}</b>`
-      : `Mail ons op <b>${value}</b>`);
+    if (scheme === 'tel') showToast('Bel ons op ', value.replace('+31', '0').replace(/^(06)(\d{2})(\d{2})(\d{2})(\d{2})$/, '$1 $2 $3 $4 $5'));
+    else showToast('Mail ons op ', value);
     if (navigator.clipboard) navigator.clipboard.writeText(value).catch(() => {});
   };
   if (framed) {

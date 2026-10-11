@@ -5,3 +5,4 @@ concepts/
 build.py
 README.md
 CLAUDE.md
+.gitignore
