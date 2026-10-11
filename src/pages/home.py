@@ -142,10 +142,10 @@ def render():
         <div class="about__body">
           {label("", "Wie zijn wij")}
           <h2 id="ab-title" class="h2 home__h2" data-reveal>Halil &amp; Sahin. Twee broers, één aanspreekpunt.</h2>
-          <p class="about__text" data-reveal>Wij zijn Halil en Sahin, twee broers uit Breda. Wij bouwen je website én zorgen voor je marketing: je Google Bedrijfsprofiel, je vindbaarheid in je regio en hulp bij je social media. Alles in één hand, en je spreekt altijd een van ons tweeën.</p>
+          <p class="about__text" data-reveal>Wij zijn Halil en Sahin, twee broers uit de omgeving van Breda. Wij bouwen je website én zorgen voor je marketing: je Google Bedrijfsprofiel, je vindbaarheid in je regio en hulp bij je social media. Alles in één hand, en je spreekt altijd een van ons tweeën.</p>
           <blockquote class="about__why" data-reveal>
             <p class="label">Waarom we zijn begonnen</p>
-            <p>We zagen hoe vaak ondernemers te veel betalen voor een website die hen niet helpt. Mooi om naar te kijken, maar er komen geen klanten van. Dat willen wij voorkomen. Daarom zie je bij ons eerst gratis je website, betaal je een eerlijke prijs en zorgen we dat klanten je ook echt vinden.</p>
+            <p>We zagen hoe vaak ondernemers te veel betalen voor een website die hen niet verder helpt. Dat vonden we zonde, en dat willen wij voorkomen. Bij ons zie je eerst gratis je nieuwe website, betaal je een eerlijke prijs en zorgen we dat klanten je ook echt vinden. Zo levert je website iets op, in plaats van dat hij alleen geld kost.</p>
           </blockquote>
           <a href="over-ons.html" class="link" data-reveal>Meer over ons {I["arrow"]}</a>
         </div>
