@@ -106,7 +106,7 @@ def render():
           <div class="svc__media" data-clip>{pic("warm-laptop", "Laptop op een houten kast met een voorbeeldwebsite van Vizora in warme tinten", 1500, 1213, pos="50% 62%")}</div>
           <div class="svc__cols" data-reveal>
             <p>Elke website ontwerpen we op maat, rond jouw klanten en jouw doelen. Geen standaard template, wel een site die laat zien hoe goed je bent en die op elke telefoon goed werkt.</p>
-            <p>Wij regelen het ontwerp, de bouw, de koppeling met je domein en het livezetten. Jij vertelt over je zaak; bij de teksten helpen we je. Technische kennis heb je niet nodig.</p>
+            <p>Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; bij de teksten helpen we je. Technische kennis heb je niet nodig.</p>
           </div>
           {gets(["Uniek ontwerp, geen template", "Perfect op telefoon, tablet en laptop", "Bel-, WhatsApp- en contactknoppen", "Online afspraken, reserveren of bestellen", "Basis vindbaarheid in Google", "Domeinnaam op jouw naam", "Twee feedbackrondes in de prijs", "Onderhoud en aanpassingen via het abonnement"])}
           {packs([("Start", "One-page website op maat, perfect op mobiel, met bel-, WhatsApp- en contactknoppen", f"€{P['Start']}"), ("Groei", "Tot 5 pagina's, uniek ontwerp met animaties en online afspraken, reserveren of bestellen", f"€{P['Groei']}"), ("Compleet", "Alles uit Groei, plus logo en huisstijl en een persoonlijk groeiplan", f"€{P['Compleet']}")])}

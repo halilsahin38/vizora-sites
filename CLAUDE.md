@@ -21,6 +21,7 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 ## Prijzen (huidige stand op de site)
 - Pakketten eenmalig: Start €200 · Groei €350 · Compleet €500.
 - Abonnementen per maand, maandelijkse factuur: Basis €25 · Plus €49 · Pro €79 (Pro = tot 6 aanpassingen, niet onbeperkt).
+- Hosting gratis inbegrepen bij elk pakket; klant betaalt zelf de domeinnaam (ca. €10–15 per jaar).
 - Advies gegeven om prijzen te verhogen; nog niet besloten.
 
 ## Wat NIET (eerdere feedback)

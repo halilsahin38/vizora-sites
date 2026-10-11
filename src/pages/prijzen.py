@@ -13,6 +13,7 @@ COMPARE = [
         ("Perfect op mobiel", True, True, True),
         ("Bel-, WhatsApp- &amp; contactknoppen", True, True, True),
         ("Koppeling met je eigen domein", True, True, True),
+        ("Hosting", "gratis", "gratis", "gratis"),
         ("Animaties &amp; interactie", False, True, True),
         ("Online afspraken, reserveren of bestellen", False, True, True),
         ("Teksten die overtuigen", False, True, True),
@@ -42,7 +43,7 @@ def _faq():
     b, p, r = SUB_TIERS
     return [
         ("Waarom staat er “vanaf”?", "Elke zaak is anders. De vanaf-prijs is wat je minimaal betaalt voor het pakket. Na het gratis gesprek krijg je een vaste prijs, zonder verrassingen."),
-        ("Zijn er maandelijkse kosten?", f"De pakketten zijn eenmalig. Wil je dat we je website elke maand bijwerken en onderhouden? Dan kun je een abonnement nemen vanaf €{b['price']} per maand. Je domeinnaam betaal je zelf (meestal een paar euro per jaar)."),
+        ("Zijn er maandelijkse kosten?", f"De pakketten zijn eenmalig. Wil je dat we je website elke maand bijwerken en onderhouden? Dan kun je een abonnement nemen vanaf €{b['price']} per maand. Hosting is gratis inbegrepen. Alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar."),
         ("Welke abonnementen zijn er?", f"{b['name']} (€{b['price']} p/m): onderhoud, beveiliging en 1 kleine aanpassing per maand. {p['name']} (€{p['price']} p/m): tot 3 aanpassingen, je Google Bedrijfsprofiel bijhouden en maandelijkse groeitips. {r['name']} (€{r['price']} p/m): tot 6 aanpassingen per maand, elk kwartaal een nieuwe pagina of actie en een maandelijks groeigesprek. Je ontvangt elke maand een factuur en kunt per maand opzeggen."),
         ("Maken jullie ook posts voor social media?", "In het pakket Compleet richten we je profielen in en helpen we met stijl en strategie. Content maken of posten valt daarbuiten; dat bespreken we graag samen en kost extra."),
         ("Kan ik later upgraden?", "Ja. Begin je met Start, dan kun je altijd uitbreiden naar Groei of Compleet. Wat al gemaakt is, bouwen we gewoon verder uit."),

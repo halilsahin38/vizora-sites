@@ -43,7 +43,7 @@ WE = [
     "Bouw van de website",
     "Teksten, samen met jou",
     "Domeinnaam koppelen, op jouw naam",
-    "Hosting",
+    "Hosting, gratis inbegrepen",
     "Beveiliging (https)",
     "Snel laden op elke telefoon",
     "Aanmelden bij Google",
@@ -54,7 +54,7 @@ WE = [
 QA = [
     ("Krijg ik vooraf een ontwerp te zien?", "Ja. Als je een gesprek plant, maken we gratis een concept van jouw website. Zo zie je meteen hoe het eruit kan zien, nog voordat je iets beslist."),
     ("Wat als ik niet tevreden ben?", "Dan betaal je niets. Je ziet eerst het ontwerp en we passen het twee keer aan naar jouw wensen. Pas als jij tevreden bent, gaan we verder en ontvang je de factuur."),
-    ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein en het livezetten. Jij vertelt over je zaak; daar helpen we je ook bij."),
+    ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; daar helpen we je ook bij."),
     ("Moet ik zelf teksten en foto's aanleveren?", "Teksten schrijven we graag met je mee. Foto's en video's komen het liefst van jou, want niemand kent je zaak beter. We adviseren je wel over wat goed werkt."),
     ("Hoe lang duurt het voordat mijn website online staat?", "Dat hangt af van de grootte van je website en hoe snel de teksten en foto's rond zijn. In het gesprek spreken we samen een planning af die bij jou past."),
     ("Wat kost een website?", f'Onze pakketten beginnen bij €{P["Start"]} (Start), €{P["Groei"]} (Groei) en €{P["Compleet"]} (Compleet), eenmalig. Na het gesprek krijg je een vaste prijs op maat. Alle details staan op de <a href="prijzen.html">prijzenpagina</a>.'),

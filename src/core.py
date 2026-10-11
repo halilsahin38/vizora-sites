@@ -34,10 +34,10 @@ LOGO_MARK = '<svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><pat
 PACKAGES = [
     dict(name="Start", title="Online zichtbaar", price="200", featured=False,
          desc="Voor starters en zzp'ers die snel en professioneel online willen staan.",
-         feats=["One-page website op maat", "Perfect op mobiel", "Bel-, WhatsApp- en contactknoppen", "Basis vindbaarheid in Google", "Koppeling met je eigen domein"]),
+         feats=["One-page website op maat", "Perfect op mobiel", "Bel-, WhatsApp- en contactknoppen", "Basis vindbaarheid in Google", "Eigen domein + gratis hosting"]),
     dict(name="Groei", title="Meer klanten", price="350", featured=True,
          desc="Voor ondernemers die online echt klanten willen binnenhalen.",
-         feats=["Website tot 5 pagina's", "Uniek ontwerp met animaties", "Online afspraken, reserveren of bestellen", "Google Bedrijfsprofiel ingericht", "Teksten die overtuigen", "Lokale SEO voor jouw regio"]),
+         feats=["Website tot 5 pagina's", "Uniek ontwerp met animaties", "Online afspraken, reserveren of bestellen", "Google Bedrijfsprofiel ingericht", "Teksten die overtuigen", "Lokale SEO voor jouw regio", "Gratis hosting"]),
     dict(name="Compleet", title="Alles geregeld", price="500", featured=False,
          desc="Website, bereik en een helder groeiplan in één keer goed.",
          feats=["Alles uit Groei", "Logo en huisstijl", "Profielen op social media ingericht", "Persoonlijk groeiplan", "Advies voor advertenties", "1 maand gratis aanpassingen"]),
@@ -59,7 +59,7 @@ FAQ = [
     ("Wat is het gratis websiteconcept?", "Als je een gesprek plant, maken wij vooraf een eerste ontwerp van jouw website. In het gesprek laten we het zien en bespreken we stap voor stap hoe jouw zaak online kan groeien. Gratis en vrijblijvend."),
     ("Wat als ik niet tevreden ben?", "Dan betaal je niets. Je ziet eerst het ontwerp en we passen het twee keer aan naar jouw wensen. Pas als jij tevreden bent, gaan we verder en ontvang je de factuur."),
     ("Hoe lang duurt het voordat mijn website online staat?", "Dat hangt af van je wensen en hoe snel de teksten en foto's rond zijn. In het eerste gesprek spreken we samen een planning af die bij jou past."),
-    ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein en het livezetten. Jij vertelt over je zaak; daar helpen we je ook bij."),
+    ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; daar helpen we je ook bij."),
     ("Kan ik later nog dingen laten aanpassen?", "Ja. Met een website-abonnement vanaf €25 per maand passen we elke maand dingen voor je aan en houden we je site veilig en up-to-date. Zonder abonnement kan het ook, dan spreken we per keer een prijs af."),
     ("Maken jullie ook posts voor social media?", "We richten je profielen in en helpen met stijl en strategie. Content maken of posten valt daarbuiten; dat bespreken we graag samen en kost extra."),
 ]
