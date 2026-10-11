@@ -51,6 +51,7 @@ ul, ol { padding: 0; list-style: none; }
 .skip:focus { left: 12px; }
 .i { width: 1em; height: 1em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .i--fill { fill: currentColor; stroke: none; }
+.vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 /* ---------- layout ---------- */
 .wrap { width: 100%; max-width: 1600px; margin-inline: auto; padding-inline: var(--pad); }
@@ -215,8 +216,9 @@ em { font-style: normal; color: var(--terra); }
 
 /* ---------- beweging: begintoestanden (alleen met JS, met vangnet) ---------- */
 html.js:not(.ready) [data-lines] { opacity: 0; }
-.line { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
-.line__in { display: block; }
+/* titelregels die motion.js maakt (.tl/.tl__in): niet hergebruiken in paginastijlen */
+.tl { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
+.tl__in { display: block; }
 [data-fill] .w { transition: none; }
 .is-em { color: var(--terra); }
 

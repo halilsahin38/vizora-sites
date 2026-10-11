@@ -3,7 +3,6 @@
    (pakketten, vergelijking, abonnement, garanties, extra's, vragen)
    ========================================================= */
 
-.vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 /* ---------- pakketten (zelfde opbouw als op de homepage) ---------- */
 .pp { padding-top: clamp(32px, 4vw, 64px); padding-bottom: clamp(72px, 9vw, 130px); }

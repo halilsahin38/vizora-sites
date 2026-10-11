@@ -161,14 +161,15 @@ def header(active):
 '''
 
 
-def footer():
+def footer(active=""):
+    plan = "#plannen" if active == "contact.html" else "contact.html"
     return f'''  <footer class="ft" data-theme="dark">
     <div class="wrap">
       <div class="ft__cta">
         <p class="label">(→) Volgende stap</p>
         <h2 class="ft__title">Eerst je website zien.<br><span>Dan pas beslissen.</span></h2>
         <div class="ft__actions">
-          <a href="contact.html" class="btn btn--light">Plan je gratis concept {I["arrow"]}</a>
+          <a href="{plan}" class="btn btn--light">Plan je gratis concept {I["arrow"]}</a>
           <a href="{TEL}" class="btn btn--line">{I["call"]} Bel {TEL_TXT}</a>
           <a href="{WA}" class="btn btn--line" target="_blank" rel="noopener">{WA_SVG} WhatsApp</a>
         </div>

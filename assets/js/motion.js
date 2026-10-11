@@ -50,12 +50,12 @@
     });
     const html = lines.map((ws) => {
       const inner = ws.map((w) => w.outerHTML).join(' ');
-      return `<span class="line"><span class="line__in">${inner}</span></span>`;
+      return `<span class="tl"><span class="tl__in">${inner}</span></span>`;
     }).join('');
     el.setAttribute('aria-label', el.textContent.trim());
     el.innerHTML = html;
-    el.querySelectorAll('.line').forEach((l) => l.setAttribute('aria-hidden', 'true'));
-    return el.querySelectorAll('.line__in');
+    el.querySelectorAll('.tl').forEach((l) => l.setAttribute('aria-hidden', 'true'));
+    return el.querySelectorAll('.tl__in');
   };
 
   if (!gsap || !ScrollTrigger || reduce) {

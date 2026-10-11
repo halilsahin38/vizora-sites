@@ -146,5 +146,5 @@ def render():
   </main>
 
 '''
-    html += footer()
+    html += footer(FILE)
     return html
