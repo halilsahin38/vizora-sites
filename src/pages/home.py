@@ -37,10 +37,12 @@ def render():
 
     services = "\n".join(f'''          <a class="sv" href="{href}" data-reveal>
             <span class="sv__n label">0{i}</span>
-            <span class="sv__t">{t}</span>
-            <span class="sv__d">{d}</span>
-            <span class="sv__p">{p}</span>
-            <span class="sv__go">{I["arrow"]}</span>
+            <span class="sv__row">
+              <span class="sv__t">{t}</span>
+              <span class="sv__d">{d}</span>
+              <span class="sv__p">{p}</span>
+              <span class="sv__go">{I["arrow"]}</span>
+            </span>
           </a>''' for i, (t, d, p, href) in enumerate(SERVICES, 1))
 
     steps = "\n".join(f'''          <article class="st" style="--i:{i}">
