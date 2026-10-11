@@ -66,7 +66,7 @@ def render():
     promises = "".join(f"<li>{t}</li>" for t, _ in GUARANTEES)
 
     html = head(FILE, "Vizora Digital | Je nieuwe website zie je al in het eerste gesprek",
-                "Vizora Digital bouwt websites die klanten opleveren en zorgt dat je gevonden wordt in Google. Eerst gratis je concept zien, dan pas beslissen. Voor ondernemers in heel Nederland.",
+                "Vizora Digital bouwt websites die klanten opleveren en helpt je om gevonden te worden in Google. Eerst gratis je concept zien, dan pas beslissen. Voor ondernemers in heel Nederland.",
                 css=("home",), preload="assets/foto/licht-laptop.webp", ld=True)
     html += header(FILE)
     html += f'''
@@ -74,7 +74,7 @@ def render():
     <section class="hero wrap">
       <h1 class="hero__title" data-lines>Je nieuwe website zie je al in het <em>eerste gesprek</em>.</h1>
       <div class="hero__row">
-        <p class="hero__lead" data-reveal>Wij maken vooraf gratis een concept van jouw website. Daarna zorgen we dat klanten je vinden in Google. Pas betalen als je blij bent.</p>
+        <p class="hero__lead" data-reveal>Wij maken vooraf gratis een concept van jouw website. Daarna helpen we je om gevonden te worden in Google. Pas betalen als je blij bent.</p>
         <div class="hero__cta" data-reveal>
           <a href="contact.html" class="btn">Plan je gratis concept {I["arrow"]}</a>
           <p class="hero__trust label">Gratis concept · Vanaf €200 · Reactie dezelfde dag</p>
@@ -142,10 +142,10 @@ def render():
         <div class="about__body">
           {label("", "Wie zijn wij")}
           <h2 id="ab-title" class="h2 home__h2" data-reveal>Halil &amp; Sahin. Twee broers, één aanspreekpunt.</h2>
-          <p class="about__text" data-reveal>Wij zijn Halil en Sahin, twee broers uit de omgeving van Breda. Wij bouwen je website én zorgen voor je marketing: je Google Bedrijfsprofiel, je vindbaarheid in je regio en hulp bij je social media. Alles in één hand, en je spreekt altijd een van ons tweeën.</p>
+          <p class="about__text" data-reveal>Wij zijn Halil en Sahin, twee broers uit de omgeving van Breda. Wij bouwen je website en helpen je met je marketing: je Google Bedrijfsprofiel, je vindbaarheid in je regio en je social media. Alles in één hand, en je spreekt altijd een van ons tweeën.</p>
           <blockquote class="about__why" data-reveal>
             <p class="label">Waarom we zijn begonnen</p>
-            <p>We zagen hoe vaak ondernemers te veel betalen voor een website die hen niet verder helpt. Dat vonden we zonde, en dat willen wij voorkomen. Bij ons zie je eerst gratis je nieuwe website, betaal je een eerlijke prijs en zorgen we dat klanten je ook echt vinden. Zo levert je website iets op, in plaats van dat hij alleen geld kost.</p>
+            <p>We zagen hoe vaak ondernemers te veel betalen voor een website die hen niet verder helpt. Dat vonden we zonde, en dat willen wij voorkomen. Daarom werken we anders: eerst plannen we samen een gesprek, en daarin laten we je al zien hoe jouw nieuwe website eruit kan zien. Pas als je blij bent, gaan we verder. Daarna helpen we je om online gevonden te worden.</p>
           </blockquote>
           <a href="over-ons.html" class="link" data-reveal>Meer over ons {I["arrow"]}</a>
         </div>

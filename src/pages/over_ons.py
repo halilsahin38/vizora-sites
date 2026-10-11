@@ -32,12 +32,12 @@ def render():
           </li>''' for i, (t, d) in enumerate(PROMISES, 1))
 
     html = head(FILE, "Over ons | Halil &amp; Sahin | Vizora Digital",
-                "Vizora Digital is opgericht door de broers Halil en Sahin. Vanuit Breda maken ze websites en zorgen ze voor online groei, voor ondernemers in heel Nederland. Persoonlijk en direct bereikbaar.",
+                "Vizora Digital is opgericht door de broers Halil en Sahin. Vanuit Breda maken ze websites en helpen ze met online groei, voor ondernemers in heel Nederland. Persoonlijk en direct bereikbaar.",
                 css=("over-ons",))
     html += header(FILE)
     html += f'''
   <main id="main">
-{page_head("", "Over ons", "Twee broers, één doel: jouw zaak laten <em>groeien.</em>", "Wij zijn Halil en Sahin. Vanuit Breda maken we websites die klanten opleveren, en zorgen we dat ondernemers in heel Nederland online gevonden worden.")}
+{page_head("", "Over ons", "Twee broers, één doel: jouw zaak laten <em>groeien.</em>", "Wij zijn Halil en Sahin. Vanuit Breda maken we websites die klanten opleveren, en helpen we ondernemers in heel Nederland om online gevonden te worden.")}
     <section class="duo wrap" aria-labelledby="duo-title">
       <div class="duo__grid">
         <div class="duo__side">
