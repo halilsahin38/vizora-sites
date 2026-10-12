@@ -15,7 +15,7 @@ MAIL = "halilsahinai@gmail.com"
 
 # Inline script: zet de class "js" (voor begintoestanden van animaties) en zorgt dat alles
 # na 2,5 s zichtbaar wordt als motion.js om wat voor reden ook niet laadt.
-# Let op: na een wijziging de sha256-hash in vercel.json bijwerken (build.py print hem).
+# De CSP-hash van dit script wordt door build.py automatisch berekend (dist/_headers).
 INLINE_JS = 'document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},2500)'
 
 PAGES = [("diensten.html", "Diensten"), ("prijzen.html", "Prijzen"), ("werkwijze.html", "Werkwijze"), ("over-ons.html", "Over ons")]
@@ -121,7 +121,7 @@ def pic(name, alt, w, h, cls="", eager=False, pos=None, attrs="", sizes=None):
 
 def head(file, title, desc, css=(), preload=None, ld=False):
     """preload = (fotonaam, breedte, sizes) voor het grootste beeld bovenaan (LCP)."""
-    url = SITE + "/" + ("" if file == "index.html" else file)
+    url = SITE + "/" + ("" if file == "index.html" else file.removesuffix(".html"))  # schone URL (Cloudflare Pages)
     links = "\n".join(f'  <link rel="stylesheet" href="assets/css/{c}.css">' for c in ("fonts", "base", *css))
     pre = ""
     if preload:

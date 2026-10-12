@@ -9,6 +9,7 @@ import hashlib
 import importlib
 import pathlib
 import re
+import shutil
 import sys
 
 ROOT = pathlib.Path(__file__).parent
@@ -51,7 +52,7 @@ for file, mod in PAGES:
     built.append(file)
 
 (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {core.SITE}/sitemap.xml\n")
-urls = "".join(f"  <url><loc>{core.SITE}/{'' if p == 'index.html' else p}</loc></url>\n"
+urls = "".join(f"  <url><loc>{core.SITE}/{'' if p == 'index.html' else p.removesuffix('.html')}</loc></url>\n"
                for p, _ in PAGES if p != "404.html")
 (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 
@@ -60,8 +61,38 @@ urls = "".join(f"  <url><loc>{core.SITE}/{'' if p == 'index.html' else p}</loc><
 (ROOT / ".well-known" / "security.txt").write_text(
     f"Contact: mailto:{core.MAIL}\nExpires: {core.SECURITY_EXPIRES}\nPreferred-Languages: nl, en\nCanonical: {core.SITE}/.well-known/security.txt\n")
 
+# ---------- online zetten (Cloudflare Pages) ----------
+# Build-instellingen in Cloudflare: build command "python3 build.py", output directory "dist".
+# In dist/ komt alleen de website zelf; bronbestanden (src/, tools/, concepts/, build.py, ...) gaan niet online.
 csp_hash = base64.b64encode(hashlib.sha256(core.INLINE_JS.encode()).digest()).decode()
-vercel = (ROOT / "vercel.json").read_text()
-if csp_hash not in vercel:
-    print(f"LET OP: zet 'sha256-{csp_hash}' in de CSP van vercel.json")
-print("gebouwd:", ", ".join(built))
+CSP = "default-src 'self'; script-src 'self' 'sha256-{hash}'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; media-src 'self'; manifest-src 'self'; worker-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests".replace("{hash}", csp_hash)
+HEADERS = [
+    ("Content-Security-Policy", CSP),
+    ('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload'),
+    ('X-Content-Type-Options', 'nosniff'),
+    ('X-Frame-Options', 'DENY'),
+    ('Referrer-Policy', 'strict-origin-when-cross-origin'),
+    ('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), hid=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=()'),
+    ('Cross-Origin-Opener-Policy', 'same-origin'),
+    ('Cross-Origin-Resource-Policy', 'same-origin'),
+    ('X-Permitted-Cross-Domain-Policies', 'none'),
+    ('Origin-Agent-Cluster', '?1'),
+]
+
+DIST = ROOT / "dist"
+if DIST.exists():
+    shutil.rmtree(DIST)
+DIST.mkdir()
+for p in [f for f, _ in PAGES] + ["robots.txt", "sitemap.xml"]:
+    shutil.copy2(ROOT / p, DIST / p)
+shutil.copytree(ROOT / ".well-known", DIST / ".well-known")
+shutil.copytree(ROOT / "assets", DIST / "assets")
+
+head = "/*\n" + "".join(f"  {k}: {val}\n" for k, val in HEADERS)
+head += "\n/assets/*\n  Cache-Control: public, max-age=604800\n"
+head += "\n/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n"
+(DIST / "_headers").write_text(head)
+# Geen _redirects nodig: Cloudflare serveert /contact voor contact.html, stuurt /contact.html door naar /contact
+# en toont 404.html bij onbekende adressen.
+
+print("gebouwd:", ", ".join(built), "→ dist/ klaar voor Cloudflare Pages")

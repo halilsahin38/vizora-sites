@@ -12,6 +12,8 @@ De HTML-pagina's worden gemaakt door `build.py` uit de bestanden in `src/`. Pas 
 python3 build.py
 ```
 
+Online via Cloudflare Pages: build command `python3 build.py`, output directory `dist`.
+
 ## Bestanden
 
 | Bestand | Inhoud |
@@ -25,8 +27,7 @@ python3 build.py
 | `assets/foto/` | Telefoon- en laptopfoto's met de voorbeeldontwerpen |
 | `concepts/` | Voorbeeldontwerpen merk, licht en warm (bron voor de foto's) |
 | `tools/render-concepts.mjs` | Maakt screenshots van de voorbeeldontwerpen |
-| `vercel.json` | Beveiligingsheaders voor hosting op Vercel |
-| `.vercelignore` | Bronbestanden die niet online komen |
+| `dist/` | Wordt gemaakt door `build.py`: alleen de website, plus `_headers` voor Cloudflare Pages (niet in git) |
 
 ## Foto's
 

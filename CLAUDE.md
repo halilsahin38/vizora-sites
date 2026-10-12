@@ -17,7 +17,8 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 - E-mail halilsahinai@gmail.com · WhatsApp/bellen 06 38 70 53 48 (wa.me/31638705348, tel:+31638705348)
 - Ma t/m za 09:00–18:00 (afspraken 09:00–17:00). Belofte: binnen werktijd antwoord dezelfde dag. Geen Instagram nog. KvK-nummer volgt.
 - Agenda komt later via Cal.com (Halil stuurt de link).
-- Online zetten via Vercel/merge alleen na expliciete toestemming van Halil.
+- Hosting: Cloudflare Pages (gratis, ook commercieel toegestaan; ook voor klantsites). Online zetten/merge alleen na
+  expliciete toestemming van Halil. Cloudflare-instellingen: build command `python3 build.py`, output directory `dist`.
 
 ## Prijzen (huidige stand op de site)
 - Alle prijzen exclusief btw.
@@ -41,7 +42,8 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 ## Techniek
 - Alle pagina's worden gegenereerd door `python3 build.py` (f-strings: letterlijke accolades als `{{ }}`).
 - Teksten en pagina's in `src/` (core.py + pages/), stijl in `assets/css/`, gedrag in `assets/js/` (site.js, motion.js).
-- CSP in `vercel.json` bevat een hash van het inline script; herberekenen als `INLINE_JS` verandert.
+- `build.py` maakt `dist/` (alleen de website) met `_headers` (beveiligingsheaders + CSP; de hash van het inline script
+  wordt automatisch berekend). `dist/` staat niet in git.
 - Beveiliging: alles komt van eigen domein (lettertypes lokaal in `assets/fonts/`, geen Google Fonts of andere externe
-  bronnen), strenge headers in `vercel.json`. `/.well-known/security.txt` verloopt op `SECURITY_EXPIRES` in core.py: jaarlijks verlengen.
+  bronnen), strenge headers via `dist/_headers` (staan in build.py). `/.well-known/security.txt` verloopt op `SECURITY_EXPIRES` in core.py: jaarlijks verlengen.
 - Testscreenshots en tijdelijke bestanden nooit in deze map zetten (gebruik een scratchpad).
