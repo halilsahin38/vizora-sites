@@ -58,15 +58,23 @@
 
     const btn = hd.querySelector('.hd__menu');
     const menu = hd.querySelector('#menu');
+    // alles buiten de kop is onbereikbaar zolang het menu open is
+    const outside = () => document.querySelectorAll('main, footer, .dock');
     const setMenu = (open) => {
+      if (open === !menu.hidden) return;
       hd.classList.toggle('is-open', open);
       menu.hidden = !open;
       btn.setAttribute('aria-expanded', open);
       btn.querySelector('span').textContent = open ? 'Sluiten' : 'Menu';
       document.documentElement.style.overflow = open ? 'hidden' : '';
-      if (open) hd.classList.add('is-scrolled');
+      outside().forEach((el) => { el.inert = open; });
+      if (open) {
+        hd.classList.add('is-scrolled');
+        menu.querySelector('a')?.focus();
+      }
     };
     btn.addEventListener('click', () => setMenu(menu.hidden));
+    menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); btn.focus(); } });
     window.matchMedia('(min-width: 961px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
   }
@@ -81,6 +89,7 @@
       dock.classList.toggle('is-open', open);
       fab.setAttribute('aria-expanded', open);
       fab.setAttribute('aria-label', open ? 'Contactopties sluiten' : 'Contactopties openen');
+      if (open) panel.querySelector('a')?.focus();
     };
     fab.addEventListener('click', () => setOpen(panel.hidden));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { setOpen(false); fab.focus(); } });
@@ -122,13 +131,15 @@
     const monthFmt = new Intl.DateTimeFormat('nl-NL', { month: 'short' });
     const fullFmt = new Intl.DateTimeFormat('nl-NL', { weekday: 'long', day: 'numeric', month: 'long' });
 
-    // volgende 12 werkdagen (ma t/m za), vanaf morgen
+    // 12 werkdagen (ma t/m za), vanaf de tweede werkdag na vandaag: dan is het concept klaar
     if (datesEl) {
       const d = new Date();
+      let skip = 1; // de eerste werkdag na vandaag slaan we over
       let added = 0;
       while (added < 12) {
         d.setDate(d.getDate() + 1);
         if (d.getDay() === 0) continue;
+        if (skip) { skip--; continue; }
         const id = `date-${added}`;
         const wrap = document.createElement('div');
         wrap.className = 'choice';
@@ -189,20 +200,32 @@
       ].filter((l) => l !== null).join('\n');
     };
 
+    const required = [[booking.naam, 'je naam'], [booking.telefoon, 'je telefoonnummer']];
     const validate = () => {
-      const missing = [];
-      if (!booking.naam.value.trim()) missing.push('je naam');
-      if (!booking.telefoon.value.trim()) missing.push('je telefoonnummer');
+      const missing = required.filter(([el]) => !el.value.trim());
+      required.forEach(([el]) => {
+        if (missing.some(([m]) => m === el)) el.setAttribute('aria-invalid', 'true');
+        else el.removeAttribute('aria-invalid');
+      });
       if (missing.length) {
-        errorEl.textContent = `Vul nog in: ${missing.join(', ')}.`;
+        errorEl.textContent = `Vul nog in: ${missing.map(([, t]) => t).join(', ')}.`;
         errorEl.classList.add('is-shown');
-        errorEl.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+        const first = missing[0][0];
+        first.focus({ preventScroll: true });
+        first.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
         return false;
       }
       errorEl.classList.remove('is-shown');
       errorEl.textContent = '';
       return true;
     };
+    // foutmarkering weg zodra het veld is ingevuld
+    required.forEach(([el]) => el.addEventListener('input', () => {
+      if (el.value.trim() && el.hasAttribute('aria-invalid')) {
+        el.removeAttribute('aria-invalid');
+        if (required.every(([r]) => !r.hasAttribute('aria-invalid'))) { errorEl.classList.remove('is-shown'); errorEl.textContent = ''; }
+      }
+    }));
 
     booking.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -222,6 +245,11 @@
     if (bedrijf && booking.bedrijf) booking.bedrijf.value = bedrijf.slice(0, 60);
     if (pakket && booking.bericht) {
       const abo = pakket.startsWith('Abonnement');
+      const pkEl = booking.querySelector('[data-summary-pakket]');
+      if (pkEl) {
+        pkEl.textContent = abo ? `Website-abonnement${pakket.length > 11 ? ` ${pakket.slice(11, 20)}` : ''}` : `Pakket ${pakket.slice(0, 20)}`;
+        pkEl.hidden = false;
+      }
       const box = booking.querySelector(`[name="dienst"][value="${abo ? 'Website-abonnement' : 'Website'}"]`);
       if (box) box.checked = true;
       booking.bericht.value = abo

@@ -22,8 +22,8 @@ def _shots():
     for i, (key, name, _) in enumerate(STYLES):
         on = " is-on" if i == 0 else ""
         plain = name.replace("&amp;", "en")
-        laptop = pic(f"{key}-laptop", f"Voorbeeldwebsite in de stijl {plain} op een laptop", 1500, 1213)
-        phone = pic(f"{key}-telefoon", f"Dezelfde website in de stijl {plain} op een telefoon", 1100, 1286, pos="52% 40%")
+        laptop = pic(f"{key}-laptop", f"Voorbeeldwebsite in de stijl {plain} op een laptop", 1500, 1213, sizes=SIZES["sw_laptop"])
+        phone = pic(f"{key}-telefoon", f"Dezelfde website in de stijl {plain} op een telefoon", 1100, 1286, pos="52% 40%", sizes=SIZES["sw_phone"])
         out.append(f'''            <div class="sw__shot{on}" data-sw-shot="{i}"{"" if i == 0 else ' aria-hidden="true"'}>
               <div class="sw__laptop">{laptop}</div>
               <div class="sw__phone">{phone}</div>
@@ -55,6 +55,7 @@ def _packs():
         out.append(f'''          <a class="pk{" pk--featured" if feat else ""}" href="contact.html?pakket={pk["name"]}">
             <span class="pk__top"><span class="label">{pk["name"]}</span>{tag}</span>
             <span class="pk__price"><span class="pk__from">vanaf</span>€{pk["price"]}</span>
+            <span class="pk__note">eenmalig · excl. btw</span>
             <span class="pk__title">{pk["title"]}</span>
             <span class="pk__desc">{pk["desc"]}</span>
             <span class="pk__go">Kies {pk["name"]} {I["arrow"]}</span>
@@ -65,9 +66,9 @@ def _packs():
 def render():
     promises = "".join(f"<li>{t}</li>" for t, _ in GUARANTEES)
 
-    html = head(FILE, "Vizora Digital | Je nieuwe website zie je al in het eerste gesprek",
-                "Vizora Digital bouwt websites die klanten opleveren en helpt je om gevonden te worden in Google. Eerst gratis je concept zien, dan pas beslissen. Voor ondernemers in heel Nederland.",
-                css=("home",), preload="assets/foto/licht-laptop.webp", ld=True)
+    html = head(FILE, "Website laten maken met gratis concept | Vizora Digital",
+                "Website laten maken? Je ziet vooraf gratis een concept en betaalt pas als je blij bent. Daarna helpen we je gevonden te worden in Google. Heel Nederland.",
+                css=("home",), preload=("licht-laptop", 1500, SIZES["hero"]), ld=True)
     html += header(FILE)
     html += f'''
   <main id="main">
@@ -77,11 +78,11 @@ def render():
         <p class="hero__lead" data-reveal>Wij maken vooraf gratis een concept van jouw website. Daarna helpen we je om gevonden te worden in Google. Pas betalen als je blij bent.</p>
         <div class="hero__cta" data-reveal>
           <a href="contact.html" class="btn">Plan je gratis concept {I["arrow"]}</a>
-          <p class="hero__trust label">Gratis concept · Vanaf €200 · Reactie dezelfde dag</p>
+          <p class="hero__trust label">Gratis concept · Vanaf €{PACKAGES[0]["price"]} excl. btw · Binnen werktijd antwoord dezelfde dag</p>
         </div>
       </div>
       <div class="hero__media" data-grow>
-        {pic("licht-laptop", "Laptop op een houten bureau met een voorbeeldwebsite van Vizora op het scherm", 1500, 1213, eager=True, pos="45% 55%")}
+        {pic("licht-laptop", "Laptop op een houten bureau met een voorbeeldwebsite van Vizora op het scherm", 1500, 1213, eager=True, pos="45% 55%", sizes=SIZES["hero"])}
       </div>
     </section>
 
@@ -132,13 +133,13 @@ def render():
         <div class="pk__grid" data-reveal>
 {_packs()}
         </div>
-        <p class="prices__more" data-reveal><span>Geen opstartkosten, geen jaarcontract. Onderhoud vanaf €{SUB_TIERS[0]["price"]} per maand, maandelijks opzegbaar.</span> <a href="prijzen.html" class="link">Bekijk alle prijzen {I["arrow"]}</a></p>
+        <p class="prices__more" data-reveal><span>Geen opstartkosten, geen jaarcontract. Onderhoud vanaf €{SUB_TIERS[0]["price"]} per maand excl. btw, maandelijks opzegbaar.</span> <a href="prijzen.html" class="link">Bekijk alle prijzen {I["arrow"]}</a></p>
       </div>
     </section>
 
     <section class="about sheet" aria-labelledby="ab-title">
       <div class="about__in wrap">
-        <figure class="about__photo" data-clip>{pic("halil", "Halil, medeoprichter van Vizora Digital", 640, 800, pos="50% 20%")}</figure>
+        <figure class="about__photo"><div class="about__img" data-clip>{pic("halil", "Halil, medeoprichter van Vizora Digital", 640, 800, pos="50% 20%")}</div><figcaption class="label about__cap">Halil</figcaption></figure>
         <div class="about__body">
           {label("", "Wie zijn wij")}
           <h2 id="ab-title" class="h2 home__h2" data-reveal>Halil &amp; Sahin. Twee broers, één aanspreekpunt.</h2>

@@ -9,10 +9,10 @@ PHOTO = "halil"
 PHOTO_SIZE = (640, 800)
 
 PROMISES = [
-    ("Persoonlijk", "Je spreekt altijd Halil of Sahin. Geen accountmanager, geen ticketnummer, geen wachtrij. We kennen je zaak en denken mee alsof het onze eigen zaak is."),
+    ("Persoonlijk", "Je spreekt altijd Halil of Sahin, geen accountmanager of ticketnummer. We kennen je zaak en denken mee alsof het onze eigen zaak is."),
     ("Zelf gemaakt", "We ontwerpen en bouwen elke website zelf, van eerste schets tot livegang. Daardoor weten we precies hoe jouw site in elkaar zit en kunnen we snel schakelen."),
     ("Eerlijk", "Duidelijke prijzen en een vaste prijs vooraf. Ben je niet blij met het ontwerp, dan betaal je niets. En als iets niet nodig is, zeggen we dat ook."),
-    ("Gericht op groei", "Mooi is niet genoeg. Alles wat we maken moet je iets opleveren: meer bereik, meer aanvragen, meer klanten."),
+    ("Gericht op groei", "Mooi is niet genoeg. Alles wat we maken heeft een doel: dat klanten je kunnen vinden en makkelijk contact met je opnemen."),
     ("Bereikbaar", "Maandag t/m zaterdag van 09:00 tot 18:00, via WhatsApp, telefoon of e-mail. Ook na de livegang blijven we gewoon je aanspreekpunt."),
 ]
 
@@ -21,7 +21,9 @@ def photo_slot():
     if not PHOTO:
         return "<!-- foto Halil & Sahin -->"
     w, h = PHOTO_SIZE
-    return f'<figure class="duo__photo" data-clip>{pic(PHOTO, "Halil, medeoprichter van Vizora Digital", w, h)}</figure>'
+    # eager: op mobiel is dit het grootste beeld bovenaan (LCP)
+    return (f'<figure class="duo__photo"><div class="duo__img" data-clip>{pic(PHOTO, "Halil, medeoprichter van Vizora Digital", w, h, eager=True)}</div>'
+            f'<figcaption class="label duo__cap">Halil</figcaption></figure>')
 
 
 def render():
@@ -32,12 +34,12 @@ def render():
           </li>''' for i, (t, d) in enumerate(PROMISES, 1))
 
     html = head(FILE, "Over ons | Halil &amp; Sahin | Vizora Digital",
-                "Vizora Digital is opgericht door de broers Halil en Sahin. Vanuit Breda maken ze websites en helpen ze met online groei, voor ondernemers in heel Nederland. Persoonlijk en direct bereikbaar.",
+                "Vizora Digital is van de broers Halil en Sahin. Vanuit Breda maken ze websites op maat en helpen ze ondernemers in heel Nederland online verder.",
                 css=("over-ons",))
     html += header(FILE)
     html += f'''
   <main id="main">
-{page_head("", "Over ons", "Twee broers, één doel: jouw zaak laten <em>groeien.</em>", "Wij zijn Halil en Sahin. Vanuit Breda maken we websites die klanten opleveren, en helpen we ondernemers in heel Nederland om online gevonden te worden.")}
+{page_head("", "Over ons", "Twee broers, één doel: jouw zaak laten <em>groeien.</em>", "Wij zijn Halil en Sahin. Vanuit Breda maken we websites op maat, en helpen we ondernemers in heel Nederland om online gevonden te worden.")}
     <section class="duo wrap" aria-labelledby="duo-title">
       <div class="duo__grid">
         <div class="duo__side">
@@ -48,7 +50,7 @@ def render():
           <h2 id="duo-title" class="duo__names" data-reveal>Halil <span>&amp;</span><br>Sahin</h2>
           <p class="duo__lead" data-reveal>Twee broers, samen Vizora Digital. Een jonge webstudio uit de omgeving van Breda, voor ondernemers in heel Nederland: van starter tot gevestigde zaak.</p>
           <div class="duo__cols" data-reveal>
-            <p>Jong betekent bij ons: geen accountmanagers of wachtrijen, maar alle aandacht voor jouw project. Je spreekt altijd een van ons tweeën, van het eerste gesprek tot lang na de livegang.</p>
+            <p>Jong betekent bij ons: alle aandacht voor jouw project. Je spreekt altijd een van ons tweeën, van het eerste gesprek tot lang na de livegang.</p>
             <p>We bouwen elke website zelf, van eerste schets tot livegang, en blijven daarna bereikbaar voor vragen en aanpassingen. Gewoon via WhatsApp of telefoon.</p>
           </div>
           <dl class="duo__facts" data-reveal>
@@ -82,13 +84,6 @@ def render():
       </div>
     </section>
 
-    <section class="quote" aria-label="Onze belofte">
-      <figure class="wrap quote__in">
-        <blockquote class="quote__text" data-reveal><p>Jouw succes is ons visitekaartje. <span>Als jouw zaak groeit, groeien wij mee.</span></p></blockquote>
-        <figcaption class="label" data-reveal>Halil &amp; Sahin</figcaption>
-      </figure>
-    </section>
-
     <section class="sec pr wrap" aria-labelledby="pr-title">
       <div class="split">
         {label("03", "Waar we voor staan")}
@@ -105,8 +100,8 @@ def render():
       <div class="wrap split">
         {label("04", "Direct contact")}
         <div>
-          <h2 id="direct-title" class="h2" data-reveal>Geen wachtrij.<br><span>Gewoon even bellen.</span></h2>
-          <p class="direct__text" data-reveal>Een vraag, een idee of twijfel? Bel of app ons. Je krijgt Halil of Sahin aan de lijn, geen callcenter.</p>
+          <h2 id="direct-title" class="h2" data-reveal>Korte lijnen.<br><span>Gewoon even bellen.</span></h2>
+          <p class="direct__text" data-reveal>Een vraag, een idee of twijfel? Bel of app ons. Je krijgt Halil of Sahin aan de lijn.</p>
           <a href="{TEL}" class="direct__tel" data-reveal aria-label="Bel ons: {TEL_TXT}">{TEL_TXT}</a>
           <div class="direct__actions" data-reveal>
             <a href="{WA}" class="btn" target="_blank" rel="noopener">{WA_SVG} WhatsApp</a>

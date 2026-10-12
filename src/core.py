@@ -35,7 +35,7 @@ LOGO_MARK = '<svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><pat
 PACKAGES = [
     dict(name="Start", title="Online zichtbaar", price="200", featured=False,
          desc="Voor starters en zzp'ers die snel en professioneel online willen staan.",
-         feats=["One-page website op maat", "Perfect op mobiel", "Bel-, WhatsApp- en contactknoppen", "Basis vindbaarheid in Google", "Eigen domein + gratis hosting"]),
+         feats=["One-page website op maat", "Perfect op mobiel", "Bel-, WhatsApp- en contactknoppen", "Basis vindbaarheid in Google", "Koppeling met je eigen domein + gratis hosting"]),
     dict(name="Groei", title="Meer klanten", price="350", featured=True,
          desc="Voor ondernemers die online echt klanten willen binnenhalen.",
          feats=["Website tot 5 pagina's", "Uniek ontwerp met animaties", "Online afspraken, reserveren of bestellen", "Google Bedrijfsprofiel ingericht", "Teksten die overtuigen", "Lokale SEO voor jouw regio", "Gratis hosting"]),
@@ -54,23 +54,25 @@ GUARANTEES = [
     ("Domein op jouw naam", "Je domeinnaam is en blijft van jou. Geen gedoe als je ooit wilt overstappen."),
     ("Maandelijks opzegbaar", "Het abonnement loopt per maand. Geen jaarcontract, geen kleine lettertjes."),
 ]
+OG_ALT = "Vizora Digital: Je nieuwe website zie je al in het eerste gesprek."
 LD = {
-    "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": SITE + "/#bedrijf",
     "name": "Vizora Digital",
-    "url": SITE,
-    "logo": SITE + "/assets/logo.svg",
+    "url": SITE + "/",
+    "logo": SITE + "/assets/logo-512.png",
     "image": SITE + "/assets/og.png",
     "description": "Websites en online groei voor ondernemers in heel Nederland. Vanuit Breda.",
     "telephone": "+31638705348",
     "email": MAIL,
-    "priceRange": "€€",
+    "priceRange": "€200 - €500",
     "address": {"@type": "PostalAddress", "addressLocality": "Breda", "addressRegion": "Noord-Brabant", "addressCountry": "NL"},
     "areaServed": {"@type": "Country", "name": "Nederland"},
     "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "18:00"}],
     "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}],
 }
+WEBSITE = {"@type": "WebSite", "name": "Vizora Digital", "url": SITE + "/"}
 
 
 # ---------- helpers ----------
@@ -79,19 +81,55 @@ def label(num, text):
     return f'<p class="label">{text}</p>'
 
 
-def pic(name, alt, w, h, cls="", eager=False, pos=None, attrs=""):
-    """<picture> met webp + jpg uit assets/foto/."""
+# Kleinere varianten van de apparaatfoto's: <naam>-<breedte>.webp/.jpg naast het origineel.
+SMALL = {"laptop": 800, "telefoon": 500}
+
+# sizes per plek (ongeveer hoe breed de foto op het scherm staat)
+SIZES = {
+    "hero": "(max-width: 960px) 100vw, (max-width: 1600px) 92vw, 1500px",
+    "sw_laptop": "(max-width: 960px) 92vw, 50vw",
+    "sw_phone": "(max-width: 960px) 28vw, 13vw",
+    "svc_laptop": "(max-width: 960px) 92vw, (max-width: 1600px) 66vw, 1060px",
+    "svc_phone": "(max-width: 960px) min(92vw, 520px), (max-width: 1600px) 32vw, 520px",
+    "see_laptop": "(max-width: 560px) 90vw, (max-width: 1600px) 60vw, 960px",
+    "see_phone": "(max-width: 560px) 52vw, (max-width: 960px) 36vw, (max-width: 1600px) 31vw, 500px",
+}
+
+
+def srcset(name, ext, w):
+    """srcset met de kleine variant en het origineel, of None als er geen kleine variant is."""
+    small = SMALL.get(name.rsplit("-", 1)[-1])
+    if not small:
+        return None
+    return f"assets/foto/{name}-{small}.{ext} {small}w, assets/foto/{name}.{ext} {w}w"
+
+
+def pic(name, alt, w, h, cls="", eager=False, pos=None, attrs="", sizes=None):
+    """<picture> met webp + jpg uit assets/foto/. Met sizes (en een kleine variant) ook een srcset."""
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
     style = f' style="object-position:{pos}"' if pos else ""
-    return (f'<picture class="{cls}"><source srcset="assets/foto/{name}.webp" type="image/webp">'
-            f'<img src="assets/foto/{name}.jpg" alt="{alt}" width="{w}" height="{h}" {load} decoding="async"{style}{attrs}></picture>')
+    webp = srcset(name, "webp", w) if sizes else None
+    if webp:
+        source = f'<source srcset="{webp}" sizes="{sizes}" type="image/webp">'
+        extra = f' srcset="{srcset(name, "jpg", w)}" sizes="{sizes}"'
+    else:
+        source = f'<source srcset="assets/foto/{name}.webp" type="image/webp">'
+        extra = ""
+    return (f'<picture class="{cls}">{source}'
+            f'<img src="assets/foto/{name}.jpg"{extra} alt="{alt}" width="{w}" height="{h}" {load} decoding="async"{style}{attrs}></picture>')
 
 
 def head(file, title, desc, css=(), preload=None, ld=False):
+    """preload = (fotonaam, breedte, sizes) voor het grootste beeld bovenaan (LCP)."""
     url = SITE + "/" + ("" if file == "index.html" else file)
     links = "\n".join(f'  <link rel="stylesheet" href="assets/css/{c}.css">' for c in ("fonts", "base", *css))
-    pre = f'\n  <link rel="preload" as="image" href="{preload}" type="image/webp">' if preload else ""
-    ldj = f'\n  <script type="application/ld+json">{json.dumps(LD, ensure_ascii=False)}</script>' if ld else ""
+    pre = ""
+    if preload:
+        name, w, sizes = preload
+        ss = srcset(name, "webp", w)
+        resp = f' imagesrcset="{ss}" imagesizes="{sizes}"' if ss else ""
+        pre = f'\n  <link rel="preload" as="image" href="assets/foto/{name}.webp"{resp} type="image/webp" fetchpriority="high">'
+    ldj = f'\n  <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": [LD, WEBSITE]}, ensure_ascii=False)}</script>' if ld else ""
     return f'''<!doctype html>
 <html lang="nl">
 <head>
@@ -108,8 +146,13 @@ def head(file, title, desc, css=(), preload=None, ld=False):
   <meta property="og:description" content="{desc}">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{SITE}/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{OG_ALT}">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/logo-512.png" type="image/png" sizes="512x512">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>{pre}
 {links}
   <script>{INLINE_JS}</script>{ldj}
@@ -140,7 +183,8 @@ def header(active):
 {mobile}
       </nav>
       <div class="menu__foot wrap">
-        <a href="{TEL}" class="btn btn--light">{I["call"]} Bel {TEL_TXT}</a>
+        <a href="{"#plannen" if active == "contact.html" else "contact.html"}" class="btn">Plan je gratis concept {I["arrow"]}</a>
+        <a href="{TEL}" class="btn btn--line">{I["call"]} Bel {TEL_TXT}</a>
         <a href="{WA}" class="btn btn--line" target="_blank" rel="noopener">{WA_SVG} WhatsApp</a>
       </div>
     </div>
@@ -148,10 +192,10 @@ def header(active):
 '''
 
 
-def footer(active=""):
+def footer(active="", cta=True):
+    """cta=False: zonder het blok 'Klaar voor meer klanten?' (bv. op de contactpagina, direct na het formulier)."""
     plan = "#plannen" if active == "contact.html" else "contact.html"
-    return f'''  <footer class="ft" data-theme="dark">
-    <div class="wrap">
+    cta_html = f'''
       <div class="ft__cta">
         <p class="label">Volgende stap</p>
         <h2 class="ft__title">Klaar voor meer klanten?<br><span>Begin met je gratis concept.</span></h2>
@@ -161,7 +205,9 @@ def footer(active=""):
           <a href="{WA}" class="btn btn--line" target="_blank" rel="noopener">{WA_SVG} WhatsApp</a>
           <a href="mailto:{MAIL}" class="btn btn--line">{I["mail"]} Mail ons</a>
         </div>
-      </div>
+      </div>''' if cta else ""
+    return f'''  <footer class="ft{"" if cta else " ft--plain"}" data-theme="dark">
+    <div class="wrap">{cta_html}
       <div class="ft__cols">
         <div>
           <p class="label">Pagina's</p>
@@ -173,7 +219,7 @@ def footer(active=""):
         </div>
         <div>
           <p class="label">Bereikbaar</p>
-          <ul><li>Maandag t/m zaterdag</li><li>09:00 – 18:00</li><li>Antwoord dezelfde dag</li><li>Vanuit Breda, voor heel Nederland</li></ul>
+          <ul><li>Maandag t/m zaterdag</li><li>09:00 – 18:00</li><li>Binnen werktijd antwoord dezelfde dag</li><li>Vanuit Breda, voor heel Nederland</li></ul>
         </div>
       </div>
       <p class="ft__word" aria-hidden="true">Vizora</p>
@@ -185,10 +231,10 @@ def footer(active=""):
   </footer>
 
   <div class="dock" data-dock>
-    <div class="dock__panel" id="dock-panel" role="dialog" aria-label="Neem contact op" hidden>
+    <div class="dock__panel" id="dock-panel" hidden>
       <p class="dock__status" data-dock-status><i></i><span>Nu bereikbaar</span></p>
       <p class="dock__title">Vraag? Stel hem gerust.</p>
-      <p class="dock__text">Je spreekt direct met Halil of Sahin. Binnen werktijd hoor je dezelfde dag van ons.</p>
+      <p class="dock__text">Je spreekt direct met Halil of Sahin. Binnen werktijd antwoord dezelfde dag.</p>
       <a href="{WA}" class="dock__btn dock__btn--wa" target="_blank" rel="noopener">{WA_SVG} WhatsApp</a>
       <a href="{TEL}" class="dock__btn">{I["call"]} Bel {TEL_TXT}</a>
       <a href="mailto:{MAIL}" class="dock__btn">{I["mail"]} Mail ons</a>

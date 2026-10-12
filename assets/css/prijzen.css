@@ -20,7 +20,7 @@
 .pk__desc { color: var(--muted); margin-top: .5rem; min-height: 3.2em; }
 .pk__list { margin-top: 1.6rem; display: grid; gap: .65rem; flex: 1; align-content: start; }
 .pk__list li { display: grid; grid-template-columns: 18px 1fr; gap: .7rem; font-size: .98rem; }
-.pk__list li::before { content: ""; width: 10px; height: 1.5px; background: var(--ink); margin-top: .78em; }
+.pk__list li::before { content: ""; width: 10px; height: 2px; background: var(--ink); margin-top: .78em; }
 .pk__btn { margin-top: 2.2rem; width: 100%; }
 .pk--featured .pk__price { color: var(--terra); }
 
@@ -67,7 +67,7 @@
 .tier__price span { display: block; margin-top: .9rem; font-family: var(--mono); font-size: 12px; font-weight: 400; line-height: 1.4; letter-spacing: .04em; text-transform: uppercase; color: var(--on-dark-muted); }
 .tier__list { margin-top: 2rem; display: grid; gap: .65rem; flex: 1; align-content: start; }
 .tier__list li { display: grid; grid-template-columns: 18px 1fr; gap: .7rem; font-size: .98rem; }
-.tier__list li::before { content: ""; width: 10px; height: 1.5px; background: var(--on-dark); margin-top: .78em; }
+.tier__list li::before { content: ""; width: 10px; height: 2px; background: var(--on-dark); margin-top: .78em; }
 .tier__btn { margin-top: 2.2rem; width: 100%; }
 .abo__terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin: clamp(64px, 8vw, 120px) 0 0; }
 .abo__terms div { border-top: 1px solid var(--rule-dark); padding-top: 1rem; }

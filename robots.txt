@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /src/
 
 Sitemap: https://vizoradigital.nl/sitemap.xml

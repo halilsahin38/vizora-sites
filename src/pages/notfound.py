@@ -6,6 +6,7 @@ FILE = "404.html"
 
 LINKS = [
     ("index.html", "Home", "Terug naar het begin"),
+    ("prijzen.html", "Prijzen", "Bekijk de pakketten en prijzen"),
     ("contact.html", "Contact", "Plan je gratis gesprek"),
 ]
 

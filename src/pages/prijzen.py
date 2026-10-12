@@ -34,17 +34,19 @@ COMPARE = [
 
 EXTRAS = [
     ("Advertenties", "Campagnes in Google en op Instagram en Facebook, met duidelijke rapportages.", "Prijs op aanvraag"),
-    ("Social media content", "Content maken of posten voor jouw zaak. Wat je nodig hebt en wat het kost, bespreken we samen.", "In overleg"),
+    ("Content voor social media", "Content maken of posten voor jouw zaak. Wat je nodig hebt en wat het kost, bespreken we samen.", "In overleg"),
     ("Losse aanpassingen", "Geen abonnement? Dan kan het ook. We spreken per aanpassing vooraf een prijs af.", "Per keer"),
 ]
 
 
 def _faq():
     b, p, r = SUB_TIERS
+    st, gr, co = PACKAGES
     return [
+        ("Wat kost een website laten maken?", f"Bij ons begint een website bij €{st['price']} voor {st['name']} (een one-page website), €{gr['price']} voor {gr['name']} (tot 5 pagina's) of €{co['price']} voor {co['name']} (met logo en huisstijl). Dat zijn eenmalige vanaf-prijzen, exclusief btw. Hosting is gratis; alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar. Na het gratis gesprek krijg je een vaste prijs op maat."),
         ("Waarom staat er “vanaf”?", "Elke zaak is anders. De vanaf-prijs is wat je minimaal betaalt voor het pakket. Na het gratis gesprek krijg je een vaste prijs, zonder verrassingen."),
-        ("Zijn er maandelijkse kosten?", f"De pakketten zijn eenmalig. Wil je dat we je website elke maand bijwerken en onderhouden? Dan kun je een abonnement nemen vanaf €{b['price']} per maand. Hosting is gratis inbegrepen. Alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar."),
-        ("Welke abonnementen zijn er?", f"{b['name']} (€{b['price']} p/m): onderhoud, beveiliging en 1 kleine aanpassing per maand. {p['name']} (€{p['price']} p/m): tot 3 aanpassingen, je Google Bedrijfsprofiel bijhouden en maandelijkse groeitips. {r['name']} (€{r['price']} p/m): tot 6 aanpassingen per maand, elk kwartaal een nieuwe pagina of actie en een maandelijks groeigesprek. Je ontvangt elke maand een factuur en kunt per maand opzeggen."),
+        ("Zijn er maandelijkse kosten?", f"De pakketten zijn eenmalig. Wil je dat we je website elke maand bijwerken en onderhouden? Dan kun je een abonnement nemen vanaf €{b['price']} per maand, excl. btw. Hosting is gratis inbegrepen. Alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar."),
+        ("Welke abonnementen zijn er?", f"{b['name']} (€{b['price']} p/m): onderhoud, beveiliging en 1 kleine aanpassing per maand. {p['name']} (€{p['price']} p/m): tot 3 aanpassingen, je Google Bedrijfsprofiel bijhouden en maandelijkse groeitips. {r['name']} (€{r['price']} p/m): tot 6 aanpassingen per maand, elk kwartaal een nieuwe pagina of actie en een maandelijks groeigesprek. Alle bedragen excl. btw. Je ontvangt elke maand een factuur en kunt per maand opzeggen."),
         ("Maken jullie ook posts voor social media?", "In het pakket Compleet richten we je profielen in en helpen we met stijl en strategie. Content maken of posten valt daarbuiten; dat bespreken we graag samen en kost extra."),
         ("Kan ik later upgraden?", "Ja. Begin je met Start, dan kun je altijd uitbreiden naar Groei of Compleet. Wat al gemaakt is, bouwen we gewoon verder uit."),
         ("Hoe betaal ik?", "Dat spreken we samen af in de offerte. Je weet vooraf precies wat je betaalt en wanneer. Het abonnement betaal je per maand, op factuur."),
@@ -106,8 +108,8 @@ def render():
           </div>''' for i, (t, d, p) in enumerate(EXTRAS, 1))
 
     html = head(FILE, f"Prijzen | Websites vanaf €{start} | Vizora Digital",
-                f"Duidelijke pakketten: {', '.join(p['name'] + ' vanaf €' + p['price'] for p in PACKAGES)}, eenmalig. "
-                f"Website-abonnement vanaf €{SUB_TIERS[0]['price']} per maand. Voor ondernemers in heel Nederland.",
+                f"Website laten maken vanaf €{start} excl. btw. Drie pakketten, eenmalig, en een abonnement vanaf "
+                f"€{SUB_TIERS[0]['price']} per maand. Eerst gratis je concept zien, dan pas beslissen.",
                 css=("prijzen",))
     html += header(FILE)
     html += f'''
@@ -118,13 +120,13 @@ def render():
         {label("01", "Pakketten")}
         <div>
           <h2 id="pk-title" class="h2" data-reveal>Drie pakketten.<br><span>Eén keer betalen.</span></h2>
-          <p class="pp__intro" data-reveal>Kies een pakket als startpunt. Na het gratis gesprek krijg je altijd eerst een vaste prijs op maat, zodat je precies weet waar je aan toe bent.</p>
+          <p class="pp__intro" data-reveal>Kies een pakket als startpunt. Na het gratis gesprek krijg je altijd eerst een vaste prijs op maat, zodat je precies weet waar je aan toe bent. Prijzen voor ondernemers, exclusief btw.</p>
         </div>
       </div>
       <div class="pk__grid">
 {price_columns()}
       </div>
-      <p class="pp__foot" data-reveal>Alle prijzen zijn exclusief btw. Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen en hoor je vooraf.</p>
+      <p class="pp__foot" data-reveal>Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen en hoor je vooraf.</p>
     </section>
 
     <section class="sec cmp wrap" id="vergelijken" aria-labelledby="cmp-title">
@@ -132,7 +134,7 @@ def render():
         <div class="cmp__aside">
           {label("02", "Vergelijken")}
           <h2 id="cmp-title" class="h2 cmp__title" data-reveal>Wat zit er in elk pakket?</h2>
-          <p class="cmp__help" data-reveal>Twijfel je tussen twee pakketten? <a href="{WA}" target="_blank" rel="noopener">App</a>, <a href="mailto:{MAIL}">mail</a> of bel <a href="{TEL}">{TEL_TXT}</a>. We adviseren eerlijk, ook als een kleiner pakket genoeg is.</p>
+          <p class="cmp__help" data-reveal>Twijfel je tussen twee pakketten? <a href="{WA}" target="_blank" rel="noopener">App</a>, <a href="mailto:{MAIL}">mail</a> of bel <a href="{TEL}">{TEL_TXT}</a>. We adviseren eerlijk, ook als een kleiner pakket genoeg is. Alle prijzen excl. btw.</p>
         </div>
         <div class="cmp__wrap" data-reveal>
 {_compare()}

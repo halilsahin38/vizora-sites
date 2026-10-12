@@ -8,7 +8,7 @@ S = {t["name"]: t["price"] for t in SUB_TIERS}
 # In het kort (balk onder de kop)
 GLANCE = [
     ("Eerste gesprek", "Gratis"),
-    ("Je concept", "Gratis, vooraf gemaakt"),
+    ("Je concept", "Gratis, vooraf"),
     ("Betalen", "Pas als je blij bent"),
     ("Techniek", "Regelen wij"),
 ]
@@ -28,8 +28,8 @@ STEPS = [
      "We werken het concept uit tot je complete website en schrijven de teksten met je mee. Je krijgt twee feedbackrondes; pas als je blij bent met het ontwerp, betaal je. Daarna testen we alles en zetten we je site live op je eigen domein.",
      ["Twee feedbackrondes", "Niet blij = niet betalen", "Getest op elk apparaat"]),
     ("Blijven groeien",
-     f"Een website is nooit af. Met het website-abonnement (vanaf €{S['Basis']} per maand) houden we hem veilig en up-to-date en passen we dingen voor je aan. Wil je verder, met advertenties of hulp bij social media? Dan pakken we de volgende stap uit je groeiplan op.",
-     [f"Vanaf €{S['Basis']} p/m", "Maandelijks opzegbaar", "Hulp via WhatsApp"]),
+     f"Een website is nooit af. Met het website-abonnement (vanaf €{S['Basis']} per maand, excl. btw) houden we hem veilig en up-to-date en passen we dingen voor je aan. Wil je verder, met advertenties of hulp bij social media? Dan pakken we de volgende stap uit je groeiplan op.",
+     [f"Vanaf €{S['Basis']} p/m excl. btw", "Maandelijks opzegbaar", "Hulp via WhatsApp"]),
 ]
 
 # Wie doet wat
@@ -54,11 +54,11 @@ WE = [
 QA = [
     ("Krijg ik vooraf een ontwerp te zien?", "Ja. Als je een gesprek plant, maken we gratis een concept van jouw website. Zo zie je meteen hoe het eruit kan zien, nog voordat je iets beslist."),
     ("Wat als ik niet tevreden ben?", "Dan betaal je niets. Je ziet eerst het ontwerp en we passen het twee keer aan naar jouw wensen. Pas als jij tevreden bent, gaan we verder en ontvang je de factuur."),
-    ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; daar helpen we je ook bij."),
+    ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; bij de teksten helpen we je."),
     ("Moet ik zelf teksten en foto's aanleveren?", "Teksten schrijven we graag met je mee. Foto's en video's komen het liefst van jou, want niemand kent je zaak beter. We adviseren je wel over wat goed werkt."),
     ("Hoe lang duurt het voordat mijn website online staat?", "Dat hangt af van de grootte van je website en hoe snel de teksten en foto's rond zijn. In het gesprek spreken we samen een planning af die bij jou past."),
     ("Wat kost een website?", f'Onze pakketten beginnen bij €{P["Start"]} (Start), €{P["Groei"]} (Groei) en €{P["Compleet"]} (Compleet), eenmalig en exclusief btw. Na het gesprek krijg je een vaste prijs op maat. Alle details staan op de <a href="prijzen.html">prijzenpagina</a>.'),
-    ("Kan ik later nog dingen laten aanpassen?", f"Ja. Met het website-abonnement (vanaf €{S['Basis']} per maand) werken we je website elke maand bij. Zonder abonnement kan het ook; dan spreken we per aanpassing een prijs af."),
+    ("Kan ik later nog dingen laten aanpassen?", f"Ja. Met het website-abonnement (vanaf €{S['Basis']} per maand, excl. btw) werken we je website elke maand bij. Zonder abonnement kan het ook; dan spreken we per aanpassing een prijs af."),
     ("Maken jullie ook posts voor social media?", "We richten je profielen in en helpen met stijl en strategie. Content maken of posten valt buiten de pakketten; dat bespreken we graag samen en kost extra."),
     ("Ik heb al een website. Kunnen jullie die verbeteren?", "Zeker. We kijken eerst gratis naar je huidige site en vertellen eerlijk of verbeteren of opnieuw bouwen slimmer is."),
     ("Waar zitten jullie?", "In Breda. We werken voor ondernemers in heel Nederland. Kennismaken en overleggen gaat makkelijk via telefoon, WhatsApp of video."),
@@ -82,7 +82,7 @@ def render():
     we = "".join(f"<li>{x}</li>" for x in WE)
 
     html = head(FILE, "Werkwijze | Eerst zien, dan beslissen | Vizora Digital",
-                "Van gratis kennismaking en websiteconcept tot een website die elke maand meegroeit. Jij vertelt over je zaak, wij regelen de techniek. Zo werkt Vizora Digital.",
+                "Zo werkt website laten maken bij Vizora Digital: gratis kennismaking, vooraf een gratis concept, pas betalen als je blij bent. Wij regelen de techniek.",
                 css=("werkwijze",))
     html += header(FILE)
     html += f'''
@@ -118,11 +118,11 @@ def render():
         </div>
         <div class="see__media">
           <figure class="see__laptop">
-            <div class="see__img" data-clip>{pic("merk-laptop", "Laptop met een donker voorbeeldontwerp van Vizora op het scherm", 1500, 1213, pos="50% 55%")}</div>
+            <div class="see__img" data-clip>{pic("merk-laptop", "Laptop met een donker voorbeeldontwerp van Vizora op het scherm", 1500, 1213, pos="50% 55%", sizes=SIZES["see_laptop"])}</div>
           </figure>
           <figure class="see__phone">
             <div class="see__float" data-speed="-0.06">
-              <div class="see__img" data-clip>{pic("merk-telefoon", "Hetzelfde voorbeeldontwerp op een telefoon", 1100, 1286, pos="52% 40%")}</div>
+              <div class="see__img" data-clip>{pic("merk-telefoon", "Hetzelfde voorbeeldontwerp op een telefoon", 1100, 1286, pos="52% 40%", sizes=SIZES["see_phone"])}</div>
             </div>
             <figcaption class="label">Voorbeeld van een concept, op laptop en telefoon</figcaption>
           </figure>

@@ -141,7 +141,6 @@ em { font-style: normal; color: var(--terra); }
 .menu__links a { font-size: clamp(2.2rem, 9vw, 3.4rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.15; padding-block: .25rem; border-bottom: 1px solid var(--rule); }
 .menu__links a[aria-current] { color: var(--terra); }
 .menu__foot { display: grid; gap: .7rem; margin-top: 2rem; }
-.menu__foot .btn--light { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .menu__foot .btn--line { color: var(--ink); border-color: var(--rule); }
 
 /* ---------- subpagina-kop ---------- */
@@ -183,6 +182,8 @@ em { font-style: normal; color: var(--terra); }
 .ft__actions .btn--light::before { background: var(--terra); }
 .ft__actions .btn--light:hover { color: #fff; }
 .ft__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin-top: clamp(80px, 10vw, 150px); padding-top: 2rem; border-top: 1px solid var(--rule-dark); }
+.ft--plain { padding-top: clamp(64px, 7vw, 100px); }
+.ft--plain .ft__cols { margin-top: 0; }
 .ft__cols .label { margin-bottom: 1rem; }
 .ft__cols ul { display: grid; gap: .45rem; color: var(--on-dark); }
 .ft__cols a { transition: color .25s; overflow-wrap: anywhere; }

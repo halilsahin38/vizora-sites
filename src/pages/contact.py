@@ -66,7 +66,7 @@ def _form():
 
           <fieldset class="bk__step">
             <legend><span class="bk__n">02</span>Kies een dag <span class="bk__opt">optioneel</span></legend>
-            <p class="bk__hint">Maandag t/m zaterdag, de komende twaalf dagen. Geen voorkeur? Sla dit over, dan stellen wij een moment voor.</p>
+            <p class="bk__hint">Maandag t/m zaterdag, vanaf twee werkdagen na vandaag: dan is je concept klaar. Geen voorkeur? Sla dit over, dan stellen wij een moment voor.</p>
             <div class="dates"></div>
           </fieldset>
 
@@ -79,7 +79,7 @@ def _form():
 
           <fieldset class="bk__step">
             <legend><span class="bk__n">04</span>Waar ben je in geïnteresseerd?</legend>
-            <p class="bk__hint">Kies er gerust meer. Twijfel je nog? Dan zoeken we het samen uit.</p>
+            <p class="bk__hint">Je mag er meerdere kiezen. Twijfel je nog? Dan zoeken we het samen uit.</p>
             <div class="bk__tags">
 {dienst}
             </div>
@@ -100,6 +100,7 @@ def _form():
           <div class="bk__send">
             <div class="bk__sum">
               <p class="label">Je aanvraag</p>
+              <p class="bk__sumpk" data-summary-pakket hidden></p>
               <p class="bk__sumt" data-summary aria-live="polite">Geen dag gekozen? Dan stellen wij een moment voor.</p>
             </div>
             <p class="booking__error" role="alert"></p>
@@ -107,7 +108,7 @@ def _form():
               <button type="submit" class="btn bk__wa">{WA_SVG} Verstuur via WhatsApp</button>
               <button type="button" class="btn btn--ghost" data-email>{I["mail"]} Verstuur via e-mail</button>
             </div>
-            <p class="bk__note"><b>Je bericht staat daarna klaar in WhatsApp of in je mail. Druk daar nog op verzenden, dan is het geregeld.</b> Binnen werktijd (ma–za 9–18 uur) hoor je dezelfde dag van ons. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
+            <p class="bk__note"><b>Je bericht staat daarna klaar in WhatsApp of in je mail. Druk daar nog op verzenden, dan is het geregeld.</b> Binnen werktijd (ma–za 9–18 uur) antwoord dezelfde dag. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
           </div>
         </form>'''
 
@@ -122,7 +123,7 @@ def render():
       </div>'''
 
     html = head(FILE, "Contact | Plan een gratis gesprek | Vizora Digital",
-                f"Plan een gratis gesprek met Vizora Digital en zie vooraf een gratis concept van je website. "
+                f"Plan een gratis gesprek en zie vooraf een gratis concept van je nieuwe website. "
                 f"Of bel of app direct: {TEL_TXT}. Voor ondernemers in heel Nederland.",
                 css=("contact",))
     html += header(FILE)
@@ -160,5 +161,5 @@ def render():
   </main>
 
 '''
-    html += footer(FILE)
+    html += footer(FILE, cta=False)
     return html
