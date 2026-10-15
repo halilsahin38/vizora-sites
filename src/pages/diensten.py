@@ -85,7 +85,7 @@ def render():
     extra_html = "\n".join(extra)
 
     html = head(FILE, "Diensten | Websites, marketing en social media | Vizora Digital",
-                "Website laten maken op maat, hulp om gevonden te worden in Google en hulp bij social media. Voor ondernemers in heel Nederland, vanuit Breda.",
+                "Een website op maat, hulp om gevonden te worden in Google en hulp bij social media. Voor ondernemers in heel Nederland, vanuit Breda.",
                 css=("diensten",))
     html += header(FILE)
     html += f'''

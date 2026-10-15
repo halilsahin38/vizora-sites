@@ -66,8 +66,8 @@ def _packs():
 def render():
     promises = "".join(f"<li>{t}</li>" for t, _ in GUARANTEES)
 
-    html = head(FILE, "Website laten maken met gratis concept | Vizora Digital",
-                "Website laten maken? Je ziet vooraf gratis een concept en betaalt pas als je blij bent. Daarna helpen we je gevonden te worden in Google. Heel Nederland.",
+    html = head(FILE, "Vizora Digital | Zie je nieuwe website al vóór je betaalt",
+                "Wij maken gratis een concept van jouw website en laten het zien in het eerste gesprek. Pas betalen als je blij bent. Voor ondernemers in heel Nederland.",
                 css=("home",), preload=("licht-laptop", 1500, SIZES["hero"]), ld=True)
     html += header(FILE)
     html += f'''

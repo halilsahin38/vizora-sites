@@ -82,7 +82,7 @@ def render():
     we = "".join(f"<li>{x}</li>" for x in WE)
 
     html = head(FILE, "Werkwijze | Eerst zien, dan beslissen | Vizora Digital",
-                "Zo werkt website laten maken bij Vizora Digital: gratis kennismaking, vooraf een gratis concept, pas betalen als je blij bent. Wij regelen de techniek.",
+                "Zo werkt het bij Vizora Digital: gratis kennismaking, vooraf een gratis concept, pas betalen als je blij bent. Wij regelen de techniek.",
                 css=("werkwijze",))
     html += header(FILE)
     html += f'''

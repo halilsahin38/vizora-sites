@@ -108,7 +108,7 @@ def render():
           </div>''' for i, (t, d, p) in enumerate(EXTRAS, 1))
 
     html = head(FILE, f"Prijzen | Websites vanaf €{start} | Vizora Digital",
-                f"Website laten maken vanaf €{start} excl. btw. Drie pakketten, eenmalig, en een abonnement vanaf "
+                f"Je eigen website vanaf €{start} excl. btw. Drie pakketten, eenmalig, en een abonnement vanaf "
                 f"€{SUB_TIERS[0]['price']} per maand. Eerst gratis je concept zien, dan pas beslissen.",
                 css=("prijzen",))
     html += header(FILE)
