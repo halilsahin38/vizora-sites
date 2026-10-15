@@ -1,0 +1,67 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jouw Bedrijf (voorbeeld: warm &amp; persoonlijk)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root{--bg:#f6ece0;--fg:#2a1a12;--acc:#a9583a;--on-acc:#fff;--card:#fffaf3;--line:rgba(42,26,18,.2);--display:'DM Serif Display',serif;--sans:'DM Sans',sans-serif;--dw:400}
+body{background:radial-gradient(800px 600px at 85% 20%,#efd6c0,transparent 60%),#f6ece0}
+.logo{display:flex;align-items:center;gap:12px;font:400 26px var(--display)}
+.logo i{width:30px;height:30px;border-radius:50%;background:#a9583a;display:block;box-shadow:inset -8px -6px 0 #8a4129}
+h1{font-size:92px;line-height:.98;letter-spacing:-.01em}
+h1 em{color:#a9583a}
+.eyebrow{color:#a9583a}
+.lead{opacity:.75}
+.meta b{font:400 32px var(--display);color:#a9583a}
+.blob{position:absolute;border-radius:48% 52% 45% 55% / 55% 45% 55% 45%}
+.b1{width:430px;height:470px;right:30px;top:40px;background:linear-gradient(160deg,#c66b47,#8a4129)}
+.b2{width:230px;height:230px;left:20px;bottom:30px;background:#e8c9a8;border-radius:50%}
+.b3{width:120px;height:120px;right:10px;bottom:70px;background:#7d8a6a;border-radius:50%}
+.card2{position:absolute;left:60px;top:120px;width:300px;padding:26px;background:#fffaf3;border-radius:22px;box-shadow:0 40px 70px -35px rgba(80,30,10,.5)}
+.card2 small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#a9583a;font-weight:700}
+.card2 p{font:400 26px/1.2 var(--display);margin:10px 0 14px}
+.card2 .who{display:flex;align-items:center;gap:10px;font-size:14px;opacity:.75}
+.card2 .who i{width:34px;height:34px;border-radius:50%;background:#e8c9a8}
+.stars{color:#c9893a;letter-spacing:3px;font-size:16px}
+.tag{position:absolute;right:60px;bottom:120px;background:#2a1a12;color:#f6ece0;border-radius:99px;padding:14px 22px;font-weight:500;font-size:15px}
+.s2 h2 em{color:#a9583a}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.three div{background:#fffaf3;border-radius:22px;padding:26px;font-size:16px;opacity:.9}
+.three b{display:block;font:400 26px var(--display);margin-bottom:8px;color:#a9583a}
+@media (max-width:500px){
+  h1{font-size:54px}
+  .visual{height:430px}
+  .b1{width:280px;height:320px;right:0;top:10px}
+  .b2{width:150px;height:150px;left:0;bottom:10px}
+  .b3{width:80px;height:80px;bottom:40px}
+  .card2{left:10px;top:70px;width:250px;padding:20px}.card2 p{font-size:21px}
+  .tag{right:14px;bottom:30px}
+  .three{grid-template-columns:1fr}
+}
+</style></head><body>
+<div class="wrap">
+  <nav class="nav">
+    <div class="logo"><i></i>Jouw Bedrijf</div>
+    <div class="nav__links"><a>Aanbod</a><a>Verhaal</a><a>Reviews</a><a>Contact</a></div>
+    <a class="btn btn--sm">Neem contact op</a>
+    <span class="burger"></span>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Met liefde gemaakt</span>
+      <h1>Met aandacht, <em>voor jou.</em></h1>
+      <p class="lead">Al jaren een vertrouwd adres in de buurt. Kom langs, maak online een afspraak of bestel direct. We helpen je graag persoonlijk verder.</p>
+      <div class="actions"><a class="btn">Maak een afspraak →</a><a class="btn btn--ghost">Ons verhaal</a></div>
+      <div class="meta"><div><b>12 jaar</b>ervaring</div><div><b>4,9★</b>op Google</div><div><b>Ma–za</b>geopend</div></div>
+    </div>
+    <div class="visual">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+      <div class="card2"><small>Review</small><p>“Super vriendelijk en echt met aandacht geholpen.”</p><div class="who"><i></i><div><span class="stars">★★★★★</span><br>Een tevreden klant</div></div></div>
+      <div class="tag">Vandaag nog plek →</div>
+    </div>
+  </section>
+</div>
+<section class="s2"><div class="wrap">
+  <span class="eyebrow">Wat we doen</span>
+  <h2 style="margin-top:18px">Alles met <em>zorg</em> gedaan.</h2>
+  <div class="three"><div><b>Persoonlijk</b>Je wordt altijd door ons zelf geholpen.</div><div><b>Vakwerk</b>Kwaliteit waar je op kunt rekenen.</div><div><b>Dichtbij</b>Gewoon om de hoek, of online.</div></div>
+</div></section>
+</body></html>

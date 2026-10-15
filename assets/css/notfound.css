@@ -1,0 +1,21 @@
+/* =========================================================
+   404 — pagina niet gevonden
+   ========================================================= */
+.nf { padding-bottom: var(--sec); }
+.nf__list { border-top: 1px solid var(--ink); }
+.nf__list li { border-bottom: 1px solid var(--rule); }
+.nf__a {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: center; gap: var(--gap);
+  padding: clamp(18px, 2.2vw, 30px) 0;
+}
+.nf__t { font-weight: 500; font-size: clamp(2.4rem, 5.4vw, 5.2rem); line-height: .95; letter-spacing: -.05em; transition: color .3s; }
+.nf__d { color: var(--muted); font-size: clamp(1rem, 1.3vw, 1.15rem); }
+.nf__go .i { width: clamp(24px, 2.4vw, 34px); height: clamp(24px, 2.4vw, 34px); stroke-width: 1.6; transition: transform .45s var(--ease), color .3s; }
+.nf__a:hover .nf__t, .nf__a:hover .nf__go .i { color: var(--terra-ink); }
+.nf__a:hover .nf__go .i { transform: translateX(6px); }
+
+@media (max-width: 720px) {
+  .nf__a { grid-template-columns: minmax(0, 1fr) auto; gap: .2rem 1rem; }
+  .nf__d { grid-row: 2; }
+  .nf__go { grid-column: 2; grid-row: 1 / span 2; }
+}
