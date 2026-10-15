@@ -30,7 +30,7 @@
 .cmp__aside { position: sticky; top: calc(var(--hd) + 32px); }
 .cmp__title { margin-top: 1.2rem; }
 .cmp__help { margin-top: 1.4rem; color: var(--muted); max-width: 22em; }
-.cmp__help a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.cmp__help a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 .cmp__help a:hover { color: var(--terra-ink); }
 
 .cmp__table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 1rem; }
@@ -97,7 +97,7 @@
 .qa { border-top: 1px solid var(--rule); }
 .qa__title { margin-top: 1.2rem; }
 .qa__help { margin-top: 1.4rem; color: var(--muted); max-width: 22em; }
-.qa__help a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.qa__help a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 .qa__help a:hover { color: var(--terra-ink); }
 .qa .split { grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); }
 

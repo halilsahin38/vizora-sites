@@ -98,6 +98,7 @@
 .qa__help { margin-top: 1.4rem; color: var(--muted); max-width: 22em; }
 .qa__help a, .qa__a a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .qa__a a:hover, .qa__help a:hover { color: var(--terra-ink); }
+.qa__help a { white-space: nowrap; }
 
 /* ---------- responsief ---------- */
 @media (max-width: 960px) {

@@ -174,7 +174,7 @@ def header(active):
       <nav class="hd__nav" aria-label="Hoofdmenu">{links}</nav>
       <div class="hd__right">
         <a href="{TEL}" class="hd__tel" aria-label="Bel ons: {TEL_TXT}">{I["call"]}<span>{TEL_TXT}</span></a>
-        <a href="contact.html" class="hd__cta"{" aria-current=\"page\"" if active == "contact.html" else ""}>Plan je gratis concept {I["up"]}</a>
+        <a href="{"#plannen" if active == "contact.html" else "contact.html"}" class="hd__cta"{" aria-current=\"page\"" if active == "contact.html" else ""}>Plan je gratis concept {I["up"]}</a>
         <button class="hd__menu" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span></button>
       </div>
     </div>

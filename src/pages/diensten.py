@@ -99,7 +99,7 @@ def render():
 
     <section class="svc" id="websites" aria-labelledby="websites-title">
       <div class="svc__grid wrap">
-        {side("01", "Websites", [("Voor wie", "Starters, zzp'ers en ondernemers die online meer klanten willen"), ("Prijs", f"Vanaf €{P['Start']}, eenmalig, excl. btw"), ("Daarna", f"Abonnement vanaf €{S['Basis']} p/m, niet verplicht")])}
+        {side("01", "Websites", [("Voor wie", "Starters, zzp'ers en ondernemers die online meer klanten willen"), ("Prijs", f"Vanaf €{P['Start']}, eenmalig, excl. btw"), ("Daarna", f"Abonnement vanaf €{S['Basis']} p/m excl. btw, niet verplicht")])}
         <div class="svc__main">
           <h2 id="websites-title" class="h2" data-reveal>Een website die werkt<br><span>als je beste verkoper.</span></h2>
           <p class="svc__lead" data-reveal>Je website is vaak het eerste wat een klant van je ziet. Wij zorgen dat die eerste indruk klopt, en dat bezoekers makkelijk kunnen bellen, appen of een afspraak maken.</p>
@@ -108,7 +108,7 @@ def render():
             <p>Elke website ontwerpen we op maat, rond jouw klanten en jouw doelen. Geen standaard template, wel een site die laat zien hoe goed je bent en die op elke telefoon goed werkt.</p>
             <p>Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; bij de teksten helpen we je. Technische kennis heb je niet nodig.</p>
           </div>
-          {gets(["Uniek ontwerp, geen template", "Perfect op telefoon, tablet en laptop", "Bel-, WhatsApp- en contactknoppen", "Online afspraken, reserveren of bestellen", "Basis vindbaarheid in Google", "Domeinnaam op jouw naam", "Twee feedbackrondes in de prijs", "Onderhoud en aanpassingen via het abonnement"])}
+          {gets(["Uniek ontwerp, geen template", "Perfect op telefoon, tablet en laptop", "Bel-, WhatsApp- en contactknoppen", "Online afspraken, reserveren of bestellen (vanaf Groei)", "Basis vindbaarheid in Google", "Domeinnaam op jouw naam", "Twee feedbackrondes in de prijs", "Onderhoud en aanpassingen via het abonnement"])}
           {packs([("Start", "One-page website op maat, perfect op mobiel, met bel-, WhatsApp- en contactknoppen", f"€{P['Start']}"), ("Groei", "Tot 5 pagina's, uniek ontwerp met animaties en online afspraken, reserveren of bestellen", f"€{P['Groei']}"), ("Compleet", "Alles uit Groei, plus logo en huisstijl en een persoonlijk groeiplan", f"€{P['Compleet']}")])}
           {note("Je ziet eerst gratis een concept van je website. Pas als je blij bent met het ontwerp, betaal je. Ben je na de feedbackrondes niet tevreden, dan betaal je niets.")}
           <div class="svc__actions" data-reveal>

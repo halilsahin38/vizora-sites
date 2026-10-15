@@ -54,7 +54,7 @@ def render():
             <p>We bouwen elke website zelf, van eerste schets tot livegang, en blijven daarna bereikbaar voor vragen en aanpassingen. Gewoon via WhatsApp of telefoon.</p>
           </div>
           <dl class="duo__facts" data-reveal>
-            <div><dt>Gevestigd</dt><dd>Breda</dd></div>
+            <div><dt>Gevestigd</dt><dd>Regio Breda</dd></div>
             <div><dt>Werkgebied</dt><dd>Heel Nederland</dd></div>
             <div><dt>Bereikbaar</dt><dd>Ma–za 09–18</dd></div>
           </dl>

@@ -59,9 +59,9 @@ QA = [
     ("Hoe lang duurt het voordat mijn website online staat?", "Dat hangt af van de grootte van je website en hoe snel de teksten en foto's rond zijn. In het gesprek spreken we samen een planning af die bij jou past."),
     ("Wat kost een website?", f'Onze pakketten beginnen bij €{P["Start"]} (Start), €{P["Groei"]} (Groei) en €{P["Compleet"]} (Compleet), eenmalig en exclusief btw. Na het gesprek krijg je een vaste prijs op maat. Alle details staan op de <a href="prijzen.html">prijzenpagina</a>.'),
     ("Kan ik later nog dingen laten aanpassen?", f"Ja. Met het website-abonnement (vanaf €{S['Basis']} per maand, excl. btw) werken we je website elke maand bij. Zonder abonnement kan het ook; dan spreken we per aanpassing een prijs af."),
-    ("Maken jullie ook posts voor social media?", "We richten je profielen in en helpen met stijl en strategie. Content maken of posten valt buiten de pakketten; dat bespreken we graag samen en kost extra."),
+    ("Maken jullie ook posts voor social media?", "In het pakket Compleet richten we je profielen in en helpen we met stijl en strategie. Content maken of posten valt buiten de pakketten; dat bespreken we graag samen en kost extra."),
     ("Ik heb al een website. Kunnen jullie die verbeteren?", "Zeker. We kijken eerst gratis naar je huidige site en vertellen eerlijk of verbeteren of opnieuw bouwen slimmer is."),
-    ("Waar zitten jullie?", "In Breda. We werken voor ondernemers in heel Nederland. Kennismaken en overleggen gaat makkelijk via telefoon, WhatsApp of video."),
+    ("Waar zitten jullie?", "In de regio Breda. We werken voor ondernemers in heel Nederland. Kennismaken en overleggen gaat makkelijk via telefoon, WhatsApp of video."),
 ]
 
 
