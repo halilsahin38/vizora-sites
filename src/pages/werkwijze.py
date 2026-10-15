@@ -19,7 +19,7 @@ STEPS = [
      "Bel of app ons, of kies een moment dat jou uitkomt. We stellen een paar vragen over je zaak: wat je doet, wie je klanten zijn en waar je naartoe wilt.",
      ["Gratis", "Bellen, appen of plannen", "Vrijblijvend"]),
     ("Jouw concept &amp; groeiplan",
-     "Voor het gesprek ontwerpen we alvast een eerste versie van jouw website, in jouw stijl. In het gesprek laten we die zien en bespreken we stap voor stap hoe je zaak online kan groeien. Telefonisch, via video of op locatie in overleg.",
+     "Voor het gesprek ontwerpen we alvast een eerste versie van jouw website, in jouw stijl. Soms bellen we eerst kort om je wensen te horen. In het gesprek laten we die zien en bespreken we stap voor stap hoe je zaak online kan groeien. Telefonisch, via video of op locatie in overleg.",
      ["Gratis", "± 30 minuten", "Op laptop én telefoon"]),
     ("Voorstel &amp; vaste prijs",
      "Enthousiast? Dan krijg je een helder voorstel: wat we gaan doen, wat het kost en wanneer het klaar is. Geen kleine lettertjes. Niet enthousiast? Dan stopt het hier en heb je niets betaald.",

@@ -21,7 +21,7 @@ DIENST = [
 # Zo gaat het (onder de intro bovenaan)
 HOW = [
     "Je kiest een moment of laat het aan ons (1 minuut).",
-    "Wij bevestigen via WhatsApp of e-mail en maken alvast je concept.",
+    "Wij bevestigen via WhatsApp of e-mail en maken alvast je concept. Soms bellen we eerst kort om je wensen te horen.",
     "In het gesprek (± 30 min) zie je je website. Daarna beslis jij.",
 ]
 

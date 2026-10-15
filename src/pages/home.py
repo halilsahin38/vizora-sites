@@ -10,7 +10,7 @@ STYLES = [
 
 STEPS = [
     ("Plan een gesprek", "Kies een moment dat jou uitkomt, of bel of app ons direct. Gratis en vrijblijvend."),
-    ("Wij maken je concept", "Voor het gesprek ontwerpen we alvast een eerste versie van jouw website, op maat."),
+    ("Wij maken je concept", "Voor het gesprek ontwerpen we alvast een eerste versie van jouw website. Soms bellen we eerst kort om je wensen te horen."),
     ("Pas dan beslis je", "Enthousiast? Dan bouwen we verder. Zo niet, dan heb je niets betaald."),
 ]
 

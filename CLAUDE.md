@@ -10,6 +10,8 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 - Hoofdtitel (gekozen door Halil): "Je nieuwe website zie je al in het eerste gesprek." Boodschap eronder: meer klanten via Google.
   ("Websites die klanten opleveren" gebruikt concurrent WebBreda al.)
 - Haakje: gratis websiteconcept bij het eerste (gepland) gesprek, plus groeiplan stap voor stap.
+  Werkwijze (keuze Halil): schets van alleen het bovenste deel van de homepagina op basis van het formulier;
+  bij te weinig info eerst kort (±10 min) bellen. Later bij veel aanvragen eventueel: eerst gesprek, dan concept.
 - Tevredenheidsgarantie: pas betalen als je blij bent met het ontwerp.
 - Toekomst: e-commerce / Shopify. Focus nu: Vizora.
 
