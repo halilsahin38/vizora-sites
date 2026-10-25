@@ -103,7 +103,6 @@ def render():
         <div class="svc__main">
           <h2 id="websites-title" class="h2" data-reveal>Een website die werkt<br><span>als je beste verkoper.</span></h2>
           <p class="svc__lead" data-reveal>Je website is vaak het eerste wat een klant van je ziet. Wij zorgen dat die eerste indruk klopt, en dat bezoekers makkelijk kunnen bellen, appen of een afspraak maken.</p>
-          <div class="svc__media" data-clip>{pic("warm-laptop", "Laptop op een houten kast met een voorbeeldwebsite van Vizora in warme tinten", 1500, 1213, pos="50% 62%", sizes=SIZES["svc_laptop"])}</div>
           <div class="svc__cols" data-reveal>
             <p>Elke website ontwerpen we op maat, rond jouw klanten en jouw doelen. Geen standaard template, wel een site die laat zien hoe goed je bent en die op elke telefoon goed werkt.</p>
             <p>Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; bij de teksten helpen we je. Technische kennis heb je niet nodig.</p>
@@ -150,12 +149,9 @@ def render():
         <div class="svc__main">
           <h2 id="social-title" class="h2" data-reveal>Social media:<br><span>wij helpen je op weg.</span></h2>
           <p class="svc__lead" data-reveal>Social media werkt het best als het echt van jou is. Jij kent je zaak, je klanten en je verhaal. Wij zorgen dat je profielen professioneel zijn ingericht, dat alles herkenbaar is in jouw stijl en dat je weet wat werkt.</p>
-          <div class="svc__duo">
-            <div class="svc__media svc__media--phone" data-clip>{pic("warm-telefoon", "Hand met een telefoon waarop dezelfde voorbeeldwebsite in mobiele versie staat", 1100, 1286, pos="52% 40%", sizes=SIZES["svc_phone"])}</div>
-            <div class="svc__say" data-reveal>
-              <p class="svc__quote">De content komt van jou. Wij zorgen voor de stijl.</p>
-              <p>Foto's en video's maak en plaats je zelf; van ons krijg je de inrichting, de templates en een plan. Wil je dat wij content maken of posten? Dat kan, in overleg en tegen meerprijs. Het valt buiten de pakketten.</p>
-            </div>
+          <div class="svc__say" data-reveal>
+            <p class="svc__quote">De content komt van jou. Wij zorgen voor de stijl.</p>
+            <p>Foto's en video's maak en plaats je zelf; van ons krijg je de inrichting, de templates en een plan. Wil je dat wij content maken of posten? Dat kan, in overleg en tegen meerprijs. Het valt buiten de pakketten.</p>
           </div>
           {gets(["Profielen inrichten op Instagram en Facebook", "Huisstijl en templates", "Bio, links en highlights", "Advies en een contentplan", "Koppeling met je website", "Content maken of posten: in overleg, meerprijs"])}
           {packs([("Compleet", "Profielen op social media ingericht, logo en huisstijl en een persoonlijk groeiplan", f"€{P['Compleet']}"), ("Los", "Alleen hulp bij social media, of content laten maken? Dat bespreken we samen.", "in overleg")])}

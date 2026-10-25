@@ -71,7 +71,7 @@
 .svc__duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--gap); align-items: end; margin-top: clamp(40px, 5vw, 72px); }
 .svc__duo .svc__media { margin-top: 0; }
 .svc__media--phone { aspect-ratio: 1100 / 1286; background: #1c211a; }
-.svc__say { padding-bottom: .4rem; }
+.svc__say { padding-bottom: .4rem; margin-top: clamp(2rem, 4vw, 3.2rem); }
 .svc__quote { font-weight: 500; font-size: clamp(1.9rem, 3.4vw, 3.3rem); line-height: 1; letter-spacing: -.045em; text-wrap: balance; }
 .svc__say p:last-child { margin-top: 1.4rem; color: var(--muted); max-width: 28em; }
 

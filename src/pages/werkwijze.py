@@ -116,17 +116,6 @@ def render():
             <p class="see__intro" data-reveal>Normaal betaal je eerst en zie je pas later wat je krijgt. Bij ons is het andersom. Plan je een gesprek, dan maken we vooraf een eerste ontwerp van jouw website. Zo zie je hoe het eruit kan zien, nog voordat je iets beslist.</p>
           </div>
         </div>
-        <div class="see__media">
-          <figure class="see__laptop">
-            <div class="see__img" data-clip>{pic("merk-laptop", "Laptop met een donker voorbeeldontwerp van Vizora op het scherm", 1500, 1213, pos="50% 55%", sizes=SIZES["see_laptop"])}</div>
-          </figure>
-          <figure class="see__phone">
-            <div class="see__float" data-speed="-0.06">
-              <div class="see__img" data-clip>{pic("merk-telefoon", "Hetzelfde voorbeeldontwerp op een telefoon", 1100, 1286, pos="52% 40%", sizes=SIZES["see_phone"])}</div>
-            </div>
-            <figcaption class="label">Voorbeeld van een concept, op laptop en telefoon</figcaption>
-          </figure>
-        </div>
         <dl class="see__facts" data-reveal>
           <div><dt>Kosten</dt><dd>€0</dd></div>
           <div><dt>Verplichting</dt><dd>Geen</dd></div>
