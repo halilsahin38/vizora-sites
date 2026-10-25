@@ -165,7 +165,7 @@
 .hero__zoom { margin-top: clamp(32px, 4vw, 56px); }
 .hero__media { will-change: transform; }
 /* het zwarte scherm van de laptop (fracties van hero-laptop.jpg); kleurt bij het inzoomen naar inkt, net als het volgende deel */
-.hero__screen { position: absolute; left: 28.39%; top: 9.63%; width: 41.19%; height: 46.91%; background: var(--ink); opacity: 0; border-radius: 2px; pointer-events: none; }
+.hero__screen { position: absolute; left: 12.87%; top: 18.64%; width: 55.35%; height: 60.72%; background: var(--ink); opacity: 0; border-radius: 2px; pointer-events: none; }
 
 /* vorige vlak wordt iets kleiner en donkerder als het volgende eroverheen schuift (motion.js zet --dim) */
 .stack { position: relative; transform-origin: 50% 100%; }

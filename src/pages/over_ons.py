@@ -6,7 +6,7 @@ FILE = "over-ons.html"
 # bijvoorbeeld "halil-sahin" (met halil-sahin.webp + halil-sahin.jpg, staand, liefst 4:5, bv. 1200x1500).
 # De opmaak staat al klaar (.duo__photo in assets/css/over-ons.css).
 PHOTO = "halil"
-PHOTO_SIZE = (640, 800)
+PHOTO_SIZE = (800, 1000)
 
 PROMISES = [
     ("Persoonlijk", "Je spreekt altijd Halil of Sahin, geen accountmanager of ticketnummer. We kennen je zaak en denken mee alsof het onze eigen zaak is."),

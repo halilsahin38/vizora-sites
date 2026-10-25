@@ -83,7 +83,7 @@ def render():
       </div>
       <div class="hero__zoom" data-zoom>
         <div class="hero__media">
-          {pic("hero-laptop", "Laptop met een zwart scherm op een houten dressoir, naast een lamp en een cactus", 2400, 1350, eager=True, sizes=SIZES["hero"])}
+          {pic("hero-laptop", "Laptop met een zwart scherm op een houten tafel", 2400, 1350, eager=True, sizes=SIZES["hero"])}
           <span class="hero__screen" aria-hidden="true"></span>
         </div>
       </div>
@@ -142,7 +142,7 @@ def render():
 
     <section class="about sheet stack" aria-labelledby="ab-title">
       <div class="about__in wrap">
-        <figure class="about__photo"><div class="about__img" data-clip>{pic("halil", "Halil, medeoprichter van Vizora Digital", 640, 800, pos="50% 20%")}</div><figcaption class="label about__cap">Halil</figcaption></figure>
+        <figure class="about__photo"><div class="about__img" data-clip>{pic("halil", "Halil, medeoprichter van Vizora Digital", 800, 1000, pos="50% 20%")}</div><figcaption class="label about__cap">Halil</figcaption></figure>
         <div class="about__body">
           {label("", "Wie zijn wij")}
           <h2 id="ab-title" class="h2 home__h2" data-reveal>Halil &amp; Sahin. Twee broers, één aanspreekpunt.</h2>

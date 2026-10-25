@@ -165,7 +165,7 @@
   if (zoom && desktop) {
     const media = zoom.querySelector('.hero__media');
     const screenEl = zoom.querySelector('.hero__screen');
-    const S = { x: 0.2839, y: 0.0963, w: 0.4119, h: 0.4691 }; // schermvlak in de foto (zie .hero__screen)
+    const S = { x: 0.1287, y: 0.1864, w: 0.5535, h: 0.6072 }; // schermvlak in de foto (zie .hero__screen)
     const geo = () => {
       const W = zoom.offsetWidth, H = zoom.offsetHeight, left = zoom.getBoundingClientRect().left;
       const sx = left + (S.x + S.w / 2) * W, sy = window.innerHeight / 2 - H / 2 + (S.y + S.h / 2) * H; // bij vastzetten staat de foto midden in beeld
@@ -175,7 +175,7 @@
       };
     };
     gsap.set(media, { transformOrigin: `${(S.x + S.w / 2) * 100}% ${(S.y + S.h / 2) * 100}%` });
-    gsap.timeline({ scrollTrigger: { trigger: zoom, start: 'center center', end: '+=120%', pin: true, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1 } })
+    gsap.timeline({ scrollTrigger: { trigger: zoom, start: 'center center', end: '+=120%', pin: true, scrub: true, invalidateOnRefresh: true, anticipatePin: 1 } })
       // de wrapper wordt vastgezet, het beeld erin schaalt (pin en transform niet op hetzelfde element)
       .to(media, { scale: () => geo().s, x: () => geo().dx, y: () => geo().dy, ease: 'power2.in', duration: 1 }, 0)
       .to(media, { borderRadius: 0, ease: 'none', duration: 0.3 }, 0)
@@ -186,7 +186,7 @@
   /* telefoon/tablet: geen vastzetten, wel rustig inzoomen op het scherm terwijl de hero wegscrollt */
   if (zoom && !desktop) {
     const media = zoom.querySelector('.hero__media');
-    gsap.fromTo(media, { scale: 1 }, { scale: 1.45, transformOrigin: '49% 33%', ease: 'none', scrollTrigger: { trigger: media, start: 'top 55%', end: 'bottom top', scrub: true } });
+    gsap.fromTo(media, { scale: 1 }, { scale: 1.45, transformOrigin: '37.4% 49%', ease: 'none', scrollTrigger: { trigger: media, start: 'top 55%', end: 'bottom top', scrub: true } });
   }
 
   /* stapelende vlakken: het vorige deel krimpt licht en wordt donkerder als het volgende eroverheen schuift */
