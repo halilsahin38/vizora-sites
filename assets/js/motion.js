@@ -159,5 +159,32 @@
     });
   }
 
+  /* hero: de laptop zoomt in tot hij het scherm vult (alleen desktop) */
+  const zoom = document.querySelector('[data-zoom]');
+  if (zoom && desktop) {
+    const cover = () => Math.max(window.innerWidth / zoom.offsetWidth, window.innerHeight / zoom.offsetHeight) * 1.02;
+    const media = zoom.querySelector('.hero__media');
+    gsap.timeline({ scrollTrigger: { trigger: zoom, start: 'center center', end: '+=70%', pin: true, scrub: 0.6, invalidateOnRefresh: true } })
+      .to(zoom, { scale: cover, ease: 'none' }, 0)
+      .to(media, { borderRadius: 0, ease: 'none' }, 0);
+    gsap.fromTo('.hero__title, .hero__row', { yPercent: 0, opacity: 1 }, { yPercent: -30, opacity: 0, ease: 'none', immediateRender: false, scrollTrigger: { trigger: '.hero', start: 'top top', end: () => '+=' + Math.max(200, zoom.getBoundingClientRect().top + window.scrollY + zoom.offsetHeight / 2 - window.innerHeight / 2), scrub: true, invalidateOnRefresh: true } });
+  }
+
+  /* stapelende vlakken: het vorige deel krimpt licht en wordt donkerder als het volgende eroverheen schuift */
+  gsap.utils.toArray('.sheet, .ft').forEach((next) => {
+    const prev = next.classList.contains('ft') ? document.querySelector('main > .stack:last-of-type') : next.previousElementSibling;
+    if (!prev || !prev.classList.contains('stack')) return;
+    // hero niet schalen: een transform op de hero breekt de vastgezette (gepinde) laptop
+    const scale = !prev.querySelector('[data-zoom]');
+    gsap.fromTo(prev, scale ? { scale: 1, '--dim': 0 } : { '--dim': 0 }, {
+      ...(scale ? { scale: desktop ? 0.95 : 0.97 } : {}), '--dim': 0.5, ease: 'none',
+      scrollTrigger: { trigger: next, start: 'top bottom', end: 'top top', scrub: true },
+    });
+  });
+
+  /* grote 'Vizora' onderaan schuift omhoog in beeld */
+  const word = document.querySelector('.ft__word');
+  if (word) gsap.fromTo(word, { yPercent: 35 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: word, start: 'top bottom', end: 'bottom bottom', scrub: true } });
+
   window.addEventListener('load', () => ScrollTrigger.refresh());
 })();

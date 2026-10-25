@@ -72,7 +72,7 @@ def render():
     html += header(FILE)
     html += f'''
   <main id="main">
-    <section class="hero wrap">
+    <section class="hero wrap stack">
       <h1 class="hero__title" data-lines>Je nieuwe website zie je al in het <em>eerste gesprek</em>.</h1>
       <div class="hero__row">
         <p class="hero__lead" data-reveal>Wij maken vooraf gratis een concept van jouw website. Daarna helpen we je om gevonden te worden in Google. Pas betalen als je blij bent.</p>
@@ -81,12 +81,14 @@ def render():
           <p class="hero__trust label">Gratis concept · Vanaf €{PACKAGES[0]["price"]} excl. btw · Binnen werktijd antwoord dezelfde dag</p>
         </div>
       </div>
-      <div class="hero__media" data-grow>
-        {pic("licht-laptop", "Laptop op een houten bureau met een voorbeeldwebsite van Vizora op het scherm", 1500, 1213, eager=True, pos="45% 55%", sizes=SIZES["hero"])}
+      <div class="hero__zoom" data-zoom>
+        <div class="hero__media" data-grow>
+          {pic("licht-laptop", "Laptop op een houten bureau met een voorbeeldwebsite van Vizora op het scherm", 1500, 1213, eager=True, pos="45% 55%", sizes=SIZES["hero"])}
+        </div>
       </div>
     </section>
 
-    <section class="sw sheet" data-theme="dark" aria-labelledby="sw-title" data-switcher>
+    <section class="sw sheet stack" data-theme="dark" aria-labelledby="sw-title" data-switcher>
       <div class="sw__sticky">
         <div class="sw__grid wrap">
           <div class="sw__side">
@@ -105,7 +107,7 @@ def render():
       </div>
     </section>
 
-    <section class="steps sheet" aria-labelledby="steps-title">
+    <section class="steps sheet stack" aria-labelledby="steps-title">
       <div class="wrap">
         <div class="split">
           {label("", "Zo werkt het")}
@@ -121,7 +123,7 @@ def render():
       </div>
     </section>
 
-    <section class="prices sheet" id="prijzen" aria-labelledby="pr-title">
+    <section class="prices sheet stack" id="prijzen" aria-labelledby="pr-title">
       <div class="wrap">
         <div class="split">
           {label("", "Prijzen")}
@@ -137,7 +139,7 @@ def render():
       </div>
     </section>
 
-    <section class="about sheet" aria-labelledby="ab-title">
+    <section class="about sheet stack" aria-labelledby="ab-title">
       <div class="about__in wrap">
         <figure class="about__photo"><div class="about__img" data-clip>{pic("halil", "Halil, medeoprichter van Vizora Digital", 640, 800, pos="50% 20%")}</div><figcaption class="label about__cap">Halil</figcaption></figure>
         <div class="about__body">

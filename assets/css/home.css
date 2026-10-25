@@ -160,3 +160,11 @@
   .pk__price { margin-top: 1.2rem; }
   .pk__title { margin-top: 1.2rem; }
 }
+
+/* ---------- vloeiend scrollen: strook, zoom en stapelende vlakken ---------- */
+.hero__zoom { transform-origin: 50% 50%; will-change: transform; }
+
+/* vorige vlak wordt iets kleiner en donkerder als het volgende eroverheen schuift (motion.js zet --dim) */
+.stack { position: relative; transform-origin: 50% 100%; }
+.stack::after { content: ""; position: absolute; inset: 0; background: #0b0a09; opacity: var(--dim, 0); pointer-events: none; border-radius: inherit; z-index: 2; }
+main { overflow-x: clip; } /* ingezoomde hero mag niet breder worden dan het scherm */

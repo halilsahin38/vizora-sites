@@ -25,7 +25,7 @@
   <link rel="preload" as="image" href="assets/foto/licht-laptop.webp" imagesrcset="assets/foto/licht-laptop-800.webp 800w, assets/foto/licht-laptop.webp 1500w" imagesizes="(max-width: 960px) 100vw, (max-width: 1600px) 92vw, 1500px" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/fonts.css?v=5835cd519a">
   <link rel="stylesheet" href="assets/css/base.css?v=60df99dd08">
-  <link rel="stylesheet" href="assets/css/home.css?v=9ac179d59e">
+  <link rel="stylesheet" href="assets/css/home.css?v=323aec82d5">
   <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},2500)</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://vizoradigital.nl/#bedrijf", "name": "Vizora Digital", "url": "https://vizoradigital.nl/", "logo": "https://vizoradigital.nl/assets/logo-512.png", "image": "https://vizoradigital.nl/assets/og.png", "description": "Websites en online groei voor ondernemers in heel Nederland. Vanuit Breda.", "telephone": "+31638705348", "email": "halilsahinai@gmail.com", "priceRange": "€200 - €500", "address": {"@type": "PostalAddress", "addressLocality": "Breda", "addressRegion": "Noord-Brabant", "addressCountry": "NL"}, "areaServed": {"@type": "Country", "name": "Nederland"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "18:00"}], "founder": [{"@type": "Person", "name": "Halil"}, {"@type": "Person", "name": "Sahin"}]}, {"@type": "WebSite", "name": "Vizora Digital", "url": "https://vizoradigital.nl/"}]}</script>
 </head>
@@ -60,7 +60,7 @@
   </header>
 
   <main id="main">
-    <section class="hero wrap">
+    <section class="hero wrap stack">
       <h1 class="hero__title" data-lines>Je nieuwe website zie je al in het <em>eerste gesprek</em>.</h1>
       <div class="hero__row">
         <p class="hero__lead" data-reveal>Wij maken vooraf gratis een concept van jouw website. Daarna helpen we je om gevonden te worden in Google. Pas betalen als je blij bent.</p>
@@ -69,12 +69,14 @@
           <p class="hero__trust label">Gratis concept · Vanaf €200 excl. btw · Binnen werktijd antwoord dezelfde dag</p>
         </div>
       </div>
-      <div class="hero__media" data-grow>
-        <picture class=""><source srcset="assets/foto/licht-laptop-800.webp 800w, assets/foto/licht-laptop.webp 1500w" sizes="(max-width: 960px) 100vw, (max-width: 1600px) 92vw, 1500px" type="image/webp"><img src="assets/foto/licht-laptop.jpg" srcset="assets/foto/licht-laptop-800.jpg 800w, assets/foto/licht-laptop.jpg 1500w" sizes="(max-width: 960px) 100vw, (max-width: 1600px) 92vw, 1500px" alt="Laptop op een houten bureau met een voorbeeldwebsite van Vizora op het scherm" width="1500" height="1213" fetchpriority="high" decoding="async" style="object-position:45% 55%"></picture>
+      <div class="hero__zoom" data-zoom>
+        <div class="hero__media" data-grow>
+          <picture class=""><source srcset="assets/foto/licht-laptop-800.webp 800w, assets/foto/licht-laptop.webp 1500w" sizes="(max-width: 960px) 100vw, (max-width: 1600px) 92vw, 1500px" type="image/webp"><img src="assets/foto/licht-laptop.jpg" srcset="assets/foto/licht-laptop-800.jpg 800w, assets/foto/licht-laptop.jpg 1500w" sizes="(max-width: 960px) 100vw, (max-width: 1600px) 92vw, 1500px" alt="Laptop op een houten bureau met een voorbeeldwebsite van Vizora op het scherm" width="1500" height="1213" fetchpriority="high" decoding="async" style="object-position:45% 55%"></picture>
+        </div>
       </div>
     </section>
 
-    <section class="sw sheet" data-theme="dark" aria-labelledby="sw-title" data-switcher>
+    <section class="sw sheet stack" data-theme="dark" aria-labelledby="sw-title" data-switcher>
       <div class="sw__sticky">
         <div class="sw__grid wrap">
           <div class="sw__side">
@@ -118,7 +120,7 @@
       </div>
     </section>
 
-    <section class="steps sheet" aria-labelledby="steps-title">
+    <section class="steps sheet stack" aria-labelledby="steps-title">
       <div class="wrap">
         <div class="split">
           <p class="label">Zo werkt het</p>
@@ -148,7 +150,7 @@
       </div>
     </section>
 
-    <section class="prices sheet" id="prijzen" aria-labelledby="pr-title">
+    <section class="prices sheet stack" id="prijzen" aria-labelledby="pr-title">
       <div class="wrap">
         <div class="split">
           <p class="label">Prijzen</p>
@@ -187,7 +189,7 @@
       </div>
     </section>
 
-    <section class="about sheet" aria-labelledby="ab-title">
+    <section class="about sheet stack" aria-labelledby="ab-title">
       <div class="about__in wrap">
         <figure class="about__photo"><div class="about__img" data-clip><picture class=""><source srcset="assets/foto/halil.webp" type="image/webp"><img src="assets/foto/halil.jpg" alt="Halil, medeoprichter van Vizora Digital" width="640" height="800" loading="lazy" decoding="async" style="object-position:50% 20%"></picture></div><figcaption class="label about__cap">Halil</figcaption></figure>
         <div class="about__body">
@@ -254,6 +256,6 @@
   <script src="assets/vendor/ScrollTrigger.min.js?v=b0b14d67b5" defer></script>
   <script src="assets/vendor/lenis.min.js?v=53195c9797" defer></script>
   <script src="assets/js/site.js?v=5d531756cd" defer></script>
-  <script src="assets/js/motion.js?v=22af02fde6" defer></script>
+  <script src="assets/js/motion.js?v=2216b9147c" defer></script>
 </body>
 </html>
