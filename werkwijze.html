@@ -23,8 +23,8 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css?v=5835cd519a">
-  <link rel="stylesheet" href="assets/css/base.css?v=60df99dd08">
-  <link rel="stylesheet" href="assets/css/werkwijze.css?v=dcc3ffa8f7">
+  <link rel="stylesheet" href="assets/css/base.css?v=2a76945431">
+  <link rel="stylesheet" href="assets/css/werkwijze.css?v=baba9c73a4">
   <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},2500)</script>
 </head>
 <body>
@@ -58,14 +58,16 @@
   </header>
 
   <main id="main">
-    <section class="ph wrap">
+    <section class="ph">
+      <div class="wrap">
       <p class="label">Werkwijze</p>
       <h1 class="ph__title" data-lines>Stap voor stap naar <em>meer klanten.</em></h1>
       <p class="ph__lead" data-reveal>Je weet altijd waar je aan toe bent. Je ziet je website eerst, voordat je iets betaalt. En het technische werk? Dat doen wij.</p>
+      </div>
     </section>
 
     <div class="glance wrap">
-      <dl class="glance__list" data-reveal>
+      <dl class="glance__list" data-stagger>
         <div><dt>Eerste gesprek</dt><dd>Gratis</dd></div>
         <div><dt>Je concept</dt><dd>Gratis, vooraf</dd></div>
         <div><dt>Betalen</dt><dd>Pas als je blij bent</dd></div>
@@ -73,7 +75,8 @@
       </dl>
     </div>
 
-    <section class="sec tls wrap" aria-labelledby="tl-title">
+    <section class="sec tls stack" aria-labelledby="tl-title">
+      <div class="wrap">
       <div class="split">
         <p class="label">Het traject</p>
         <div>
@@ -128,9 +131,10 @@
           </div>
         </li>
       </ol>
+      </div>
     </section>
 
-    <section class="see" aria-labelledby="see-title">
+    <section class="see sheet stack" aria-labelledby="see-title">
       <div class="wrap">
         <div class="split">
           <p class="label">Het gratis concept</p>
@@ -139,7 +143,7 @@
             <p class="see__intro" data-reveal>Normaal betaal je eerst en zie je pas later wat je krijgt. Bij ons is het andersom. Plan je een gesprek, dan maken we vooraf een eerste ontwerp van jouw website. Zo zie je hoe het eruit kan zien, nog voordat je iets beslist.</p>
           </div>
         </div>
-        <dl class="see__facts" data-reveal>
+        <dl class="see__facts" data-stagger>
           <div><dt>Kosten</dt><dd>€0</dd></div>
           <div><dt>Verplichting</dt><dd>Geen</dd></div>
           <div><dt>Klaar</dt><dd>Vóór het gesprek</dd></div>
@@ -151,7 +155,7 @@
       </div>
     </section>
 
-    <section class="who" aria-labelledby="who-title">
+    <section class="who sheet stack" aria-labelledby="who-title">
       <div class="wrap">
         <div class="split">
           <p class="label">Wie doet wat</p>
@@ -161,26 +165,26 @@
           </div>
         </div>
         <div class="who__grid">
-          <div class="who__you" data-reveal>
-            <p class="label who__head"><span>Jij</span><span>3 dingen</span></p>
-            <ol class="who__big"><li>Vertellen over je zaak en je klanten.</li><li>Foto's aanleveren, als je die hebt.</li><li>Zeggen wat je van het ontwerp vindt.</li></ol>
+          <div class="who__you">
+            <p class="label who__head" data-reveal><span>Jij</span><span>3 dingen</span></p>
+            <ol class="who__big" data-stagger><li>Vertellen over je zaak en je klanten.</li><li>Foto's aanleveren, als je die hebt.</li><li>Zeggen wat je van het ontwerp vindt.</li></ol>
           </div>
-          <div class="who__we" data-reveal>
-            <p class="label who__head"><span>Wij</span><span>al het technische werk</span></p>
-            <ol class="who__list"><li>Ontwerp op maat</li><li>Bouw van de website</li><li>Teksten, samen met jou</li><li>Domeinnaam koppelen, op jouw naam</li><li>Hosting, gratis inbegrepen</li><li>Beveiliging (https)</li><li>Snel laden op elke telefoon</li><li>Aanmelden bij Google</li><li>Livezetten</li><li>Onderhoud en updates, met het abonnement</li></ol>
+          <div class="who__we">
+            <p class="label who__head" data-reveal><span>Wij</span><span>al het technische werk</span></p>
+            <ol class="who__list" data-stagger><li>Ontwerp op maat</li><li>Bouw van de website</li><li>Teksten, samen met jou</li><li>Domeinnaam koppelen, op jouw naam</li><li>Hosting, gratis inbegrepen</li><li>Beveiliging (https)</li><li>Snel laden op elke telefoon</li><li>Aanmelden bij Google</li><li>Livezetten</li><li>Onderhoud en updates, met het abonnement</li></ol>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="sec qa wrap" aria-labelledby="qa-title">
-      <div class="split">
+    <section class="sec qa sheet stack" aria-labelledby="qa-title">
+      <div class="split wrap">
         <div>
           <p class="label">Vragen</p>
           <h2 id="qa-title" class="h2 qa__title" data-reveal>Vragen over de werkwijze</h2>
           <p class="qa__help" data-reveal>Staat je vraag er niet bij? <a href="https://wa.me/31638705348" target="_blank" rel="noopener">App</a>, <a href="mailto:halilsahinai@gmail.com">mail</a> of bel <a href="tel:+31638705348">06 38 70 53 48</a>. Ma t/m za, 09:00–18:00.</p>
         </div>
-        <div class="qa__list" data-reveal>
+        <div class="qa__list" data-stagger>
           <details class="qa__item"><summary><span>Krijg ik vooraf een ontwerp te zien?</span><svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M12 5v14M5 12h14"/></svg></summary><div class="qa__a"><p>Ja. Als je een gesprek plant, maken we gratis een concept van jouw website. Zo zie je meteen hoe het eruit kan zien, nog voordat je iets beslist.</p></div></details>
           <details class="qa__item"><summary><span>Wat als ik niet tevreden ben?</span><svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M12 5v14M5 12h14"/></svg></summary><div class="qa__a"><p>Dan betaal je niets. Je ziet eerst het ontwerp en we passen het twee keer aan naar jouw wensen. Pas als jij tevreden bent, gaan we verder en ontvang je de factuur.</p></div></details>
           <details class="qa__item"><summary><span>Moet ik zelf iets technisch doen?</span><svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M12 5v14M5 12h14"/></svg></summary><div class="qa__a"><p>Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; bij de teksten helpen we je.</p></div></details>
@@ -246,6 +250,6 @@
   <script src="assets/vendor/ScrollTrigger.min.js?v=b0b14d67b5" defer></script>
   <script src="assets/vendor/lenis.min.js?v=53195c9797" defer></script>
   <script src="assets/js/site.js?v=5d531756cd" defer></script>
-  <script src="assets/js/motion.js?v=85927c772c" defer></script>
+  <script src="assets/js/motion.js?v=01f1d1fe66" defer></script>
 </body>
 </html>

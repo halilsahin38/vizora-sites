@@ -3,11 +3,21 @@
  * Gebruik met data-attributen in de HTML:
  *   data-lines        hoofdtitel: regels schuiven één voor één omhoog bij het laden (alleen h1)
  *   data-reveal       element komt zacht omhoog in beeld
+ *   data-stagger      op een lijst/raster/tabeldeel: de kinderen komen kort na elkaar omhoog in beeld
+ *                     (y 30 → 0, opacity 0 → 1, één keer; wat tegelijk binnenkomt, komt na elkaar). Zet dan
+ *                     géén data-reveal op die kinderen. Begintoestand staat in base.css (html.js:not(.ready)).
  *   data-fill         alinea kleurt woord voor woord van lichtgrijs naar inkt tijdens het scrollen
  *   data-clip         beeld opent als een gordijn en zoomt licht uit
+ *   data-drift        beeld schuift rustig binnen zijn kader (parallax op de <picture>; samen met data-clip te gebruiken)
  *   data-grow         groot beeld groeit mee tijdens het scrollen (hero)
  *   data-speed="-0.1" parallax: beweegt langzamer/sneller dan de pagina
  *   data-switcher     voorbeelden: knoppen wisselen de website op laptop/telefoon; op desktop ook door te scrollen (pin)
+ *
+ * Met classes:
+ *   .sheet            vel met afgeronde bovenkant dat over het vorige deel schuift (stijl in base.css)
+ *   .stack            het deel vóór een .sheet (of het laatste deel vóór de voet): krimpt licht en wordt donkerder
+ *                     als het volgende vel eroverheen schuift. Geen .stack op een deel met een vastgezette (pin) laptop.
+ *   .ph__title        titel van de subpagina-kop: schuift bij scrollen langzaam omhoog en vervaagt een beetje
  *
  * Bij prefers-reduced-motion of zonder GSAP blijft alles gewoon zichtbaar en statisch.
  */
@@ -101,6 +111,18 @@
     window.__lenis = lenis;
   }
 
+  /* subpagina-kop: de titel als geheel (niet per woord) schuift langzaam omhoog en vervaagt een beetje
+     (tot 0.8, terwijl hij uit beeld gaat: zo blijft ook het terracotta woord leesbaar, contrast > 3:1).
+     Pas na het opsplitsen in regels starten: anders zou de titel even zichtbaar worden vóór zijn intro. */
+  const ph = document.querySelector('.ph');
+  const phTitle = ph && ph.querySelector('.ph__title');
+  const phDrift = () => {
+    if (!phTitle) return;
+    gsap.timeline({ scrollTrigger: { trigger: ph, start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true } })
+      .fromTo(phTitle, { y: 0 }, { y: () => -ph.offsetHeight * (desktop ? 0.15 : 0.1), ease: 'none', duration: 1 }, 0)
+      .fromTo(phTitle, { opacity: 1 }, { opacity: 0.8, ease: 'none', duration: 0.6 }, 0);
+  };
+
   /* hoofdtitel: regels omhoog */
   const start = () => {
     document.querySelectorAll('[data-lines]').forEach((el) => {
@@ -108,12 +130,26 @@
       gsap.from(inners, { yPercent: 110, duration: 1.2, ease: 'expo.out', stagger: 0.09, delay: 0.1 });
     });
     done();
+    phDrift();
   };
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(start);
 
-  /* zacht in beeld */
+  /* zacht in beeld (niet binnen een data-stagger-lijst: daar bewegen de kinderen al) */
   gsap.utils.toArray('[data-reveal]').forEach((el) => {
+    if (el.closest('[data-stagger] > *')) return;
     gsap.from(el, { y: 36, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+  });
+
+  /* lijsten, rasters en tabelrijen: kinderen komen kort na elkaar in beeld. Per lijst een batch, zodat lange
+     lijsten meelopen met het scrollen en wat tegelijk binnenkomt (bv. drie kolommen) netjes na elkaar komt. */
+  gsap.utils.toArray('[data-stagger]').forEach((list) => {
+    const items = [...list.children];
+    if (!items.length) return;
+    gsap.set(items, { y: 30, opacity: 0 });
+    ScrollTrigger.batch(items, {
+      start: 'top 92%', once: true,
+      onEnter: (batch) => gsap.to(batch, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', stagger: 0.06, overwrite: true, clearProps: 'transform' }),
+    });
   });
 
   /* alinea kleurt mee */
@@ -131,6 +167,17 @@
     const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 40%', scrub: 0.6 } });
     tl.fromTo(el, { clipPath: 'inset(9% 7% 9% 7% round 14px)' }, { clipPath: 'inset(0% 0% 0% 0% round 8px)', ease: 'none' }, 0);
     if (img) tl.fromTo(img, { scale: 1.18 }, { scale: 1, ease: 'none' }, 0);
+  });
+
+  /* beeld schuift rustig binnen zijn kader: de <picture> beweegt (data-clip schaalt de <img> zelf).
+     Schaal 1.15 dekt een verschuiving van 7% naar boven en beneden, zodat de rand van het kader nooit leeg is. */
+  gsap.utils.toArray('[data-drift]').forEach((frame) => {
+    const media = frame.querySelector('picture') || frame.querySelector('img');
+    if (!media) return;
+    gsap.fromTo(media, { yPercent: -7, scale: 1.15 }, {
+      yPercent: 7, scale: 1.15, ease: 'none',
+      scrollTrigger: { trigger: frame, start: 'top bottom', end: 'bottom top', scrub: true },
+    });
   });
 
   /* hero-beeld groeit mee */

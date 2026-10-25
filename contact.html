@@ -23,8 +23,8 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css?v=5835cd519a">
-  <link rel="stylesheet" href="assets/css/base.css?v=60df99dd08">
-  <link rel="stylesheet" href="assets/css/contact.css?v=6c332291b3">
+  <link rel="stylesheet" href="assets/css/base.css?v=2a76945431">
+  <link rel="stylesheet" href="assets/css/contact.css?v=1504d4e306">
   <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},2500)</script>
 </head>
 <body>
@@ -58,18 +58,21 @@
   </header>
 
   <main id="main">
-    <section class="ph wrap">
+    <section class="ph stack">
+      <div class="wrap">
       <p class="label">Contact</p>
       <h1 class="ph__title" data-lines>Plan een gratis gesprek, of <em>bel direct.</em></h1>
       <p class="ph__lead" data-reveal>Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen, appen of mailen? Dat kan natuurlijk ook.</p>
-      <div class="how" data-reveal>
-        <h2 class="label" id="how-title">Zo gaat het</h2>
-        <ol class="how__list"><li><span class="label" aria-hidden="true">01</span><span>Je kiest een moment of laat het aan ons (1 minuut).</span></li><li><span class="label" aria-hidden="true">02</span><span>Wij bevestigen via WhatsApp of e-mail en maken alvast je concept. Soms bellen we eerst kort om je wensen te horen.</span></li><li><span class="label" aria-hidden="true">03</span><span>In het gesprek (± 30 min) zie je je website. Daarna beslis jij.</span></li></ol>
+      <div class="how">
+        <h2 class="label" id="how-title" data-reveal>Zo gaat het</h2>
+        <ol class="how__list" data-stagger><li><span class="label" aria-hidden="true">01</span><span>Je kiest een moment of laat het aan ons (1 minuut).</span></li><li><span class="label" aria-hidden="true">02</span><span>Wij bevestigen via WhatsApp of e-mail en maken alvast je concept. Soms bellen we eerst kort om je wensen te horen.</span></li><li><span class="label" aria-hidden="true">03</span><span>In het gesprek (± 30 min) zie je je website. Daarna beslis jij.</span></li></ol>
+      </div>
       </div>
     </section>
 
-    <section class="cd wrap" aria-label="Direct contact">
-      <ul class="cd__list" data-reveal>
+    <section class="cd sheet stack" aria-label="Direct contact">
+      <div class="wrap">
+      <ul class="cd__list" data-stagger>
         <li class="cd__item"><a class="cd__a" href="tel:+31638705348">
           <span class="cd__top"><span class="label">Bellen</span><span class="cd__ic"><svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span></span>
           <span class="cd__v">06 38 70 53 48</span>
@@ -86,9 +89,11 @@
           <span class="cd__d">Handig voor langere vragen of bestanden</span>
         </a></li>
       </ul>
+      </div>
     </section>
 
-    <section class="bk wrap" id="plannen" aria-labelledby="bk-title">
+    <section class="bk sheet" id="plannen" aria-labelledby="bk-title">
+      <div class="wrap">
       <div class="split">
         <p class="label">Gesprek plannen</p>
         <div>
@@ -99,8 +104,8 @@
       <div class="bk__grid">
         <aside class="bk__aside" aria-label="Over het gesprek">
           <p class="label">Wat je van het gesprek krijgt</p>
-          <ol class="bk__gains"><li><span class="label">01</span><span>Een gratis concept van je nieuwe website</span></li><li><span class="label">02</span><span>Een eerlijke blik op je online uitstraling</span></li><li><span class="label">03</span><span>Een groeiplan, stap voor stap</span></li><li><span class="label">04</span><span>100% vrijblijvend</span></li></ol>
-          <dl class="bk__facts">
+          <ol class="bk__gains" data-stagger><li><span class="label">01</span><span>Een gratis concept van je nieuwe website</span></li><li><span class="label">02</span><span>Een eerlijke blik op je online uitstraling</span></li><li><span class="label">03</span><span>Een groeiplan, stap voor stap</span></li><li><span class="label">04</span><span>100% vrijblijvend</span></li></ol>
+          <dl class="bk__facts" data-stagger>
             <div><dt>Werkgebied</dt><dd>Heel Nederland, vanuit Breda</dd></div>
             <div><dt>Afspraken</dt><dd>Ma t/m za, 09:00 – 17:00</dd></div>
             <div><dt>Vorm</dt><dd>Video, telefonisch of op locatie</dd></div>
@@ -177,6 +182,7 @@
           </div>
         </form>
       </div>
+      </div>
     </section>
   </main>
 
@@ -220,6 +226,6 @@
   <script src="assets/vendor/ScrollTrigger.min.js?v=b0b14d67b5" defer></script>
   <script src="assets/vendor/lenis.min.js?v=53195c9797" defer></script>
   <script src="assets/js/site.js?v=5d531756cd" defer></script>
-  <script src="assets/js/motion.js?v=85927c772c" defer></script>
+  <script src="assets/js/motion.js?v=01f1d1fe66" defer></script>
 </body>
 </html>

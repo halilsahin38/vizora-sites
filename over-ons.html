@@ -23,8 +23,8 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css?v=5835cd519a">
-  <link rel="stylesheet" href="assets/css/base.css?v=60df99dd08">
-  <link rel="stylesheet" href="assets/css/over-ons.css?v=b3964e8dd3">
+  <link rel="stylesheet" href="assets/css/base.css?v=2a76945431">
+  <link rel="stylesheet" href="assets/css/over-ons.css?v=d7c0c50bfb">
   <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},2500)</script>
 </head>
 <body>
@@ -58,17 +58,19 @@
   </header>
 
   <main id="main">
-    <section class="ph wrap">
+    <section class="ph">
+      <div class="wrap">
       <p class="label">Over ons</p>
       <h1 class="ph__title" data-lines>Twee broers, één doel: jouw zaak laten <em>groeien.</em></h1>
       <p class="ph__lead" data-reveal>Wij zijn Halil en Sahin. Vanuit Breda maken we websites op maat, en helpen we ondernemers in heel Nederland om online gevonden te worden.</p>
+      </div>
     </section>
 
-    <section class="duo wrap" aria-labelledby="duo-title">
-      <div class="duo__grid">
+    <section class="duo stack" aria-labelledby="duo-title">
+      <div class="duo__grid wrap">
         <div class="duo__side">
           <p class="label">Wie we zijn</p>
-          <figure class="duo__photo"><div class="duo__img" data-clip><picture class=""><source srcset="assets/foto/halil.webp" type="image/webp"><img src="assets/foto/halil.jpg" alt="Halil, medeoprichter van Vizora Digital" width="800" height="1000" fetchpriority="high" decoding="async"></picture></div><figcaption class="label duo__cap">Halil</figcaption></figure>
+          <figure class="duo__photo"><div class="duo__img" data-clip data-drift><picture class=""><source srcset="assets/foto/halil.webp" type="image/webp"><img src="assets/foto/halil.jpg" alt="Halil, medeoprichter van Vizora Digital" width="800" height="1000" fetchpriority="high" decoding="async"></picture></div><figcaption class="label duo__cap">Halil</figcaption></figure>
         </div>
         <div class="duo__main">
           <h2 id="duo-title" class="duo__names" data-reveal>Halil <span>&amp;</span><br>Sahin</h2>
@@ -77,7 +79,7 @@
             <p>Jong betekent bij ons: alle aandacht voor jouw project. Je spreekt altijd een van ons tweeën, van het eerste gesprek tot lang na de livegang.</p>
             <p>We bouwen elke website zelf, van eerste schets tot livegang, en blijven daarna bereikbaar voor vragen en aanpassingen. Gewoon via WhatsApp of telefoon.</p>
           </div>
-          <dl class="duo__facts" data-reveal>
+          <dl class="duo__facts" data-stagger>
             <div><dt>Gevestigd</dt><dd>Regio Breda</dd></div>
             <div><dt>Werkgebied</dt><dd>Heel Nederland</dd></div>
             <div><dt>Bereikbaar</dt><dd>Ma–za 09–18</dd></div>
@@ -86,8 +88,8 @@
       </div>
     </section>
 
-    <section class="sec story wrap" aria-labelledby="story-title">
-      <div class="split">
+    <section class="sec story sheet stack" aria-labelledby="story-title">
+      <div class="split wrap">
         <p class="label">Ons verhaal</p>
         <div>
           <h2 id="story-title" class="h2" data-reveal>Waarom we Vizora<br><span>zijn begonnen.</span></h2>
@@ -96,9 +98,9 @@
             <p>Een groot bureau is vaak duur, en je spreekt steeds iemand anders. Zelf een website maken kost veel tijd, en dan moet je nog gevonden worden.</p>
             <p>Dat willen wij voorkomen. Daarom zijn we Vizora begonnen: een website op maat en een plan om te groeien, voor een eerlijke prijs. Van twee mensen die je gewoon kunt bellen of appen.</p>
           </div>
-          <div class="name" data-reveal>
-            <p class="label">Waar de naam vandaan komt</p>
-            <dl class="name__list">
+          <div class="name">
+            <p class="label" data-reveal>Waar de naam vandaan komt</p>
+            <dl class="name__list" data-stagger>
               <div><dt>Visie</dt><dd>Een duidelijk plan: weten welke stap je zet, en waarom.</dd></div>
               <div><dt>Zichtbaarheid</dt><dd>Een zaak die gezien wordt, in Google en daarbuiten.</dd></div>
               <div class="name__sum"><dt>Vizora</dt><dd>Daar helpen we je mee.</dd></div>
@@ -108,43 +110,45 @@
       </div>
     </section>
 
-    <section class="sec pr wrap" aria-labelledby="pr-title">
+    <section class="sec pr sheet stack" aria-labelledby="pr-title">
+      <div class="wrap">
       <div class="split">
         <p class="label">Waar we voor staan</p>
         <div>
           <h2 id="pr-title" class="h2" data-reveal>Wat je van ons<br><span>mag verwachten.</span></h2>
         </div>
       </div>
-      <ol class="pr__list">
-          <li class="pr__row" data-reveal>
+      <ol class="pr__list" data-stagger>
+          <li class="pr__row">
             <span class="pr__n label">01</span>
             <h3 class="pr__t">Persoonlijk</h3>
             <p class="pr__d">Je spreekt altijd Halil of Sahin, geen accountmanager of ticketnummer. We kennen je zaak en denken mee alsof het onze eigen zaak is.</p>
           </li>
-          <li class="pr__row" data-reveal>
+          <li class="pr__row">
             <span class="pr__n label">02</span>
             <h3 class="pr__t">Zelf gemaakt</h3>
             <p class="pr__d">We ontwerpen en bouwen elke website zelf, van eerste schets tot livegang. Daardoor weten we precies hoe jouw site in elkaar zit en kunnen we snel schakelen.</p>
           </li>
-          <li class="pr__row" data-reveal>
+          <li class="pr__row">
             <span class="pr__n label">03</span>
             <h3 class="pr__t">Eerlijk</h3>
             <p class="pr__d">Duidelijke prijzen en een vaste prijs vooraf. Ben je niet blij met het ontwerp, dan betaal je niets. En als iets niet nodig is, zeggen we dat ook.</p>
           </li>
-          <li class="pr__row" data-reveal>
+          <li class="pr__row">
             <span class="pr__n label">04</span>
             <h3 class="pr__t">Gericht op groei</h3>
             <p class="pr__d">Mooi is niet genoeg. Alles wat we maken heeft een doel: dat klanten je kunnen vinden en makkelijk contact met je opnemen.</p>
           </li>
-          <li class="pr__row" data-reveal>
+          <li class="pr__row">
             <span class="pr__n label">05</span>
             <h3 class="pr__t">Bereikbaar</h3>
             <p class="pr__d">Maandag t/m zaterdag van 09:00 tot 18:00, via WhatsApp, telefoon of e-mail. Ook na de livegang blijven we gewoon je aanspreekpunt.</p>
           </li>
       </ol>
+      </div>
     </section>
 
-    <section class="direct" aria-labelledby="direct-title">
+    <section class="direct sheet stack" aria-labelledby="direct-title">
       <div class="wrap split">
         <p class="label">Direct contact</p>
         <div>
@@ -211,6 +215,6 @@
   <script src="assets/vendor/ScrollTrigger.min.js?v=b0b14d67b5" defer></script>
   <script src="assets/vendor/lenis.min.js?v=53195c9797" defer></script>
   <script src="assets/js/site.js?v=5d531756cd" defer></script>
-  <script src="assets/js/motion.js?v=85927c772c" defer></script>
+  <script src="assets/js/motion.js?v=01f1d1fe66" defer></script>
 </body>
 </html>

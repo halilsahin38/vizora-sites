@@ -22,12 +22,12 @@ def photo_slot():
         return "<!-- foto Halil & Sahin -->"
     w, h = PHOTO_SIZE
     # eager: op mobiel is dit het grootste beeld bovenaan (LCP)
-    return (f'<figure class="duo__photo"><div class="duo__img" data-clip>{pic(PHOTO, "Halil, medeoprichter van Vizora Digital", w, h, eager=True)}</div>'
+    return (f'<figure class="duo__photo"><div class="duo__img" data-clip data-drift>{pic(PHOTO, "Halil, medeoprichter van Vizora Digital", w, h, eager=True)}</div>'
             f'<figcaption class="label duo__cap">Halil</figcaption></figure>')
 
 
 def render():
-    promises = "\n".join(f'''          <li class="pr__row" data-reveal>
+    promises = "\n".join(f'''          <li class="pr__row">
             <span class="pr__n label">0{i}</span>
             <h3 class="pr__t">{t}</h3>
             <p class="pr__d">{d}</p>
@@ -40,8 +40,8 @@ def render():
     html += f'''
   <main id="main">
 {page_head("", "Over ons", "Twee broers, één doel: jouw zaak laten <em>groeien.</em>", "Wij zijn Halil en Sahin. Vanuit Breda maken we websites op maat, en helpen we ondernemers in heel Nederland om online gevonden te worden.")}
-    <section class="duo wrap" aria-labelledby="duo-title">
-      <div class="duo__grid">
+    <section class="duo stack" aria-labelledby="duo-title">
+      <div class="duo__grid wrap">
         <div class="duo__side">
           {label("01", "Wie we zijn")}
           {photo_slot()}
@@ -53,7 +53,7 @@ def render():
             <p>Jong betekent bij ons: alle aandacht voor jouw project. Je spreekt altijd een van ons tweeën, van het eerste gesprek tot lang na de livegang.</p>
             <p>We bouwen elke website zelf, van eerste schets tot livegang, en blijven daarna bereikbaar voor vragen en aanpassingen. Gewoon via WhatsApp of telefoon.</p>
           </div>
-          <dl class="duo__facts" data-reveal>
+          <dl class="duo__facts" data-stagger>
             <div><dt>Gevestigd</dt><dd>Regio Breda</dd></div>
             <div><dt>Werkgebied</dt><dd>Heel Nederland</dd></div>
             <div><dt>Bereikbaar</dt><dd>Ma–za 09–18</dd></div>
@@ -62,8 +62,8 @@ def render():
       </div>
     </section>
 
-    <section class="sec story wrap" aria-labelledby="story-title">
-      <div class="split">
+    <section class="sec story sheet stack" aria-labelledby="story-title">
+      <div class="split wrap">
         {label("02", "Ons verhaal")}
         <div>
           <h2 id="story-title" class="h2" data-reveal>Waarom we Vizora<br><span>zijn begonnen.</span></h2>
@@ -72,9 +72,9 @@ def render():
             <p>Een groot bureau is vaak duur, en je spreekt steeds iemand anders. Zelf een website maken kost veel tijd, en dan moet je nog gevonden worden.</p>
             <p>Dat willen wij voorkomen. Daarom zijn we Vizora begonnen: een website op maat en een plan om te groeien, voor een eerlijke prijs. Van twee mensen die je gewoon kunt bellen of appen.</p>
           </div>
-          <div class="name" data-reveal>
-            <p class="label">Waar de naam vandaan komt</p>
-            <dl class="name__list">
+          <div class="name">
+            <p class="label" data-reveal>Waar de naam vandaan komt</p>
+            <dl class="name__list" data-stagger>
               <div><dt>Visie</dt><dd>Een duidelijk plan: weten welke stap je zet, en waarom.</dd></div>
               <div><dt>Zichtbaarheid</dt><dd>Een zaak die gezien wordt, in Google en daarbuiten.</dd></div>
               <div class="name__sum"><dt>Vizora</dt><dd>Daar helpen we je mee.</dd></div>
@@ -84,19 +84,21 @@ def render():
       </div>
     </section>
 
-    <section class="sec pr wrap" aria-labelledby="pr-title">
+    <section class="sec pr sheet stack" aria-labelledby="pr-title">
+      <div class="wrap">
       <div class="split">
         {label("03", "Waar we voor staan")}
         <div>
           <h2 id="pr-title" class="h2" data-reveal>Wat je van ons<br><span>mag verwachten.</span></h2>
         </div>
       </div>
-      <ol class="pr__list">
+      <ol class="pr__list" data-stagger>
 {promises}
       </ol>
+      </div>
     </section>
 
-    <section class="direct" aria-labelledby="direct-title">
+    <section class="direct sheet stack" aria-labelledby="direct-title">
       <div class="wrap split">
         {label("04", "Direct contact")}
         <div>

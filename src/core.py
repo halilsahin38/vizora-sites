@@ -252,12 +252,15 @@ def footer(active="", cta=True):
 '''
 
 
-def page_head(num, label_text, title, lead, extra=""):
-    """Kop voor subpagina's: groot, links uitgelijnd, met label. extra = HTML onder de intro (optioneel)."""
-    return f'''    <section class="ph wrap">
+def page_head(num, label_text, title, lead, extra="", cls=""):
+    """Kop voor subpagina's: groot, links uitgelijnd, met label. extra = HTML onder de intro (optioneel).
+    cls = extra classes op de sectie, bv. "stack" als het volgende deel er als vel overheen schuift."""
+    return f'''    <section class="ph{" " + cls if cls else ""}">
+      <div class="wrap">
       {label(num, label_text)}
       <h1 class="ph__title" data-lines>{title}</h1>
       <p class="ph__lead" data-reveal>{lead}</p>{extra}
+      </div>
     </section>
 '''
 
@@ -273,7 +276,7 @@ def price_columns():
     for p in PACKAGES:
         feats = "".join(f"<li>{f}</li>" for f in p["feats"])
         badge = '<span class="tag">Onze aanrader</span>' if p["featured"] else ""
-        out.append(f'''          <article class="pk{" pk--featured" if p["featured"] else ""}" data-reveal>
+        out.append(f'''          <article class="pk{" pk--featured" if p["featured"] else ""}">
             <div class="pk__top"><p class="label">{p["name"]}</p>{badge}</div>
             <p class="pk__price"><span class="pk__from">vanaf</span>€{p["price"]}</p>
             <p class="pk__note">eenmalig · excl. btw</p>
@@ -287,5 +290,5 @@ def price_columns():
 
 def guarantees():
     return "\n".join(
-        f'''          <div class="gu__item" data-reveal><p class="label">0{i}</p><h3>{t}</h3><p>{d}</p></div>'''
+        f'''          <div class="gu__item"><p class="label">0{i}</p><h3>{t}</h3><p>{d}</p></div>'''
         for i, (t, d) in enumerate(GUARANTEES, 1))

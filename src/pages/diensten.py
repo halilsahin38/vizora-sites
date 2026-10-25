@@ -25,24 +25,24 @@ EXTRA = [
 
 def facts(items):
     rows = "".join(f"<div><dt>{t}</dt><dd>{d}</dd></div>" for t, d in items)
-    return f'<dl class="svc__facts">{rows}</dl>'
+    return f'<dl class="svc__facts" data-stagger>{rows}</dl>'
 
 
 def gets(items, title="Wat je krijgt"):
     lis = "".join(f"<li>{x}</li>" for x in items)
-    return f'''<div class="svc__block" data-reveal>
-            <p class="label">{title}</p>
-            <ul class="svc__list">{lis}</ul>
+    return f'''<div class="svc__block">
+            <p class="label" data-reveal>{title}</p>
+            <ul class="svc__list" data-stagger>{lis}</ul>
           </div>'''
 
 
 def packs(rows, more=True):
     out = "".join(f'''
               <div class="pkr"><span class="pkr__n">{n}</span><span class="pkr__d">{d}</span><span class="pkr__p">{p}</span></div>''' for n, d, p in rows)
-    link = f'\n            <a href="prijzen.html" class="link svc__more">Alle pakketten en prijzen {I["arrow"]}</a>' if more else ""
-    return f'''<div class="svc__block" data-reveal>
-            <p class="label">In welk pakket · prijzen excl. btw</p>
-            <div class="pkr__list">{out}
+    link = f'\n            <a href="prijzen.html" class="link svc__more" data-reveal>Alle pakketten en prijzen {I["arrow"]}</a>' if more else ""
+    return f'''<div class="svc__block">
+            <p class="label" data-reveal>In welk pakket · prijzen excl. btw</p>
+            <div class="pkr__list" data-stagger>{out}
             </div>{link}
           </div>'''
 
@@ -75,11 +75,11 @@ def render():
         inner = f'''<span class="xtr__name">{n}</span>
             <span class="xtr__rest"><span class="xtr__desc">{d}</span><span class="xtr__tag">{tag}</span><span class="xtr__go">{I["arrow"] if href else ""}</span></span>'''
         if href:
-            extra.append(f'''          <a class="xtr__row xtr__row--link" href="{href}" data-reveal>
+            extra.append(f'''          <a class="xtr__row xtr__row--link" href="{href}">
             {inner}
           </a>''')
         else:
-            extra.append(f'''          <div class="xtr__row" data-reveal>
+            extra.append(f'''          <div class="xtr__row">
             {inner}
           </div>''')
     extra_html = "\n".join(extra)
@@ -92,12 +92,12 @@ def render():
   <main id="main">
 {page_head("", "Diensten", "Alles om online te <em>groeien.</em>", "Een website op maat, hulp om gevonden te worden in Google en hulp bij social media. Los af te nemen of als compleet pakket, en altijd afgestemd op jouw zaak.")}
     <nav class="dx wrap" aria-label="Diensten op deze pagina">
-      <ol class="dx__list">
+      <ol class="dx__list" data-stagger>
 {index}
       </ol>
     </nav>
 
-    <section class="svc" id="websites" aria-labelledby="websites-title">
+    <section class="svc stack" id="websites" aria-labelledby="websites-title">
       <div class="svc__grid wrap">
         {side("01", "Websites", [("Voor wie", "Starters, zzp'ers en ondernemers die online meer klanten willen"), ("Prijs", f"Vanaf €{P['Start']}, eenmalig, excl. btw"), ("Daarna", f"Abonnement vanaf €{S['Basis']} p/m excl. btw, niet verplicht")])}
         <div class="svc__main">
@@ -117,16 +117,16 @@ def render():
       </div>
     </section>
 
-    <section class="svc svc--alt" id="marketing" aria-labelledby="marketing-title">
+    <section class="svc svc--alt sheet stack" id="marketing" aria-labelledby="marketing-title">
       <div class="svc__grid wrap">
         {side("02", "Marketing", [("Voor wie", "Ondernemers die gevonden willen worden door klanten in hun regio"), ("Zit in", f"Groei (€{P['Groei']}) en Compleet (€{P['Compleet']}), excl. btw"), ("Advertenties", "Op maat, altijd eerst in overleg")])}
         <div class="svc__main">
           <h2 id="marketing-title" class="h2" data-reveal>Gevonden worden<br><span>door wie nu zoekt.</span></h2>
           <p class="svc__lead" data-reveal>Je beste klanten zijn vaak mensen die al zoeken naar wat jij aanbiedt. Met een sterk Google Bedrijfsprofiel, lokale SEO en waar het past gerichte advertenties, helpen we je gevonden te worden waar zij zoeken.</p>
-          <ol class="ladder" aria-label="Zo bouwen we het op">
-            <li data-reveal><span class="ladder__n label">Stap 1</span><span class="ladder__t">De basis</span><span class="ladder__d">Google Bedrijfsprofiel en lokale SEO, zodat je zichtbaar bent in Google en Google Maps.</span></li>
-            <li data-reveal><span class="ladder__n label">Stap 2</span><span class="ladder__t">Vertrouwen</span><span class="ladder__d">Hulp bij het vragen om reviews, zodat nieuwe klanten zien dat anderen tevreden zijn.</span></li>
-            <li data-reveal><span class="ladder__n label">Stap 3</span><span class="ladder__t">Extra bereik</span><span class="ladder__d">Advertenties in Google en op Instagram en Facebook. Pas als de basis staat.</span></li>
+          <ol class="ladder" aria-label="Zo bouwen we het op" data-stagger>
+            <li><span class="ladder__n label">Stap 1</span><span class="ladder__t">De basis</span><span class="ladder__d">Google Bedrijfsprofiel en lokale SEO, zodat je zichtbaar bent in Google en Google Maps.</span></li>
+            <li><span class="ladder__n label">Stap 2</span><span class="ladder__t">Vertrouwen</span><span class="ladder__d">Hulp bij het vragen om reviews, zodat nieuwe klanten zien dat anderen tevreden zijn.</span></li>
+            <li><span class="ladder__n label">Stap 3</span><span class="ladder__t">Extra bereik</span><span class="ladder__d">Advertenties in Google en op Instagram en Facebook. Pas als de basis staat.</span></li>
           </ol>
           <div class="svc__cols" data-reveal>
             <p>We beginnen met de basis en bouwen daarna stap voor stap verder. Zo weet je precies waar je geld naartoe gaat.</p>
@@ -143,7 +143,7 @@ def render():
       </div>
     </section>
 
-    <section class="svc" id="social-media" aria-labelledby="social-title">
+    <section class="svc sheet" id="social-media" aria-labelledby="social-title">
       <div class="svc__grid wrap">
         {side("03", "Social media", [("Voor wie", "Ondernemers die online overal herkenbaar willen zijn"), ("Zit in", f"Compleet (€{P['Compleet']}), excl. btw"), ("Content", "Komt van jou. Maken of posten in overleg, tegen meerprijs")])}
         <div class="svc__main">
@@ -162,7 +162,8 @@ def render():
       </div>
     </section>
 
-    <section class="xtr wrap" aria-labelledby="xtr-title">
+    <section class="xtr stack" aria-labelledby="xtr-title">
+      <div class="wrap">
       <div class="split">
         {label("04", "Extra")}
         <div>
@@ -170,12 +171,13 @@ def render():
           <p class="xtr__intro" data-reveal>Los te combineren met elke website. Wat het kost, hoor je vooraf; zonder verrassingen achteraf.</p>
         </div>
       </div>
-      <div class="xtr__list">
+      <div class="xtr__list" data-stagger>
 {extra_html}
+      </div>
       </div>
     </section>
 
-    <section class="help" aria-labelledby="help-title">
+    <section class="help sheet stack" aria-labelledby="help-title">
       <div class="wrap split">
         {label("05", "Twijfel je?")}
         <div>

@@ -23,8 +23,8 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css?v=5835cd519a">
-  <link rel="stylesheet" href="assets/css/base.css?v=60df99dd08">
-  <link rel="stylesheet" href="assets/css/prijzen.css?v=237100f0b1">
+  <link rel="stylesheet" href="assets/css/base.css?v=2a76945431">
+  <link rel="stylesheet" href="assets/css/prijzen.css?v=b92429f91f">
   <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},2500)</script>
 </head>
 <body>
@@ -58,10 +58,12 @@
   </header>
 
   <main id="main">
-    <section class="ph wrap">
+    <section class="ph">
+      <div class="wrap">
       <p class="label">Prijzen</p>
       <h1 class="ph__title" data-lines>Duidelijke pakketten, <em>eerlijke</em> prijzen.</h1>
       <p class="ph__lead" data-reveal>Eén keer betalen voor je website, en als je wilt een vast bedrag per maand voor onderhoud en groei. Je ziet eerst gratis je concept. Pas als je blij bent, betaal je.</p>
+      </div>
     </section>
 
     <section class="pp wrap" id="pakketten" aria-labelledby="pk-title">
@@ -72,8 +74,8 @@
           <p class="pp__intro" data-reveal>Kies een pakket als startpunt. Na het gratis gesprek krijg je altijd eerst een vaste prijs op maat, zodat je precies weet waar je aan toe bent. Prijzen voor ondernemers, exclusief btw.</p>
         </div>
       </div>
-      <div class="pk__grid">
-          <article class="pk" data-reveal>
+      <div class="pk__grid" data-stagger>
+          <article class="pk">
             <div class="pk__top"><p class="label">Start</p></div>
             <p class="pk__price"><span class="pk__from">vanaf</span>€200</p>
             <p class="pk__note">eenmalig · excl. btw</p>
@@ -82,7 +84,7 @@
             <ul class="pk__list"><li>One-page website op maat</li><li>Perfect op mobiel</li><li>Bel-, WhatsApp- en contactknoppen</li><li>Basis vindbaarheid in Google</li><li>Koppeling met je eigen domein + gratis hosting</li></ul>
             <a href="contact.html?pakket=Start" class="btn btn--ghost pk__btn">Kies Start <svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
-          <article class="pk pk--featured" data-reveal>
+          <article class="pk pk--featured">
             <div class="pk__top"><p class="label">Groei</p><span class="tag">Onze aanrader</span></div>
             <p class="pk__price"><span class="pk__from">vanaf</span>€350</p>
             <p class="pk__note">eenmalig · excl. btw</p>
@@ -91,7 +93,7 @@
             <ul class="pk__list"><li>Website tot 5 pagina's</li><li>Uniek ontwerp met animaties</li><li>Online afspraken, reserveren of bestellen</li><li>Google Bedrijfsprofiel ingericht</li><li>Teksten die overtuigen</li><li>Lokale SEO voor jouw regio</li><li>Gratis hosting</li></ul>
             <a href="contact.html?pakket=Groei" class="btn pk__btn">Kies Groei <svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
-          <article class="pk" data-reveal>
+          <article class="pk">
             <div class="pk__top"><p class="label">Compleet</p></div>
             <p class="pk__price"><span class="pk__from">vanaf</span>€500</p>
             <p class="pk__note">eenmalig · excl. btw</p>
@@ -104,18 +106,18 @@
       <p class="pp__foot" data-reveal>Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen en hoor je vooraf.</p>
     </section>
 
-    <section class="sec cmp wrap" id="vergelijken" aria-labelledby="cmp-title">
-      <div class="cmp__split">
+    <section class="sec cmp stack" id="vergelijken" aria-labelledby="cmp-title">
+      <div class="cmp__split wrap">
         <div class="cmp__aside">
           <p class="label">Vergelijken</p>
           <h2 id="cmp-title" class="h2 cmp__title" data-reveal>Wat zit er in elk pakket?</h2>
           <p class="cmp__help" data-reveal>Twijfel je tussen twee pakketten? <a href="https://wa.me/31638705348" target="_blank" rel="noopener">App</a>, <a href="mailto:halilsahinai@gmail.com">mail</a> of bel <a href="tel:+31638705348">06 38 70 53 48</a>. We adviseren eerlijk, ook als een kleiner pakket genoeg is. Alle prijzen excl. btw.</p>
         </div>
-        <div class="cmp__wrap" data-reveal>
+        <div class="cmp__wrap">
           <table class="cmp__table">
             <caption class="vh">Wat zit er in de pakketten Start, Groei, Compleet</caption>
-            <thead><tr><th scope="col"><span class="label">Inbegrepen</span></th><th scope="col"><span class="cmp__pk">Start</span><span class="cmp__pr"><span class="cmp__from">vanaf </span>€200</span></th><th scope="col" class="is-f"><span class="cmp__pk">Groei</span><span class="cmp__pr"><span class="cmp__from">vanaf </span>€350</span></th><th scope="col"><span class="cmp__pk">Compleet</span><span class="cmp__pr"><span class="cmp__from">vanaf </span>€500</span></th></tr></thead>
-            <tbody>
+            <thead data-stagger><tr><th scope="col"><span class="label">Inbegrepen</span></th><th scope="col"><span class="cmp__pk">Start</span><span class="cmp__pr"><span class="cmp__from">vanaf </span>€200</span></th><th scope="col" class="is-f"><span class="cmp__pk">Groei</span><span class="cmp__pr"><span class="cmp__from">vanaf </span>€350</span></th><th scope="col"><span class="cmp__pk">Compleet</span><span class="cmp__pr"><span class="cmp__from">vanaf </span>€500</span></th></tr></thead>
+            <tbody data-stagger>
               <tr class="cmp__grp"><th scope="rowgroup">Website</th><td></td><td class="is-f"></td><td></td></tr>
               <tr><th scope="row">Aantal pagina's</th><td><span class="cmp__v">1</span></td><td class="is-f"><span class="cmp__v">tot 5</span></td><td><span class="cmp__v">tot 5</span></td></tr>
               <tr><th scope="row">Ontwerp op maat</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
@@ -127,13 +129,13 @@
               <tr><th scope="row">Online afspraken, reserveren of bestellen</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
               <tr><th scope="row">Teksten die overtuigen</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
             </tbody>
-            <tbody>
+            <tbody data-stagger>
               <tr class="cmp__grp"><th scope="rowgroup">Gevonden worden</th><td></td><td class="is-f"></td><td></td></tr>
               <tr><th scope="row">Basis vindbaarheid in Google</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
               <tr><th scope="row">Google Bedrijfsprofiel ingericht</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
               <tr><th scope="row">Lokale SEO voor jouw regio</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
             </tbody>
-            <tbody>
+            <tbody data-stagger>
               <tr class="cmp__grp"><th scope="rowgroup">Merk &amp; groei</th><td></td><td class="is-f"></td><td></td></tr>
               <tr><th scope="row">Logo &amp; huisstijl</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
               <tr><th scope="row">Profielen op social media ingericht</th><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td class="is-f"><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__n"><path d="M8 12h8"/></svg><span class="vh">Niet inbegrepen</span></td><td><svg viewBox="0 0 24 24" aria-hidden="true" class="i cmp__y"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span class="vh">Inbegrepen</span></td></tr>
@@ -146,7 +148,7 @@
       </div>
     </section>
 
-    <section class="abo" id="abonnement" data-theme="dark" aria-labelledby="abo-title">
+    <section class="abo sheet stack" id="abonnement" data-theme="dark" aria-labelledby="abo-title">
       <div class="wrap">
         <div class="split">
           <p class="label">Website-abonnement</p>
@@ -155,27 +157,27 @@
             <p class="abo__lead" data-reveal>Met een abonnement houden wij je site up-to-date, veilig en snel, en helpen we je elke maand een stap verder. Je kiest zelf hoeveel hulp je wilt.</p>
           </div>
         </div>
-        <div class="abo__grid">
-          <article class="tier" data-reveal>
+        <div class="abo__grid" data-stagger>
+          <article class="tier">
             <h3 class="tier__name">Basis</h3>
             <p class="tier__price">€25<span>per maand · excl. btw</span></p>
             <ul class="tier__list"><li>Onderhoud &amp; beveiliging</li><li>1 kleine aanpassing per maand</li><li>Hulp via WhatsApp</li></ul>
             <a href="contact.html?pakket=Abonnement%20Basis" class="btn btn--line tier__btn">Kies Basis <svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
-          <article class="tier" data-reveal>
+          <article class="tier">
             <h3 class="tier__name">Plus</h3>
             <p class="tier__price">€49<span>per maand · excl. btw</span></p>
             <ul class="tier__list"><li>Alles uit Basis</li><li>Tot 3 aanpassingen per maand</li><li>Google Bedrijfsprofiel bijhouden</li><li>Maandelijkse groeitips</li></ul>
             <a href="contact.html?pakket=Abonnement%20Plus" class="btn btn--line tier__btn">Kies Plus <svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
-          <article class="tier" data-reveal>
+          <article class="tier">
             <h3 class="tier__name">Pro</h3>
             <p class="tier__price">€79<span>per maand · excl. btw</span></p>
             <ul class="tier__list"><li>Alles uit Plus</li><li>Tot 6 aanpassingen per maand</li><li>Elk kwartaal een nieuwe pagina of actie</li><li>Maandelijks groeigesprek</li></ul>
             <a href="contact.html?pakket=Abonnement%20Pro" class="btn btn--line tier__btn">Kies Pro <svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </article>
         </div>
-        <dl class="abo__terms" data-reveal>
+        <dl class="abo__terms" data-stagger>
           <div><dt>Factuur</dt><dd>Elke maand</dd></div>
           <div><dt>Opzeggen</dt><dd>Per maand</dd></div>
           <div><dt>Jaarcontract</dt><dd>Geen</dd></div>
@@ -184,7 +186,7 @@
       </div>
     </section>
 
-    <section class="gu" id="garanties" aria-labelledby="gu-title">
+    <section class="gu sheet stack" id="garanties" aria-labelledby="gu-title">
       <div class="wrap">
         <div class="split">
           <p class="label">Garanties</p>
@@ -193,16 +195,17 @@
             <p class="gu__lead" data-reveal>Je ziet eerst het ontwerp. Pas als jij zegt “zo wil ik het”, gaan we verder en ontvang je de factuur.</p>
           </div>
         </div>
-        <div class="gu__grid">
-          <div class="gu__item" data-reveal><p class="label">01</p><h3>Niet blij? Niet betalen.</h3><p>Je ziet eerst het ontwerp. Ben je na de feedbackrondes niet tevreden, dan betaal je niets.</p></div>
-          <div class="gu__item" data-reveal><p class="label">02</p><h3>Twee feedbackrondes</h3><p>Twee keer aanpassen naar jouw wensen zit gewoon in de prijs.</p></div>
-          <div class="gu__item" data-reveal><p class="label">03</p><h3>Domein op jouw naam</h3><p>Je domeinnaam is en blijft van jou. Geen gedoe als je ooit wilt overstappen.</p></div>
-          <div class="gu__item" data-reveal><p class="label">04</p><h3>Maandelijks opzegbaar</h3><p>Het abonnement loopt per maand. Geen jaarcontract, geen kleine lettertjes.</p></div>
+        <div class="gu__grid" data-stagger>
+          <div class="gu__item"><p class="label">01</p><h3>Niet blij? Niet betalen.</h3><p>Je ziet eerst het ontwerp. Ben je na de feedbackrondes niet tevreden, dan betaal je niets.</p></div>
+          <div class="gu__item"><p class="label">02</p><h3>Twee feedbackrondes</h3><p>Twee keer aanpassen naar jouw wensen zit gewoon in de prijs.</p></div>
+          <div class="gu__item"><p class="label">03</p><h3>Domein op jouw naam</h3><p>Je domeinnaam is en blijft van jou. Geen gedoe als je ooit wilt overstappen.</p></div>
+          <div class="gu__item"><p class="label">04</p><h3>Maandelijks opzegbaar</h3><p>Het abonnement loopt per maand. Geen jaarcontract, geen kleine lettertjes.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="sec ext wrap" id="extra" aria-labelledby="ex-title">
+    <section class="sec ext sheet" id="extra" aria-labelledby="ex-title">
+      <div class="wrap">
       <div class="split">
         <p class="label">Uitbreiden</p>
         <div>
@@ -210,8 +213,8 @@
           <p class="pp__intro" data-reveal>Klaar voor de volgende stap? Deze diensten stemmen we samen af op jouw zaak.</p>
         </div>
       </div>
-      <div class="ex__list">
-          <div class="ex" data-reveal>
+      <div class="ex__list" data-stagger>
+          <div class="ex">
             <span class="label">01</span>
             <div class="ex__row">
               <h3 class="ex__t">Advertenties</h3>
@@ -219,7 +222,7 @@
               <p class="ex__p">Prijs op aanvraag</p>
             </div>
           </div>
-          <div class="ex" data-reveal>
+          <div class="ex">
             <span class="label">02</span>
             <div class="ex__row">
               <h3 class="ex__t">Content voor social media</h3>
@@ -227,7 +230,7 @@
               <p class="ex__p">In overleg</p>
             </div>
           </div>
-          <div class="ex" data-reveal>
+          <div class="ex">
             <span class="label">03</span>
             <div class="ex__row">
               <h3 class="ex__t">Losse aanpassingen</h3>
@@ -236,16 +239,17 @@
             </div>
           </div>
       </div>
+      </div>
     </section>
 
-    <section class="sec qa wrap" aria-labelledby="qa-title">
-      <div class="split">
+    <section class="sec qa stack" aria-labelledby="qa-title">
+      <div class="split wrap">
         <div>
           <p class="label">Vragen over prijzen</p>
           <h2 id="qa-title" class="h2 qa__title" data-reveal>Goed om te weten</h2>
           <p class="qa__help" data-reveal>Staat je vraag er niet bij? <a href="https://wa.me/31638705348" target="_blank" rel="noopener">App ons</a> of bel <a href="tel:+31638705348">06 38 70 53 48</a>.</p>
         </div>
-        <div class="qa__list" data-reveal>
+        <div class="qa__list" data-stagger>
           <details class="qa__item"><summary><span>Wat kost een website laten maken?</span><svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M12 5v14M5 12h14"/></svg></summary><div class="qa__a"><p>Bij ons begint een website bij €200 voor Start (een one-page website), €350 voor Groei (tot 5 pagina's) of €500 voor Compleet (met logo en huisstijl). Dat zijn eenmalige vanaf-prijzen, exclusief btw. Hosting is gratis; alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar. Na het gratis gesprek krijg je een vaste prijs op maat.</p></div></details>
           <details class="qa__item"><summary><span>Waarom staat er “vanaf”?</span><svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M12 5v14M5 12h14"/></svg></summary><div class="qa__a"><p>Elke zaak is anders. De vanaf-prijs is wat je minimaal betaalt voor het pakket. Na het gratis gesprek krijg je een vaste prijs, zonder verrassingen.</p></div></details>
           <details class="qa__item"><summary><span>Zijn er maandelijkse kosten?</span><svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M12 5v14M5 12h14"/></svg></summary><div class="qa__a"><p>De pakketten zijn eenmalig. Wil je dat we je website elke maand bijwerken en onderhouden? Dan kun je een abonnement nemen vanaf €25 per maand, excl. btw. Hosting is gratis inbegrepen. Alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar.</p></div></details>
@@ -309,6 +313,6 @@
   <script src="assets/vendor/ScrollTrigger.min.js?v=b0b14d67b5" defer></script>
   <script src="assets/vendor/lenis.min.js?v=53195c9797" defer></script>
   <script src="assets/js/site.js?v=5d531756cd" defer></script>
-  <script src="assets/js/motion.js?v=85927c772c" defer></script>
+  <script src="assets/js/motion.js?v=01f1d1fe66" defer></script>
 </body>
 </html>

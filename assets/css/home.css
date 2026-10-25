@@ -2,13 +2,9 @@
    Homepagina
    Ritme: papier (hero) → inkt (voorbeelden) → terracotta (werkwijze)
    → papier (prijzen) → beige (wie zijn wij) → inkt (voet).
-   Gekleurde delen schuiven als afgeronde vellen over elkaar (.sheet).
+   Gekleurde delen schuiven als afgeronde vellen over elkaar (.sheet en .stack staan in base.css).
    ========================================================= */
 
-.sheet {
-  position: relative; border-radius: var(--sheet) var(--sheet) 0 0; margin-top: calc(var(--sheet) * -1);
-  padding-block: var(--sec) calc(var(--sec) + var(--sheet));
-}
 .home__h2 { font-size: clamp(2.2rem, 4.4vw, 4.4rem); }
 
 /* ---------- hero ---------- */
@@ -166,8 +162,3 @@
 .hero__media { will-change: transform; }
 /* het zwarte scherm van de laptop (fracties van hero-laptop.jpg); kleurt bij het inzoomen naar inkt, net als het volgende deel */
 .hero__screen { position: absolute; left: 12.87%; top: 18.64%; width: 55.35%; height: 60.72%; background: var(--ink); opacity: 0; border-radius: 2px; pointer-events: none; }
-
-/* vorige vlak wordt iets kleiner en donkerder als het volgende eroverheen schuift (motion.js zet --dim) */
-.stack { position: relative; transform-origin: 50% 100%; }
-.stack::after { content: ""; position: absolute; inset: 0; background: #0b0a09; opacity: var(--dim, 0); pointer-events: none; border-radius: inherit; z-index: 2; }
-main { overflow-x: clip; } /* ingezoomde hero mag niet breder worden dan het scherm */

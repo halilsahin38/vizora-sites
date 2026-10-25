@@ -89,12 +89,13 @@ def render():
   <main id="main">
 {page_head("", "Werkwijze", "Stap voor stap naar <em>meer klanten.</em>", "Je weet altijd waar je aan toe bent. Je ziet je website eerst, voordat je iets betaalt. En het technische werk? Dat doen wij.")}
     <div class="glance wrap">
-      <dl class="glance__list" data-reveal>
+      <dl class="glance__list" data-stagger>
 {glance}
       </dl>
     </div>
 
-    <section class="sec tls wrap" aria-labelledby="tl-title">
+    <section class="sec tls stack" aria-labelledby="tl-title">
+      <div class="wrap">
       <div class="split">
         {label("01", "Het traject")}
         <div>
@@ -105,9 +106,10 @@ def render():
       <ol class="trj">
 {steps}
       </ol>
+      </div>
     </section>
 
-    <section class="see" aria-labelledby="see-title">
+    <section class="see sheet stack" aria-labelledby="see-title">
       <div class="wrap">
         <div class="split">
           {label("02", "Het gratis concept")}
@@ -116,7 +118,7 @@ def render():
             <p class="see__intro" data-reveal>Normaal betaal je eerst en zie je pas later wat je krijgt. Bij ons is het andersom. Plan je een gesprek, dan maken we vooraf een eerste ontwerp van jouw website. Zo zie je hoe het eruit kan zien, nog voordat je iets beslist.</p>
           </div>
         </div>
-        <dl class="see__facts" data-reveal>
+        <dl class="see__facts" data-stagger>
           <div><dt>Kosten</dt><dd>€0</dd></div>
           <div><dt>Verplichting</dt><dd>Geen</dd></div>
           <div><dt>Klaar</dt><dd>Vóór het gesprek</dd></div>
@@ -128,7 +130,7 @@ def render():
       </div>
     </section>
 
-    <section class="who" aria-labelledby="who-title">
+    <section class="who sheet stack" aria-labelledby="who-title">
       <div class="wrap">
         <div class="split">
           {label("03", "Wie doet wat")}
@@ -138,26 +140,26 @@ def render():
           </div>
         </div>
         <div class="who__grid">
-          <div class="who__you" data-reveal>
-            <p class="label who__head"><span>Jij</span><span>3 dingen</span></p>
-            <ol class="who__big">{you}</ol>
+          <div class="who__you">
+            <p class="label who__head" data-reveal><span>Jij</span><span>3 dingen</span></p>
+            <ol class="who__big" data-stagger>{you}</ol>
           </div>
-          <div class="who__we" data-reveal>
-            <p class="label who__head"><span>Wij</span><span>al het technische werk</span></p>
-            <ol class="who__list">{we}</ol>
+          <div class="who__we">
+            <p class="label who__head" data-reveal><span>Wij</span><span>al het technische werk</span></p>
+            <ol class="who__list" data-stagger>{we}</ol>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="sec qa wrap" aria-labelledby="qa-title">
-      <div class="split">
+    <section class="sec qa sheet stack" aria-labelledby="qa-title">
+      <div class="split wrap">
         <div>
           {label("04", "Vragen")}
           <h2 id="qa-title" class="h2 qa__title" data-reveal>Vragen over de werkwijze</h2>
           <p class="qa__help" data-reveal>Staat je vraag er niet bij? <a href="{WA}" target="_blank" rel="noopener">App</a>, <a href="mailto:{MAIL}">mail</a> of bel <a href="{TEL}">{TEL_TXT}</a>. Ma t/m za, 09:00–18:00.</p>
         </div>
-        <div class="qa__list" data-reveal>
+        <div class="qa__list" data-stagger>
 {faq_list(QA)}
         </div>
       </div>

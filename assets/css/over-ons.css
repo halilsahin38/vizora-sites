@@ -3,7 +3,7 @@
    ========================================================= */
 
 /* ---------- wie we zijn ---------- */
-.duo { padding-bottom: clamp(80px, 9vw, 140px); }
+.duo { padding-bottom: calc(clamp(80px, 9vw, 140px) + var(--sheet)); } /* + overlap van het volgende vel */
 .duo__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); gap: var(--gap); align-items: start; }
 .duo__grid::before { content: ""; grid-column: 1 / -1; height: 1px; background: var(--ink); margin-bottom: clamp(20px, 2.6vw, 36px); }
 .duo__side .label { padding-top: .2em; }
@@ -24,8 +24,8 @@
 .duo__img img { object-fit: cover; }
 .duo__side .duo__cap { margin-top: .8rem; padding-top: 0; }
 
-/* ---------- ons verhaal ---------- */
-.story { border-top: 1px solid var(--rule); }
+/* ---------- ons verhaal (beige vel) ---------- */
+.story { background: var(--beige); }
 .story__lead { margin-top: clamp(1.8rem, 3vw, 2.6rem); font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.4; letter-spacing: -.015em; max-width: 34em; }
 .story__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-top: clamp(1.6rem, 2.6vw, 2.2rem); color: var(--muted); max-width: 60em; }
 .name { margin-top: clamp(3.6rem, 6vw, 5.6rem); }
@@ -38,15 +38,14 @@
 .name__sum dt { color: var(--terra); }
 .name__sum dd { color: var(--ink); font-weight: 500; }
 
-/* ---------- beloftes ---------- */
-.pr { border-top: 1px solid var(--rule); }
+/* ---------- beloftes (papieren vel) ---------- */
 .pr__list { margin-top: clamp(48px, 6vw, 90px); border-top: 1px solid var(--ink); }
 .pr__row { display: grid; grid-template-columns: calc((100% - var(--gap)) / 3.6) minmax(0, 1.15fr) minmax(0, 1.45fr); gap: var(--gap); align-items: baseline; padding: clamp(22px, 2.6vw, 38px) 0; border-bottom: 1px solid var(--rule); }
 .pr__t { font-weight: 500; font-size: clamp(2rem, 3.8vw, 3.6rem); line-height: 1; letter-spacing: -.05em; }
 .pr__d { color: var(--muted); font-size: 1rem; max-width: 30em; }
 
-/* ---------- direct contact ---------- */
-.direct { background: var(--beige); padding-block: clamp(80px, 10vw, 150px); }
+/* ---------- direct contact (beige vel) ---------- */
+.direct { background: var(--beige); --sheet-pad: clamp(80px, 10vw, 150px); }
 .direct__text { margin-top: 1.6rem; color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 34em; }
 .direct__tel {
   display: inline-block; margin-top: clamp(2rem, 4vw, 3.4rem); white-space: nowrap;

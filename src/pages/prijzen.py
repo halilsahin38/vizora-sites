@@ -75,10 +75,10 @@ def _compare():
         for name, *vals in rows:
             cells = "".join(_cell(v, f) for v, f in zip(vals, feat))
             trs.append(f'              <tr><th scope="row">{name}</th>{cells}</tr>')
-        groups.append("            <tbody>\n" + "\n".join(trs) + "\n            </tbody>")
+        groups.append("            <tbody data-stagger>\n" + "\n".join(trs) + "\n            </tbody>")
     return f'''          <table class="cmp__table">
             <caption class="vh">Wat zit er in de pakketten {", ".join(p["name"] for p in PACKAGES)}</caption>
-            <thead><tr><th scope="col"><span class="label">Inbegrepen</span></th>{heads}</tr></thead>
+            <thead data-stagger><tr><th scope="col"><span class="label">Inbegrepen</span></th>{heads}</tr></thead>
 {chr(10).join(groups)}
           </table>'''
 
@@ -87,7 +87,7 @@ def _tiers():
     out = []
     for t in SUB_TIERS:
         feats = "".join(f"<li>{f}</li>" for f in t["feats"])
-        out.append(f'''          <article class="tier" data-reveal>
+        out.append(f'''          <article class="tier">
             <h3 class="tier__name">{t["name"]}</h3>
             <p class="tier__price">€{t["price"]}<span>per maand · excl. btw</span></p>
             <ul class="tier__list">{feats}</ul>
@@ -98,7 +98,7 @@ def _tiers():
 
 def render():
     start = PACKAGES[0]["price"]
-    extras = "\n".join(f'''          <div class="ex" data-reveal>
+    extras = "\n".join(f'''          <div class="ex">
             <span class="label">0{i}</span>
             <div class="ex__row">
               <h3 class="ex__t">{t}</h3>
@@ -123,26 +123,26 @@ def render():
           <p class="pp__intro" data-reveal>Kies een pakket als startpunt. Na het gratis gesprek krijg je altijd eerst een vaste prijs op maat, zodat je precies weet waar je aan toe bent. Prijzen voor ondernemers, exclusief btw.</p>
         </div>
       </div>
-      <div class="pk__grid">
+      <div class="pk__grid" data-stagger>
 {price_columns()}
       </div>
       <p class="pp__foot" data-reveal>Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen en hoor je vooraf.</p>
     </section>
 
-    <section class="sec cmp wrap" id="vergelijken" aria-labelledby="cmp-title">
-      <div class="cmp__split">
+    <section class="sec cmp stack" id="vergelijken" aria-labelledby="cmp-title">
+      <div class="cmp__split wrap">
         <div class="cmp__aside">
           {label("02", "Vergelijken")}
           <h2 id="cmp-title" class="h2 cmp__title" data-reveal>Wat zit er in elk pakket?</h2>
           <p class="cmp__help" data-reveal>Twijfel je tussen twee pakketten? <a href="{WA}" target="_blank" rel="noopener">App</a>, <a href="mailto:{MAIL}">mail</a> of bel <a href="{TEL}">{TEL_TXT}</a>. We adviseren eerlijk, ook als een kleiner pakket genoeg is. Alle prijzen excl. btw.</p>
         </div>
-        <div class="cmp__wrap" data-reveal>
+        <div class="cmp__wrap">
 {_compare()}
         </div>
       </div>
     </section>
 
-    <section class="abo" id="abonnement" data-theme="dark" aria-labelledby="abo-title">
+    <section class="abo sheet stack" id="abonnement" data-theme="dark" aria-labelledby="abo-title">
       <div class="wrap">
         <div class="split">
           {label("03", "Website-abonnement")}
@@ -151,10 +151,10 @@ def render():
             <p class="abo__lead" data-reveal>Met een abonnement houden wij je site up-to-date, veilig en snel, en helpen we je elke maand een stap verder. Je kiest zelf hoeveel hulp je wilt.</p>
           </div>
         </div>
-        <div class="abo__grid">
+        <div class="abo__grid" data-stagger>
 {_tiers()}
         </div>
-        <dl class="abo__terms" data-reveal>
+        <dl class="abo__terms" data-stagger>
           <div><dt>Factuur</dt><dd>Elke maand</dd></div>
           <div><dt>Opzeggen</dt><dd>Per maand</dd></div>
           <div><dt>Jaarcontract</dt><dd>Geen</dd></div>
@@ -163,7 +163,7 @@ def render():
       </div>
     </section>
 
-    <section class="gu" id="garanties" aria-labelledby="gu-title">
+    <section class="gu sheet stack" id="garanties" aria-labelledby="gu-title">
       <div class="wrap">
         <div class="split">
           {label("04", "Garanties")}
@@ -172,13 +172,14 @@ def render():
             <p class="gu__lead" data-reveal>Je ziet eerst het ontwerp. Pas als jij zegt “zo wil ik het”, gaan we verder en ontvang je de factuur.</p>
           </div>
         </div>
-        <div class="gu__grid">
+        <div class="gu__grid" data-stagger>
 {guarantees()}
         </div>
       </div>
     </section>
 
-    <section class="sec ext wrap" id="extra" aria-labelledby="ex-title">
+    <section class="sec ext sheet" id="extra" aria-labelledby="ex-title">
+      <div class="wrap">
       <div class="split">
         {label("05", "Uitbreiden")}
         <div>
@@ -186,19 +187,20 @@ def render():
           <p class="pp__intro" data-reveal>Klaar voor de volgende stap? Deze diensten stemmen we samen af op jouw zaak.</p>
         </div>
       </div>
-      <div class="ex__list">
+      <div class="ex__list" data-stagger>
 {extras}
+      </div>
       </div>
     </section>
 
-    <section class="sec qa wrap" aria-labelledby="qa-title">
-      <div class="split">
+    <section class="sec qa stack" aria-labelledby="qa-title">
+      <div class="split wrap">
         <div>
           {label("06", "Vragen over prijzen")}
           <h2 id="qa-title" class="h2 qa__title" data-reveal>Goed om te weten</h2>
           <p class="qa__help" data-reveal>Staat je vraag er niet bij? <a href="{WA}" target="_blank" rel="noopener">App ons</a> of bel <a href="{TEL}">{TEL_TXT}</a>.</p>
         </div>
-        <div class="qa__list" data-reveal>
+        <div class="qa__list" data-stagger>
 {faq_list(_faq())}
         </div>
       </div>

@@ -25,7 +25,7 @@
 .pk--featured .pk__price { color: var(--terra); }
 
 /* ---------- vergelijkingstabel ---------- */
-.cmp { border-top: 1px solid var(--rule); }
+.cmp { border-top: 1px solid var(--rule); padding-bottom: calc(var(--sec) + var(--sheet)); } /* + overlap van het donkere vel */
 .cmp__split { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); gap: var(--gap); align-items: start; }
 .cmp__aside { position: sticky; top: calc(var(--hd) + 32px); }
 .cmp__title { margin-top: 1.2rem; }
@@ -54,8 +54,8 @@
 .cmp__v { font-weight: 500; }
 .cmp__table tbody:last-child tr:last-child td.is-f { border-radius: 0 0 var(--r) var(--r); }
 
-/* ---------- abonnement (donker) ---------- */
-.abo { background: var(--ink); color: var(--on-dark); padding-block: var(--sec); }
+/* ---------- abonnement (donker vel) ---------- */
+.abo { background: var(--ink); color: var(--on-dark); }
 .abo .label { color: var(--on-dark-muted); }
 .abo .h2 span { color: var(--on-dark-muted); }
 .abo__lead { margin-top: 1.6rem; color: var(--on-dark-muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 34em; }
@@ -76,8 +76,8 @@
 .abo__free { margin-top: clamp(2rem, 3.4vw, 2.8rem); max-width: 40em; color: var(--on-dark-muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); }
 .abo__free b { font-weight: 500; color: var(--on-dark); }
 
-/* ---------- garanties ---------- */
-.gu { background: var(--beige); padding-block: clamp(80px, 10vw, 150px); }
+/* ---------- garanties (beige vel) ---------- */
+.gu { background: var(--beige); --sheet-pad: clamp(80px, 10vw, 150px); }
 .gu .h2 span { color: var(--terra); }
 .gu__lead { margin-top: 1.6rem; color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 34em; }
 .gu__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); margin-top: clamp(48px, 6vw, 90px); }
@@ -85,7 +85,8 @@
 .gu__item h3 { font-weight: 500; font-size: clamp(1.3rem, 1.8vw, 1.6rem); letter-spacing: -.03em; line-height: 1.1; margin: 2.4rem 0 .7rem; }
 .gu__item p:last-child { color: var(--muted); font-size: .98rem; }
 
-/* ---------- uitbreiden ---------- */
+/* ---------- uitbreiden (papieren vel) ---------- */
+.ext { padding-bottom: var(--sec); }
 .ex__list { margin-top: clamp(48px, 6vw, 90px); border-top: 1px solid var(--rule); }
 .ex { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); gap: var(--gap); align-items: center; padding: clamp(22px, 2.6vw, 38px) 0; border-bottom: 1px solid var(--rule); }
 .ex__row { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, .5fr); gap: var(--gap); align-items: center; }

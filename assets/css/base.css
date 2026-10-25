@@ -61,6 +61,18 @@ ul, ol { padding: 0; list-style: none; }
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); gap: var(--gap); align-items: start; }
 .split > .label { padding-top: .9em; }
 
+/* vellen die als kaarten over elkaar schuiven: afgeronde bovenkant, schuift over het vorige deel heen.
+   Ruimte binnenin via --sheet-pad (standaard var(--sec)); onderaan komt de overlap van het volgende vel erbij.
+   Zonder eigen achtergrond is een vel papier. */
+.sheet {
+  position: relative; background: var(--paper); border-radius: var(--sheet) var(--sheet) 0 0; margin-top: calc(var(--sheet) * -1);
+  padding-block: var(--sheet-pad, var(--sec)) calc(var(--sheet-pad, var(--sec)) + var(--sheet));
+}
+/* vorige vlak wordt iets kleiner en donkerder als het volgende vel eroverheen schuift (motion.js zet --dim) */
+.stack { position: relative; transform-origin: 50% 100%; }
+.stack::after { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: var(--dim, 0); pointer-events: none; border-radius: inherit; z-index: 2; }
+main { overflow-x: clip; } /* niets (ingezoomde hero, geschaalde vlakken) mag de pagina breder maken */
+
 /* ---------- typografie ---------- */
 .label {
   font-family: var(--mono); font-size: 12px; font-weight: 400; line-height: 1.4;
@@ -222,6 +234,8 @@ em { font-style: normal; color: var(--terra); }
 
 /* ---------- beweging: begintoestanden (alleen met JS, met vangnet) ---------- */
 html.js:not(.ready) [data-lines] { opacity: 0; }
+/* lijsten met data-stagger: kinderen pas tonen als motion.js ze in beeld laat komen (zonder JS of bij reduced motion meteen) */
+html.js:not(.ready) [data-stagger] > * { opacity: 0; }
 /* titelregels die motion.js maakt (.tl/.tl__in): niet hergebruiken in paginastijlen */
 .tl { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
 .tl__in { display: block; }

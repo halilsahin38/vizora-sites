@@ -117,9 +117,9 @@ def render():
     gains = "".join(f'<li><span class="label">0{i}</span><span>{g}</span></li>' for i, g in enumerate(GAINS, 1))
     how_items = "".join(f'<li><span class="label" aria-hidden="true">0{i}</span><span>{t}</span></li>' for i, t in enumerate(HOW, 1))
     how = f'''
-      <div class="how" data-reveal>
-        <h2 class="label" id="how-title">Zo gaat het</h2>
-        <ol class="how__list">{how_items}</ol>
+      <div class="how">
+        <h2 class="label" id="how-title" data-reveal>Zo gaat het</h2>
+        <ol class="how__list" data-stagger>{how_items}</ol>
       </div>'''
 
     html = head(FILE, "Contact | Plan een gratis gesprek | Vizora Digital",
@@ -129,14 +129,17 @@ def render():
     html += header(FILE)
     html += f'''
   <main id="main">
-{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen, appen of mailen? Dat kan natuurlijk ook.", how)}
-    <section class="cd wrap" aria-label="Direct contact">
-      <ul class="cd__list" data-reveal>
+{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen, appen of mailen? Dat kan natuurlijk ook.", how, cls="stack")}
+    <section class="cd sheet stack" aria-label="Direct contact">
+      <div class="wrap">
+      <ul class="cd__list" data-stagger>
 {_direct()}
       </ul>
+      </div>
     </section>
 
-    <section class="bk wrap" id="plannen" aria-labelledby="bk-title">
+    <section class="bk sheet" id="plannen" aria-labelledby="bk-title">
+      <div class="wrap">
       <div class="split">
         {label("01", "Gesprek plannen")}
         <div>
@@ -147,8 +150,8 @@ def render():
       <div class="bk__grid">
         <aside class="bk__aside" aria-label="Over het gesprek">
           <p class="label">Wat je van het gesprek krijgt</p>
-          <ol class="bk__gains">{gains}</ol>
-          <dl class="bk__facts">
+          <ol class="bk__gains" data-stagger>{gains}</ol>
+          <dl class="bk__facts" data-stagger>
             <div><dt>Werkgebied</dt><dd>Heel Nederland, vanuit Breda</dd></div>
             <div><dt>Afspraken</dt><dd>Ma t/m za, 09:00 – 17:00</dd></div>
             <div><dt>Vorm</dt><dd>Video, telefonisch of op locatie</dd></div>
@@ -156,6 +159,7 @@ def render():
           <p class="bk__help">Eerst een vraag? Bel <a href="{TEL}">{TEL_TXT}</a> of <a href="{WA}" target="_blank" rel="noopener">app ons</a>.</p>
         </aside>
 {_form()}
+      </div>
       </div>
     </section>
   </main>
