@@ -39,7 +39,7 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 ## Stijl
 - Kleuren: gebroken wit #faf8f4, wit, linnen beige #eee6d9, inkt zwart #121110, accent terracotta #a9583a, salie #7d8a6a.
 - Echte apparaten (telefoon/laptop) met eigen voorbeeldontwerpen op het scherm, beweging bij scrollen (parallax).
-- Voorbeeldontwerpen staan in `concepts/` (merk = Atelier Dorr, licht = Mertens & Verhoef, warm = Praktijk Wilgenhof:
+- Voorbeeldontwerpen staan in `concepts/` (merk = Atelier Dorr, licht = Van Hulst Installaties, warm = Praktijk Wilgenhof:
   echt ogende fictieve bedrijven uit verschillende sectoren, met "fictief bedrijf" in de footer); foto's in `assets/foto/`.
 - Nooit AI-trucjes in voorbeelden: geen "Jouw Bedrijf", nepcijfers, zwevende kaartjes, blobs. Elke laptop/telefoonfoto een andere echte omgeving.
 

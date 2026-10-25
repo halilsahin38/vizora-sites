@@ -32,7 +32,7 @@ Online via Cloudflare Pages: build command `python3 build.py`, output directory 
 ## Foto's
 
 De foto's in `assets/foto/` komen van Unsplash en vallen onder de Unsplash-licentie (gratis te gebruiken, ook commercieel, naamsvermelding niet verplicht).
-Op de telefoon- en laptopfoto's staan de voorbeeldontwerpen uit `concepts/` (merk = Atelier Dorr, licht = Mertens & Verhoef,
+Op de telefoon- en laptopfoto's staan de voorbeeldontwerpen uit `concepts/` (merk = Atelier Dorr, licht = Van Hulst Installaties,
 warm = Praktijk Wilgenhof; alle drie fictieve bedrijven). Elke stijl heeft een eigen foto:
 
 - merk: laptop https://unsplash.com/photos/s7IIk_2dA7g · telefoon https://unsplash.com/photos/uD5SvzjOsgY
