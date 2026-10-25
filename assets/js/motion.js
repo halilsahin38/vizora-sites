@@ -159,15 +159,34 @@
     });
   }
 
-  /* hero: de laptop zoomt in tot hij het scherm vult (alleen desktop) */
+  /* hero: inzoomen op het zwarte laptopscherm tot het het hele beeld vult; het scherm kleurt naar inkt
+     en loopt zo naadloos over in het donkere voorbeelden-deel eronder (alleen desktop) */
   const zoom = document.querySelector('[data-zoom]');
   if (zoom && desktop) {
-    const cover = () => Math.max(window.innerWidth / zoom.offsetWidth, window.innerHeight / zoom.offsetHeight) * 1.02;
     const media = zoom.querySelector('.hero__media');
-    gsap.timeline({ scrollTrigger: { trigger: zoom, start: 'center center', end: '+=70%', pin: true, scrub: 0.6, invalidateOnRefresh: true } })
-      .to(zoom, { scale: cover, ease: 'none' }, 0)
-      .to(media, { borderRadius: 0, ease: 'none' }, 0);
+    const screenEl = zoom.querySelector('.hero__screen');
+    const S = { x: 0.2839, y: 0.0963, w: 0.4119, h: 0.4691 }; // schermvlak in de foto (zie .hero__screen)
+    const geo = () => {
+      const W = zoom.offsetWidth, H = zoom.offsetHeight, left = zoom.getBoundingClientRect().left;
+      const sx = left + (S.x + S.w / 2) * W, sy = window.innerHeight / 2 - H / 2 + (S.y + S.h / 2) * H; // bij vastzetten staat de foto midden in beeld
+      return {
+        s: Math.max(window.innerWidth / (S.w * W), window.innerHeight / (S.h * H)) * 1.12,
+        dx: window.innerWidth / 2 - sx, dy: window.innerHeight / 2 - sy,
+      };
+    };
+    gsap.set(media, { transformOrigin: `${(S.x + S.w / 2) * 100}% ${(S.y + S.h / 2) * 100}%` });
+    gsap.timeline({ scrollTrigger: { trigger: zoom, start: 'center center', end: '+=120%', pin: true, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1 } })
+      // de wrapper wordt vastgezet, het beeld erin schaalt (pin en transform niet op hetzelfde element)
+      .to(media, { scale: () => geo().s, x: () => geo().dx, y: () => geo().dy, ease: 'power2.in', duration: 1 }, 0)
+      .to(media, { borderRadius: 0, ease: 'none', duration: 0.3 }, 0)
+      .to(screenEl, { opacity: 1, ease: 'none', duration: 0.3 }, 0.7);
     gsap.fromTo('.hero__title, .hero__row', { yPercent: 0, opacity: 1 }, { yPercent: -30, opacity: 0, ease: 'none', immediateRender: false, scrollTrigger: { trigger: '.hero', start: 'top top', end: () => '+=' + Math.max(200, zoom.getBoundingClientRect().top + window.scrollY + zoom.offsetHeight / 2 - window.innerHeight / 2), scrub: true, invalidateOnRefresh: true } });
+  }
+
+  /* telefoon/tablet: geen vastzetten, wel rustig inzoomen op het scherm terwijl de hero wegscrollt */
+  if (zoom && !desktop) {
+    const media = zoom.querySelector('.hero__media');
+    gsap.fromTo(media, { scale: 1 }, { scale: 1.45, transformOrigin: '49% 33%', ease: 'none', scrollTrigger: { trigger: media, start: 'top 55%', end: 'bottom top', scrub: true } });
   }
 
   /* stapelende vlakken: het vorige deel krimpt licht en wordt donkerder als het volgende eroverheen schuift */

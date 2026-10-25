@@ -18,7 +18,7 @@
 .hero__lead { font-size: clamp(1.1rem, 1.45vw, 1.3rem); line-height: 1.5; color: var(--muted); max-width: 31em; }
 .hero__cta { display: grid; justify-items: end; gap: .9rem; }
 .hero__trust { text-align: right; }
-.hero__media { margin-top: clamp(32px, 4vw, 56px); border-radius: var(--r); overflow: hidden; aspect-ratio: 16 / 9; background: #2a211b; transform-origin: 50% 0; }
+.hero__media { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 16 / 9; background: #2a211b; }
 .hero__media picture, .hero__media img { width: 100%; height: 100%; }
 .hero__media img { object-fit: cover; }
 
@@ -162,7 +162,10 @@
 }
 
 /* ---------- vloeiend scrollen: strook, zoom en stapelende vlakken ---------- */
-.hero__zoom { transform-origin: 50% 50%; will-change: transform; }
+.hero__zoom { margin-top: clamp(32px, 4vw, 56px); }
+.hero__media { will-change: transform; }
+/* het zwarte scherm van de laptop (fracties van hero-laptop.jpg); kleurt bij het inzoomen naar inkt, net als het volgende deel */
+.hero__screen { position: absolute; left: 28.39%; top: 9.63%; width: 41.19%; height: 46.91%; background: var(--ink); opacity: 0; border-radius: 2px; pointer-events: none; }
 
 /* vorige vlak wordt iets kleiner en donkerder als het volgende eroverheen schuift (motion.js zet --dim) */
 .stack { position: relative; transform-origin: 50% 100%; }

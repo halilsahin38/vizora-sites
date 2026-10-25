@@ -68,11 +68,11 @@ def render():
 
     html = head(FILE, "Vizora Digital | Zie je nieuwe website al vóór je betaalt",
                 "Wij maken gratis een concept van jouw website en laten het zien in het eerste gesprek. Pas betalen als je blij bent. Voor ondernemers in heel Nederland.",
-                css=("home",), preload=("licht-laptop", 1500, SIZES["hero"]), ld=True)
+                css=("home",), preload=("hero-laptop", 2400, SIZES["hero"]), ld=True)
     html += header(FILE)
     html += f'''
   <main id="main">
-    <section class="hero wrap stack">
+    <section class="hero wrap">
       <h1 class="hero__title" data-lines>Je nieuwe website zie je al in het <em>eerste gesprek</em>.</h1>
       <div class="hero__row">
         <p class="hero__lead" data-reveal>Wij maken vooraf gratis een concept van jouw website. Daarna helpen we je om gevonden te worden in Google. Pas betalen als je blij bent.</p>
@@ -82,8 +82,9 @@ def render():
         </div>
       </div>
       <div class="hero__zoom" data-zoom>
-        <div class="hero__media" data-grow>
-          {pic("licht-laptop", "Laptop op een houten bureau met een voorbeeldwebsite van Vizora op het scherm", 1500, 1213, eager=True, pos="45% 55%", sizes=SIZES["hero"])}
+        <div class="hero__media">
+          {pic("hero-laptop", "Laptop met een zwart scherm op een houten dressoir, naast een lamp en een cactus", 2400, 1350, eager=True, sizes=SIZES["hero"])}
+          <span class="hero__screen" aria-hidden="true"></span>
         </div>
       </div>
     </section>
