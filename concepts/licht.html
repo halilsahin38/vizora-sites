@@ -1,73 +1,573 @@
-<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jouw Bedrijf (voorbeeld: licht &amp; strak)</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="base.css">
+<!doctype html>
+<!--
+  Voorbeeldontwerp "Licht & strak" door Vizora Digital. Mertens & Verhoef is een fictief bedrijf.
+
+  Lettertype: Schibsted Grotesk (SIL Open Font License), lokaal in fonts/.
+
+  Foto's (Unsplash License, vrij te gebruiken, ook commercieel), bijgesneden en met één kleurbewerking:
+  - img/licht/kantoor-gevel.jpg, kantoor-gevel-staand.jpg
+      https://unsplash.com/photos/a-historic-brick-building-with-large-windows-and-a-tree-_ryUjZ66Lyg
+  - img/licht/spreekkamer.jpg
+      https://unsplash.com/photos/a-room-with-a-long-table-and-a-large-window-hQEvJZ2FWVM
+  - img/licht/stukken.jpg
+      https://unsplash.com/photos/finance-tracker-planner-with-budget-sheets-Ok76F6yW2iA
+  - img/licht/werkplek.jpg
+      https://unsplash.com/photos/a-living-room-filled-with-furniture-and-a-large-window-2pia6OAe5rA
+-->
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mertens &amp; Verhoef · Administratie en belastingadvies in Breda</title>
+<meta name="description" content="Aangifte en boekhouding voor zzp en mkb in Breda. Vaste prijzen, één vast aanspreekpunt.">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-:root{--bg:#ffffff;--fg:#111312;--acc:#111312;--on-acc:#fff;--card:#f4f5f1;--line:rgba(17,19,18,.14);--display:'Inter Tight',sans-serif;--sans:'Inter',sans-serif;--dw:600;--r:12px}
-.logo{display:flex;align-items:center;gap:10px;font:700 21px var(--display);letter-spacing:-.02em}
-.logo i{width:24px;height:24px;border-radius:7px;background:#7d8a6a;display:block;position:relative}
-.logo i::after{content:"";position:absolute;inset:6px;border-radius:3px;background:#fff}
-.nav .btn{border-radius:12px}
-.eyebrow{color:#56613f;letter-spacing:.12em}
-.eyebrow::before{background:#7d8a6a}
-h1{font-size:84px;line-height:.98;letter-spacing:-.045em}
-h1 span{color:#7d8a6a}
-.lead{opacity:.68}
-.btn{border-radius:12px}
-.meta b{font:600 30px var(--display);letter-spacing:-.03em}
-.panel{position:absolute;inset:20px 0 40px 40px;border-radius:24px;background:#eef0e9;overflow:hidden}
-.panel::before{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-160px;border-radius:50%;background:radial-gradient(circle,#c9d1bb,transparent 70%)}
-.grid{position:absolute;left:44px;right:44px;top:50px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.tile{background:#fff;border-radius:18px;padding:22px;box-shadow:0 20px 40px -24px rgba(30,40,20,.35)}
-.tile small{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.55}
-.tile b{display:block;font:600 34px var(--display);letter-spacing:-.03em;margin-top:8px}
-.tile.big{grid-column:1/3;display:flex;justify-content:space-between;align-items:flex-end;min-height:180px;background:#111312;color:#fff}
-.tile.big b{font-size:44px;max-width:8em;line-height:1.02}
-.tile.big .go{width:56px;height:56px;border-radius:14px;background:#7d8a6a;display:grid;place-items:center;font-size:24px}
-.bar{height:8px;border-radius:4px;background:#e6e9e0;margin-top:16px;overflow:hidden}.bar i{display:block;height:100%;width:72%;background:#7d8a6a;border-radius:4px}
-.check{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:14px}.check i{width:18px;height:18px;border-radius:5px;background:#7d8a6a}
-.s2 h2{letter-spacing:-.04em}
-.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.cols div{border-top:1.5px solid #111312;padding-top:18px;font-size:16px;opacity:.8}
-.cols b{display:block;font:600 22px var(--display);margin-bottom:6px;opacity:1}
-@media (max-width:500px){
-  h1{font-size:48px}
-  .visual{height:430px;margin-top:4px}
-  .panel{inset:0}
-  .grid{left:18px;right:18px;top:20px;gap:12px}
-  .tile{padding:16px}.tile b{font-size:26px}
-  .tile.big{min-height:130px}.tile.big b{font-size:30px}
-  .cols{grid-template-columns:1fr}
+@font-face{font-family:"Schibsted Grotesk";font-style:normal;font-weight:400 900;font-display:swap;
+  src:url("fonts/schibsted-grotesk-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Schibsted Grotesk";font-style:normal;font-weight:400 900;font-display:swap;
+  src:url("fonts/schibsted-grotesk-latin-ext.woff2") format("woff2");
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --paper:#ffffff;
+  --stone:#f4f4f1;
+  --ink:#16181b;
+  --ink-2:#464a51;
+  --ink-3:#62666d;
+  --rule:#dcdcd6;
+  --blue:#1f4fa3;
+  --sans:"Schibsted Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --max:1360px;
+  --pad:40px;
+  --gap:24px;
 }
-</style></head><body>
-<div class="wrap">
-  <nav class="nav">
-    <div class="logo"><i></i>Jouw Bedrijf</div>
-    <div class="nav__links"><a>Diensten</a><a>Werkwijze</a><a>Over ons</a><a>Contact</a></div>
-    <a class="btn btn--sm">Afspraak maken</a>
-    <span class="burger"></span>
-  </nav>
-  <section class="hero">
-    <div>
-      <span class="eyebrow">Persoonlijk &amp; dichtbij</span>
-      <h1>Helder advies.<br><span>Zonder gedoe.</span></h1>
-      <p class="lead">Wij nemen je werk uit handen, zodat jij je kunt richten op wat je het liefst doet. Duidelijke afspraken, snel geregeld en altijd bereikbaar.</p>
-      <div class="actions"><a class="btn">Plan een afspraak →</a><a class="btn btn--ghost">Onze diensten</a></div>
-      <div class="meta"><div><b>500+</b>tevreden klanten</div><div><b>24u</b>reactietijd</div><div><b>9,4</b>gemiddeld cijfer</div></div>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-kerning:normal}
+h1,h2,h3,p,ol,ul,dl,dd,figure{margin:0}
+ol,ul{padding:0;list-style:none}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+::selection{background:#d8e1f1}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:var(--pad);top:-60px;background:var(--ink);color:#fff;padding:10px 14px;z-index:10;text-decoration:none}
+.skip:focus{top:12px}
+
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+
+.link{color:var(--blue);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.24em;text-decoration-color:rgba(31,79,163,.45)}
+.link:hover{text-decoration-color:currentColor}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:500;font-size:16px;line-height:1;
+  padding:17px 24px 18px;border-radius:3px}
+.btn:hover{background:#1a4389}
+
+/* kop */
+.top{border-bottom:1px solid var(--rule)}
+.top__in{display:flex;align-items:center;height:76px}
+.brand{display:flex;align-items:center;text-decoration:none;white-space:nowrap}
+.brand b{font-weight:600;font-size:19px;letter-spacing:-.012em}
+.brand span{font-size:14px;color:var(--ink-3);margin-left:16px;padding-left:16px;border-left:1px solid var(--rule);line-height:20px}
+.nav{margin-left:auto;display:flex;gap:30px;font-size:15px}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--blue)}
+.top__tel{margin-left:32px;padding-left:32px;border-left:1px solid var(--rule);font-size:15px;font-weight:500;text-decoration:none;line-height:20px}
+.top__tel:hover{color:var(--blue)}
+.menu{display:none;margin-left:auto;font:500 15px/1 var(--sans);color:var(--ink);background:none;border:1px solid var(--rule);border-radius:2px;padding:10px 14px;cursor:pointer}
+
+/* opening */
+.hero{padding-top:72px;padding-bottom:48px;align-items:end}
+.hero h1{grid-column:1/span 7;font-weight:500;font-size:54px;line-height:1.07;letter-spacing:-.026em;text-wrap:balance}
+.hero__side{grid-column:9/span 4;color:var(--ink-2);padding-bottom:4px}
+.hero__side p{max-width:31em;text-wrap:pretty}
+.hero__contact{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);display:grid;gap:2px}
+.tel{font-size:24px;font-weight:500;color:var(--ink);letter-spacing:-.012em;text-decoration:none;justify-self:start}
+.tel:hover{color:var(--blue)}
+.small{font-size:14px;color:var(--ink-3)}
+.hero__contact .link{margin-top:14px;justify-self:start}
+
+.photo img{width:100%;object-fit:cover}
+.photo figcaption,.cap{margin-top:12px;font-size:13px;line-height:1.45;color:var(--ink-3)}
+.hero-photo img{height:clamp(340px,calc(100vh - 462px),600px);object-position:50% 78%}
+.hero-photo figcaption{display:flex;justify-content:space-between;gap:24px}
+
+/* secties */
+.sec{padding:120px 0}
+.sec--stone{background:var(--stone)}
+h2{font-weight:500;font-size:38px;line-height:1.1;letter-spacing:-.022em;text-wrap:balance}
+.lead{color:var(--ink-2);text-wrap:pretty}
+.head{align-items:end;margin-bottom:56px}
+.head h2{grid-column:1/span 5}
+.head .lead{grid-column:7/span 5}
+
+/* tarieven */
+.prices{width:100%;border-collapse:collapse}
+.prices col.c-name{width:27%}
+.prices col.c-amt{width:13%}
+.prices col.c-per{width:11%}
+.prices thead th{font-size:13px;font-weight:500;color:var(--ink-3);text-align:left;padding:0 24px 12px 0;border-bottom:1px solid var(--ink)}
+.prices thead th.r{text-align:right;padding-right:0}
+.prices .grp th{text-align:left;font-size:15px;font-weight:600;padding:44px 0 14px;border-bottom:1px solid var(--rule)}
+.prices tbody tr:first-child th{padding-top:28px}
+.prices tbody th[scope=row],.prices td{vertical-align:baseline;border-bottom:1px solid var(--rule);padding:22px 24px 22px 0}
+.prices tbody th[scope=row]{text-align:left;font-weight:500;font-size:19px;letter-spacing:-.01em}
+.prices .desc{color:var(--ink-2);font-size:16px}
+.prices .desc span{display:block;max-width:40em}
+.prices .amt{text-align:right;white-space:nowrap;font-size:19px;font-weight:500;padding-right:0}
+.prices .amt b{font-weight:500;font-variant-numeric:tabular-nums}
+.prices .amt small{font-size:14px;font-weight:400;color:var(--ink-3);margin-right:6px}
+.prices .per{white-space:nowrap;font-size:15px;color:var(--ink-3);padding-left:12px;padding-right:0}
+.prices tr.all th[scope=row],.prices tr.all td{border-bottom-color:var(--ink)}
+.prices-note{margin-top:28px;max-width:46em;font-size:14px;color:var(--ink-3)}
+
+/* data */
+.data__intro{grid-column:1/span 4}
+.data__intro .lead{margin-top:20px}
+.data__intro .photo{margin-top:48px}
+.data__list{grid-column:6/span 7;border-top:1px solid var(--ink)}
+.dates li{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:24px;padding:24px 0 26px;border-bottom:1px solid var(--rule)}
+.dates .when{font-size:22px;font-weight:500;letter-spacing:-.014em;line-height:1.2;color:var(--ink);margin:0}
+.dates time{font-variant-numeric:tabular-nums}
+.dates .when small{display:block;font-size:13px;font-weight:400;color:var(--ink-3);letter-spacing:0;margin-top:4px}
+.dates h3{font-size:18px;font-weight:500;line-height:1.35;margin-top:1px}
+.dates div p{color:var(--ink-2);font-size:16px;margin-top:6px;max-width:34em}
+.data__note{grid-column:6/span 7;margin-top:20px;font-size:14px;color:var(--ink-3);max-width:40em}
+
+/* werkwijze */
+.werk{align-items:start}
+.werk__photo{grid-column:1/span 5;position:sticky;top:40px;margin-top:6px}
+.werk__photo img{aspect-ratio:4/5}
+.werk__body{grid-column:7/span 6}
+.steps{counter-reset:stap;border-bottom:1px solid var(--rule)}
+.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);padding:26px 0 28px;border-top:1px solid var(--rule);counter-increment:stap}
+.steps li:first-child{border-top-color:var(--ink)}
+.steps li::before{content:counter(stap) ".";font-size:15px;color:var(--ink-3);line-height:1.6}
+.steps h3{font-size:20px;font-weight:500;line-height:1.3;letter-spacing:-.01em}
+.steps p{color:var(--ink-2);margin-top:6px;max-width:34em}
+.vast{margin-top:36px;max-width:34em;padding-left:44px}
+
+/* kantoor */
+.kantoor{align-items:start}
+.kantoor__text{grid-column:1/span 5}
+.kantoor__text .lead{margin-top:20px}
+.team{margin-top:40px;border-top:1px solid var(--ink)}
+.team li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.team li span{color:var(--ink-3);text-align:right}
+.kantoor__photo{grid-column:7/span 6;margin-top:6px}
+.kantoor__photo img{aspect-ratio:4/3}
+
+/* contact */
+.contact{align-items:start}
+.contact__main{grid-column:1/span 5}
+.contact__main .lead{margin-top:20px;max-width:28em}
+.contact__main .btn{margin-top:36px}
+.contact__main .alt{margin-top:18px;font-size:15px;color:var(--ink-2)}
+.contact__main .alt a{font-weight:500;text-decoration:none;color:var(--ink)}
+.contact__info{grid-column:7/span 6;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:var(--gap);row-gap:40px;border-top:1px solid var(--ink);padding-top:22px}
+.contact__info h3{font-size:13px;font-weight:500;color:var(--ink-3);margin-bottom:10px}
+.blk-adres{grid-column:1/span 3}
+.blk-mail{grid-column:4/span 3}
+.blk-tijden{grid-column:1/span 6;border-top:1px solid var(--rule);padding-top:22px}
+.contact__info p{font-size:16px;color:var(--ink-2)}
+.contact__info .big{font-size:20px;font-weight:500;color:var(--ink);line-height:1.35;letter-spacing:-.01em}
+.contact__info .big a{text-decoration:none}
+.contact__info .big a:hover{color:var(--blue)}
+.contact__info .big + p{margin-top:10px}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours th,.hours td{text-align:left;font-weight:400;padding:9px 0;border-bottom:1px solid var(--rule);vertical-align:baseline}
+.hours td{text-align:right;color:var(--ink)}
+.hours th{color:var(--ink-2)}
+.hours tr:last-child th,.hours tr:last-child td{border-bottom:0}
+
+/* voet */
+.foot{border-top:1px solid var(--rule);padding:64px 0 36px;font-size:15px}
+.foot__top{row-gap:40px}
+.foot__brand{grid-column:1/span 4}
+.foot__brand b{font-weight:600;font-size:19px;letter-spacing:-.012em;display:block}
+.foot__brand p{color:var(--ink-3);margin-top:6px;max-width:22em}
+.foot__col{grid-column:span 2}
+.foot__col--wide{grid-column:span 3}
+.foot h3{font-size:13px;font-weight:500;color:var(--ink-3);margin-bottom:12px}
+.foot__col li + li{margin-top:6px}
+.foot__tel{margin-top:12px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--blue)}
+.foot__col p{color:var(--ink-2)}
+.foot__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-3)}
+.foot__bottom ul{display:flex;flex-wrap:wrap;gap:6px 24px}
+
+/* tablet */
+@media (max-width:1100px){
+  :root{--pad:32px}
+  .nav{gap:22px}
+  .brand span{display:none}
+  .hero h1{grid-column:1/span 8;font-size:48px}
+  .hero__side{grid-column:9/span 4}
+  .data__intro{grid-column:1/span 5}
+  .data__list,.data__note{grid-column:7/span 6}
+  .dates li{grid-template-columns:1fr}
+  .dates .when{margin-bottom:8px}
+  .contact__main,.contact__info{grid-column:1/-1}
+  .contact__info{margin-top:56px}
+  .kantoor__text{grid-column:1/span 6}
+  .kantoor__photo{grid-column:7/span 6}
+}
+@media (max-width:900px){
+  .nav{display:none}
+  .top__tel{margin-left:auto;border-left:0}
+  .hero{row-gap:36px}
+  .hero h1,.hero__side{grid-column:1/-1}
+  .hero__side{max-width:34em}
+}
+
+/* telefoon */
+@media (max-width:760px){
+  :root{--pad:20px;--gap:16px}
+  body{font-size:16px}
+  .top__in{height:62px}
+  .brand b{font-size:18px}
+  .top__tel{display:none}
+  .menu{display:block}
+  .hero{padding-top:34px;padding-bottom:32px;row-gap:22px}
+  .hero h1{font-size:35px;line-height:1.1;letter-spacing:-.024em}
+  .hero__contact{margin-top:20px;padding-top:16px}
+  .tel{font-size:22px}
+  .hero__contact .link{margin-top:10px}
+  .hero-photo img{height:auto;aspect-ratio:4/5;object-position:50% 50%}
+  .hero-photo figcaption{display:block}
+  .hero-photo figcaption span + span{display:none}
+
+  .sec{padding:80px 0}
+  h2{font-size:30px}
+  .head{margin-bottom:36px;row-gap:16px}
+  .head h2,.head .lead{grid-column:1/-1}
+
+  .prices,.prices tbody,.prices tr,.prices th,.prices td{display:block}
+  .prices colgroup,.prices thead{display:none}
+  .prices .grp th{padding:36px 0 12px;font-size:15px}
+  .prices tbody tr:first-child th{padding-top:0}
+  .prices tr:not(.grp){display:grid;grid-template-columns:minmax(0,1fr) auto auto;column-gap:0;padding:18px 0 20px;border-bottom:1px solid var(--rule)}
+  .prices tr.all{border-bottom-color:var(--ink)}
+  .prices tbody th[scope=row],.prices td{border:0;padding:0}
+  .prices tbody th[scope=row]{grid-column:1;grid-row:1;font-size:17px;line-height:1.35;padding-right:12px}
+  .prices .amt{grid-column:2;grid-row:1;font-size:17px;line-height:1.35}
+  .prices .amt small{font-size:13px;margin-right:4px}
+  .prices .per{grid-column:3;grid-row:1;font-size:13px;line-height:1.35;padding:0 0 0 5px;align-self:baseline}
+  .prices .amt,.prices tbody th[scope=row]{align-self:baseline}
+  .prices .desc{grid-column:1/-1;grid-row:2;font-size:15px;margin-top:6px;max-width:30em}
+
+  .data__intro,.data__list,.data__note{grid-column:1/-1}
+  .data__intro .photo{margin-top:32px}
+  .data__list{margin-top:48px}
+  .dates li{grid-template-columns:minmax(0,1fr);padding:20px 0 22px}
+  .dates .when{font-size:19px;margin:0 0 6px;display:flex;align-items:baseline;gap:8px}
+  .dates .when small{margin:0;font-size:14px}
+  .dates h3{font-size:17px}
+  .dates p{font-size:15px}
+
+  .werk__photo,.werk__body{grid-column:1/-1}
+  .werk__photo{position:static;order:2;margin-top:40px}
+  .werk__body{order:1}
+  .steps li{grid-template-columns:32px minmax(0,1fr);padding:20px 0 22px}
+  .steps h3{font-size:18px}
+  .steps p{font-size:15px}
+  .vast{padding-left:0;margin-top:28px}
+
+  .kantoor__text,.kantoor__photo{grid-column:1/-1}
+  .kantoor__photo{margin-top:40px}
+  .team li{font-size:15px}
+
+  .contact__main,.contact__info{grid-column:1/-1}
+  .contact__main .btn{display:block;text-align:center;margin-top:28px}
+  .contact__info{margin-top:56px;row-gap:28px}
+  .blk-adres,.blk-mail,.blk-tijden{grid-column:1/-1}
+  .blk-mail,.blk-tijden{border-top:1px solid var(--rule);padding-top:20px}
+
+  .foot{padding-top:48px}
+  .foot__brand{grid-column:1/-1}
+  .foot__col,.foot__col--wide{grid-column:span 6}
+  .foot__col--wide{grid-column:1/-1}
+  .foot__bottom{display:block;margin-top:48px}
+  .foot__bottom p{margin-top:14px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#main" aria-label="Mertens &amp; Verhoef, naar het begin"><b>Mertens &amp; Verhoef</b><span>Administratie en belastingadvies</span></a>
+    <nav class="nav" aria-label="Hoofdmenu">
+      <a href="#tarieven">Tarieven</a>
+      <a href="#data">Belangrijke data</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#kantoor">Kantoor</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="top__tel num" href="tel:+31765148230">076 514 82 30</a>
+    <button class="menu" type="button" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap grid hero" aria-labelledby="titel">
+    <h1 id="titel">Aangifte en boekhouding voor zzp en mkb. Vaste prijzen, één vast aanspreekpunt.</h1>
+    <div class="hero__side">
+      <p>Administratie- en belastingkantoor in Breda, sinds 2009. Je weet vooraf wat je betaalt en je spreekt elk jaar dezelfde boekhouder.</p>
+      <div class="hero__contact">
+        <a class="tel num" href="tel:+31765148230">076 514 82 30</a>
+        <span class="small">Maandag t/m vrijdag, 08:30–17:30</span>
+        <a class="link" href="#contact">Plan een kennismaking (30&nbsp;min, gratis)</a>
+      </div>
     </div>
-    <div class="visual">
-      <div class="panel">
-        <div class="grid">
-          <div class="tile big"><b>Binnen 24 uur een reactie.</b><span class="go">→</span></div>
-          <div class="tile"><small>Afspraken</small><b>+38%</b><div class="bar"><i></i></div></div>
-          <div class="tile"><small>Werkwijze</small><div class="check"><i></i>Kennismaken</div><div class="check"><i></i>Plan op maat</div><div class="check"><i></i>Aan de slag</div></div>
+  </section>
+
+  <figure class="wrap photo hero-photo">
+    <picture>
+      <source media="(max-width: 760px)" srcset="img/licht/kantoor-gevel-staand.jpg" width="1100" height="1375">
+      <img src="img/licht/kantoor-gevel.jpg" width="2000" height="1000" alt="Gevel van een herenhuis van donkere baksteen met hoge ramen en een zwarte voordeur met bovenlicht; rechts een kastanjeboom.">
+    </picture>
+    <figcaption><span>Het kantoor aan de Willemstraat 68, drie minuten lopen van station Breda.</span><span>De bel zit rechts naast de deur.</span></figcaption>
+  </figure>
+
+  <section class="sec" id="tarieven" aria-labelledby="t-tarieven">
+    <div class="wrap">
+      <div class="grid head">
+        <h2 id="t-tarieven">Wat het kost</h2>
+        <p class="lead">Vaste prijzen, vooraf op papier. Geen uurtje-factuurtje en geen rekening voor een kort telefoontje. Komt er werk bij dat niet in de afspraak staat, dan bellen we eerst.</p>
+      </div>
+
+      <table class="prices">
+        <caption class="sr">Tarieven 2027, exclusief btw</caption>
+        <colgroup><col class="c-name"><col><col class="c-amt"><col class="c-per"></colgroup>
+        <thead>
+          <tr><th scope="col">Dienst</th><th scope="col">Wat je krijgt</th><th scope="col" class="r">Prijs, excl. btw</th><th scope="col"><span class="sr">Per</span></th></tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><th colspan="4" scope="colgroup">Zzp en eenmanszaak</th></tr>
+          <tr>
+            <th scope="row">Aangifte inkomstenbelasting</th>
+            <td class="desc"><span>Winstberekening, aangifte en controle van de voorlopige aanslag. De aangifte van je fiscale partner zit erbij.</span></td>
+            <td class="amt"><small>vanaf</small><b>€245</b></td><td class="per">per jaar</td>
+          </tr>
+          <tr>
+            <th scope="row">Btw-aangifte</th>
+            <td class="desc"><span>Aangifte op basis van je boekhouding, met een overzicht van wat je betaalt en wanneer.</span></td>
+            <td class="amt"><b>€45</b></td><td class="per">per kwartaal</td>
+          </tr>
+          <tr>
+            <th scope="row">Boekhouding</th>
+            <td class="desc"><span>Wij verwerken bank, verkoopfacturen en bonnen in Moneybird, e-Boekhouden of je eigen pakket. Tot 40 boekingen per maand.</span></td>
+            <td class="amt"><small>vanaf</small><b>€65</b></td><td class="per">per maand</td>
+          </tr>
+          <tr>
+            <th scope="row">Jaarrekening</th>
+            <td class="desc"><span>Balans en winst-en-verliesrekening, met een toelichting die je bank of hypotheekadviseur begrijpt.</span></td>
+            <td class="amt"><small>vanaf</small><b>€395</b></td><td class="per">per jaar</td>
+          </tr>
+          <tr>
+            <th scope="row">Startersadvies</th>
+            <td class="desc"><span>Gesprek van anderhalf uur over rechtsvorm, btw, de kleineondernemersregeling, het urencriterium en wat je opzij zet voor de belasting. Met verslag.</span></td>
+            <td class="amt"><b>€125</b></td><td class="per">eenmalig</td>
+          </tr>
+          <tr class="all">
+            <th scope="row">Zzp compleet</th>
+            <td class="desc"><span>Boekhouding, de vier btw-aangiften en je aangifte inkomstenbelasting voor één bedrag per maand. Scheelt ruim €130 per jaar.</span></td>
+            <td class="amt"><b>€89</b></td><td class="per">per maand</td>
+          </tr>
+          <tr class="grp"><th colspan="4" scope="colgroup">Vof en bv</th></tr>
+          <tr>
+            <th scope="row">Boekhouding en btw</th>
+            <td class="desc"><span>Volledige verwerking van je administratie, inclusief de btw-aangifte en een overzicht per kwartaal.</span></td>
+            <td class="amt"><small>vanaf</small><b>€145</b></td><td class="per">per maand</td>
+          </tr>
+          <tr>
+            <th scope="row">Jaarrekening bv</th>
+            <td class="desc"><span>Opstellen, samen doorlopen en deponeren bij de Kamer van Koophandel.</span></td>
+            <td class="amt"><small>vanaf</small><b>€950</b></td><td class="per">per jaar</td>
+          </tr>
+          <tr>
+            <th scope="row">Vennootschapsbelasting</th>
+            <td class="desc"><span>Aangifte en controle van de aanslag. Als het nodig is, vragen wij uitstel aan.</span></td>
+            <td class="amt"><small>vanaf</small><b>€375</b></td><td class="per">per jaar</td>
+          </tr>
+          <tr>
+            <th scope="row">Aangifte dga</th>
+            <td class="desc"><span>Aangifte inkomstenbelasting voor de directeur-grootaandeelhouder, afgestemd op de jaarrekening.</span></td>
+            <td class="amt"><b>€195</b></td><td class="per">per jaar</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="prices-note">Alle bedragen zijn exclusief 21% btw en gelden voor 2027. ‘Vanaf’ is de prijs voor een gewone administratie. Heb je personeel, meer dan 40 boekingen per maand of een tweede onderneming, dan staat de prijs vooraf in de opdrachtbevestiging.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--stone" id="data" aria-labelledby="t-data">
+    <div class="wrap grid">
+      <div class="data__intro">
+        <h2 id="t-data">Belangrijke data</h2>
+        <p class="lead">De vaste momenten in het belastingjaar. Twee weken van tevoren krijg je een mail met wat we van je nodig hebben, dus onthouden hoeft niet.</p>
+        <figure class="photo">
+          <img src="img/licht/stukken.jpg" width="1300" height="1036" loading="lazy" alt="Overzichten en een geopende map op een lichtgrijs bureau, met een houten schaaltje paperclips en een pen.">
+          <figcaption>Aanleveren kan via de app of per mail. Een map met bonnen op de balie mag ook.</figcaption>
+        </figure>
+      </div>
+      <ol class="data__list dates">
+        <li>
+          <p class="when">Elk kwartaal</p>
+          <div><h3>Btw-aangifte</h3><p>Uiterlijk de laatste dag van de maand na het kwartaal: 31 januari, 30 april, 31 juli en 31 oktober.</p></div>
+        </li>
+        <li>
+          <p class="when"><time datetime="2026-12-31">31 dec</time><small>2026</small></p>
+          <div><h3>Laatste dag voor investeringen dit jaar</h3><p>Een aankoop vóór 31 december kan nog aftrek opleveren over 2026. Twijfel je, bel ons in november.</p></div>
+        </li>
+        <li>
+          <p class="when"><time datetime="2027-02-15">15 feb</time><small>2027</small></p>
+          <div><h3>Je stukken over 2026 bij ons binnen</h3><p>Dan staat je aangifte inkomstenbelasting ruim op tijd klaar.</p></div>
+        </li>
+        <li>
+          <p class="when"><time datetime="2027-03-01">1 mrt</time><small>2027</small></p>
+          <div><h3>Aangifte inkomstenbelasting 2026 gaat open</h3><p>Dien je in vóór 1 april, dan heb je meestal vóór 1 juli bericht van de Belastingdienst.</p></div>
+        </li>
+        <li>
+          <p class="when"><time datetime="2027-05-01">1 mei</time><small>2027</small></p>
+          <div><h3>Uiterste datum aangifte inkomstenbelasting</h3><p>Lukt het niet, dan vragen wij op tijd uitstel voor je aan.</p></div>
+        </li>
+        <li>
+          <p class="when"><time datetime="2027-06-01">1 jun</time><small>2027</small></p>
+          <div><h3>Aangifte vennootschapsbelasting</h3><p>Voor de bv. Ook hier regelen wij het uitstel als dat nodig is.</p></div>
+        </li>
+      </ol>
+      <p class="data__note">Data gecontroleerd op 1 oktober 2026. Valt een datum in het weekend, dan schuift de termijn op naar de eerstvolgende werkdag.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="werkwijze" aria-labelledby="t-werk">
+    <div class="wrap">
+      <div class="grid head">
+        <h2 id="t-werk">Zo werken we</h2>
+        <p class="lead">Van het eerste gesprek tot je jaarlijkse aangifte, steeds met dezelfde persoon. Zo ziet een jaar bij ons eruit.</p>
+      </div>
+      <div class="grid werk">
+      <figure class="photo werk__photo">
+        <img src="img/licht/spreekkamer.jpg" width="1300" height="1735" loading="lazy" alt="Lege spreekkamer met een lange houten tafel, een gietijzeren radiator en een hoog raam met zwarte kozijnen.">
+        <figcaption>De spreekkamer op de eerste verdieping. Hier zijn de meeste kennismakingen.</figcaption>
+      </figure>
+      <div class="werk__body">
+        <ol class="steps">
+          <li><div><h3>Kennismaken</h3><p>Een half uur op kantoor, of via video als dat beter uitkomt. Je vertelt wat je doet en wat je zelf wilt blijven doen. Kosteloos en zonder verplichting.</p></div></li>
+          <li><div><h3>De prijs op papier</h3><p>Binnen twee werkdagen krijg je een opdrachtbevestiging met een vaste prijs per jaar of per maand. Pas als je tekent, gaan we aan de slag.</p></div></li>
+          <li><div><h3>Overstappen</h3><p>Wij vragen de machtigingen aan bij de Belastingdienst en halen de stukken op bij je vorige boekhouder. Je hoeft zelf niemand te bellen.</p></div></li>
+          <li><div><h3>Elk kwartaal</h3><p>Je zet bonnen en facturen in de app of mailt ze door. Wij doen de btw-aangifte en sturen je een overzicht van één pagina.</p></div></li>
+          <li><div><h3>Eén keer per jaar</h3><p>Jaarrekening en aangifte inkomstenbelasting, met een gesprek over de cijfers: wat ging goed, wat kan beter en wat zet je opzij.</p></div></li>
+        </ol>
+        <p class="vast lead">Je boekhouder is ook bij vakantie of ziekte geen onbekende: Lotte Mertens of Joris Verhoef neemt het dan over, en zij kennen je dossier.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--stone" id="kantoor" aria-labelledby="t-kantoor">
+    <div class="wrap grid kantoor">
+      <div class="kantoor__text">
+        <h2 id="t-kantoor">Het kantoor</h2>
+        <p class="lead">Lotte Mertens begon in 2009 als zelfstandig belastingadviseur. In 2014 kwam Joris Verhoef erbij en sindsdien zitten we aan de Willemstraat. We zijn met zes mensen en werken voor ondernemers in Breda en de rest van West-Brabant.</p>
+        <ul class="team">
+          <li>Lotte Mertens <span>Belastingadviseur, partner</span></li>
+          <li>Joris Verhoef <span>Accountant (AA), partner</span></li>
+          <li>Sanne de Bruijn <span>Boekhouder, zzp en starters</span></li>
+          <li>Daan Hendriks <span>Boekhouder, vof en bv</span></li>
+          <li>Fatma Yılmaz <span>Boekhouder, btw</span></li>
+          <li>Ruben Kools <span>Planning en secretariaat</span></li>
+        </ul>
+      </div>
+      <figure class="photo kantoor__photo">
+        <img src="img/licht/werkplek.jpg" width="1600" height="1185" loading="lazy" alt="Lichte werkkamer met twee hoge schuiframen, een bureau met een cognackleurige stoel en planten.">
+        <figcaption>Werkkamer op de tweede verdieping.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" aria-labelledby="t-contact">
+    <div class="wrap grid contact">
+      <div class="contact__main">
+        <h2 id="t-contact">Plan een kennismaking</h2>
+        <p class="lead">Een half uur, op kantoor of via video. Kosteloos en zonder verplichting. Je weet daarna wat we voor je kunnen doen en wat het kost.</p>
+        <a class="btn" href="mailto:info@mertensverhoef.nl?subject=Kennismaking">Plan een kennismaking (30&nbsp;min, gratis)</a>
+        <p class="alt">Liever bellen? <a class="num" href="tel:+31765148230">076 514 82 30</a></p>
+      </div>
+      <div class="contact__info">
+        <div class="blk-adres">
+          <h3>Adres</h3>
+          <p class="big">Willemstraat 68<br>4811 AK Breda</p>
+          <p>Drie minuten lopen van station Breda. Fietsenrek voor de deur.</p>
+        </div>
+        <div class="blk-mail">
+          <h3>Telefoon en e-mail</h3>
+          <p class="big"><a class="num" href="tel:+31765148230">076 514 82 30</a><br><a href="mailto:info@mertensverhoef.nl">info@mertensverhoef.nl</a></p>
+          <p>Mail je vóór 15:00, dan heb je dezelfde dag antwoord.</p>
+        </div>
+        <div class="blk-tijden">
+          <h3>Openingstijden</h3>
+          <table class="hours">
+            <tr><th scope="row">Maandag t/m donderdag</th><td>08:30–17:30</td></tr>
+            <tr><th scope="row">Vrijdag</th><td>08:30–16:00</td></tr>
+            <tr><th scope="row">Woensdagavond, op afspraak</th><td>tot 20:00</td></tr>
+            <tr><th scope="row">Zaterdag en zondag</th><td>gesloten</td></tr>
+          </table>
         </div>
       </div>
     </div>
   </section>
-</div>
-<section class="s2"><div class="wrap">
-  <span class="eyebrow">Waarom wij</span>
-  <h2 style="margin-top:18px">Eenvoudig, eerlijk en snel.</h2>
-  <div class="cols"><div><b>Duidelijke prijzen</b>Je weet vooraf waar je aan toe bent.</div><div><b>Vast aanspreekpunt</b>Altijd dezelfde persoon aan de lijn.</div><div><b>Snel geregeld</b>Binnen een week van start.</div></div>
-</div></section>
-</body></html>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid foot__top">
+      <div class="foot__brand">
+        <b>Mertens &amp; Verhoef</b>
+        <p>Administratie en belastingadvies voor zzp en mkb in Breda.</p>
+      </div>
+      <div class="foot__col foot__col--wide">
+        <h3>Diensten</h3>
+        <ul>
+          <li><a href="#tarieven">Aangifte inkomstenbelasting</a></li>
+          <li><a href="#tarieven">Btw-aangifte</a></li>
+          <li><a href="#tarieven">Boekhouding</a></li>
+          <li><a href="#tarieven">Jaarrekening</a></li>
+          <li><a href="#tarieven">Startersadvies</a></li>
+        </ul>
+      </div>
+      <div class="foot__col">
+        <h3>Kantoor</h3>
+        <ul>
+          <li><a href="#werkwijze">Werkwijze</a></li>
+          <li><a href="#data">Belangrijke data</a></li>
+          <li><a href="#kantoor">Wie we zijn</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot__col foot__col--wide">
+        <h3>Bezoekadres</h3>
+        <p>Willemstraat 68<br>4811 AK Breda</p>
+        <p class="foot__tel"><a class="num" href="tel:+31765148230">076 514 82 30</a><br><a href="mailto:info@mertensverhoef.nl">info@mertensverhoef.nl</a></p>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <ul>
+        <li>© 2026 Mertens &amp; Verhoef</li>
+        <li><a href="#main">Privacyverklaring</a></li>
+        <li><a href="#main">Algemene voorwaarden</a></li>
+      </ul>
+      <p>Voorbeeldontwerp door Vizora Digital · fictief bedrijf</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -32,9 +32,11 @@ Online via Cloudflare Pages: build command `python3 build.py`, output directory 
 ## Foto's
 
 De foto's in `assets/foto/` komen van Unsplash en vallen onder de Unsplash-licentie (gratis te gebruiken, ook commercieel, naamsvermelding niet verplicht).
-Op de telefoon- en laptopfoto's zijn de voorbeeldontwerpen uit `concepts/merk.html`, `licht.html` en `warm.html` op het scherm gezet (`merk-`, `licht-`, `warm-`).
+Op de telefoon- en laptopfoto's staan de voorbeeldontwerpen uit `concepts/` (merk = Atelier Dorr, licht = Mertens & Verhoef,
+warm = Praktijk Wilgenhof; alle drie fictieve bedrijven). Elke stijl heeft een eigen foto:
 
-- telefoonfoto (`*-telefoon`) – https://unsplash.com/photos/person-holding-white-iphone-5-c-ikAlhV_zCHo
-- laptopfoto (`*-laptop`) – https://unsplash.com/photos/black-and-silver-laptop-computer-on-brown-wooden-table-1Ps-Oi64lOA
+- merk: laptop https://unsplash.com/photos/s7IIk_2dA7g · telefoon https://unsplash.com/photos/uD5SvzjOsgY
+- licht: laptop https://unsplash.com/photos/wnZ3ai3_idw · telefoon https://unsplash.com/photos/J82GxqnwKSs
+- warm: laptop https://unsplash.com/photos/ZWfOEaNfelY · telefoon https://unsplash.com/photos/zVraN8Nnc4c
 
-Vervang een foto door een bestand met dezelfde naam (.jpg en .webp) om hem te wisselen.
+De foto's binnen de voorbeeldontwerpen staan als bron vermeld bovenin elk conceptbestand.
