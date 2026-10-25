@@ -130,7 +130,7 @@ def render():
     html += f'''
   <main id="main">
 {page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen, appen of mailen? Dat kan natuurlijk ook.", how, cls="stack")}
-    <section class="cd sheet stack" aria-label="Direct contact">
+    <section class="cd sheet" aria-label="Direct contact">
       <div class="wrap">
       <ul class="cd__list" data-stagger>
 {_direct()}

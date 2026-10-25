@@ -16,7 +16,7 @@
   font-weight: 500; font-size: 1.08rem; line-height: 1.3; letter-spacing: -.015em;
 }
 
-/* ---------- direct contact (beige vel) ---------- */
+/* ---------- direct contact (beige vel; geen .stack: deze gegevens blijven altijd goed leesbaar) ---------- */
 .cd { background: var(--beige); --sheet-pad: clamp(56px, 7vw, 100px); }
 .cd__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
 .cd__item { border-left: 1px solid var(--rule); }
