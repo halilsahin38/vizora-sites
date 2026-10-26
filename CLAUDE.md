@@ -37,7 +37,13 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 - Geen cursor-ring, intro-animatie of woord-voor-woord animatie in koppen (alleen in de hoofdtitel).
 
 ## Stijl
-- Kleuren: gebroken wit #faf8f4, wit, linnen beige #eee6d9, inkt zwart #121110, accent terracotta #a9583a, salie #7d8a6a.
+- Kleuren (oktober 2026, keuze Claude op verzoek van Halil): warm papier #f5f2eb, linnen #e8e1d3, inkt = diep woudgroen #0f1f1a
+  (donkere vlakken + tekst), accent terracotta #b4471f (spaarzaam), roest #97401c (vlak "Zo werkt het") met perzik #f2b896.
+  Tokens staan in `assets/css/base.css` (:root). Fijne korrel (`--grain`) op de grote donkere/roest vlakken.
+- Logo (keuze Halil: "B · Scherm"): groen afgerond vierkant met witte V en een terracotta streepje bovenin (de camera van de
+  laptop). `LOGO_MARK` in core.py, `assets/logo.svg`, `favicon.svg`, `logo-512.png`, `apple-touch-icon.png`, `og.png`.
+- Hero: video uit Higgsfield (`assets/video/hero.mp4` + `hero-480.mp4`, zonder geluid) volgt het scrollen; daarna zoom in het
+  scherm met "Vizora Digital", naadloos naar het groene voorbeelden-deel. Eerste videobeeld = `assets/foto/hero-laptop.*`.
 - Echte apparaten (telefoon/laptop) met eigen voorbeeldontwerpen op het scherm, beweging bij scrollen (parallax).
 - Voorbeeldontwerpen staan in `concepts/` (merk = Atelier Dorr, licht = Van Hulst Installaties, warm = Praktijk Wilgenhof:
   echt ogende fictieve bedrijven uit verschillende sectoren, met "fictief bedrijf" in de footer); foto's in `assets/foto/`.

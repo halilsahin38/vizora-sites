@@ -29,7 +29,7 @@ I = {
     "plus": '<svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M12 5v14M5 12h14"/></svg>',
 }
 WA_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" class="i i--fill"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>'
-LOGO_MARK = '<svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><path class="lm-a" d="M8 10h12l15 44h-8z"/><path class="lm-b" d="M56 10H44L29 54h8z"/><circle class="lm-c" cx="32" cy="14" r="5"/></svg>'
+LOGO_MARK = '<svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><rect class="lm-box" x="2" y="2" width="60" height="60" rx="15"/><rect class="lm-cam" x="26" y="9" width="12" height="4" rx="2"/><path class="lm-v" d="M15 20h8l9 18 9-18h8L36 46h-8z"/></svg>'  # scherm met V; het streepje is de camera van de laptop
 
 # ---------- aanbod (één bron voor home en prijzen) ----------
 PACKAGES = [
@@ -138,7 +138,7 @@ def head(file, title, desc, css=(), preload=None, ld=False):
   <title>{title}</title>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{url}">
-  <meta name="theme-color" content="#faf8f4">
+  <meta name="theme-color" content="#f5f2eb">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:site_name" content="Vizora Digital">

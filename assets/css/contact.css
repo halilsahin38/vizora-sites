@@ -77,7 +77,7 @@
 .choice input { position: absolute; top: 50%; left: 50%; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
 .choice label {
   display: flex; align-items: center; justify-content: center; gap: .6rem; height: 100%; min-height: 56px; padding: .7rem 1rem;
-  border: 1px solid rgba(18, 17, 16, .2); border-radius: var(--r); background: transparent;
+  border: 1px solid rgba(15, 31, 26, .2); border-radius: var(--r); background: transparent;
   line-height: 1.2; text-align: center; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
   transition: background-color .25s, border-color .25s, color .25s;
 }
@@ -124,13 +124,13 @@
 .bk__lab span[aria-hidden] { color: var(--terra-ink); }
 .bk__field input, .bk__field textarea {
   width: 100%; min-height: 54px; font: inherit; font-size: 1.06rem; line-height: 1.4; color: var(--ink);
-  background: #fff; border: 1px solid rgba(18, 17, 16, .42); border-radius: var(--r);
+  background: #fff; border: 1px solid rgba(15, 31, 26, .42); border-radius: var(--r);
   padding: .8rem 1rem; transition: border-color .25s, box-shadow .25s, background-color .25s;
 }
 .bk__field textarea { resize: vertical; min-height: 7.4rem; }
 .bk__field input:hover, .bk__field textarea:hover { border-color: var(--ink); }
-.bk__field input:focus, .bk__field textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(169, 88, 58, .28); }
-.bk__field [aria-invalid="true"] { border-color: var(--terra); background: #fdf7f3; }
+.bk__field input:focus, .bk__field textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(180, 71, 31, .28); }
+.bk__field [aria-invalid="true"] { border-color: var(--terra); background: #fbf3ee; }
 .bk__fhint { font-size: .9rem; color: var(--muted); }
 .bk__req { margin-top: 1.2rem; font-size: .9rem; color: var(--muted); }
 
@@ -142,7 +142,7 @@
 .bk__sumt::first-letter { text-transform: uppercase; }
 .booking__error:not(.is-shown) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .booking__error.is-shown {
-  padding: .9rem 1.1rem; border-left: 2px solid var(--terra); background: rgba(169, 88, 58, .08);
+  padding: .9rem 1.1rem; border-left: 2px solid var(--terra); background: rgba(180, 71, 31, .08);
   color: var(--terra-ink); font-weight: 500; animation: bk-in .5s var(--ease);
 }
 @keyframes bk-in { from { opacity: 0; transform: translateY(-4px); } }
