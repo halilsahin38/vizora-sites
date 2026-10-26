@@ -44,7 +44,8 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 - Logo (keuze Halil: "B · Scherm"): groen afgerond vierkant met witte V en een terracotta streepje bovenin (de camera van de
   laptop). `LOGO_MARK` in core.py, `assets/logo.svg`, `favicon.svg`, `logo-512.png`, `apple-touch-icon.png`, `og.png`.
 - Hero: video uit Higgsfield (`assets/video/hero.mp4` + `hero-480.mp4`, zonder geluid) volgt het scrollen; daarna zoom in het
-  scherm met "Vizora Digital", naadloos naar het groene voorbeelden-deel. Eerste videobeeld = `assets/foto/hero-laptop.*`.
+  scherm met "Vizora Digital", naadloos naar het voorbeelden-deel. Dat deel wisselt van achtergrond mee met de gekozen
+  stijl (data-sw-style; kleuren uit concepts/), het hero-scherm heeft de kleur van stijl 1 (#1d1a17). Eerste videobeeld = `assets/foto/hero-laptop.*`.
 - Echte apparaten (telefoon/laptop) met eigen voorbeeldontwerpen op het scherm, beweging bij scrollen (parallax).
 - Voorbeeldontwerpen staan in `concepts/` (merk = Atelier Dorr, licht = Van Hulst Installaties, warm = Praktijk Wilgenhof:
   echt ogende fictieve bedrijven uit verschillende sectoren, met "fictief bedrijf" in de footer); foto's in `assets/foto/`.

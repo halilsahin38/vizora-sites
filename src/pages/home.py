@@ -89,7 +89,7 @@ def render():
       </div>
     </section>
 
-    <section class="sw sheet stack" data-theme="dark" aria-labelledby="sw-title" data-switcher>
+    <section class="sw sheet stack" data-theme="dark" data-sw-style="0" aria-labelledby="sw-title" data-switcher>
       <div class="sw__sticky">
         <div class="sw__grid wrap">
           <div class="sw__side">

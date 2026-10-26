@@ -78,6 +78,7 @@
     swSet = (i) => {
       if (i === cur) return;
       cur = i;
+      sw.dataset.swStyle = String(i); // achtergrond en tekstkleuren wisselen mee (home.css)
       tabs.forEach((t, k) => { t.classList.toggle('is-on', k === i); t.setAttribute('aria-pressed', String(k === i)); });
       shots.forEach((s, k) => { s.classList.toggle('is-on', k === i); if (k === i) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });
     };
