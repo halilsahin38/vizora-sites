@@ -1,0 +1,121 @@
+/* =========================================================
+   Homepagina
+   Ritme: papier (hero) → inkt (belofte) → saliegroen (werkwijze)
+   → papier (prijzen) → beige (wie zijn wij) → inkt (voet).
+   Gekleurde delen schuiven als afgeronde vellen over elkaar (.sheet en .stack staan in base.css).
+   ========================================================= */
+
+.home__h2 { font-size: clamp(2.2rem, 4.4vw, 4.4rem); }
+
+/* ---------- hero ---------- */
+.hero { padding-top: calc(var(--hd) + clamp(32px, 4vw, 64px)); padding-bottom: calc(var(--sheet) + clamp(24px, 3vw, 48px)); }
+.hero__title { font-weight: 500; font-size: clamp(3rem, 8.8vw, 9.2rem); line-height: .9; letter-spacing: -.058em; max-width: 9.6em; }
+.hero__row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--gap); align-items: end; margin-top: clamp(1.6rem, 3vw, 2.8rem); }
+.hero__lead { font-size: clamp(1.1rem, 1.45vw, 1.3rem); line-height: 1.5; color: var(--muted); max-width: 31em; }
+.hero__cta { display: grid; justify-items: end; gap: .9rem; }
+.hero__trust { text-align: right; }
+.hero__media { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 16 / 9; background: var(--ink-2); }
+.hero__media picture, .hero__media img { width: 100%; height: 100%; }
+.hero__media img { object-fit: cover; }
+
+/* ---------- belofte: donker vel direct na de zoom (het laptopscherm loopt hier naadloos in over) ---------- */
+.vow { background: var(--ink); color: var(--on-dark); --sheet-pad: clamp(72px, 9vw, 140px); }
+.vow .label { color: var(--on-dark-muted); }
+.vow__title { font-weight: 500; font-size: clamp(2.8rem, 6.6vw, 6.6rem); line-height: .92; letter-spacing: -.058em; }
+.vow__title span { color: var(--terra-light); }
+.vow__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin-top: clamp(40px, 5vw, 72px); border-top: 1px solid var(--rule-dark); }
+.vow__list li { display: grid; gap: .8rem; padding-top: 1.2rem; font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.35; letter-spacing: -.015em; }
+.vow__cta { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.6rem; margin-top: clamp(40px, 5vw, 64px); }
+.vow__tel { color: var(--on-dark-muted); border-bottom: 1px solid var(--rule-dark); padding-bottom: 2px; transition: color .3s, border-color .3s; }
+.vow__tel:hover { color: var(--on-dark); border-color: var(--on-dark); }
+
+/* ---------- werkwijze: licht saliegroen vel ---------- */
+.steps { background: var(--mist); }
+.steps__title { font-weight: 500; font-size: clamp(3rem, 8vw, 8rem); line-height: .9; letter-spacing: -.058em; }
+.steps__title span { color: var(--terra); }
+.steps__intro { margin-top: 1.6rem; color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 30em; }
+.steps__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); margin-top: clamp(48px, 6vw, 84px); }
+.st { display: flex; flex-direction: column; gap: .9rem; padding: clamp(24px, 2.6vw, 40px); border-radius: var(--r); background: var(--paper-2); color: var(--ink); min-height: clamp(260px, 24vw, 360px); }
+.st:nth-child(3) { background: var(--ink); color: var(--on-dark); }
+.st__n { font-weight: 500; font-size: clamp(3.6rem, 6vw, 6rem); line-height: .8; letter-spacing: -.06em; color: var(--terra); margin-bottom: auto; padding-bottom: 2rem; }
+.st h3 { font-weight: 500; font-size: clamp(1.6rem, 2.4vw, 2.3rem); line-height: 1; letter-spacing: -.045em; }
+.st p:last-child { color: var(--muted); max-width: 26em; }
+.st:nth-child(3) p:last-child { color: var(--on-dark-muted); }
+.st:nth-child(3) .st__n { color: var(--terra-light); }
+.promise { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: clamp(20px, 2vw, 28px); }
+.promise li { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: .6rem .9rem; border: 1px solid var(--rule); border-radius: 99px; background: var(--paper); }
+.promise li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--terra); }
+
+/* ---------- prijzen ---------- */
+.prices { background: var(--paper); }
+.prices__intro { margin-top: 1.6rem; color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 34em; }
+.pk__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); align-items: stretch; margin-top: clamp(56px, 6vw, 90px); }
+.pk { display: flex; flex-direction: column; padding: clamp(28px, 2.6vw, 40px) 0; border-top: 1px solid var(--ink); }
+.pk__top { display: flex; justify-content: space-between; align-items: center; min-height: 26px; }
+.pk__price { font-weight: 500; font-size: clamp(3.4rem, 6.4vw, 6rem); line-height: .9; letter-spacing: -.06em; margin-top: 1.8rem; display: flex; align-items: flex-start; gap: .5rem; transition: transform .5s var(--ease); }
+.pk__from { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: .6rem; }
+.pk__note { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: .7rem; }
+.pk__title { font-weight: 500; font-size: 1.4rem; letter-spacing: -.03em; margin-top: 1.8rem; }
+.pk__desc { color: var(--muted); margin-top: .4rem; flex: 1; }
+.pk__go { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.8rem; font-weight: 500; align-self: flex-start; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; transition: gap .3s var(--ease), color .3s; }
+.pk:hover .pk__price { transform: translateY(-4px); }
+.pk:hover .pk__go { gap: .8rem; color: var(--terra-ink); }
+/* aanrader: één donker blok dat iets omhoog staat */
+.pk--featured { background: var(--ink); color: var(--on-dark); border-top: 0; border-radius: var(--r); padding-inline: clamp(24px, 2.6vw, 40px); transform: translateY(-14px); margin-bottom: -14px; }
+.pk--featured .label, .pk--featured .pk__desc, .pk--featured .pk__note { color: var(--on-dark-muted); }
+.pk--featured .pk__from { color: var(--terra-light); }
+.pk--featured:hover .pk__go { color: var(--terra-light); }
+.prices__more { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem; margin-top: clamp(36px, 4vw, 56px); padding-top: 1.4rem; border-top: 1px solid var(--rule); color: var(--muted); }
+.prices__more .link { color: var(--ink); }
+
+/* ---------- wie zijn wij: beige vel ---------- */
+.about { background: var(--beige); }
+.about__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(32px, 6vw, 110px); align-items: center; }
+.about__photo { margin: 0; max-width: 480px; }
+.about__img { aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: var(--paper-2); }
+.about__img picture, .about__img img { width: 100%; height: 100%; }
+.about__img img { object-fit: cover; }
+.about__cap { margin-top: .8rem; }
+.about .h2 { margin-top: 1.2rem; }
+.about__text { margin-top: clamp(1.4rem, 2.4vw, 2rem); font-size: clamp(1.05rem, 1.3vw, 1.2rem); color: var(--muted); max-width: 34em; }
+.about__why { margin: clamp(1.6rem, 2.6vw, 2.2rem) 0 clamp(1.8rem, 3vw, 2.4rem); padding-left: clamp(1rem, 1.6vw, 1.4rem); border-left: 2px solid var(--terra); max-width: 36em; }
+.about__why .label { color: var(--terra-ink); }
+.about__why p:last-child { margin-top: .6rem; font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.45; letter-spacing: -.01em; color: var(--ink); }
+
+/* ---------- responsief ---------- */
+@media (max-width: 960px) {
+  .hero__row { grid-template-columns: 1fr; }
+  .hero__cta { justify-items: start; }
+  .hero__trust { text-align: left; }
+  .hero__media { aspect-ratio: 4 / 3; }
+  .vow__list { grid-template-columns: 1fr; gap: 0; }
+  .vow__list li { padding-block: 1.1rem; border-bottom: 1px solid var(--rule-dark); }
+  .steps__list { grid-template-columns: 1fr; }
+  .st { min-height: 0; }
+  .st__n { padding-bottom: 1rem; }
+  .pk__grid { grid-template-columns: 1fr; gap: 0; }
+  .pk { padding: 1.8rem 0; }
+  .pk--featured { transform: none; margin: 1rem 0; padding: 1.8rem clamp(20px, 5vw, 32px); }
+  .about__in { grid-template-columns: 1fr; }
+  .about__photo { max-width: none; }
+  .about__img { aspect-ratio: 1 / 1; }
+}
+@media (max-width: 560px) {
+  .hero__cta, .hero__cta .btn { width: 100%; }
+  .pk__price { margin-top: 1.2rem; }
+  .pk__title { margin-top: 1.2rem; }
+}
+
+/* ---------- vloeiend scrollen: strook, zoom en stapelende vlakken ---------- */
+.hero__zoom { margin-top: clamp(32px, 4vw, 56px); }
+.hero__media { will-change: transform; }
+/* video (camera rijdt naar de laptop) ligt over de eerste beeldfoto; zelfde beeld, dus geen flits als hij laadt */
+.hero__media { container-type: inline-size; }
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .4s; }
+.hero__video.is-ready { opacity: 1; }
+/* het zwarte scherm van de laptop in het laatste videobeeld (fracties van 1280×720); kleurt bij het inzoomen
+   naar inkt met 'Vizora Digital' erop, en loopt zo naadloos over in het donkere voorbeelden-deel eronder */
+.hero__screen { position: absolute; left: 34.38%; top: 34.3%; width: 31.02%; height: 37.9%; display: grid; place-items: center; background: var(--ink); opacity: 0; border-radius: 6px 6px 0 0; pointer-events: none; }
+.hero__mark { display: inline-flex; align-items: center; gap: .4em; color: var(--on-dark); font-weight: 600; font-size: 1.5cqw; letter-spacing: -.04em; white-space: nowrap; opacity: 0; }
+.hero__mark .logo__mark { width: 1.25em; height: 1.25em; }
+.hero__mark .lm-box { fill: var(--on-dark); } .hero__mark .lm-v { fill: var(--ink); }
