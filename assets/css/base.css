@@ -15,8 +15,7 @@
   --terra: #b4471f;
   --terra-ink: #933a17;
   --terra-light: #ec8d63; /* terracotta voor tekst op inkt (6.9:1) */
-  --rust: #97401c; /* diep roest: groot vlak (werkwijze), papier erop 6.1:1 */
-  --peach: #f2b896; /* accent op roest voor grote koppen (3.9:1) */
+  --mist: #dfe4d9; /* licht saliegroen: vlak 'Zo werkt het' op de homepage */
   --sage: #6f8a76;
   --on-dark: #f2eee5;
   --on-dark-muted: #a6b1aa;
@@ -72,7 +71,7 @@ ul, ol { padding: 0; list-style: none; }
 }
 /* fijne korrel op de grote donkere en roestkleurige vlakken: geeft diepte, net als drukwerk (data-URI, geen extra bestand) */
 :root { --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-[data-theme="dark"], .ft, .steps, .see { background-image: var(--grain); }
+[data-theme="dark"], .ft, .see { background-image: var(--grain); }
 /* vorige vlak wordt iets kleiner en donkerder als het volgende vel eroverheen schuift (motion.js zet --dim) */
 .stack { position: relative; transform-origin: 50% 100%; }
 .stack::after { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: var(--dim, 0); pointer-events: none; border-radius: inherit; z-index: 2; }

@@ -16,8 +16,7 @@ STEPS = [
 
 
 def _shots():
-    # De laptop- en telefoonfoto's zijn per stijl identiek, alleen het scherm verschilt.
-    # Daardoor lijkt het alsof alleen de website wisselt.
+    # Elke stijl heeft een eigen laptop- en telefoonfoto (elk een andere echte omgeving).
     out = []
     for i, (key, name, _) in enumerate(STYLES):
         on = " is-on" if i == 0 else ""
@@ -96,7 +95,7 @@ def render():
           <div class="sw__side">
             {label("", "Voorbeelden")}
             <h2 id="sw-title" class="sw__title">Zo kan jouw website eruitzien.</h2>
-            <p class="sw__intro">Zelfde laptop, zelfde telefoon. Alleen de website verandert. Zo maken we elke site op maat: jouw kleuren, jouw teksten, jouw zaak.</p>
+            <p class="sw__intro">Drie voorbeelden van fictieve bedrijven, elk in een eigen stijl. Zo maken we elke site op maat: jouw kleuren, jouw teksten, jouw zaak.</p>
             <ul class="sw__tabs" aria-label="Kies een voorbeeldstijl">
 {_tabs()}
             </ul>

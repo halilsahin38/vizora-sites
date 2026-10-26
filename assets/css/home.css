@@ -72,12 +72,11 @@
 .sw.is-pinned .sw__sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; padding-top: calc(var(--hd) * .6); }
 .sw.is-pinned .sw__stage { width: min(100% - clamp(24px, 4vw, 56px), calc((100vh - 220px) * 1.236)); justify-self: end; }
 
-/* ---------- werkwijze: roestkleurig vel ---------- */
-.steps { background: var(--rust); color: var(--paper); }
-.steps .label { color: var(--paper); }
+/* ---------- werkwijze: licht saliegroen vel ---------- */
+.steps { background: var(--mist); }
 .steps__title { font-weight: 500; font-size: clamp(3rem, 8vw, 8rem); line-height: .9; letter-spacing: -.058em; }
-.steps__title span { color: var(--peach); }
-.steps__intro { margin-top: 1.6rem; font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 30em; }
+.steps__title span { color: var(--terra); }
+.steps__intro { margin-top: 1.6rem; color: var(--muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 30em; }
 .steps__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); margin-top: clamp(48px, 6vw, 84px); }
 .st { display: flex; flex-direction: column; gap: .9rem; padding: clamp(24px, 2.6vw, 40px); border-radius: var(--r); background: var(--paper); color: var(--ink); min-height: clamp(260px, 24vw, 360px); }
 .st:nth-child(3) { background: var(--ink); color: var(--on-dark); }
@@ -87,8 +86,8 @@
 .st:nth-child(3) p:last-child { color: var(--on-dark-muted); }
 .st:nth-child(3) .st__n { color: var(--terra-light); }
 .promise { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: clamp(20px, 2vw, 28px); }
-.promise li { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: .6rem .9rem; border: 1px solid rgba(245, 242, 235, .4); border-radius: 99px; }
-.promise li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--peach); }
+.promise li { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; padding: .6rem .9rem; border: 1px solid var(--rule); border-radius: 99px; background: var(--paper); }
+.promise li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--terra); }
 
 /* ---------- prijzen ---------- */
 .prices { background: var(--paper); }

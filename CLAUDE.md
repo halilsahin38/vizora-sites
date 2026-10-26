@@ -38,8 +38,9 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 
 ## Stijl
 - Kleuren (oktober 2026, keuze Claude op verzoek van Halil): warm papier #f5f2eb, linnen #e8e1d3, inkt = diep woudgroen #0f1f1a
-  (donkere vlakken + tekst), accent terracotta #b4471f (spaarzaam), roest #97401c (vlak "Zo werkt het") met perzik #f2b896.
-  Tokens staan in `assets/css/base.css` (:root). Fijne korrel (`--grain`) op de grote donkere/roest vlakken.
+  (donkere vlakken + tekst), accent terracotta #b4471f (spaarzaam), licht saliegroen #dfe4d9 (vlak "Zo werkt het").
+  Geen grote oranje/roest vlakken: Halil vond dat niet passen.
+  Tokens staan in `assets/css/base.css` (:root). Fijne korrel (`--grain`) op de grote donkere vlakken.
 - Logo (keuze Halil: "B · Scherm"): groen afgerond vierkant met witte V en een terracotta streepje bovenin (de camera van de
   laptop). `LOGO_MARK` in core.py, `assets/logo.svg`, `favicon.svg`, `logo-512.png`, `apple-touch-icon.png`, `og.png`.
 - Hero: video uit Higgsfield (`assets/video/hero.mp4` + `hero-480.mp4`, zonder geluid) volgt het scrollen; daarna zoom in het

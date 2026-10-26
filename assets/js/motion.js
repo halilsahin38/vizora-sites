@@ -281,5 +281,9 @@
   const word = document.querySelector('.ft__word');
   if (word) gsap.fromTo(word, { yPercent: 35 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: word, start: 'top bottom', end: 'bottom bottom', scrub: true } });
 
+  // de triggers zijn niet in paginavolgorde gemaakt (de vastgezette hero na de voorbeelden):
+  // sorteren, anders telt de extra scrollruimte van de hero-pin niet mee voor de delen eronder
+  ScrollTrigger.sort();
+  ScrollTrigger.refresh();
   window.addEventListener('load', () => ScrollTrigger.refresh());
 })();
