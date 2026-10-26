@@ -33,21 +33,25 @@ LOGO_MARK = '<svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><rec
 
 # ---------- aanbod (één bron voor home en prijzen) ----------
 PACKAGES = [
-    dict(name="Start", title="Online zichtbaar", price="200", featured=False,
+    dict(name="Start", title="Online zichtbaar", price="395", featured=False,
          desc="Voor starters en zzp'ers die snel en professioneel online willen staan.",
          feats=["One-page website op maat", "Perfect op mobiel", "Bel-, WhatsApp- en contactknoppen", "Basis vindbaarheid in Google", "Koppeling met je eigen domein + gratis hosting"]),
-    dict(name="Groei", title="Meer klanten", price="350", featured=True,
+    dict(name="Groei", title="Meer klanten", price="795", featured=True,
          desc="Voor ondernemers die online echt klanten willen binnenhalen.",
          feats=["Website tot 5 pagina's", "Uniek ontwerp met animaties", "Online afspraken, reserveren of bestellen", "Google Bedrijfsprofiel ingericht", "Teksten die overtuigen", "Lokale SEO voor jouw regio", "Gratis hosting"]),
-    dict(name="Compleet", title="Alles geregeld", price="500", featured=False,
+    dict(name="Compleet", title="Alles geregeld", price="1.295", featured=False,
          desc="Website, bereik en een helder groeiplan in één keer goed.",
          feats=["Alles uit Groei", "Logo en huisstijl", "Profielen op social media ingericht", "Persoonlijk groeiplan", "Advies voor advertenties", "1 maand gratis aanpassingen"]),
 ]
 SUB_TIERS = [
-    dict(name="Basis", price="25", feats=["Onderhoud &amp; beveiliging", "1 kleine aanpassing per maand", "Hulp via WhatsApp"]),
-    dict(name="Plus", price="49", feats=["Alles uit Basis", "Tot 3 aanpassingen per maand", "Google Bedrijfsprofiel bijhouden", "Maandelijkse groeitips"]),
-    dict(name="Pro", price="79", feats=["Alles uit Plus", "Tot 6 aanpassingen per maand", "Elk kwartaal een nieuwe pagina of actie", "Maandelijks groeigesprek"]),
+    dict(name="Basis", price="30", feats=["Onderhoud &amp; beveiliging", "1 kleine aanpassing per maand", "Hulp via WhatsApp"]),
+    dict(name="Plus", price="59", feats=["Alles uit Basis", "Tot 3 aanpassingen per maand", "Google Bedrijfsprofiel bijhouden", "Maandelijkse groeitips"]),
+    dict(name="Pro", price="95", feats=["Alles uit Plus", "Tot 6 aanpassingen per maand", "Elk kwartaal een nieuwe pagina of actie", "Maandelijks groeigesprek"]),
 ]
+# grote projecten: geen vast pakket, prijs op offerte na het gratis gesprek
+MAATWERK = dict(name="Maatwerk", price="2.000",
+                desc="Een webshop, een website met veel pagina's of koppelingen, of een site voor een groter bedrijf. "
+                     "Na het gratis gesprek krijg je een offerte met een vaste prijs.")
 GUARANTEES = [
     ("Niet blij? Niet betalen.", "Je ziet eerst het ontwerp. Ben je na de feedbackrondes niet tevreden, dan betaal je niets."),
     ("Twee feedbackrondes", "Twee keer aanpassen naar jouw wensen zit gewoon in de prijs."),
@@ -65,7 +69,7 @@ LD = {
     "description": "Websites en online groei voor ondernemers in heel Nederland. Vanuit Breda.",
     "telephone": "+31638705348",
     "email": MAIL,
-    "priceRange": "€200 - €500",
+    "priceRange": "€395 - €2000+",
     "address": {"@type": "PostalAddress", "addressLocality": "Breda", "addressRegion": "Noord-Brabant", "addressCountry": "NL"},
     "areaServed": {"@type": "Country", "name": "Nederland"},
     "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
@@ -286,6 +290,15 @@ def price_columns():
             <a href="contact.html?pakket={p["name"]}" class="btn{"" if p["featured"] else " btn--ghost"} pk__btn">Kies {p["name"]} {I["arrow"]}</a>
           </article>''')
     return "\n".join(out)
+
+
+def maatwerk():
+    """Brede kaart onder de pakketten voor grote projecten (home en prijzen)."""
+    m = MAATWERK
+    return f'''      <a class="mw" href="contact.html?pakket={m["name"]}" data-reveal>
+        <span class="mw__l"><span class="label">{m["name"]}</span><span class="mw__t">Groter project?</span><span class="mw__d">{m["desc"]}</span></span>
+        <span class="mw__r"><span class="mw__p"><span class="pk__from">vanaf</span>€{m["price"]}</span><span class="pk__note">op offerte · excl. btw</span><span class="mw__go">Bespreek je project {I["arrow"]}</span></span>
+      </a>'''
 
 
 def guarantees():

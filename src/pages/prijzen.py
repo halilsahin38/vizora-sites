@@ -43,7 +43,7 @@ def _faq():
     b, p, r = SUB_TIERS
     st, gr, co = PACKAGES
     return [
-        ("Wat kost een website laten maken?", f"Bij ons begint een website bij €{st['price']} voor {st['name']} (een one-page website), €{gr['price']} voor {gr['name']} (tot 5 pagina's) of €{co['price']} voor {co['name']} (met logo en huisstijl). Dat zijn eenmalige vanaf-prijzen, exclusief btw. Hosting is gratis; alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar. Na het gratis gesprek krijg je een vaste prijs op maat."),
+        ("Wat kost een website laten maken?", f"Bij ons begint een website bij €{st['price']} voor {st['name']} (een one-page website), €{gr['price']} voor {gr['name']} (tot 5 pagina's) of €{co['price']} voor {co['name']} (met logo en huisstijl). Dat zijn eenmalige vanaf-prijzen, exclusief btw. Hosting is gratis; alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar. Voor grotere projecten, zoals een webshop of een website met veel pagina's, maken we maatwerk vanaf €{MAATWERK['price']}. Na het gratis gesprek krijg je altijd een vaste prijs op maat."),
         ("Waarom staat er “vanaf”?", "Elke zaak is anders. De vanaf-prijs is wat je minimaal betaalt voor het pakket. Na het gratis gesprek krijg je een vaste prijs, zonder verrassingen."),
         ("Zijn er maandelijkse kosten?", f"De pakketten zijn eenmalig. Wil je dat we je website elke maand bijwerken en onderhouden? Dan kun je een abonnement nemen vanaf €{b['price']} per maand, excl. btw. Hosting is gratis inbegrepen. Alleen je domeinnaam betaal je zelf, meestal €10 tot €15 per jaar."),
         ("Welke abonnementen zijn er?", f"{b['name']} (€{b['price']} p/m): onderhoud, beveiliging en 1 kleine aanpassing per maand. {p['name']} (€{p['price']} p/m): tot 3 aanpassingen, je Google Bedrijfsprofiel bijhouden en maandelijkse groeitips. {r['name']} (€{r['price']} p/m): tot 6 aanpassingen per maand, elk kwartaal een nieuwe pagina of actie en een maandelijks groeigesprek. Alle bedragen excl. btw. Je ontvangt elke maand een factuur en kunt per maand opzeggen."),
@@ -126,6 +126,7 @@ def render():
       <div class="pk__grid" data-stagger>
 {price_columns()}
       </div>
+{maatwerk()}
       <p class="pp__foot" data-reveal>Alle pakketprijzen zijn vanaf-prijzen voor een eenmalig project. De definitieve prijs hangt af van je wensen en hoor je vooraf.</p>
     </section>
 

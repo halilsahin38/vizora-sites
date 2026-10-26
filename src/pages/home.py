@@ -9,7 +9,7 @@ STYLES = [
 ]
 
 STEPS = [
-    ("Plan een gesprek", "Kies een moment dat jou uitkomt, of bel of app ons direct. Gratis en vrijblijvend."),
+    ("Plan een gesprek", "Laat je gegevens achter, of bel of app ons direct. Wij stellen een moment voor. Gratis en vrijblijvend."),
     ("Wij maken je concept", "Voor het gesprek ontwerpen we alvast een eerste versie van jouw website. Soms bellen we eerst kort om je wensen te horen."),
     ("Pas dan beslis je", "Enthousiast? Dan bouwen we verder. Zo niet, dan heb je niets betaald."),
 ]
@@ -136,6 +136,7 @@ def render():
         <div class="pk__grid" data-reveal>
 {_packs()}
         </div>
+  {maatwerk()}
         <p class="prices__more" data-reveal><span>Geen opstartkosten, geen jaarcontract. Onderhoud vanaf €{SUB_TIERS[0]["price"]} per maand excl. btw, maandelijks opzegbaar.</span> <a href="prijzen.html" class="link">Bekijk alle prijzen {I["arrow"]}</a></p>
       </div>
     </section>

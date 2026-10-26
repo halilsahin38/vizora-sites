@@ -18,16 +18,17 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 ## Contact en praktisch
 - E-mail halilsahinai@gmail.com · WhatsApp/bellen 06 38 70 53 48 (wa.me/31638705348, tel:+31638705348)
 - Ma t/m za 09:00–18:00 (afspraken 09:00–17:00). Belofte: binnen werktijd antwoord dezelfde dag. Geen Instagram nog. KvK-nummer volgt.
-- Agenda komt later via Cal.com (Halil stuurt de link).
+- Agenda komt later via Cal.com (Halil stuurt de link). Het formulier vraagt geen dag of tijd meer (keuze Halil): wij stellen een moment voor.
 - Hosting: Cloudflare Pages (gratis, ook commercieel toegestaan; ook voor klantsites). Online zetten/merge alleen na
   expliciete toestemming van Halil. Cloudflare-instellingen: build command `python3 build.py`, output directory `dist`.
 
 ## Prijzen (huidige stand op de site)
 - Alle prijzen exclusief btw.
-- Pakketten eenmalig: Start €200 · Groei €350 · Compleet €500.
-- Abonnementen per maand, maandelijkse factuur: Basis €25 · Plus €49 · Pro €79 (Pro = tot 6 aanpassingen, niet onbeperkt).
+- Pakketten eenmalig (oktober 2026): Start €395 · Groei €795 · Compleet €1.295.
+- Maatwerk voor grote projecten (webshop, veel pagina's, grotere bedrijven): vanaf €2.000, op offerte (`MAATWERK` in core.py).
+- Abonnementen per maand, maandelijkse factuur: Basis €30 · Plus €59 · Pro €95 (Pro = tot 6 aanpassingen, niet onbeperkt).
 - Hosting gratis inbegrepen bij elk pakket; klant betaalt zelf de domeinnaam (ca. €10–15 per jaar).
-- Advies gegeven om prijzen te verhogen; nog niet besloten.
+- Prijzen staan op één plek: `PACKAGES`, `SUB_TIERS` en `MAATWERK` in `src/core.py`.
 
 ## Wat NIET (eerdere feedback)
 - Geen voorbeelden per branche (kappers/restaurants/bakkers): klanten moeten niet denken dat we alleen voor één branche werken.

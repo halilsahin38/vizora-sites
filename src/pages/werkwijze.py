@@ -16,7 +16,7 @@ GLANCE = [
 # De stappen (titel, tekst, kenmerken)
 STEPS = [
     ("Kennismaken",
-     "Bel of app ons, of kies een moment dat jou uitkomt. We stellen een paar vragen over je zaak: wat je doet, wie je klanten zijn en waar je naartoe wilt.",
+     "Bel of app ons, of vul het formulier in; wij stellen een moment voor. We stellen een paar vragen over je zaak: wat je doet, wie je klanten zijn en waar je naartoe wilt.",
      ["Gratis", "Bellen, appen of plannen", "Vrijblijvend"]),
     ("Jouw concept &amp; groeiplan",
      "Voor het gesprek ontwerpen we alvast een eerste versie van jouw website, in jouw stijl. Soms bellen we eerst kort om je wensen te horen. In het gesprek laten we die zien en bespreken we stap voor stap hoe je zaak online kan groeien. Telefonisch, via video of op locatie in overleg.",
@@ -57,7 +57,7 @@ QA = [
     ("Moet ik zelf iets technisch doen?", "Nee. Wij regelen het ontwerp, de bouw, de koppeling met je domein, de hosting en het livezetten. Jij vertelt over je zaak; bij de teksten helpen we je."),
     ("Moet ik zelf teksten en foto's aanleveren?", "Teksten schrijven we graag met je mee. Foto's en video's komen het liefst van jou, want niemand kent je zaak beter. We adviseren je wel over wat goed werkt."),
     ("Hoe lang duurt het voordat mijn website online staat?", "Dat hangt af van de grootte van je website en hoe snel de teksten en foto's rond zijn. In het gesprek spreken we samen een planning af die bij jou past."),
-    ("Wat kost een website?", f'Onze pakketten beginnen bij €{P["Start"]} (Start), €{P["Groei"]} (Groei) en €{P["Compleet"]} (Compleet), eenmalig en exclusief btw. Na het gesprek krijg je een vaste prijs op maat. Alle details staan op de <a href="prijzen.html">prijzenpagina</a>.'),
+    ("Wat kost een website?", f'Onze pakketten beginnen bij €{P["Start"]} (Start), €{P["Groei"]} (Groei) en €{P["Compleet"]} (Compleet), eenmalig en exclusief btw. Grotere projecten, zoals een webshop, doen we als maatwerk vanaf €{MAATWERK["price"]}. Na het gesprek krijg je een vaste prijs op maat. Alle details staan op de <a href="prijzen.html">prijzenpagina</a>.'),
     ("Kan ik later nog dingen laten aanpassen?", f"Ja. Met het website-abonnement (vanaf €{S['Basis']} per maand, excl. btw) werken we je website elke maand bij. Zonder abonnement kan het ook; dan spreken we per aanpassing een prijs af."),
     ("Maken jullie ook posts voor social media?", "In het pakket Compleet richten we je profielen in en helpen we met stijl en strategie. Content maken of posten valt buiten de pakketten; dat bespreken we graag samen en kost extra."),
     ("Ik heb al een website. Kunnen jullie die verbeteren?", "Zeker. We kijken eerst gratis naar je huidige site en vertellen eerlijk of verbeteren of opnieuw bouwen slimmer is."),

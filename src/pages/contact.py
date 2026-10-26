@@ -7,10 +7,9 @@ CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true" class="i"><path d="M5 12.5l
 # Hoe wil je het gesprek voeren? (value = wat in het bericht komt)
 VORM = [
     ("Videogesprek", "Videogesprek", "Online, vanaf je laptop of telefoon"),
-    ("Telefonisch gesprek", "Telefonisch", "Wij bellen jou op het gekozen moment"),
+    ("Telefonisch gesprek", "Telefonisch", "Wij bellen jou op het afgesproken moment"),
     ("Afspraak op locatie", "Op locatie", "Bij jou in de zaak, in overleg"),
 ]
-TIMES = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"]
 DIENST = [
     ("Website", "Website"),
     ("Marketing &amp; bereik", "Marketing &amp; bereik"),
@@ -20,8 +19,8 @@ DIENST = [
 ]
 # Zo gaat het (onder de intro bovenaan)
 HOW = [
-    "Je kiest een moment of laat het aan ons (1 minuut).",
-    "Wij bevestigen via WhatsApp of e-mail en maken alvast je concept. Soms bellen we eerst kort om je wensen te horen.",
+    "Je vult het formulier in (1 minuut).",
+    "Wij stellen via WhatsApp of e-mail een moment voor en maken alvast je concept. Soms bellen we eerst kort om je wensen te horen.",
     "In het gesprek (± 30 min) zie je je website. Daarna beslis jij.",
 ]
 
@@ -50,9 +49,6 @@ def _form():
     vorm = "\n".join(
         f'''              <div class="choice"><input type="radio" name="vorm" id="v{i}" value="{v}"{" checked" if i == 1 else ""}><label for="v{i}"><b>{t}</b><small>{s}</small></label></div>'''
         for i, (v, t, s) in enumerate(VORM, 1))
-    tijd = "\n".join(
-        f'''              <div class="choice"><input type="radio" name="tijd" id="t{i}" value="{t}"><label for="t{i}">{t}</label></div>'''
-        for i, t in enumerate(TIMES))
     dienst = "\n".join(
         f'''              <div class="choice"><input type="checkbox" name="dienst" id="d{i}" value="{v}"><label for="d{i}"><span class="bk__box">{CHECK}</span>{t}</label></div>'''
         for i, (v, t) in enumerate(DIENST, 1))
@@ -65,20 +61,7 @@ def _form():
           </fieldset>
 
           <fieldset class="bk__step">
-            <legend><span class="bk__n">02</span>Kies een dag <span class="bk__opt">optioneel</span></legend>
-            <p class="bk__hint">Maandag t/m zaterdag, vanaf twee werkdagen na vandaag: dan is je concept klaar. Geen voorkeur? Sla dit over, dan stellen wij een moment voor.</p>
-            <div class="dates"></div>
-          </fieldset>
-
-          <fieldset class="bk__step">
-            <legend><span class="bk__n">03</span>Kies een tijd <span class="bk__opt">optioneel</span></legend>
-            <div class="bk__times">
-{tijd}
-            </div>
-          </fieldset>
-
-          <fieldset class="bk__step">
-            <legend><span class="bk__n">04</span>Waar ben je in geïnteresseerd?</legend>
+            <legend><span class="bk__n">02</span>Waar ben je in geïnteresseerd?</legend>
             <p class="bk__hint">Je mag er meerdere kiezen. Twijfel je nog? Dan zoeken we het samen uit.</p>
             <div class="bk__tags">
 {dienst}
@@ -86,7 +69,7 @@ def _form():
           </fieldset>
 
           <fieldset class="bk__step">
-            <legend><span class="bk__n">05</span>Je gegevens</legend>
+            <legend><span class="bk__n">03</span>Je gegevens</legend>
             <div class="bk__fields">
               <label class="bk__field"><span class="bk__lab">Naam <span aria-hidden="true">*</span></span><input name="naam" type="text" required autocomplete="name" maxlength="80"></label>
               <label class="bk__field"><span class="bk__lab">Telefoonnummer <span aria-hidden="true">*</span></span><input name="telefoon" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20"></label>
@@ -101,14 +84,14 @@ def _form():
             <div class="bk__sum">
               <p class="label">Je aanvraag</p>
               <p class="bk__sumpk" data-summary-pakket hidden></p>
-              <p class="bk__sumt" data-summary aria-live="polite">Geen dag gekozen? Dan stellen wij een moment voor.</p>
+              <p class="bk__sumt" data-summary aria-live="polite">Videogesprek. Wij stellen een moment voor dat jou uitkomt.</p>
             </div>
             <p class="booking__error" role="alert"></p>
             <div class="bk__actions">
               <button type="submit" class="btn bk__wa">{WA_SVG} Verstuur via WhatsApp</button>
               <button type="button" class="btn btn--ghost" data-email>{I["mail"]} Verstuur via e-mail</button>
             </div>
-            <p class="bk__note"><b>Je bericht staat daarna klaar in WhatsApp of in je mail. Druk daar nog op verzenden, dan is het geregeld.</b> Binnen werktijd (ma–za 9–18 uur) antwoord dezelfde dag. Geen moment gekozen, of past het niet? Dan stellen we een tijdstip voor.</p>
+            <p class="bk__note"><b>Je bericht staat daarna klaar in WhatsApp of in je mail. Druk daar nog op verzenden, dan is het geregeld.</b> Binnen werktijd (ma–za 9–18 uur) antwoord dezelfde dag, met een voorstel voor een moment.</p>
           </div>
         </form>'''
 
@@ -129,7 +112,7 @@ def render():
     html += header(FILE)
     html += f'''
   <main id="main">
-{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Kies een moment dat jou uitkomt. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen, appen of mailen? Dat kan natuurlijk ook.", how, cls="stack")}
+{page_head("", "Contact", "Plan een gratis gesprek, of <em>bel direct.</em>", "Laat je gegevens achter, dan stellen wij een moment voor. Wij maken vooraf een concept van jouw website en laten het in het gesprek zien. Liever meteen even bellen, appen of mailen? Dat kan natuurlijk ook.", how, cls="stack")}
     <section class="cd sheet" aria-label="Direct contact">
       <div class="wrap">
       <ul class="cd__list" data-stagger>
@@ -143,8 +126,8 @@ def render():
       <div class="split">
         {label("01", "Gesprek plannen")}
         <div>
-          <h2 id="bk-title" class="h2" data-reveal>Kies een moment.<br><span>Wij maken je concept.</span></h2>
-          <p class="bk__intro" data-reveal>Vijf korte stappen. Je aanvraag gaat via WhatsApp of e-mail naar ons, en wij bevestigen het moment.</p>
+          <h2 id="bk-title" class="h2" data-reveal>Vul het in.<br><span>Wij maken je concept.</span></h2>
+          <p class="bk__intro" data-reveal>Drie korte stappen. Je aanvraag gaat via WhatsApp of e-mail naar ons, en wij stellen een moment voor dat jou uitkomt.</p>
         </div>
       </div>
       <div class="bk__grid">

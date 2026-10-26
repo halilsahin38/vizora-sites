@@ -124,63 +124,17 @@
   if (booking) {
     const WHATSAPP = '31638705348';
     const EMAIL = 'halilsahinai@gmail.com';
-    const datesEl = booking.querySelector('.dates');
     const summary = booking.querySelector('[data-summary]');
     const errorEl = booking.querySelector('.booking__error');
-    const dayFmt = new Intl.DateTimeFormat('nl-NL', { weekday: 'short' });
-    const monthFmt = new Intl.DateTimeFormat('nl-NL', { month: 'short' });
-    const fullFmt = new Intl.DateTimeFormat('nl-NL', { weekday: 'long', day: 'numeric', month: 'long' });
-
-    // 12 werkdagen (ma t/m za), vanaf de tweede werkdag na vandaag: dan is het concept klaar
-    if (datesEl) {
-      const d = new Date();
-      let skip = 1; // de eerste werkdag na vandaag slaan we over
-      let added = 0;
-      while (added < 12) {
-        d.setDate(d.getDate() + 1);
-        if (d.getDay() === 0) continue;
-        if (skip) { skip--; continue; }
-        const id = `date-${added}`;
-        const wrap = document.createElement('div');
-        wrap.className = 'choice';
-        wrap.innerHTML =
-          `<input type="radio" name="datum" id="${id}" value="${fullFmt.format(d)}">` +
-          `<label for="${id}"><small>${dayFmt.format(d).replace('.', '')}</small>` +
-          `<b>${d.getDate()}</b><small>${monthFmt.format(d).replace('.', '')}</small></label>`;
-        datesEl.append(wrap);
-        added++;
-      }
-    }
 
     const val = (name) => booking.querySelector(`[name="${name}"]:checked`)?.value;
+    // samenvatting: hoe het gesprek gaat; het moment stellen wij voor
     const updateSummary = () => {
       if (!summary) return;
-      const datum = val('datum'); const tijd = val('tijd'); const vorm = val('vorm');
-      summary.textContent = datum || tijd
-        ? `${vorm || 'Gesprek'}${datum ? ` op ${datum}` : ''}${tijd ? ` om ${tijd}` : ''}`
-        : 'Geen dag gekozen? Dan stellen wij een moment voor.';
+      summary.textContent = `${val('vorm') || 'Gesprek'}. Wij stellen een moment voor dat jou uitkomt.`;
     };
     booking.addEventListener('change', updateSummary);
     updateSummary();
-
-    // dag en tijd zijn optioneel: nog een keer klikken op je keuze zet hem weer uit
-    ['datum', 'tijd'].forEach((name) => {
-      let last = val(name) || null;
-      booking.addEventListener('change', (e) => { if (e.target.name === name) last = e.target.value; });
-      booking.addEventListener('click', (e) => {
-        const input = e.target.closest?.(`input[name="${name}"]`);
-        if (!input) return;
-        if (last === input.value) { input.checked = false; last = null; updateSummary(); } else last = input.value;
-      });
-    });
-
-    const preference = () => {
-      const datum = val('datum'); const tijd = val('tijd');
-      if (datum && tijd) return `${datum} om ${tijd}`;
-      if (datum) return `${datum}, tijd maakt niet uit`;
-      if (tijd) return `${tijd}, dag maakt niet uit`;
-      return 'geen, stel zelf een moment voor';
-    };
 
     const buildMessage = () => {
       const f = new FormData(booking);
@@ -189,7 +143,7 @@
         'Hoi Vizora Digital! Ik wil graag een gratis kennismakingsgesprek plannen.',
         '',
         `Gesprek: ${val('vorm') || 'maakt niet uit'}`,
-        `Voorkeur: ${preference()}`,
+        'Moment: stel zelf een moment voor',
         `Interesse in: ${f.getAll('dienst').join(', ') || 'nog niet zeker'}`,
         '',
         `Naam: ${field('naam')}`,
