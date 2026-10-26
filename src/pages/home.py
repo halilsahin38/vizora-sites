@@ -68,7 +68,7 @@ def render():
 
     html = head(FILE, "Vizora Digital | Zie je nieuwe website al vóór je betaalt",
                 "Wij maken gratis een concept van jouw website en laten het zien in het eerste gesprek. Pas betalen als je blij bent. Voor ondernemers in heel Nederland.",
-                css=("home",), preload=("hero-laptop", 2400, SIZES["hero"]), ld=True)
+                css=("home",), preload=("hero-laptop", 1280, SIZES["hero"]), ld=True)
     html += header(FILE)
     html += f'''
   <main id="main">
@@ -83,8 +83,9 @@ def render():
       </div>
       <div class="hero__zoom" data-zoom>
         <div class="hero__media">
-          {pic("hero-laptop", "Laptop met een zwart scherm op een houten tafel", 2400, 1350, eager=True, sizes=SIZES["hero"])}
-          <span class="hero__screen" aria-hidden="true"></span>
+          {pic("hero-laptop", "Laptop met een zwart scherm op een tafel, met zonlicht op de muur", 1280, 720, eager=True, sizes=SIZES["hero"])}
+          <video class="hero__video" muted playsinline preload="none" aria-hidden="true" data-src="assets/video/hero.mp4" data-src-small="assets/video/hero-480.mp4"></video>
+          <span class="hero__screen" aria-hidden="true"><span class="hero__mark">{LOGO_MARK}<span>Vizora Digital</span></span></span>
         </div>
       </div>
     </section>

@@ -206,34 +206,63 @@
     });
   }
 
-  /* hero: inzoomen op het zwarte laptopscherm tot het het hele beeld vult; het scherm kleurt naar inkt
-     en loopt zo naadloos over in het donkere voorbeelden-deel eronder (alleen desktop) */
+  /* hero-video (camera rijdt langzaam naar de laptop): speelt niet vanzelf af, maar volgt het scrollen.
+     Laadt pas hier, dus niet bij reduced motion. Kan hij niet afspelen (bv. energiebesparing op iOS), dan blijft de foto staan. */
   const zoom = document.querySelector('[data-zoom]');
+  const video = zoom && zoom.querySelector('.hero__video');
+  let seek = () => {};
+  if (video) {
+    let want = 0;
+    const go = () => {
+      if (!video.duration) return;
+      const t = want * (video.duration - 0.05);
+      if (Math.abs(video.currentTime - t) > 0.01) video.currentTime = t;
+    };
+    seek = (p) => { want = p; if (!video.seeking) go(); };
+    video.addEventListener('seeked', go); // tijdens het zoeken bijgehouden doel inhalen
+    video.addEventListener('loadeddata', () => {
+      const play = video.play(); // één keer starten zodat elk browser het beeld daarna bij zoeken tekent
+      if (play) play.then(() => { video.pause(); go(); video.classList.add('is-ready'); }).catch(() => {});
+    }, { once: true });
+    video.preload = 'auto';
+    video.src = desktop ? video.dataset.src : video.dataset.srcSmall;
+  }
+
+  /* hero: eerst rijdt de camera naar de laptop (video), dan zoomen we in op het scherm tot het het hele beeld vult.
+     Het scherm kleurt naar inkt met 'Vizora Digital' erop en loopt zo naadloos over in het donkere voorbeelden-deel (alleen desktop) */
   if (zoom && desktop) {
     const media = zoom.querySelector('.hero__media');
     const screenEl = zoom.querySelector('.hero__screen');
-    const S = { x: 0.1287, y: 0.1864, w: 0.5535, h: 0.6072 }; // schermvlak in de foto (zie .hero__screen)
+    const mark = zoom.querySelector('.hero__mark');
+    const S = { x: 0.3438, y: 0.343, w: 0.3102, h: 0.379 }; // schermvlak in het laatste videobeeld (zie .hero__screen)
+    const Z = 0.42; // deel van het vastzetten waarin eerst de video loopt
     const geo = () => {
       const W = zoom.offsetWidth, H = zoom.offsetHeight, left = zoom.getBoundingClientRect().left;
-      const sx = left + (S.x + S.w / 2) * W, sy = window.innerHeight / 2 - H / 2 + (S.y + S.h / 2) * H; // bij vastzetten staat de foto midden in beeld
+      const sx = left + (S.x + S.w / 2) * W, sy = window.innerHeight / 2 - H / 2 + (S.y + S.h / 2) * H; // bij vastzetten staat het beeld midden in beeld
       return {
         s: Math.max(window.innerWidth / (S.w * W), window.innerHeight / (S.h * H)) * 1.12,
         dx: window.innerWidth / 2 - sx, dy: window.innerHeight / 2 - sy,
       };
     };
     gsap.set(media, { transformOrigin: `${(S.x + S.w / 2) * 100}% ${(S.y + S.h / 2) * 100}%` });
-    gsap.timeline({ scrollTrigger: { trigger: zoom, start: 'center center', end: '+=120%', pin: true, scrub: true, invalidateOnRefresh: true, anticipatePin: 1 } })
+    const tl = gsap.timeline({ scrollTrigger: { trigger: zoom, start: 'center center', end: '+=200%', pin: true, scrub: true, invalidateOnRefresh: true, anticipatePin: 1 } })
       // de wrapper wordt vastgezet, het beeld erin schaalt (pin en transform niet op hetzelfde element)
-      .to(media, { scale: () => geo().s, x: () => geo().dx, y: () => geo().dy, ease: 'power2.in', duration: 1 }, 0)
-      .to(media, { borderRadius: 0, ease: 'none', duration: 0.3 }, 0)
-      .to(screenEl, { opacity: 1, ease: 'none', duration: 0.3 }, 0.7);
+      .to(media, { scale: () => geo().s, x: () => geo().dx, y: () => geo().dy, ease: 'power2.in', duration: 1 - Z }, Z)
+      .to(media, { borderRadius: 0, ease: 'none', duration: 0.2 }, Z)
+      .to(screenEl, { opacity: 1, ease: 'none', duration: 0.1 }, Z)
+      .fromTo(mark, { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, ease: 'power1.out', duration: 0.14, immediateRender: false }, Z + 0.06)
+      .to(mark, { opacity: 0, ease: 'none', duration: 0.1 }, 0.88);
+    const pin = tl.scrollTrigger;
+    // video loopt vanaf de bovenkant van de pagina tot het inzoomen begint
+    if (video) ScrollTrigger.create({ start: 0, end: () => pin.start + (pin.end - pin.start) * Z, invalidateOnRefresh: true, onUpdate: (st) => seek(st.progress) });
     gsap.fromTo('.hero__title, .hero__row', { yPercent: 0, opacity: 1 }, { yPercent: -30, opacity: 0, ease: 'none', immediateRender: false, scrollTrigger: { trigger: '.hero', start: 'top top', end: () => '+=' + Math.max(200, zoom.getBoundingClientRect().top + window.scrollY + zoom.offsetHeight / 2 - window.innerHeight / 2), scrub: true, invalidateOnRefresh: true } });
   }
 
-  /* telefoon/tablet: geen vastzetten, wel rustig inzoomen op het scherm terwijl de hero wegscrollt */
+  /* telefoon/tablet: geen vastzetten; de video volgt het scrollen en het beeld zoomt rustig in op het scherm */
   if (zoom && !desktop) {
     const media = zoom.querySelector('.hero__media');
-    gsap.fromTo(media, { scale: 1 }, { scale: 1.45, transformOrigin: '37.4% 49%', ease: 'none', scrollTrigger: { trigger: media, start: 'top 55%', end: 'bottom top', scrub: true } });
+    if (video) ScrollTrigger.create({ trigger: media, start: 0, end: 'bottom top', onUpdate: (st) => seek(st.progress) });
+    gsap.fromTo(media, { scale: 1 }, { scale: 1.35, transformOrigin: '50% 53%', ease: 'none', scrollTrigger: { trigger: media, start: 'top 55%', end: 'bottom top', scrub: true } });
   }
 
   /* stapelende vlakken: het vorige deel krimpt licht en wordt donkerder als het volgende eroverheen schuift */

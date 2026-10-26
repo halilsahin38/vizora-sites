@@ -160,5 +160,13 @@
 /* ---------- vloeiend scrollen: strook, zoom en stapelende vlakken ---------- */
 .hero__zoom { margin-top: clamp(32px, 4vw, 56px); }
 .hero__media { will-change: transform; }
-/* het zwarte scherm van de laptop (fracties van hero-laptop.jpg); kleurt bij het inzoomen naar inkt, net als het volgende deel */
-.hero__screen { position: absolute; left: 12.87%; top: 18.64%; width: 55.35%; height: 60.72%; background: var(--ink); opacity: 0; border-radius: 2px; pointer-events: none; }
+/* video (camera rijdt naar de laptop) ligt over de eerste beeldfoto; zelfde beeld, dus geen flits als hij laadt */
+.hero__media { container-type: inline-size; }
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .4s; }
+.hero__video.is-ready { opacity: 1; }
+/* het zwarte scherm van de laptop in het laatste videobeeld (fracties van 1280×720); kleurt bij het inzoomen
+   naar inkt met 'Vizora Digital' erop, en loopt zo naadloos over in het donkere voorbeelden-deel eronder */
+.hero__screen { position: absolute; left: 34.38%; top: 34.3%; width: 31.02%; height: 37.9%; display: grid; place-items: center; background: var(--ink); opacity: 0; border-radius: 6px 6px 0 0; pointer-events: none; }
+.hero__mark { display: inline-flex; align-items: center; gap: .4em; color: var(--on-dark); font-weight: 600; font-size: 1.5cqw; letter-spacing: -.04em; white-space: nowrap; opacity: 0; }
+.hero__mark .logo__mark { width: 1.25em; height: 1.25em; }
+.hero__mark .lm-a { fill: var(--on-dark); }
