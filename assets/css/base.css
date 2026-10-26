@@ -3,9 +3,9 @@
    Typografie: Host Grotesk (alles) + Geist Mono (labels)
    ========================================================= */
 :root {
-  --paper: #f5f2eb;
-  --paper-2: #ede8de;
-  --beige: #e8e1d3;
+  --paper: #ffffff; /* wit: bijna alle achtergronden (keuze Halil) */
+  --paper-2: #f5f5f2; /* heel licht grijs: kaarten en vlakjes op wit */
+  --beige: #ffffff; /* vroeger linnen; delen zijn nu ook wit */
   --sand: #d3c8b3;
   --ink: #0f1f1a; /* diep woudgroen, bijna zwart */
   --ink-2: #17302a;
@@ -15,7 +15,7 @@
   --terra: #b4471f;
   --terra-ink: #933a17;
   --terra-light: #ec8d63; /* terracotta voor tekst op inkt (6.9:1) */
-  --mist: #dfe4d9; /* licht saliegroen: vlak 'Zo werkt het' op de homepage */
+  --mist: #ffffff;
   --sage: #6f8a76;
   --on-dark: #f2eee5;
   --on-dark-muted: #a6b1aa;
@@ -67,6 +67,7 @@ ul, ol { padding: 0; list-style: none; }
    Zonder eigen achtergrond is een vel papier. */
 .sheet {
   position: relative; background: var(--paper); border-radius: var(--sheet) var(--sheet) 0 0; margin-top: calc(var(--sheet) * -1);
+  box-shadow: 0 -1px 0 var(--rule), 0 -30px 60px -30px rgba(15, 31, 26, .14); /* wit op wit: rand + zachte schaduw */
   padding-block: var(--sheet-pad, var(--sec)) calc(var(--sheet-pad, var(--sec)) + var(--sheet));
 }
 /* fijne korrel op de grote donkere en roestkleurige vlakken: geeft diepte, net als drukwerk (data-URI, geen extra bestand) */
@@ -130,7 +131,7 @@ em { font-style: normal; color: var(--terra); }
 
 /* ---------- kop ---------- */
 .hd { position: fixed; inset: 0 0 auto; z-index: 100; transition: background-color .4s, box-shadow .4s, transform .5s var(--ease); }
-.hd.is-scrolled { background: rgba(245, 242, 235, .9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--rule); }
+.hd.is-scrolled { background: rgba(255, 255, 255, .9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--rule); }
 .hd.is-hidden { transform: translateY(-100%); }
 /* menu open: geen backdrop-filter, anders wordt de kop het kader van het vaste menu (en klapt het menu in) */
 .hd.is-open { background: var(--paper); backdrop-filter: none; -webkit-backdrop-filter: none; }
@@ -295,7 +296,7 @@ html.js:not(.ready) [data-stagger] > * { opacity: 0; }
 .mw__r { justify-items: end; text-align: right; }
 .mw__t { font-weight: 500; font-size: clamp(1.6rem, 2.6vw, 2.4rem); line-height: 1; letter-spacing: -.045em; }
 .mw__d { color: var(--muted); max-width: 40em; }
-.mw__p { display: flex; align-items: flex-start; gap: .5rem; font-weight: 500; font-size: clamp(2.4rem, 4vw, 3.6rem); line-height: .9; letter-spacing: -.06em; }
+.mw__p { display: flex; align-items: flex-start; gap: .5rem; font-weight: 500; font-size: clamp(2rem, 3.2vw, 3rem); line-height: .9; letter-spacing: -.06em; }
 .mw .pk__from { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: .5rem; }
 .mw .pk__note { margin-top: 0; font-family: var(--mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
 .mw__go { display: inline-flex; align-items: center; gap: .5rem; margin-top: .4rem; font-weight: 500; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; transition: gap .3s var(--ease), color .3s; }

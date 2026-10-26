@@ -49,7 +49,7 @@ SUB_TIERS = [
     dict(name="Pro", price="95", feats=["Alles uit Plus", "Tot 6 aanpassingen per maand", "Elk kwartaal een nieuwe pagina of actie", "Maandelijks groeigesprek"]),
 ]
 # grote projecten: geen vast pakket, prijs op offerte na het gratis gesprek
-MAATWERK = dict(name="Maatwerk", price="2.000",
+MAATWERK = dict(name="Maatwerk", price="In overleg",
                 desc="Een webshop, een website met veel pagina's of koppelingen, of een site voor een groter bedrijf. "
                      "Na het gratis gesprek krijg je een offerte met een vaste prijs.")
 GUARANTEES = [
@@ -69,7 +69,7 @@ LD = {
     "description": "Websites en online groei voor ondernemers in heel Nederland. Vanuit Breda.",
     "telephone": "+31638705348",
     "email": MAIL,
-    "priceRange": "€395 - €2000+",
+    "priceRange": "€395 - €1295, maatwerk in overleg",
     "address": {"@type": "PostalAddress", "addressLocality": "Breda", "addressRegion": "Noord-Brabant", "addressCountry": "NL"},
     "areaServed": {"@type": "Country", "name": "Nederland"},
     "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
@@ -140,7 +140,7 @@ def head(file, title, desc, css=(), preload=None, ld=False):
   <title>{title}</title>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{url}">
-  <meta name="theme-color" content="#f5f2eb">
+  <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:site_name" content="Vizora Digital">
@@ -293,9 +293,9 @@ def price_columns():
 def maatwerk():
     """Brede kaart onder de pakketten voor grote projecten (home en prijzen)."""
     m = MAATWERK
-    return f'''      <a class="mw" href="contact.html?pakket={m["name"]}" data-reveal>
+    return f'''      <a class="mw" href="contact.html?pakket={m["name"]}" data-tilt>
         <span class="mw__l"><span class="label">{m["name"]}</span><span class="mw__t">Groter project?</span><span class="mw__d">{m["desc"]}</span></span>
-        <span class="mw__r"><span class="mw__p"><span class="pk__from">vanaf</span>€{m["price"]}</span><span class="pk__note">op offerte · excl. btw</span><span class="mw__go">Bespreek je project {I["arrow"]}</span></span>
+        <span class="mw__r"><span class="mw__p">{m["price"]}</span><span class="pk__note">prijs op offerte · excl. btw</span><span class="mw__go">Bespreek je project {I["arrow"]}</span></span>
       </a>'''
 
 

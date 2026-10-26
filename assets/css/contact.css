@@ -125,7 +125,7 @@
 
 /* versturen */
 .bk__send { padding-top: clamp(28px, 3vw, 44px); display: grid; gap: 1.2rem; }
-.bk__sum { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem 1.4rem; padding: 1.15rem 1.4rem; background: var(--beige); border-radius: var(--r); }
+.bk__sum { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem 1.4rem; padding: 1.15rem 1.4rem; background: var(--paper-2); border-radius: var(--r); }
 .bk__sumpk { font-weight: 500; font-size: clamp(1.1rem, 1.5vw, 1.3rem); letter-spacing: -.02em; line-height: 1.3; color: var(--terra-ink); }
 .bk__sumt { font-weight: 500; font-size: clamp(1.1rem, 1.5vw, 1.3rem); letter-spacing: -.02em; line-height: 1.3; }
 .bk__sumt::first-letter { text-transform: uppercase; }

@@ -11,6 +11,7 @@
  *   data-drift        beeld schuift rustig binnen zijn kader (parallax op de <picture>; samen met data-clip te gebruiken)
  *   data-grow         groot beeld groeit mee tijdens het scrollen (hero)
  *   data-speed="-0.1" parallax: beweegt langzamer/sneller dan de pagina
+ *   data-tilt         blok kantelt bij scrollen in 3D omhoog ("side" = draait vanaf opzij)
  *
  * Met classes:
  *   .sheet            vel met afgeronde bovenkant dat over het vorige deel schuift (stijl in base.css)
@@ -165,6 +166,24 @@
     if (img) gsap.fromTo(img, { yPercent: -6, scale: 1.12 }, { yPercent: 4, scale: 1, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
 
+  /* 3D bij scrollen: blokken kantelen vanuit de diepte omhoog en komen recht in beeld (data-tilt).
+     Alleen kantelen, niet vervagen: tekst blijft altijd leesbaar. data-tilt="side": draait vanaf opzij (foto).
+     Een eigen CSS-verschuiving (bv. de uitgelichte prijskaart) blijft behouden. Buren starten na elkaar. */
+  const tiltOrder = new Map();
+  gsap.utils.toArray('[data-tilt]').forEach((el) => {
+    const kind = el.dataset.tilt;
+    const i = tiltOrder.get(el.parentElement) || 0;
+    tiltOrder.set(el.parentElement, i + 1);
+    const y0 = gsap.getProperty(el, 'y');
+    const from = kind === 'side'
+      ? { rotateY: desktop ? -18 : -10, x: desktop ? -40 : -16 }
+      : { rotateX: desktop ? 32 : 18, y: y0 + (desktop ? 110 : 50), scale: 0.94 };
+    gsap.fromTo(el, { ...from, transformPerspective: 1200, transformOrigin: kind === 'side' ? '0% 50%' : '50% 100%' }, {
+      rotateX: 0, rotateY: 0, x: 0, y: y0, scale: 1, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top bottom', end: `top ${desktop ? 62 - i * 7 : 75}%`, scrub: 0.8 },
+    });
+  });
+
   /* parallax */
   gsap.utils.toArray('[data-speed]').forEach((el) => {
     const s = parseFloat(el.dataset.speed) || 0;
@@ -230,14 +249,23 @@
     gsap.fromTo(media, { scale: 1 }, { scale: 1.35, transformOrigin: '50% 53%', ease: 'none', scrollTrigger: { trigger: media, start: 'top 55%', end: 'bottom top', scrub: true } });
   }
 
+  /* hero in 3D: de laptop ligt eerst iets achterover en komt rechtop terwijl je naar beneden scrollt (vóór het inzoomen) */
+  if (zoom) {
+    gsap.fromTo(zoom.querySelector('.hero__media'), { rotateX: desktop ? 14 : 8, transformPerspective: 1400 }, {
+      rotateX: 0, ease: 'none',
+      scrollTrigger: { trigger: zoom, start: 'top bottom', end: desktop ? 'center center' : 'top 30%', scrub: true },
+    });
+  }
+
   /* stapelende vlakken: het vorige deel krimpt licht en wordt donkerder als het volgende eroverheen schuift */
   gsap.utils.toArray('.sheet, .ft').forEach((next) => {
     const prev = next.classList.contains('ft') ? document.querySelector('main > .stack:last-of-type') : next.previousElementSibling;
     if (!prev || !prev.classList.contains('stack')) return;
     // hero niet schalen: een transform op de hero breekt de vastgezette (gepinde) laptop
     const scale = !prev.querySelector('[data-zoom]');
+    const dim = prev.matches('[data-theme="dark"]') ? 0.5 : 0.12; // wit wordt anders grauw
     gsap.fromTo(prev, scale ? { scale: 1, '--dim': 0 } : { '--dim': 0 }, {
-      ...(scale ? { scale: desktop ? 0.95 : 0.97 } : {}), '--dim': 0.5, ease: 'none',
+      ...(scale ? { scale: desktop ? 0.95 : 0.97 } : {}), '--dim': dim, ease: 'none',
       scrollTrigger: { trigger: next, start: 'top bottom', end: 'top top', scrub: true },
     });
   });

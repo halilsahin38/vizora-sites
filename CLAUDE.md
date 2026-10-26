@@ -25,7 +25,7 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 ## Prijzen (huidige stand op de site)
 - Alle prijzen exclusief btw.
 - Pakketten eenmalig (oktober 2026): Start €395 · Groei €795 · Compleet €1.295.
-- Maatwerk voor grote projecten (webshop, veel pagina's, grotere bedrijven): vanaf €2.000, op offerte (`MAATWERK` in core.py).
+- Maatwerk voor grote projecten (webshop, veel pagina's, grotere bedrijven): prijs "In overleg", op offerte (`MAATWERK` in core.py).
 - Abonnementen per maand, maandelijkse factuur: Basis €30 · Plus €59 · Pro €95 (Pro = tot 6 aanpassingen, niet onbeperkt).
 - Hosting gratis inbegrepen bij elk pakket; klant betaalt zelf de domeinnaam (ca. €10–15 per jaar).
 - Prijzen staan op één plek: `PACKAGES`, `SUB_TIERS` en `MAATWERK` in `src/core.py`.
@@ -38,16 +38,17 @@ dan pas bouwen. Geen dingen toevoegen waar niet om gevraagd is.
 - Geen cursor-ring, intro-animatie of woord-voor-woord animatie in koppen (alleen in de hoofdtitel).
 
 ## Stijl
-- Kleuren (oktober 2026, keuze Claude op verzoek van Halil): warm papier #f5f2eb, linnen #e8e1d3, inkt = diep woudgroen #0f1f1a
-  (donkere vlakken + tekst), accent terracotta #b4471f (spaarzaam), licht saliegroen #dfe4d9 (vlak "Zo werkt het").
-  Geen grote oranje/roest vlakken: Halil vond dat niet passen.
+- Kleuren: achtergrond **wit** voor bijna alles (keuze Halil), lichtgrijs #f5f5f2 voor kaarten; inkt = diep woudgroen #0f1f1a
+  (tekst + de paar donkere vlakken: belofte-blok na de zoom, uitgelichte prijs, voet); accent terracotta #b4471f (spaarzaam).
+  Geen grote oranje/roest vlakken: Halil vond dat niet passen. Witte vellen schuiven over elkaar met een dunne rand + zachte schaduw.
   Tokens staan in `assets/css/base.css` (:root). Fijne korrel (`--grain`) op de grote donkere vlakken.
 - Logo (keuze Halil: "B · Scherm"): groen afgerond vierkant met witte V en een terracotta streepje bovenin (de camera van de
   laptop). `LOGO_MARK` in core.py, `assets/logo.svg`, `favicon.svg`, `logo-512.png`, `apple-touch-icon.png`, `og.png`.
 - Hero: video uit Higgsfield (`assets/video/hero.mp4` + `hero-480.mp4`, zonder geluid) volgt het scrollen; daarna zoom in het
   scherm met "Vizora Digital", naadloos naar het donkere belofte-blok ("Gratis concept. Pas betalen als je blij bent.").
   Eerste videobeeld = `assets/foto/hero-laptop.*`.
-- Echte apparaten (telefoon/laptop) met eigen voorbeeldontwerpen op het scherm, beweging bij scrollen (parallax).
+- 3D-beweging bij scrollen (keuze Halil): hero-laptop komt rechtop, kaarten/blokken kantelen omhoog (`data-tilt`, alleen kantelen,
+  niet vervagen: tekst blijft leesbaar).
 - Geen voorbeeldsites van verzonnen bedrijven op de site (keuze Halil, oktober 2026: oogt nep/AI-erig, catalogus-gevoel).
   Later echte klantwebsites tonen. De oude concepten staan nog in `concepts/` maar worden niet gebruikt.
 - Nooit AI-trucjes in voorbeelden: geen "Jouw Bedrijf", nepcijfers, zwevende kaartjes, blobs. Elke laptop/telefoonfoto een andere echte omgeving.

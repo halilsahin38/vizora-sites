@@ -90,7 +90,7 @@
 .xtr__tag { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); text-align: right; }
 .xtr__go { align-self: center; }
 .xtr__go .i { width: 24px; height: 24px; transition: transform .45s var(--ease); }
-.xtr__row--link::before { content: ""; position: absolute; inset: 0 calc(var(--pad) * -1); background: var(--beige); opacity: 0; transition: opacity .35s; z-index: -1; }
+.xtr__row--link::before { content: ""; position: absolute; inset: 0 calc(var(--pad) * -1); background: var(--paper-2); opacity: 0; transition: opacity .35s; z-index: -1; }
 .xtr__row--link:hover::before { opacity: 1; }
 .xtr__row--link:hover .xtr__name { color: var(--terra-ink); }
 .xtr__row--link:hover .xtr__go .i { transform: translateX(6px); }

@@ -19,7 +19,7 @@
 
 /* plek voor de foto van Halil & Sahin (staand portret, zie PHOTO in src/pages/over_ons.py) */
 .duo__photo { margin: clamp(1.6rem, 2.6vw, 2.4rem) 0 0; max-width: 420px; }
-.duo__img { aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: var(--beige); }
+.duo__img { aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: var(--paper-2); }
 .duo__img picture, .duo__img img { width: 100%; height: 100%; }
 .duo__img img { object-fit: cover; }
 .duo__side .duo__cap { margin-top: .8rem; padding-top: 0; }

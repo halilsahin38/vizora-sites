@@ -10,7 +10,7 @@ STEPS = [
 
 
 def _steps():
-    return "\n".join(f'''          <li class="st" data-reveal>
+    return "\n".join(f'''          <li class="st" data-tilt>
             <p class="st__n">0{i}</p>
             <h3>{t}</h3>
             <p>{d}</p>
@@ -22,7 +22,7 @@ def _packs():
     for pk in PACKAGES:
         feat = pk["featured"]
         tag = '<span class="tag">Onze aanrader</span>' if feat else ""
-        out.append(f'''          <a class="pk{" pk--featured" if feat else ""}" href="contact.html?pakket={pk["name"]}">
+        out.append(f'''          <a class="pk{" pk--featured" if feat else ""}" data-tilt href="contact.html?pakket={pk["name"]}">
             <span class="pk__top"><span class="label">{pk["name"]}</span>{tag}</span>
             <span class="pk__price"><span class="pk__from">vanaf</span>€{pk["price"]}</span>
             <span class="pk__note">eenmalig · excl. btw</span>
@@ -66,10 +66,10 @@ def render():
           {label("", "Onze belofte")}
           <div>
             <h2 id="vow-title" class="vow__title" data-reveal>Gratis concept.<br><span>Pas betalen als je blij bent.</span></h2>
-            <ul class="vow__list" data-stagger>
-              <li><span class="label">01</span>Je ziet je nieuwe website al in het eerste gesprek.</li>
-              <li><span class="label">02</span>Vaste prijs vooraf. Geen verrassingen.</li>
-              <li><span class="label">03</span>Daarna helpen we je gevonden te worden in Google.</li>
+            <ul class="vow__list">
+              <li data-tilt><span class="label">01</span>Je ziet je nieuwe website al in het eerste gesprek.</li>
+              <li data-tilt><span class="label">02</span>Vaste prijs vooraf. Geen verrassingen.</li>
+              <li data-tilt><span class="label">03</span>Daarna helpen we je gevonden te worden in Google.</li>
             </ul>
             <div class="vow__cta" data-reveal>
               <a href="contact.html" class="btn btn--light">Plan je gratis concept {I["arrow"]}</a>
@@ -115,7 +115,7 @@ def render():
 
     <section class="about sheet stack" aria-labelledby="ab-title">
       <div class="about__in wrap">
-        <figure class="about__photo"><div class="about__img" data-clip>{pic("halil", "Halil, medeoprichter van Vizora Digital", 800, 1000, pos="50% 20%")}</div><figcaption class="label about__cap">Halil</figcaption></figure>
+        <figure class="about__photo" data-tilt="side"><div class="about__img" data-clip>{pic("halil", "Halil, medeoprichter van Vizora Digital", 800, 1000, pos="50% 20%")}</div><figcaption class="label about__cap">Halil</figcaption></figure>
         <div class="about__body">
           {label("", "Wie zijn wij")}
           <h2 id="ab-title" class="h2 home__h2" data-reveal>Halil &amp; Sahin. Twee broers, één aanspreekpunt.</h2>
