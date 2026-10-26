@@ -11,7 +11,6 @@
  *   data-drift        beeld schuift rustig binnen zijn kader (parallax op de <picture>; samen met data-clip te gebruiken)
  *   data-grow         groot beeld groeit mee tijdens het scrollen (hero)
  *   data-speed="-0.1" parallax: beweegt langzamer/sneller dan de pagina
- *   data-switcher     voorbeelden: knoppen wisselen de website op laptop/telefoon; op desktop ook door te scrollen (pin)
  *
  * Met classes:
  *   .sheet            vel met afgeronde bovenkant dat over het vorige deel schuift (stijl in base.css)
@@ -67,31 +66,6 @@
     el.querySelectorAll('.tl').forEach((l) => l.setAttribute('aria-hidden', 'true'));
     return el.querySelectorAll('.tl__in');
   };
-
-  /* voorbeelden: één scherm, drie websites (knoppen werken altijd, ook zonder GSAP) */
-  const sw = document.querySelector('[data-switcher]');
-  let swSet = () => {};
-  if (sw) {
-    const tabs = [...sw.querySelectorAll('[data-sw-tab]')];
-    const shots = [...sw.querySelectorAll('[data-sw-shot]')];
-    let cur = 0;
-    swSet = (i) => {
-      if (i === cur) return;
-      cur = i;
-      sw.dataset.swStyle = String(i); // achtergrond en tekstkleuren wisselen mee (home.css)
-      tabs.forEach((t, k) => { t.classList.toggle('is-on', k === i); t.setAttribute('aria-pressed', String(k === i)); });
-      shots.forEach((s, k) => { s.classList.toggle('is-on', k === i); if (k === i) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });
-    };
-    tabs.forEach((t, i) => t.addEventListener('click', () => {
-      // vastgezet: naar het stuk van de sectie scrollen dat bij deze stijl hoort
-      if (sw.classList.contains('is-pinned')) {
-        const top = sw.getBoundingClientRect().top + window.scrollY;
-        const y = top + (sw.offsetHeight - window.innerHeight) * (i + 0.5) / tabs.length;
-        if (window.__lenis) window.__lenis.scrollTo(y); else window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-      swSet(i);
-    }));
-  }
 
   if (!gsap || !ScrollTrigger || reduce) {
     document.querySelectorAll('[data-fill]').forEach((el) => el.classList.add('is-static'));
@@ -197,16 +171,6 @@
     gsap.fromTo(el, { yPercent: -s * 100 }, { yPercent: s * 100, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
 
-  /* voorbeelden vastzetten op desktop: scrollen wisselt de website */
-  if (sw && desktop) {
-    const n = sw.querySelectorAll('[data-sw-tab]').length;
-    sw.classList.add('is-pinned');
-    ScrollTrigger.create({
-      trigger: sw, start: 'top top', end: 'bottom bottom',
-      onUpdate: (st) => swSet(Math.min(n - 1, Math.floor(st.progress * n))),
-    });
-  }
-
   /* hero-video (camera rijdt langzaam naar de laptop): speelt niet vanzelf af, maar volgt het scrollen.
      Laadt pas hier, dus niet bij reduced motion. Kan hij niet afspelen (bv. energiebesparing op iOS), dan blijft de foto staan. */
   const zoom = document.querySelector('[data-zoom]');
@@ -230,7 +194,7 @@
   }
 
   /* hero: eerst rijdt de camera naar de laptop (video), dan zoomen we in op het scherm tot het het hele beeld vult.
-     Het scherm kleurt naar inkt met 'Vizora Digital' erop en loopt zo naadloos over in het donkere voorbeelden-deel (alleen desktop) */
+     Het scherm kleurt naar inkt met 'Vizora Digital' erop en loopt zo naadloos over in het donkere belofte-deel (alleen desktop) */
   if (zoom && desktop) {
     const media = zoom.querySelector('.hero__media');
     const screenEl = zoom.querySelector('.hero__screen');

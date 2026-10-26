@@ -91,8 +91,6 @@ SMALL = {"laptop": 800, "telefoon": 500}
 # sizes per plek (ongeveer hoe breed de foto op het scherm staat)
 SIZES = {
     "hero": "(max-width: 960px) 100vw, (max-width: 1600px) 92vw, 1500px",
-    "sw_laptop": "(max-width: 960px) 92vw, 50vw",
-    "sw_phone": "(max-width: 960px) 28vw, 13vw",
     "svc_laptop": "(max-width: 960px) 92vw, (max-width: 1600px) 66vw, 1060px",
     "svc_phone": "(max-width: 960px) min(92vw, 520px), (max-width: 1600px) 32vw, 520px",
     "see_laptop": "(max-width: 560px) 90vw, (max-width: 1600px) 60vw, 960px",

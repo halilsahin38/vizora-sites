@@ -2,40 +2,11 @@ from core import *  # noqa: F401,F403
 
 FILE = "index.html"
 
-STYLES = [
-    ("merk", "Donker &amp; luxe", "Diep zwart met warm goud. Voor een zaak die indruk wil maken."),
-    ("licht", "Licht &amp; strak", "Veel wit en één rustige kleur. Helder, modern en zakelijk."),
-    ("warm", "Warm &amp; persoonlijk", "Zachte tinten en ronde vormen. Vriendelijk en uitnodigend."),
-]
-
 STEPS = [
     ("Plan een gesprek", "Laat je gegevens achter, of bel of app ons direct. Wij stellen een moment voor. Gratis en vrijblijvend."),
     ("Wij maken je concept", "Voor het gesprek ontwerpen we alvast een eerste versie van jouw website. Soms bellen we eerst kort om je wensen te horen."),
     ("Pas dan beslis je", "Enthousiast? Dan bouwen we verder. Zo niet, dan heb je niets betaald."),
 ]
-
-
-def _shots():
-    # Elke stijl heeft een eigen laptop- en telefoonfoto (elk een andere echte omgeving).
-    out = []
-    for i, (key, name, _) in enumerate(STYLES):
-        on = " is-on" if i == 0 else ""
-        plain = name.replace("&amp;", "en")
-        laptop = pic(f"{key}-laptop", f"Voorbeeldwebsite in de stijl {plain} op een laptop", 1500, 1213, sizes=SIZES["sw_laptop"])
-        phone = pic(f"{key}-telefoon", f"Dezelfde website in de stijl {plain} op een telefoon", 1100, 1286, pos="52% 40%", sizes=SIZES["sw_phone"])
-        out.append(f'''            <div class="sw__shot{on}" data-sw-shot="{i}"{"" if i == 0 else ' aria-hidden="true"'}>
-              <div class="sw__laptop">{laptop}</div>
-              <div class="sw__phone">{phone}</div>
-            </div>''')
-    return "\n".join(out)
-
-
-def _tabs():
-    return "\n".join(f'''            <li><button type="button" class="sw__tab{" is-on" if i == 0 else ""}" data-sw-tab="{i}" aria-pressed="{"true" if i == 0 else "false"}">
-              <span class="sw__n">0{i + 1}</span>
-              <span class="sw__name">{name}</span>
-              <span class="sw__desc">{desc}</span>
-            </button></li>''' for i, (_, name, desc) in enumerate(STYLES))
 
 
 def _steps():
@@ -89,21 +60,22 @@ def render():
       </div>
     </section>
 
-    <section class="sw sheet stack" data-theme="dark" data-sw-style="0" aria-labelledby="sw-title" data-switcher>
-      <div class="sw__sticky">
-        <div class="sw__grid wrap">
-          <div class="sw__side">
-            {label("", "Voorbeelden")}
-            <h2 id="sw-title" class="sw__title">Zo kan jouw website eruitzien.</h2>
-            <p class="sw__intro">Drie voorbeelden van fictieve bedrijven, elk in een eigen stijl. Zo maken we elke site op maat: jouw kleuren, jouw teksten, jouw zaak.</p>
-            <ul class="sw__tabs" aria-label="Kies een voorbeeldstijl">
-{_tabs()}
+    <section class="vow sheet stack" data-theme="dark" aria-labelledby="vow-title">
+      <div class="wrap">
+        <div class="split">
+          {label("", "Onze belofte")}
+          <div>
+            <h2 id="vow-title" class="vow__title" data-reveal>Gratis concept.<br><span>Pas betalen als je blij bent.</span></h2>
+            <ul class="vow__list" data-stagger>
+              <li><span class="label">01</span>Je ziet je nieuwe website al in het eerste gesprek.</li>
+              <li><span class="label">02</span>Vaste prijs vooraf. Geen verrassingen.</li>
+              <li><span class="label">03</span>Daarna helpen we je gevonden te worden in Google.</li>
             </ul>
+            <div class="vow__cta" data-reveal>
+              <a href="contact.html" class="btn btn--light">Plan je gratis concept {I["arrow"]}</a>
+              <a href="{TEL}" class="vow__tel">of bel {TEL_TXT}</a>
+            </div>
           </div>
-          <div class="sw__stage">
-{_shots()}
-          </div>
-          <a href="contact.html" class="sw__cta">Jouw website hier? Plan je gratis concept {I["arrow"]}</a>
         </div>
       </div>
     </section>
