@@ -3,8 +3,8 @@
 ## Wat er al klaar is
 | Bestand | Wat |
 |---|---|
-| `Laid-Off-Get-Hired-Again.pdf` | Het product (19 pagina's), dit verkoop je |
-| `kit.html` | De bron van het product (via Claude aan te passen) |
+| `Laid-Off-Get-Hired-Again.pdf` | Het e-book (49 pagina's), dit verkoop je |
+| `book/` | De tekst en opmaak van het e-book (via Claude aan te passen, opnieuw bouwen met `node book/build.js`) |
 | `LISTING.md` | Titels, beschrijving, tags, prijs en Pinterest-teksten |
 | `preview-images/` | Cover en voorbeeldpagina's voor je productpagina |
 
@@ -25,7 +25,7 @@
 2. Ga naar **Settings → Payment** en koppel **Stripe** (bankrekening) en/of **PayPal**.
 3. Klik op **Add Product → Digital Download**.
 4. Upload `Laid-Off-Get-Hired-Again.pdf`.
-5. Vul de titel, de prijs ($12 introductieprijs) en de beschrijving uit `LISTING.md` in.
+5. Vul de titel, de prijs ($14 introductieprijs) en de beschrijving uit `LISTING.md` in.
 6. Upload de afbeeldingen uit `preview-images/` (cover als eerste).
 7. Klik op **Publish**. Je krijgt een link, en die link is je winkel.
 8. Koop het product één keer zelf met een kortingscode van 100% om de downloadflow te testen.
@@ -55,8 +55,8 @@ Zie je na **4 weken** bezoekers maar geen verkopen? Dan ligt het aan je titel, p
 ---
 
 ## Volgende producten (productladder)
-1. **Nu:** deze kit ($12 tot $17)
+1. **Nu:** dit e-book ($14 tot $19)
 2. **Gratis lokkertje:** "The 30-Second Layoff Answer" cheat sheet (1 pagina) in ruil voor een e-mailadres
 3. **Upsell:** Résumé Gap Rewrite Pack (cv- en LinkedIn-teksten voor ontslagen mensen)
-4. **Bundel ($27 tot $37):** Kit + Résumé Pack + Salary Negotiation Scripts
+4. **Bundel ($27 tot $37):** E-book + Résumé Pack + Salary Negotiation Scripts
 5. **Later:** Nederlandse versie, en kits voor andere doelgroepen (bijvoorbeeld carrièrewisselaars)

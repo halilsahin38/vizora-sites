@@ -5,23 +5,23 @@ Kopieer en plak deze teksten in Payhip, Gumroad of Etsy.
 ---
 
 ## Prijs
-- **Normale prijs:** $17
-- **Introductieprijs (eerste 2 weken):** $12, zodat je sneller je eerste reviews krijgt
+- **Normale prijs:** $19
+- **Introductieprijs (eerste 2 weken):** $14, zodat je sneller je eerste reviews krijgt
 
 ## Producttitel (Payhip / Gumroad)
-Laid Off? Get Hired Again. The Layoff Comeback Interview Kit
+Laid Off? Get Hired Again. What to Say When They Ask Why You Left
 
 ## Etsy-titel (zoekwoorden eerst, korter dan 15 woorden)
-Laid Off Job Interview Prep Kit: Layoff & Employment Gap Answer Scripts, Printable PDF
+Laid Off Job Interview Guide Ebook: Layoff & Employment Gap Answers, Printable Worksheets PDF
 
 ## Etsy-tags (13 stuks, elk maximaal 20 tekens)
 1. laid off
 2. job interview prep
 3. interview questions
 4. employment gap
-5. interview workbook
+5. interview ebook
 6. star method
-7. job search planner
+7. job search guide
 8. career change
 9. interview answers
 10. job seeker gift
@@ -33,37 +33,37 @@ Laid Off Job Interview Prep Kit: Layoff & Employment Gap Answer Scripts, Printab
 
 ## Productbeschrijving (Engels, voor alle platforms)
 
-**Dreading the question "Why did you leave your last job?"**
+**Dreading the moment they ask "So, what happened at your last job?"**
 
-Being laid off is common. Talking about it confidently is not. Most laid-off candidates don't lose offers because of the layoff. They lose them because their answer comes out too long, too emotional or too apologetic.
+You've finally got an interview. It's going fine. Then they look at your résumé and ask why you left, and you either freeze or talk for two minutes about something you meant to cover in one sentence.
 
-This 19-page printable kit gives you word-for-word scripts you can adapt in minutes, so you walk into your next interview **confident instead of defensive.**
+Being laid off is rarely what costs people the next job. How they talk about it is. This 49-page e-book shows you exactly what to say, and helps you walk in feeling like yourself again instead of someone with something to hide.
 
-**What's inside:**
-- **The 3-Part Layoff Answer Formula** (Fact, Context, Forward) for a calm, honest answer in under 30 seconds
-- **12 exit scripts**: company-wide layoff, role eliminated, merger, startup shutdown, contract ended, fired for performance, quit without a job, burnout break, laid off more than once, and more
-- **Employment gap scripts** for 3 to 6 months, 6 to 12 months, 12+ months, and career switch
-- **"Tell me about yourself" builder** with a worked example
-- **14 tough follow-up questions** ("Were you a low performer?", "Why you and not others?", salary, overqualified...), each with what they're really asking and a script
-- **Story Bank**: 7 STAR worksheets you fill in once and reuse in every interview
-- **15 smart questions to ask the interviewer**
-- **Words that hurt you / words that help you** swap list
-- **Day-of, video and one-way interview checklists**
-- **Thank-you, follow-up and rejection email templates**
-- **48-Hour Interview Plan** with an "interview tomorrow" fast track
+**Inside the book:**
+- **What the interviewer is really checking** when they ask why you left (it's three things, and you can answer all of them in one go)
+- **The 30-second answer**: what happened, why it wasn't about you, where you're going. With full before-and-after rewrites
+- **When your story is messy**: only a few people cut, fired for performance, quit without a job, burnout, laid off twice, still working your notice
+- **The gap on your résumé**: what interviewers think at 3, 6 and 12+ months, and a three-sentence answer for each
+- **"Tell me about yourself"** without starting with the layoff
+- **Getting your confidence back** before you walk in: the proof file, your story bank, and the one exercise everyone skips
+- **14 follow-up questions that trip people up**, with what they're really asking and how to answer
+- **How not to sound desperate**, including salary, even when money is tight
+- **Interview day, video and recorded interviews, and what to do afterwards**, including handling a "no"
 
-**Format:** PDF, US Letter, printable. Instant download.
+**Printable toolkit included:** proof file, 30-second answer worksheet, gap worksheet, "tell me about yourself" builder, six story-bank worksheets, questions to ask, thank-you / follow-up / rejection email templates, and a cut-out cheat sheet for the car park.
 
-**Who it's for:** anyone who was laid off, let go, or has a gap in their résumé and has an interview coming up.
+**Format:** PDF e-book, 6 x 9 in, 49 pages. Read on any phone, tablet or computer, or print the worksheets. Instant download.
 
-*Please note: this is a digital product. No physical item will be shipped. For personal use only.*
+**Who it's for:** anyone who was laid off, let go or has a gap in their résumé, and has an interview coming up (or wants to be ready when they do).
 
-**AI disclosure:** This product was created with the help of AI writing tools and was reviewed, edited and designed by the shop owner.
+*This is a digital product. Nothing will be shipped. For personal use only.*
+
+**AI disclosure:** This book was written with the help of AI writing tools and was shaped, edited and checked by the author.
 
 ---
 
 ## Korte beschrijving (Pinterest-pin, maximaal 500 tekens)
-Laid off and dreading "Why did you leave your last job?" This printable interview kit gives you word-for-word scripts to explain a layoff or employment gap in under 30 seconds, plus answers to 14 tough follow-up questions, STAR story worksheets, questions to ask the interviewer and thank-you email templates. Walk in confident, not defensive.
+Laid off and dreading "Why did you leave your last job?" This short e-book shows you how to explain a layoff or employment gap in 30 seconds, answer the 14 follow-up questions that trip people up, and get your confidence back before you walk in. Printable worksheets and email templates included.
 
 ## Teksten voor op Pinterest-afbeeldingen (één per pin)
 1. "Laid off? Here's exactly what to say in your next interview"
