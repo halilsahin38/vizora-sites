@@ -1,4 +1,4 @@
-# Verkoopteksten: Laid Off? Get Hired Again.
+# Verkoopteksten: "Why Did You Leave?"
 
 Kopieer en plak deze teksten in Payhip, Gumroad of Etsy.
 
@@ -9,10 +9,10 @@ Kopieer en plak deze teksten in Payhip, Gumroad of Etsy.
 - **Introductieprijs (eerste 2 weken):** $14, zodat je sneller je eerste reviews krijgt
 
 ## Producttitel (Payhip / Gumroad)
-Laid Off? Get Hired Again. What to Say When They Ask Why You Left
+"Why Did You Leave?" The 30-Second Answer That Gets Laid-Off People Hired Again
 
 ## Etsy-titel (zoekwoorden eerst, korter dan 15 woorden)
-Laid Off Job Interview Guide Ebook: Layoff & Employment Gap Answers, Printable Worksheets PDF
+Why Did You Leave Interview Answer Guide for Laid Off Job Seekers, Employment Gap Ebook PDF
 
 ## Etsy-tags (13 stuks, elk maximaal 20 tekens)
 1. laid off

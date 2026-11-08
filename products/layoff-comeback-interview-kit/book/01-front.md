@@ -1,5 +1,5 @@
 ::: {.copyright}
-**Laid Off? Get Hired Again.**
+**"Why Did You Leave?" The 30-Second Answer That Gets Laid-Off People Hired Again**
 
 All rights reserved. This book is for your personal use. Please don't copy, resell or share the file.
 
