@@ -3,7 +3,7 @@
 ## Wat er al klaar is
 | Bestand | Wat |
 |---|---|
-| `Why-Did-You-Leave.pdf` | Het e-book (49 pagina's), dit verkoop je |
+| `Laid-Off-to-Interview-Ready-in-30-Days.pdf` | Het e-book (55 pagina's), dit verkoop je |
 | `book/` | De tekst en opmaak van het e-book (via Claude aan te passen, opnieuw bouwen met `node book/build.js`) |
 | `LISTING.md` | Titels, beschrijving, tags, prijs en Pinterest-teksten |
 | `preview-images/` | Cover en voorbeeldpagina's voor je productpagina |
@@ -24,7 +24,7 @@
 1. Ga naar payhip.com en klik op **Sign up**.
 2. Ga naar **Settings → Payment** en koppel **Stripe** (bankrekening) en/of **PayPal**.
 3. Klik op **Add Product → Digital Download**.
-4. Upload `Why-Did-You-Leave.pdf`.
+4. Upload `Laid-Off-to-Interview-Ready-in-30-Days.pdf`.
 5. Vul de titel, de prijs ($14 introductieprijs) en de beschrijving uit `LISTING.md` in.
 6. Upload de afbeeldingen uit `preview-images/` (cover als eerste).
 7. Klik op **Publish**. Je krijgt een link, en die link is je winkel.

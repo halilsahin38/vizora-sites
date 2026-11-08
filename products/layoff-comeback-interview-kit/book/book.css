@@ -47,3 +47,13 @@ td { border-bottom: 1px solid var(--line); padding: 5px 7px; vertical-align: top
 .cheatsheet { border: 2px dashed var(--navy); border-radius: 8px; padding: 0.4em 1em 0.6em; margin-top: 0.3in; }
 .cheatsheet h2 { margin-top: 0.5em; }
 .cheatsheet p { font-size: 9.8pt; margin-bottom: 0.55em; }
+
+/* 30-day plan tables */
+.plan table { font-size: 8.6pt; table-layout: fixed; }
+.plan col { width: auto !important; }
+.plan th:nth-child(1), .plan td:nth-child(1) { width: 9%; }
+.plan td:nth-child(1) { font-weight: 700; color: var(--navy); }
+.plan th:nth-child(2), .plan td:nth-child(2) { width: 61%; }
+.plan th:nth-child(3), .plan td:nth-child(3) { width: 21%; }
+.plan td:nth-child(3) { color: var(--muted); }
+.plan th:nth-child(4), .plan td:nth-child(4) { width: 9%; text-align: center; }
