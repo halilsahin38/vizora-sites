@@ -58,7 +58,10 @@ Being laid off is rarely what costs people the next job. How they talk about it 
 
 *This is a digital product. Nothing will be shipped. For personal use only.*
 
-**AI disclosure:** This book was written with the help of AI writing tools and was shaped, edited and checked by the author.
+### Alleen voor Etsy: plak deze regel onderaan de beschrijving
+Etsy verplicht sinds oktober 2026 dat je vermeldt dat AI is gebruikt. Laat je dit weg, dan kan Etsy je listing of hele shop verwijderen. Op Payhip en Gumroad laat je deze regel weg.
+
+> This book was written with the help of AI writing tools and was shaped, edited and checked by the author.
 
 ---
 

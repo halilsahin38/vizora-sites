@@ -6,8 +6,6 @@ All rights reserved. This book is for your personal use. Please don't copy, rese
 The people in this book are composite examples. Their names and details are made up, but their situations are the ones that come up again and again for people who've been laid off.
 
 This book gives general advice about job interviews. It isn't legal, financial or medical advice, and nobody can promise you a job offer. What it can do is help you show up prepared, honest and calm. That part is up to you, and it's more than enough.
-
-This book was written with the help of AI writing tools and was shaped, edited and checked by the author.
 :::
 
 ::: {.toc}

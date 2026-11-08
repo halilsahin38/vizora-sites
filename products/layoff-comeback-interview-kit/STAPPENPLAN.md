@@ -40,7 +40,7 @@
 ## Stap 4: Etsy (tweede kanaal)
 1. Open een shop via etsy.com/sell. Er is een kleine instapvergoeding en per product kost een listing $0,20.
 2. Kies bij "Who made it?" **"I did"** en bij type **"Digital"**. Kies bij de AI-vraag dat AI is gebruikt.
-3. Vul de Etsy-titel, de 13 tags en de beschrijving in, inclusief de **AI disclosure**-regel.
+3. Vul de Etsy-titel, de 13 tags en de beschrijving in, en plak onderaan de **Etsy-regel over AI** uit `LISTING.md` (verplicht op Etsy, niet nodig op Payhip).
 4. Upload de preview-afbeeldingen. Etsy eist dat kopers een voorbeeld van de inhoud zien.
 5. Kosten per verkoop zijn ongeveer 6,5% transactie + 4% + €0,30 betaling.
 
