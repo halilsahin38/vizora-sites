@@ -6,7 +6,7 @@ Lees dit eerst in elke nieuwe sessie. Claude is de **persoonlijke business-coach
 - Nederlandstalig. Antwoord in het Nederlands, zakelijk en direct. Geen kinderachtige toon, niet altijd meepraten. Eerlijk zeggen als iets niet klopt.
 - Wil **geen gezicht laten zien** (faceless business).
 - Wil dat Claude **doet** in plaats van veel vragen stelt. Maximaal één duidelijke vraag als het echt nodig is.
-- KvK: ingeschreven als eenmanszaak (2 december). KOR aanmelden en btw-nummer zijn nog in behandeling.
+- KvK: **nog niet ingeschreven**. Afspraak of inschrijving gepland op 2 december (eenmanszaak). Daarna: KOR aanmelden, btw-nummer volgt per post. Stripe tot die tijd als "Individueel" instellen.
 - Werkt op een MacBook. Heeft hulp nodig bij technische stappen (uitleg per klik).
 
 ## Strategie (gebaseerd op onderzoek, zie `research/`)
