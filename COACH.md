@@ -34,8 +34,12 @@ Vul in en stuur naar Claude:
 - [ ] Berichten voor influencers (eerste bericht, opvolging, dealvoorstel)
 - [ ] 3 story-teksten voor influencers
 - [ ] Zoektermen en hashtags om carrièrecoaches en recruiters te vinden
-- [ ] Pin-generator (Pinterest-afbeeldingen per product)
-- [ ] Product 2 (op basis van vraagdata)
+- [x] Pin-generator (Pinterest-afbeeldingen per product)
+- [x] Productfoto's (mockups) voor Etsy/Payhip
+- [x] Berichten voor influencers en story-teksten (`INFLUENCERS.md`)
+- [x] Product 2: The Gap-Proof Résumé Kit
+- [ ] Pinterest-API-koppeling (wacht op jouw developer-account)
+- [ ] Etsy-API-koppeling (wacht op jouw developer-account)
 
 ## Beslisregels na 4 weken
 - **Bezoekers maar geen verkopen:** titel, prijs of previewafbeeldingen aanpassen.

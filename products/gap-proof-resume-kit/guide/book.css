@@ -1,0 +1,64 @@
+@page { size: 6in 9in; }
+:root { --navy: #14213d; --accent: #d9542b; --muted: #5d6576; --line: #c9ced8; --soft: #f5f1ec; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Bitstream Charter", "Liberation Serif", "DejaVu Sans", serif; font-size: 10.6pt; line-height: 1.55; color: #1d2230; hyphens: auto; }
+p { margin: 0 0 0.62em; text-align: left; orphans: 3; widows: 3; }
+strong { color: var(--navy); }
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 { font-family: "Inter", sans-serif; color: var(--navy); line-height: 1.2; break-after: avoid; }
+h1 { font-size: 21pt; font-weight: 800; letter-spacing: -0.01em; margin: 0.9in 0 0.35in; }
+h1.chapter { break-before: page; }
+h1.chapter::after { content: ""; display: block; width: 0.55in; height: 3px; background: var(--accent); margin-top: 0.16in; }
+h2 { font-size: 12.5pt; font-weight: 700; margin: 1.3em 0 0.45em; }
+h3 { font-size: 11pt; margin: 1.1em 0 0.4em; }
+
+ul, ol { margin: 0 0 0.8em; padding-left: 1.2em; }
+li { margin-bottom: 0.3em; }
+
+blockquote { margin: 0.8em 0 1em; padding: 0.55em 0.9em; border-left: 3px solid var(--accent); background: var(--soft); font-style: italic; break-inside: avoid; }
+blockquote p:last-child { margin-bottom: 0; }
+
+.example { border: 1px solid var(--line); border-radius: 6px; padding: 0.7em 0.9em 0.3em; margin: 1em 0; background: #fafbfc; font-size: 10pt; break-inside: avoid; }
+
+table { width: 100%; border-collapse: collapse; font-family: "Inter", sans-serif; font-size: 8.3pt; line-height: 1.4; margin: 0.8em 0 1.1em; break-inside: avoid; }
+th { background: var(--navy); color: #fff; text-align: left; padding: 5px 7px; font-weight: 600; }
+td { border-bottom: 1px solid var(--line); padding: 5px 7px; vertical-align: top; }
+
+.copyright { margin-top: 4.2in; font-size: 8.6pt; color: var(--muted); line-height: 1.5; }
+.copyright strong { color: var(--muted); }
+.toc { break-before: page; }
+.toc h2 { font-size: 18pt; margin: 0.5in 0 0.25in; }
+.toc ul { list-style: none; padding: 0; margin: 0; font-family: "Inter", sans-serif; font-size: 10pt; }
+.toc li { padding: 5px 0; border-bottom: 1px dashed var(--line); margin: 0; }
+
+/* Toolkit */
+.pb { break-before: page; height: 0; }
+.field { font-family: "Inter", sans-serif; font-size: 9pt; margin-top: 0.8em; }
+.field p { margin: 0; }
+.lines { background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 25px, #b9bfcb 25px, #b9bfcb 26px); margin: 2px 0 6px; }
+.l1 { height: 26px; } .l2 { height: 52px; } .l3 { height: 78px; } .l4 { height: 104px; } .l10 { height: 260px; }
+.checks { font-family: "Inter", sans-serif; font-size: 8.5pt; color: var(--muted); margin-top: 0.8em; }
+.story { border: 1px solid var(--line); border-radius: 6px; padding: 0.6em 0.8em 0.2em; margin: 0.6em 0 0.9em; font-size: 9.6pt; break-inside: avoid; }
+.story p { margin: 0.3em 0 0; font-family: "Inter", sans-serif; font-size: 8.5pt; color: var(--muted); }
+.story p:first-child { font-family: "Bitstream Charter", serif; font-size: 10pt; color: #1d2230; }
+.email { font-family: "Inter", sans-serif; font-size: 8.4pt; line-height: 1.45; background: #f4f5f8; border: 1px solid var(--line); border-radius: 6px; padding: 0.6em 0.8em; margin: 0.4em 0 1em; break-inside: avoid; }
+.email p { margin: 0 0 0.5em; }
+.cheatsheet { border: 2px dashed var(--navy); border-radius: 8px; padding: 0.4em 1em 0.6em; margin-top: 0.3in; }
+.cheatsheet h2 { margin-top: 0.5em; }
+.cheatsheet p { font-size: 9.8pt; margin-bottom: 0.55em; }
+
+/* 30-day plan tables */
+.plan table { font-size: 8.6pt; table-layout: fixed; }
+.plan col { width: auto !important; }
+.plan th:nth-child(1), .plan td:nth-child(1) { width: 9%; }
+.plan td:nth-child(1) { font-weight: 700; color: var(--navy); }
+.plan th:nth-child(2), .plan td:nth-child(2) { width: 61%; }
+.plan th:nth-child(3), .plan td:nth-child(3) { width: 21%; }
+.plan td:nth-child(3) { color: var(--muted); }
+.plan th:nth-child(4), .plan td:nth-child(4) { width: 9%; text-align: center; }
+
+/* task-list checkboxes */
+ul.task-list { list-style: none; padding-left: 0.2em; }
+ul.task-list li input { margin-right: 0.5em; }
+ul.task-list li input[type=checkbox] { -webkit-appearance: none; appearance: none; width: 11px; height: 11px; border: 1.5px solid #14213d; border-radius: 2px; margin: 0 7px 0 0; vertical-align: -1px; }

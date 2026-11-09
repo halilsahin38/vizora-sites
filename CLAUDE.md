@@ -20,6 +20,13 @@ Lees dit eerst in elke nieuwe sessie. Claude is de **persoonlijke business-coach
 | # | Product | Map | Status |
 |---|---|---|---|
 | 1 | "Laid Off to Interview-Ready in 30 Days" (e-book, 53 pagina's, $12) | `products/layoff-comeback-interview-kit/` | Klaar, nog niet online |
+| 2 | "The Gap-Proof Résumé Kit" (3 cv's + 3 brieven DOCX + gids, $12/$15) | `products/gap-proof-resume-kit/` | Klaar, nog niet online |
+| Bundel | "Laid Off → Hired Bundle" (1 + 2, $22) | Payhip-bundel | Nog aanmaken |
+
+## Tools (`tools/`)
+- `make-pins.js <productmap>`: Pinterest-pins + bulk-CSV uit `pins.json`
+- `make-mockups.js <productmap>`: productfoto's (tablet en "what's inside") uit `preview-images/` en `mockup.json`
+- Boek/gids bouwen: `node <productmap>/book/build.js` of `guide/build.js` (pandoc + Playwright)
 
 ## Voortgang en planning
 Zie `COACH.md`. Werk dat bestand bij na elke sessie.
