@@ -10,7 +10,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 
 ### Week 1 (10 tot 16 november): accounts
 - [ ] **KvK:** elke ochtend in de afspraakmail op "Wijzig afspraak" klikken voor een eerdere plek. Wijzigen kan alleen via die knop, niet telefonisch. Ook op kvk.nl checken of online inschrijven kan.
-- [ ] **Stripe** afronden als "Individueel" (website = Instagram- of Payhip-link)
+- [x] **Stripe** grotendeels ingevuld (bank, extra's, omschrijving VIZORACAREERS). **Stripe NL heeft geen optie "Individueel"**: afronden kan pas met KvK-nummer (zie "Na de KvK-afspraak")
 - [ ] **Payhip:** account, Stripe koppelen, product 1 en 2 uploaden als **concept**, bundel ($22) aanmaken, Affiliates op 40%
 - [ ] **Instagram @vizoracareers** aanmaken (faceless)
 - [ ] **Pinterest Business** aanmaken, borden "Job Interview Tips" en "Resume Tips"
@@ -29,7 +29,8 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - [ ] Influencers laten weten dat ze kunnen posten
 
 ### Na de KvK-afspraak
-- [ ] KvK-nummer invullen bij Stripe (type: Eenmanszaak) en Etsy
+- [ ] Stripe afronden: Bedrijfstype "bedrijf" → structuur "eenmanszaak", juridische naam + KvK-nummer invullen → Indienen. Daarna in Payhip Stripe koppelen
+- [ ] KvK-nummer invullen bij Etsy
 - [ ] **KOR aanmelden** bij de Belastingdienst
 - [ ] Zakelijke rekening (aanrader)
 
