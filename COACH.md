@@ -6,16 +6,34 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - **Maand 1:** product live op 3 kanalen, eerste 5 influencer-deals, eerste verkoop.
 - **Maand 2 en 3:** product 2 en 3 live, ontdekken wat verkoopt en daar meer van maken.
 
-## Fase 1: accounts en lancering (week 1)
-- [ ] **Dag 1: Payhip** (hoofdwinkel, nodig voor influencers)
-- [ ] **Dag 2: Etsy-shop**
-- [ ] **Dag 3: Pinterest Business + Canva**, eerste 5 pins
-- [ ] **Dag 4: Instagram-merkaccount** (faceless), voor contact met influencers
-- [ ] **Dag 5: KOR aanvragen**, als dat nog niet gedaan is
-- [ ] **Dag 6: eerste 20 influencers** benaderen
-- [ ] **Dag 7: rust en evaluatie** met Claude
+## Planning tot de lancering (lancering: 25 november, of eerder bij een eerdere KvK-afspraak)
 
-## Dagelijkse routine (vanaf week 2), ongeveer 1 tot 1,5 uur
+### Week 1 (10 tot 16 november): accounts
+- [ ] **KvK:** elke ochtend in de afspraakmail op "Wijzig afspraak" klikken voor een eerdere plek. Wijzigen kan alleen via die knop, niet telefonisch. Ook op kvk.nl checken of online inschrijven kan.
+- [ ] **Stripe** afronden als "Individueel" (website = Instagram- of Payhip-link)
+- [ ] **Payhip:** account, Stripe koppelen, product 1 en 2 uploaden als **concept**, bundel ($22) aanmaken, Affiliates op 40%
+- [ ] **Instagram @vizoracareers** aanmaken (faceless)
+- [ ] **Pinterest Business** aanmaken, borden "Job Interview Tips" en "Resume Tips"
+- [ ] **Etsy-shop** openen, beide listings als **concept**
+- [ ] **Higgsfield:** checken of commercieel gebruik in je plan zit
+
+### Week 2 (17 tot 24 november): voorbereiden
+- [ ] **Developer-accounts** aanvragen: developers.pinterest.com en etsy.com/developers (voor de automatische koppelingen)
+- [ ] **Influencers:** elke dag 20 accounts zoeken en benaderen (`INFLUENCERS.md`); afspraak: posten vanaf de lanceerdatum
+- [ ] **Pins** klaarzetten in Pinterest (inplannen vanaf de lanceerdatum)
+- [ ] Beide producten nog één keer zelf nalezen
+
+### Lanceerdag (25 november of eerder)
+- [ ] Payhip-producten en bundel publiceren, Etsy-listings publiceren
+- [ ] Links naar Claude sturen, zodat die in alle pins komen
+- [ ] Influencers laten weten dat ze kunnen posten
+
+### Na de KvK-afspraak
+- [ ] KvK-nummer invullen bij Stripe (type: Eenmanszaak) en Etsy
+- [ ] **KOR aanmelden** bij de Belastingdienst
+- [ ] Zakelijke rekening (aanrader)
+
+## Dagelijkse routine (vanaf de lancering), ongeveer 1 tot 1,5 uur
 - [ ] 20 tot 30 influencers zoeken en benaderen (berichten van Claude)
 - [ ] Opvolgen wie nog niet heeft geantwoord
 - [ ] 2 tot 3 Pinterest-pins plaatsen
