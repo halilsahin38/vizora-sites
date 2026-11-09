@@ -31,9 +31,7 @@ Vul in en stuur naar Claude:
 | 4 | | | | | | | |
 
 ## Wat Claude levert
-- [ ] Berichten voor influencers (eerste bericht, opvolging, dealvoorstel)
-- [ ] 3 story-teksten voor influencers
-- [ ] Zoektermen en hashtags om carrièrecoaches en recruiters te vinden
+- [x] Zoektermen en hashtags om carrièrecoaches en recruiters te vinden (`INFLUENCERS.md`)
 - [x] Pin-generator (Pinterest-afbeeldingen per product)
 - [x] Productfoto's (mockups) voor Etsy/Payhip
 - [x] Berichten voor influencers en story-teksten (`INFLUENCERS.md`)
