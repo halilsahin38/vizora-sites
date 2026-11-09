@@ -5,8 +5,13 @@ Kopieer en plak deze teksten in Payhip, Gumroad of Etsy.
 ---
 
 ## Prijs
-- **Normale prijs:** $19
-- **Introductieprijs (eerste 2 weken):** $14, zodat je sneller je eerste reviews krijgt
+- **Lanceerprijs:** $12 (op basis van het Etsy-onderzoek: vergelijkbare producten kosten $5 tot $15)
+- **Na de eerste 10 verkopen of reviews:** $15
+
+## Afbeeldingen (volgorde bij uploaden)
+1. `preview-images/00-mockup-a.png` (hoofdafbeelding: tablet op bureau)
+2. `preview-images/00-mockup-b.png` (wat zit erin)
+3. De overige `preview-images/`
 
 ## Producttitel (Payhip / Gumroad)
 Laid Off to Interview-Ready in 30 Days: What to Say When They Ask "Why Did You Leave?"

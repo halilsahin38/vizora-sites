@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body { margin: 0; }
+  .scene { width: 2000px; height: 1600px; position: relative; overflow: hidden; font-family: Inter, sans-serif; }
+  /* Variant A: tablet op bureau */
+  .desk { background: radial-gradient(ellipse at 30% 20%, #fbf6ef 0%, #efe4d4 55%, #e2d2bd 100%); }
+  .tablet { position: absolute; background: #1b1d22; border-radius: 56px; padding: 34px; box-shadow: 0 60px 120px rgba(60,40,20,.35), 0 10px 30px rgba(0,0,0,.25); }
+  .tablet img { display: block; border-radius: 18px; }
+  .phone { position: absolute; background: #1b1d22; border-radius: 52px; padding: 22px; box-shadow: 0 50px 90px rgba(60,40,20,.35); }
+  .phone img { display: block; border-radius: 34px; }
+  .cup { position: absolute; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #5a3b26 0 46%, #f4f1ec 47% 60%, #e9e3da 61% 100%); box-shadow: 0 30px 60px rgba(60,40,20,.3); }
+  .note { position: absolute; width: 520px; height: 680px; background: #fffdf8; border-radius: 10px; box-shadow: 0 30px 60px rgba(60,40,20,.25);
+          background-image: repeating-linear-gradient(to bottom, transparent 0 46px, #dfe5ee 46px 48px); }
+  .pen { position: absolute; width: 560px; height: 22px; border-radius: 11px; background: linear-gradient(#2a3550, #14213d); box-shadow: 0 10px 20px rgba(0,0,0,.25); }
+  .badge { position: absolute; left: 90px; top: 90px; background: #14213d; color: #fff; padding: 26px 38px; border-radius: 18px; font-weight: 800; font-size: 46px; line-height: 1.15; box-shadow: 0 20px 40px rgba(0,0,0,.2); }
+  .badge span { display: block; color: #f0875f; font-size: 30px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  /* Variant B: wat zit erin */
+  .inside { background: #14213d; color: #fff; }
+  .inside h1 { position: absolute; left: 100px; top: 90px; margin: 0; font-family: "Inter Display", Inter, sans-serif; font-size: 96px; font-weight: 800; letter-spacing: -.02em; }
+  .inside h1 em { font-style: normal; color: #f0875f; }
+  .pg { position: absolute; width: 470px; border-radius: 8px; box-shadow: 0 40px 80px rgba(0,0,0,.45); }
+  .list { position: absolute; left: 100px; bottom: 90px; font-size: 38px; line-height: 1.7; color: #dfe5ee; }
+  .list b { color: #fff; }
+</style></head>
+<body>
+<div id="a" class="scene desk">
+  <div class="note" style="left:1270px; top:140px; transform:rotate(8deg)"></div>
+  <div class="pen" style="left:1300px; top:930px; transform:rotate(-24deg)"></div>
+  <div class="cup" style="left:1560px; top:1180px"></div>
+  <div class="tablet" style="left:420px; top:170px; transform:rotate(-4deg)"><img src="COVER" style="width:820px"></div>
+  <div class="phone" style="left:1150px; top:700px; transform:rotate(7deg)"><img src="COVER" style="width:330px"></div>
+  <div class="badge"><span>Instant download</span>53-page e-book<br>+ worksheets</div>
+</div>
+<div id="b" class="scene inside">
+  <h1>What's <em>inside</em></h1>
+  <img class="pg" src="P2" style="left:120px; top:300px; transform:rotate(-5deg)">
+  <img class="pg" src="P3" style="left:560px; top:260px; transform:rotate(1deg); z-index:2">
+  <img class="pg" src="P4" style="left:1000px; top:300px; transform:rotate(4deg)">
+  <img class="pg" src="P5" style="left:1420px; top:330px; transform:rotate(8deg)">
+  <div class="list" style="left:auto; right:100px; bottom:70px; text-align:right">
+    <b>30-day plan</b> · 30-second layoff answer<br>
+    Résumé-gap scripts · 14 tough questions<br>
+    Printable worksheets &amp; email templates
+  </div>
+</div>
+</body></html>

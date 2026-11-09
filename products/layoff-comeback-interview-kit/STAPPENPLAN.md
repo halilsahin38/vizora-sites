@@ -25,7 +25,7 @@
 2. Ga naar **Settings → Payment** en koppel **Stripe** (bankrekening) en/of **PayPal**.
 3. Klik op **Add Product → Digital Download**.
 4. Upload `Laid-Off-to-Interview-Ready-in-30-Days.pdf`.
-5. Vul de titel, de prijs ($14 introductieprijs) en de beschrijving uit `LISTING.md` in.
+5. Vul de titel, de prijs ($12 lanceerprijs) en de beschrijving uit `LISTING.md` in.
 6. Upload de afbeeldingen uit `preview-images/` (cover als eerste).
 7. Klik op **Publish**. Je krijgt een link, en die link is je winkel.
 8. Koop het product één keer zelf met een kortingscode van 100% om de downloadflow te testen.
@@ -55,7 +55,7 @@ Zie je na **4 weken** bezoekers maar geen verkopen? Dan ligt het aan je titel, p
 ---
 
 ## Volgende producten (productladder)
-1. **Nu:** dit e-book ($14 tot $19)
+1. **Nu:** dit e-book ($12, later $15)
 2. **Gratis lokkertje:** "The 30-Second Layoff Answer" cheat sheet (1 pagina) in ruil voor een e-mailadres
 3. **Upsell:** Résumé Gap Rewrite Pack (cv- en LinkedIn-teksten voor ontslagen mensen)
 4. **Bundel ($27 tot $37):** E-book + Résumé Pack + Salary Negotiation Scripts
