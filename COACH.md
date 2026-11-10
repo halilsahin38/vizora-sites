@@ -15,7 +15,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - **Profielfoto:** eigenaar wil een geanimeerde avatar die op hem lijkt. Prompt voor Higgsfield (Nano Banana Pro, eigen foto als referentie, 1:1) staat in de chat; Claude haalt het resultaat op via de Higgsfield-koppeling en maakt hem rond. Logo-varianten staan in `brand/`.
 - **Higgsfield-foto's met persoon** (productfoto 01 en 02): prompts gegeven, nog niet gemaakt.
 - Productfoto's (8 per product) staan in `products/*/listing-images/`, video's in `products/*/listing-video.mp4`. **Product 3 (cheat sheet) is nu ook compleet** (8 foto's, video, 5 pins voor het bord "Job Interview Tips").
-- Higgsfield gecheckt (10 nov, avond): de avatar is nog niet gemaakt. Zodra hij in Higgsfield staat, haalt Claude hem op en maakt hem rond.
+- **Avatar klaar** (10 nov): 3D-avatar met bril en haar naar achteren in `brand/avatar-round.png` (profielen), `avatar-square.png` (upload) en `avatar-400.jpg`. Nog instellen op Pinterest en Etsy.
 
 ## Planning tot de lancering (lancering: 25 november, of eerder bij een eerdere KvK-afspraak)
 
