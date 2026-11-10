@@ -6,6 +6,16 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - **Maand 1:** product live op 3 kanalen, eerste 5 influencer-deals, eerste verkoop.
 - **Maand 2 en 3:** product 2 en 3 live, ontdekken wat verkoopt en daar meer van maken.
 
+## Laatste stand (10 november)
+- **Payhip:** account gemaakt; product 1 wordt toegevoegd (PDF geüpload, titel/prijs/foto's/beschrijving invullen). Product 2, 3 en de bundel nog toevoegen.
+- **Stripe:** wacht op KvK-nummer (afspraak 2 december, elke ochtend checken op een eerdere plek).
+- **Etsy:** shop VizoraCareers (English, EUR, bank ingevuld), ID-verificatie loopt.
+- **Pinterest Business:** aangemaakt; profiel bijwerken (gebruikersnaam niet halilsahinai maar vizoradigital/vizoracareers, logo als foto, bio, telefoon leeg).
+- **Gmail:** vizoracareers@gmail.com aangemaakt. **Instagram:** later.
+- **Profielfoto:** eigenaar wil een geanimeerde avatar die op hem lijkt. Prompt voor Higgsfield (Nano Banana Pro, eigen foto als referentie, 1:1) staat in de chat; Claude haalt het resultaat op via de Higgsfield-koppeling en maakt hem rond. Logo-varianten staan in `brand/`.
+- **Higgsfield-foto's met persoon** (productfoto 01 en 02): prompts gegeven, nog niet gemaakt.
+- Productfoto's (8 per product) staan in `products/*/listing-images/`, video's in `products/*/listing-video.mp4`.
+
 ## Planning tot de lancering (lancering: 25 november, of eerder bij een eerdere KvK-afspraak)
 
 ### Week 1 (10 tot 16 november): accounts
