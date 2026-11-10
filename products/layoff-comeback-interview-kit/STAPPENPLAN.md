@@ -3,7 +3,7 @@
 ## Wat er al klaar is
 | Bestand | Wat |
 |---|---|
-| `Laid-Off-to-Interview-Ready-in-30-Days.pdf` | Het e-book (55 pagina's), dit verkoop je |
+| `Laid-Off-to-Interview-Ready-in-30-Days.pdf` | Het e-book (53 pagina's), dit verkoop je |
 | `book/` | De tekst en opmaak van het e-book (via Claude aan te passen, opnieuw bouwen met `node book/build.js`) |
 | `LISTING.md` | Titels, beschrijving, tags, prijs en Pinterest-teksten |
 | `preview-images/` | Cover en voorbeeldpagina's voor je productpagina |

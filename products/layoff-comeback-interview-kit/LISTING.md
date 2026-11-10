@@ -56,7 +56,7 @@ Being laid off is rarely what costs people the next job. How they talk about it 
 
 **Printable toolkit included:** proof file, 30-second answer worksheet, gap worksheet, "tell me about yourself" builder, six story-bank worksheets, questions to ask, thank-you / follow-up / rejection email templates, and a cut-out cheat sheet for the car park.
 
-**Format:** PDF e-book, 6 x 9 in, 55 pages. Read on any phone, tablet or computer, or print the worksheets. Instant download.
+**Format:** PDF e-book, 6 x 9 in, 53 pages. Read on any phone, tablet or computer, or print the worksheets. Instant download.
 
 **Who it's for:** anyone who was laid off, let go or has a gap in their résumé, and has an interview coming up (or wants to be ready when they do).
 
