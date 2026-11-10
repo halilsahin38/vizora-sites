@@ -4,7 +4,7 @@
   body { margin: 0; }
   .scene { width: 2000px; height: 1600px; position: relative; overflow: hidden; font-family: Inter, sans-serif; }
   /* Variant A: tablet op bureau */
-  .desk { background: radial-gradient(ellipse at 30% 20%, #fbf6ef 0%, #efe4d4 55%, #e2d2bd 100%); }
+  .desk { background: radial-gradient(circle at 80% 15%, rgba(255,160,77,.35) 0, rgba(255,160,77,0) 35%), radial-gradient(ellipse at 30% 20%, #fff6ee 0%, #ffe1cf 55%, #f7c9b0 100%); }
   .tablet { position: absolute; background: #1b1d22; border-radius: 56px; padding: 34px; box-shadow: 0 60px 120px rgba(60,40,20,.35), 0 10px 30px rgba(0,0,0,.25); }
   .tablet img { display: block; border-radius: 18px; }
   .phone { position: absolute; background: #1b1d22; border-radius: 52px; padding: 22px; box-shadow: 0 50px 90px rgba(60,40,20,.35); }
@@ -13,12 +13,12 @@
   .note { position: absolute; width: 520px; height: 680px; background: #fffdf8; border-radius: 10px; box-shadow: 0 30px 60px rgba(60,40,20,.25);
           background-image: repeating-linear-gradient(to bottom, transparent 0 46px, #dfe5ee 46px 48px); }
   .pen { position: absolute; width: 560px; height: 22px; border-radius: 11px; background: linear-gradient(#2a3550, #14213d); box-shadow: 0 10px 20px rgba(0,0,0,.25); }
-  .badge { position: absolute; left: 90px; top: 90px; background: #14213d; color: #fff; padding: 26px 38px; border-radius: 18px; font-weight: 800; font-size: 46px; line-height: 1.15; box-shadow: 0 20px 40px rgba(0,0,0,.2); }
-  .badge span { display: block; color: #f0875f; font-size: 30px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+  .badge { position: absolute; left: 90px; top: 90px; background: linear-gradient(135deg, #14213d, #24407a); color: #fff; padding: 26px 38px; border-radius: 18px; font-weight: 800; font-size: 46px; line-height: 1.15; box-shadow: 0 20px 40px rgba(0,0,0,.2); }
+  .badge span { display: block; color: #ff8a5c; font-size: 30px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
   /* Variant B: wat zit erin */
-  .inside { background: #14213d; color: #fff; }
+  .inside { background: radial-gradient(circle at 85% 12%, rgba(255,107,71,.30) 0, rgba(255,107,71,0) 40%), linear-gradient(140deg, #101a33 0%, #1d3366 100%); color: #fff; }
   .inside h1 { position: absolute; left: 100px; top: 90px; margin: 0; font-family: "Inter Display", Inter, sans-serif; font-size: 96px; font-weight: 800; letter-spacing: -.02em; }
-  .inside h1 em { font-style: normal; color: #f0875f; }
+  .inside h1 em { font-style: normal; color: #ff8a5c; }
   .pg { position: absolute; width: 470px; border-radius: 8px; box-shadow: 0 40px 80px rgba(0,0,0,.45); }
   .list { position: absolute; left: 100px; bottom: 90px; font-size: 38px; line-height: 1.7; color: #dfe5ee; }
   .list b { color: #fff; }
