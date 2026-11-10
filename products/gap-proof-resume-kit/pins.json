@@ -1,0 +1,23 @@
+{
+  "brand": "VizoraCareers",
+  "cover": "preview-images/01-cover.png",
+  "link": "PAYHIP_LINK_HIER",
+  "board": "Resume Tips",
+  "pins": [
+    {"kicker": "Résumé gap?", "title": "Explain it in one honest line", "sub": "Career break: family caregiving | Jun 2025 – Present", "style": "dark",
+     "pin_title": "How to Explain an Employment Gap on Your Resume (One Line)",
+     "description": "A gap is only a problem when it's unexplained. Add one honest line in your experience section, plus two things you did. Templates + 40 fill-in gap lines inside. #resumegap #employmentgap #resumetips #jobsearch #laidoff"},
+    {"kicker": "Resume tip", "title": "Duties don't get interviews. Results do.", "sub": "Action verb + what you did + result", "style": "light",
+     "pin_title": "Resume Bullet Formula: Turn Duties Into Results",
+     "description": "Replace 'Responsible for...' with action verb + what you did + result. Before-and-after examples inside the Gap-Proof Resume Kit. #resumetips #resumewriting #jobsearch #careeradvice #atsresume"},
+    {"kicker": "Laid off?", "title": "Your gap is one line. Make the rest count.", "sub": "ATS-friendly résumé + cover letter templates", "style": "accent",
+     "pin_title": "Resume Templates for Laid Off Job Seekers (ATS-Friendly)",
+     "description": "Three ATS-friendly resume templates and three cover letters for a recent layoff, a longer gap, or a career pivot. Word & Google Docs. #resumetemplate #laidoff #atsresume #coverletter #jobsearch"},
+    {"kicker": "Gap over 6 months?", "title": "Show what you did with the time", "sub": "Courses · freelance work · volunteering · projects", "style": "dark",
+     "pin_title": "Long Employment Gap? What to Put on Your Resume",
+     "description": "Courses, freelance gigs, volunteering and projects all count. List the two strongest under your gap line. #employmentgap #careerbreak #resumetips #jobsearch #careerchange"},
+    {"kicker": "Get past the ATS", "title": "8-point résumé checklist", "sub": "One column · standard headings · contact info in the body · PDF", "style": "light",
+     "pin_title": "ATS Resume Checklist: 8 Things to Check Before You Apply",
+     "description": "Make sure applicant tracking systems can read your resume: one column, standard headings, no text boxes, saved as PDF. #atsresume #resumetips #jobsearchtips #careeradvice #resumecheck"}
+  ]
+}
