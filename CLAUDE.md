@@ -22,7 +22,7 @@ Lees dit eerst in elke nieuwe sessie. Claude is de **persoonlijke business-coach
 | 1 | "Laid Off to Interview-Ready in 30 Days" (e-book, 53 pagina's, $12) | `products/layoff-comeback-interview-kit/` | Klaar, nog niet online |
 | 2 | "The Gap-Proof Résumé Kit" (3 cv's + 3 brieven DOCX + gids, $12/$15) | `products/gap-proof-resume-kit/` | Klaar, nog niet online |
 | 3 | "The 30-Second Layoff Answer" (cheat sheet, 2 pagina's, $5, instapproduct) | `products/layoff-answer-cheat-sheet/` | Klaar (PDF, teksten, 8 foto's, video, 5 pins), nog niet online |
-| Bundel | "Laid Off → Hired Bundle" (1 + 2, $22) | Payhip-bundel | Nog aanmaken |
+| Bundel | "Laid Off → Hired Bundle" (1 + 2 + 3, $24) | `products/bundle/` | Foto + teksten klaar; aanmaken in Payhip na de losse producten |
 
 ## Tools (`tools/`)
 - `make-pins.js <productmap>`: Pinterest-pins + bulk-CSV uit `pins.json`

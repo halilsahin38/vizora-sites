@@ -29,10 +29,10 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 ### Week 1 (10 tot 16 november): accounts
 - [ ] **KvK:** elke ochtend in de afspraakmail op "Wijzig afspraak" klikken voor een eerdere plek. Wijzigen kan alleen via die knop, niet telefonisch. Ook op kvk.nl checken of online inschrijven kan.
 - [x] **Stripe** grotendeels ingevuld (bank, extra's, omschrijving VIZORACAREERS). **Stripe NL heeft geen optie "Individueel"**: afronden kan pas met KvK-nummer (zie "Na de KvK-afspraak")
-- [ ] **Payhip:** account, Stripe koppelen, product 1 en 2 uploaden als **concept**, bundel ($22) aanmaken, Affiliates op 40%
+- [ ] **Payhip:** account, Stripe koppelen, product 1 en 2 uploaden als **concept**, bundel (1 + 2 + 3, $24) aanmaken, Affiliates op 40%
 - [ ] **Instagram @vizoracareers** aanmaken (faceless)
 - [ ] **Pinterest Business** aanmaken, borden "Job Interview Tips" en "Resume Tips"
-- [~] **Etsy-shop**: account + naam VizoraCareers + bank ingevuld (taal English, valuta EUR). **ID-verificatie loopt (1 tot 3 dagen, sinds 10 nov).** Daarna listings toevoegen en pas op de lanceerdag "Open your shop" klikken. Prijzen in euro: €11 (product 1 en 2), €5 (cheat sheet), €20 (bundel)
+- [~] **Etsy-shop**: account + naam VizoraCareers + bank ingevuld (taal English, valuta EUR). **ID-verificatie loopt (1 tot 3 dagen, sinds 10 nov).** Daarna listings toevoegen en pas op de lanceerdag "Open your shop" klikken. Prijzen in euro: €11 (product 1 en 2), €5 (cheat sheet), €22 (bundel met alle 3)
 - [x] **Higgsfield:** commercieel gebruik zit in het Starter-plan (help center en pricing-uitleg van Higgsfield, gecheckt 10 nov)
 
 ### Week 2 (17 tot 24 november): voorbereiden
