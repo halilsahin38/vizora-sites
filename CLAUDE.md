@@ -32,6 +32,7 @@ Lees dit eerst in elke nieuwe sessie. Claude is de **persoonlijke business-coach
 ## Overig
 - `REVIEWS.md`: reviewverzoek-teksten (Etsy-bericht en Payhip-mail)
 - `tools/make-listing-images.js` (8 productfoto's) en `tools/make-video.sh` (Etsy-video)
+- `tools/make-hero.js <productmap>`: hoofdfoto (01) met grote belofte + sfeerfoto uit `hero.json` en `lifestyle/`. Sfeerfoto's komen uit Higgsfield (handen met tablet, leeg scherm); Claude plakt de cover op het scherm
 
 ## Voortgang en planning
 Zie `COACH.md`. Werk dat bestand bij na elke sessie.

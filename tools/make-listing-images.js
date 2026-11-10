@@ -68,8 +68,9 @@ const themeOf = (s, i) => { const t = s.theme || (i % 2 ? 'light' : 'dark'); ret
 
 (async () => {
   const out = path.join(dir, 'listing-images'); fs.mkdirSync(out, { recursive: true });
-  for (const f of fs.readdirSync(out)) fs.unlinkSync(path.join(out, f));
-  fs.copyFileSync(path.join(dir, 'preview-images', '00-mockup-a.png'), path.join(out, '01-cover-mockup.png'));
+  const hasHero = fs.existsSync(path.join(dir, 'hero.json')); // 01 komt dan uit tools/make-hero.js
+  for (const f of fs.readdirSync(out)) if (!(hasHero && f === '01-cover-mockup.png')) fs.unlinkSync(path.join(out, f));
+  if (!hasHero) fs.copyFileSync(path.join(dir, 'preview-images', '00-mockup-a.png'), path.join(out, '01-cover-mockup.png'));
   fs.copyFileSync(path.join(dir, 'preview-images', '00-mockup-b.png'), path.join(out, '02-whats-inside.png'));
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 2000, height: 1600 } });
