@@ -18,6 +18,12 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - Productfoto's (8 per product) staan in `products/*/listing-images/`, video's in `products/*/listing-video.mp4`. **Product 3 (cheat sheet) is nu ook compleet** (8 foto's, video, 5 pins voor het bord "Job Interview Tips").
 - **Avatar klaar** (10 nov): 3D-avatar met bril en haar naar achteren in `brand/avatar-round.png` (profielen), `avatar-square.png` (upload) en `avatar-400.jpg`. Nog instellen op Pinterest en Etsy.
 
+## Besluiten 10 november (avond)
+- **Composio** wordt gekoppeld met alleen Pinterest, Gmail (vizoracareers@gmail.com) en Google Sheets. Nooit bank, Stripe of Payhip-uitbetalingen. Afspraak: Claude zet alles klaar, de eigenaar keurt goed voordat iets online gaat. Instagram-DM's naar nieuwe mensen kunnen niet via een koppeling (blijft handwerk).
+- **Volgende sessie:** controleren of Composio werkt, daarna de pins inplannen zodra de Payhip-links er zijn.
+- **Tweede niche** (onderzoek, nog niet besloten): puppy-trainingsplan (bewezen vraag op Etsy, $1 tot $30, druk bezet) en Vinted-verkopersgids (onzeker, mogelijk gat). Eerst grondig onderzoeken, één kiezen in week 3. Carrièreproducten gaan eerst live.
+- **Shopify niet nodig:** Payhip is de eigen winkel (vizoracareers.payhip.com).
+
 ## Planning tot de lancering (lancering: 25 november, of eerder bij een eerdere KvK-afspraak)
 
 ### Week 1 (10 tot 16 november): accounts
