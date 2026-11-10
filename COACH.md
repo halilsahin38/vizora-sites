@@ -15,7 +15,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - [ ] **Instagram @vizoracareers** aanmaken (faceless)
 - [ ] **Pinterest Business** aanmaken, borden "Job Interview Tips" en "Resume Tips"
 - [ ] **Etsy-shop** openen, beide listings als **concept**
-- [ ] **Higgsfield:** checken of commercieel gebruik in je plan zit
+- [x] **Higgsfield:** commercieel gebruik zit in het Starter-plan (help center en pricing-uitleg van Higgsfield, gecheckt 10 nov)
 
 ### Week 2 (17 tot 24 november): voorbereiden
 - [ ] **Developer-accounts** aanvragen: developers.pinterest.com en etsy.com/developers (voor de automatische koppelingen)
