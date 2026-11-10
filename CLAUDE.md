@@ -21,17 +21,18 @@ Lees dit eerst in elke nieuwe sessie. Claude is de **persoonlijke business-coach
 |---|---|---|---|
 | 1 | "Laid Off to Interview-Ready in 30 Days" (e-book, 53 pagina's, $12) | `products/layoff-comeback-interview-kit/` | Klaar, nog niet online |
 | 2 | "The Gap-Proof Résumé Kit" (3 cv's + 3 brieven DOCX + gids, $12/$15) | `products/gap-proof-resume-kit/` | Klaar, nog niet online |
-| 3 | "The 30-Second Layoff Answer" (cheat sheet, 2 pagina's, $5, instapproduct) | `products/layoff-answer-cheat-sheet/` | PDF + teksten klaar; foto's nog maken |
-| Bundel | "Laid Off → Hired Bundle" (1 + 2, $22) | Payhip-bundel | Nog aanmaken |
+| 3 | "The 30-Second Layoff Answer" (cheat sheet, 2 pagina's, $5, instapproduct) | `products/layoff-answer-cheat-sheet/` | Klaar (PDF, teksten, 8 foto's, video, 5 pins), nog niet online |
+| Bundel | "Laid Off → Hired Bundle" (1 + 2 + 3, $24) | `products/bundle/` | Foto + teksten klaar; aanmaken in Payhip na de losse producten |
 
 ## Tools (`tools/`)
 - `make-pins.js <productmap>`: Pinterest-pins + bulk-CSV uit `pins.json`
-- `make-mockups.js <productmap>`: productfoto's (tablet en "what's inside") uit `preview-images/` en `mockup.json`
+- `make-mockups.js <productmap>`: productfoto's (tablet en "what's inside") uit `preview-images/` en `mockup.json` (4 of 2 pagina's)
 - Boek/gids bouwen: `node <productmap>/book/build.js` of `guide/build.js` (pandoc + Playwright)
 
 ## Overig
 - `REVIEWS.md`: reviewverzoek-teksten (Etsy-bericht en Payhip-mail)
 - `tools/make-listing-images.js` (8 productfoto's) en `tools/make-video.sh` (Etsy-video)
+- `tools/make-hero.js <productmap>`: hoofdfoto (01) met grote belofte + sfeerfoto uit `hero.json` en `lifestyle/`. Sfeerfoto's komen uit Higgsfield (handen met tablet, leeg scherm); Claude plakt de cover op het scherm
 
 ## Voortgang en planning
 Zie `COACH.md`. Werk dat bestand bij na elke sessie.
