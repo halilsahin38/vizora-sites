@@ -9,9 +9,7 @@ Kopieer en plak deze teksten in Payhip, Gumroad of Etsy.
 - **Na de eerste 10 verkopen of reviews:** $15
 
 ## Afbeeldingen (volgorde bij uploaden)
-1. `preview-images/00-mockup-a.png` (hoofdafbeelding: tablet op bureau)
-2. `preview-images/00-mockup-b.png` (wat zit erin)
-3. De overige `preview-images/`
+Upload alle 8 afbeeldingen uit de map `listing-images/`, in volgorde van 01 tot en met 08. Nummer 01 is de hoofdfoto.
 
 ## Producttitel (Payhip / Gumroad)
 Laid Off to Interview-Ready in 30 Days: What to Say When They Ask "Why Did You Leave?"

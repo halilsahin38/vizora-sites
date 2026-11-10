@@ -1,0 +1,26 @@
+{
+  "brand": "VizoraCareers",
+  "slides": [
+    {"name": "ats-templates", "type": "feature", "theme": "light", "side": "right", "image": "preview-images/02-example-resume.png",
+     "kicker": "Word & Google Docs", "title": "3 ATS-friendly résumé templates",
+     "bullets": ["Classic 1-page", "Experienced 2-page", "Career Change (skills first)", "Single column, readable by applicant tracking systems"]},
+    {"name": "gap-bank", "type": "feature", "theme": "dark", "side": "left", "image": "preview-images/03-gap-bank.png",
+     "kicker": "The Gap Explanation Bank", "title": "40 fill-in gap explanations",
+     "bullets": ["10 common reasons, from layoff to caregiving", "Résumé line + cover letter sentence", "LinkedIn wording + interview answer", "One consistent story everywhere"]},
+    {"name": "before-after", "type": "compare", "theme": "light",
+     "kicker": "Before & after", "title": "Turn duties into results",
+     "before": {"label": "Before", "text": "\"Responsible for customer support tickets.\""},
+     "after": {"label": "After", "text": "\"Resolved 40+ customer tickets a day and cut average response time from 2 days to under 1.\""}},
+    {"name": "cover-letters", "type": "list", "theme": "dark",
+     "kicker": "Everything in one kit", "title": "What you get",
+     "items": ["3 résumé templates (.docx)", "3 cover letters (.docx)", "Filled-in example résumé", "28-page step-by-step guide", "Bullet-rewrite formula", "ATS & keyword checklist", "LinkedIn \"Open to Work\" fill-ins", "Résumé in one evening plan"]},
+    {"name": "who-its-for", "type": "list", "theme": "light",
+     "kicker": "Who it's for", "title": "Made for you if you...",
+     "items": ["Were laid off and are job hunting", "Have a 3 to 12+ month gap", "Took a career break to care for family", "Are changing careers after a layoff", "Get no callbacks from applications", "Want a résumé that passes the ATS"]},
+    {"name": "how-it-works", "type": "steps", "theme": "dark",
+     "kicker": "Instant download", "title": "How it works",
+     "steps": [{"t": "Download", "d": "Get the ZIP file instantly after checkout."},
+               {"t": "Open", "d": "Edit the templates in Word, Google Docs or Pages."},
+               {"t": "Send", "d": "Save as PDF and start applying the same evening."}]}
+  ]
+}

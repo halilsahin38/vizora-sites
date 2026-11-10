@@ -1,0 +1,102 @@
+{
+ "brand": "VizoraCareers",
+ "slides": [
+  {
+   "name": "30-second-answer",
+   "type": "feature",
+   "theme": "light",
+   "side": "right",
+   "image": "preview-images/07-page-15.png",
+   "kicker": "The core method",
+   "title": "Your 30-second layoff answer",
+   "bullets": [
+    "What happened, in one calm sentence",
+    "Why it wasn't about you",
+    "Where you're going next",
+    "Then stop talking"
+   ]
+  },
+  {
+   "name": "before-after",
+   "type": "compare",
+   "theme": "dark",
+   "kicker": "See the difference",
+   "title": "\"So, why did you leave?\"",
+   "before": {
+    "label": "Without a plan",
+    "text": "\"Honestly it was really unfair. Management had no idea what they were doing, and then one day they just let a bunch of us go...\""
+   },
+   "after": {
+    "label": "With this guide",
+    "text": "\"My role was one of about 40 cut in a restructuring in March. I'd saved the company around €200,000 a year, and now I'm looking for a bigger procurement role like this one.\""
+   }
+  },
+  {
+   "name": "30-day-plan",
+   "type": "feature",
+   "theme": "light",
+   "side": "left",
+   "image": "preview-images/03-page-7.png",
+   "kicker": "Day by day",
+   "title": "A 30-day plan with one task a day",
+   "bullets": [
+    "30 to 60 minutes a day",
+    "Rest days built in",
+    "Week 1: get your story straight",
+    "Week 4: interview-ready"
+   ]
+  },
+  {
+   "name": "who-its-for",
+   "type": "list",
+   "theme": "dark",
+   "kicker": "Who it's for",
+   "title": "Made for you if you...",
+   "items": [
+    "Were laid off or let go",
+    "Freeze at \"Why did you leave?\"",
+    "Have a gap on your résumé",
+    "Were fired and don't know what to say",
+    "Got laid off more than once",
+    "Want to sound calm, not desperate"
+   ]
+  },
+  {
+   "name": "toolkit",
+   "type": "feature",
+   "theme": "light",
+   "side": "right",
+   "image": "preview-images/05-page-45.png",
+   "kicker": "Printable toolkit",
+   "title": "Worksheets & templates included",
+   "bullets": [
+    "30-second answer worksheet",
+    "Résumé-gap answer builder",
+    "6 story-bank worksheets",
+    "Thank-you & follow-up emails",
+    "Cut-out cheat sheet"
+   ]
+  },
+  {
+   "name": "how-it-works",
+   "type": "steps",
+   "theme": "dark",
+   "kicker": "Instant download",
+   "title": "How it works",
+   "steps": [
+    {
+     "t": "Buy",
+     "d": "Secure checkout, no account needed."
+    },
+    {
+     "t": "Download",
+     "d": "Get the PDF instantly by email."
+    },
+    {
+     "t": "Read & print",
+     "d": "Phone, tablet or computer. Print the worksheets."
+    }
+   ]
+  }
+ ]
+}

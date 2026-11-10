@@ -7,12 +7,8 @@
 - **Lanceerprijs:** $12. **Normale prijs:** $15
 - **Bundel met product 1** ("Laid Off → Hired Bundle"): **$22**, tegenover $24 los (zie onderaan)
 
-## Afbeeldingen (volgorde)
-1. `preview-images/00-mockup-a.png`
-2. `preview-images/00-mockup-b.png`
-3. `preview-images/02-example-resume.png`
-4. `preview-images/03-gap-bank.png`
-5. `preview-images/05-bullets.png`
+## Afbeeldingen (volgorde bij uploaden)
+Upload alle 8 afbeeldingen uit de map `listing-images/`, in volgorde van 01 tot en met 08. Nummer 01 is de hoofdfoto.
 
 ## Producttitel (Payhip / Gumroad)
 The Gap-Proof Résumé Kit: Turn a Layoff Gap Into Interview Calls
