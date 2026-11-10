@@ -14,7 +14,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - [ ] **Payhip:** account, Stripe koppelen, product 1 en 2 uploaden als **concept**, bundel ($22) aanmaken, Affiliates op 40%
 - [ ] **Instagram @vizoracareers** aanmaken (faceless)
 - [ ] **Pinterest Business** aanmaken, borden "Job Interview Tips" en "Resume Tips"
-- [ ] **Etsy-shop** openen, beide listings als **concept**
+- [~] **Etsy-shop**: account + naam VizoraCareers + bank ingevuld (taal English, valuta EUR). **ID-verificatie loopt (1 tot 3 dagen, sinds 10 nov).** Daarna listings toevoegen en pas op de lanceerdag "Open your shop" klikken. Prijzen in euro: €11 (product 1 en 2), €5 (cheat sheet), €20 (bundel)
 - [x] **Higgsfield:** commercieel gebruik zit in het Starter-plan (help center en pricing-uitleg van Higgsfield, gecheckt 10 nov)
 
 ### Week 2 (17 tot 24 november): voorbereiden
