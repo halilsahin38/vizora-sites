@@ -14,7 +14,8 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - **Gmail:** vizoracareers@gmail.com aangemaakt. **Instagram:** later.
 - **Profielfoto:** eigenaar wil een geanimeerde avatar die op hem lijkt. Prompt voor Higgsfield (Nano Banana Pro, eigen foto als referentie, 1:1) staat in de chat; Claude haalt het resultaat op via de Higgsfield-koppeling en maakt hem rond. Logo-varianten staan in `brand/`.
 - **Higgsfield-foto's met persoon** (productfoto 01 en 02): prompts gegeven, nog niet gemaakt.
-- Productfoto's (8 per product) staan in `products/*/listing-images/`, video's in `products/*/listing-video.mp4`.
+- Productfoto's (8 per product) staan in `products/*/listing-images/`, video's in `products/*/listing-video.mp4`. **Product 3 (cheat sheet) is nu ook compleet** (8 foto's, video, 5 pins voor het bord "Job Interview Tips").
+- Higgsfield gecheckt (10 nov, avond): de avatar is nog niet gemaakt. Zodra hij in Higgsfield staat, haalt Claude hem op en maakt hem rond.
 
 ## Planning tot de lancering (lancering: 25 november, of eerder bij een eerdere KvK-afspraak)
 
@@ -65,6 +66,7 @@ Vul in en stuur naar Claude:
 - [x] Productfoto's (mockups) voor Etsy/Payhip
 - [x] Berichten voor influencers en story-teksten (`INFLUENCERS.md`)
 - [x] Product 2: The Gap-Proof Résumé Kit
+- [x] Product 3: foto's, video en pins voor de cheat sheet
 - [ ] Pinterest-API-koppeling (wacht op jouw developer-account)
 - [ ] Etsy-API-koppeling (wacht op jouw developer-account)
 

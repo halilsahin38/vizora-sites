@@ -1,0 +1,23 @@
+{
+  "brand": "VizoraCareers",
+  "cover": "preview-images/01-page-1.png",
+  "link": "PAYHIP_LINK_HIER",
+  "board": "Job Interview Tips",
+  "pins": [
+    {"kicker": "Interview question", "title": "\"Why did you leave?\" Answer it in 30 seconds", "sub": "What happened · why it wasn't about you · where you're going", "style": "dark",
+     "pin_title": "How to Answer 'Why Did You Leave Your Last Job?' After a Layoff",
+     "description": "A calm, honest 3-part answer you can say in 30 seconds: what happened, why it wasn't about you, where you're going. Printable cheat sheet with 8 scripts. #interviewtips #laidoff #jobinterview #interviewquestions #jobsearch"},
+    {"kicker": "Laid off?", "title": "Don't say \"they let me go\"", "sub": "Say: \"My role was eliminated in [month].\"", "style": "light",
+     "pin_title": "What Not to Say in an Interview After Being Laid Off",
+     "description": "Swap defensive phrases for calm, confident ones. 'Say this, not that' table inside the 30-Second Layoff Answer cheat sheet. #interviewtips #laidoff #jobinterviewtips #careeradvice #jobsearch"},
+    {"kicker": "Interview this week?", "title": "Your 5-minute checklist before you walk in", "sub": "Say your answer out loud once · pause after a good answer · end on the future", "style": "accent",
+     "pin_title": "5-Minute Job Interview Checklist (Printable)",
+     "description": "Five things to do in the last five minutes before a job interview. Part of a 2-page printable interview cheat sheet. #jobinterview #interviewprep #interviewtips #jobsearchtips #careertips"},
+    {"kicker": "Fired, not laid off?", "title": "There's an honest answer for that too", "sub": "\"The role wasn't the right fit. Since then I've...\"", "style": "dark",
+     "pin_title": "How to Explain Being Fired in a Job Interview",
+     "description": "Keep it short, honest and focused on what you did next. Scripts for 8 situations: layoff, merger, startup shutdown, fired, quit first, burnout and more. #interviewtips #fired #jobinterview #careeradvice #jobsearch"},
+    {"kicker": "End the interview strong", "title": "3 questions to ask them", "sub": "What would a great first three months look like in this role?", "style": "light",
+     "pin_title": "3 Smart Questions to Ask at the End of a Job Interview",
+     "description": "Three questions that show you're serious and give you a chance to address doubts. From the 30-Second Layoff Answer cheat sheet. #interviewquestions #jobinterview #interviewtips #jobsearch #careertips"}
+  ]
+}
