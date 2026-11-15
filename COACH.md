@@ -9,7 +9,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 ## Laatste stand (10 november)
 - **Payhip:** account gemaakt; product 1 wordt toegevoegd (PDF geüpload, titel/prijs/foto's/beschrijving invullen). Product 2, 3 en de bundel nog toevoegen.
 - **Stripe:** wacht op KvK-nummer (afspraak 2 december, elke ochtend checken op een eerdere plek).
-- **Etsy:** shop VizoraCareers (English, EUR, bank ingevuld), ID-verificatie loopt.
+- **Etsy:** shop VizoraCareers (English, EUR, bank ingevuld). **Identiteit geverifieerd op 11 nov.** Nog doen: betaalkaart toevoegen voor de opstartkosten (US$15, Rabobank-pas met Visa/Mastercard-logo of virtuele kaart), dan listings toevoegen. Etsy-mails komen binnen op het privé-Gmail-adres, niet op vizoracareers.
 - **Pinterest Business:** aangemaakt, profielfoto (navy-avatar) staat erop. Nog doen: gebruikersnaam vizoracareers, bio, borden.
 - **Gmail:** vizoracareers@gmail.com aangemaakt. **Instagram:** bewust uitgesteld tot na de lancering.
 - **Payhip:** product 1 staat erin (onzichtbaar), link https://payhip.com/b/MsLJn (al in pins.json gezet). Nu bezig: product 2, 3 en de bundel.
@@ -21,7 +21,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 
 ## Besluiten 10 november (avond)
 - **Composio** wordt gekoppeld met alleen Pinterest, Gmail (vizoracareers@gmail.com) en Google Sheets. Nooit bank, Stripe of Payhip-uitbetalingen. Afspraak: Claude zet alles klaar, de eigenaar keurt goed voordat iets online gaat. Instagram-DM's naar nieuwe mensen kunnen niet via een koppeling (blijft handwerk).
-- **Volgende sessie:** controleren of Composio werkt, daarna de pins inplannen zodra de Payhip-links er zijn.
+- **Composio werkt** (11 nov): Pinterest (VizoraCareers, 0 borden) en Gmail (vizoracareers) actief, Google Sheets nog niet afgerond. Daarnaast is een tweede Gmail gekoppeld via Claude: Claude kijkt daar alleen in op verzoek en verstuurt/verwijdert niets zonder akkoord.
 - **Tweede niche** (onderzoek, nog niet besloten): puppy-trainingsplan (bewezen vraag op Etsy, $1 tot $30, druk bezet) en Vinted-verkopersgids (onzeker, mogelijk gat). Eerst grondig onderzoeken, één kiezen in week 3. Carrièreproducten gaan eerst live.
 - **Shopify niet nodig:** Payhip is de eigen winkel (vizoracareers.payhip.com).
 
@@ -33,7 +33,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 - [ ] **Payhip:** account, Stripe koppelen, product 1 en 2 uploaden als **concept**, bundel (1 + 2 + 3, $24) aanmaken, Affiliates op 40%
 - [ ] **Instagram @vizoracareers** aanmaken (faceless)
 - [ ] **Pinterest Business** aanmaken, borden "Job Interview Tips" en "Resume Tips"
-- [~] **Etsy-shop**: account + naam VizoraCareers + bank ingevuld (taal English, valuta EUR). **ID-verificatie loopt (1 tot 3 dagen, sinds 10 nov).** Daarna listings toevoegen en pas op de lanceerdag "Open your shop" klikken. Prijzen in euro: €11 (product 1 en 2), €5 (cheat sheet), €22 (bundel met alle 3)
+- [~] **Etsy-shop**: account + naam VizoraCareers + bank ingevuld (taal English, valuta EUR). **ID geverifieerd (11 nov).** Daarna listings toevoegen en pas op de lanceerdag "Open your shop" klikken. Prijzen in euro: €11 (product 1 en 2), €5 (cheat sheet), €22 (bundel met alle 3)
 - [x] **Higgsfield:** commercieel gebruik zit in het Starter-plan (help center en pricing-uitleg van Higgsfield, gecheckt 10 nov)
 
 ### Week 2 (17 tot 24 november): voorbereiden
