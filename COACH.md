@@ -38,7 +38,7 @@ Werk dit bestand samen met Claude bij. Vink af wat klaar is: `- [x]`.
 
 ### Week 2 (17 tot 24 november): voorbereiden
 - [ ] **Developer-accounts** aanvragen: developers.pinterest.com en etsy.com/developers (voor de automatische koppelingen)
-- [ ] **Influencers:** elke dag 20 accounts zoeken en benaderen (`INFLUENCERS.md`); afspraak: posten vanaf de lanceerdatum
+- [ ] **Influencers:** elke dag 20 accounts zoeken en benaderen (`INFLUENCERS.md`). Eerste 7 YouTube-creators staan in `CREATORS.md` (16 nov); afspraak: posten vanaf de lanceerdatum
 - [ ] **Pins** klaarzetten in Pinterest (inplannen vanaf de lanceerdatum)
 - [ ] Beide producten nog één keer zelf nalezen
 
