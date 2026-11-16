@@ -1,0 +1,26 @@
+{
+  "brand": "VizoraCareers",
+  "slides": [
+    {"name": "formula", "type": "feature", "theme": "light", "side": "right", "image": "preview-images/01-page-1.png",
+     "kicker": "The 30-second formula", "title": "Answer \"Why did you leave?\" in 3 parts",
+     "bullets": ["What happened, in one sentence", "Why it wasn't about you", "Where you're going next", "Then stop talking"]},
+    {"name": "situations", "type": "feature", "theme": "dark", "side": "left", "image": "preview-images/02-page-2.png",
+     "kicker": "Ready-to-adapt scripts", "title": "8 situations covered",
+     "bullets": ["Company-wide layoff, position eliminated", "Merger, startup shutdown", "Fired, quit first, burnout", "Plus a 3-sentence résumé-gap answer"]},
+    {"name": "say-this", "type": "compare", "theme": "light",
+     "kicker": "Say this, not that", "title": "Small words, big difference",
+     "before": {"label": "Instead of", "text": "\"Unfortunately, they let me go... I'll take anything.\""},
+     "after": {"label": "Say", "text": "\"My role was eliminated in March. I've been selective, and this role stood out because...\""}},
+    {"name": "whats-inside", "type": "list", "theme": "dark",
+     "kicker": "2 printable pages", "title": "What you get",
+     "items": ["30-second answer formula", "Worked example answer", "8 situation scripts", "Résumé-gap answer", "\"Say this, not that\" table", "3 questions to ask them", "5-minute pre-interview checklist", "Space to write your own"]},
+    {"name": "who-its-for", "type": "list", "theme": "light",
+     "kicker": "Who it's for", "title": "Made for you if you...",
+     "items": ["Were laid off recently", "Freeze on \"Why did you leave?\"", "Have an interview this week", "Were let go or quit first", "Have a gap on your résumé", "Want to sound calm, not defensive"]},
+    {"name": "how-it-works", "type": "steps", "theme": "dark",
+     "kicker": "Instant download", "title": "How it works",
+     "steps": [{"t": "Download", "d": "Get the PDF instantly after checkout."},
+               {"t": "Fill in", "d": "Pick your situation and write your answer."},
+               {"t": "Practise", "d": "Say it out loud once before you walk in."}]}
+  ]
+}
